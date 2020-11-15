@@ -1,10 +1,15 @@
 
+
 PRAGMA foreign_keys = ON;
+.mode column
+.headers ON
 
 CREATE TABLE Department(
     number integer PRIMARY KEY,
     name text NOT NULL,
-    total_beds integer NOT NULL
+    total_beds integer NOT NULL,
+    n_beds_occupy integer
+
     --- n_beds_available= total_beds- (SELECT)--- acabar
 );
 
@@ -20,7 +25,7 @@ CREATE TABLE Patient (
 CREATE TABLE Doctor (
 	id integer PRIMARY KEY AUTOINCREMENT, 
 	name text NOT NULL,
-    photo BLOB -- não sei como por ==> aula min 25
+    -- photo BLOB -- não sei como por ==> aula min 25
     phone_number integer,
 	mail_address text NOT NULL,
     password text NOT NULL,
@@ -64,7 +69,7 @@ CREATE TABLE Appointment(
 );
 
 CREATE TABLE Prescription (
-    id integer PRIMARY KEY, 
+    id integer PRIMARY KEY AUTOINCREMENT, 
     date Date NOT NULL, -- tipo 11-11-2021
     date_limit Date NOT NULL, 
     id_appointment integer NOT NULL REFERENCES Appointment,
@@ -110,7 +115,7 @@ CREATE TABLE ReceiveNotification (
 );
 
 CREATE TABLE Report (
-    id integer PRIMARY KEY,
+    id integer PRIMARY KEY AUTOINCREMENT,
     date Date NOT NULL,
     message text NOT NULL
 );
@@ -120,8 +125,9 @@ CREATE TABLE Bed(
     id_department integer NOT NULL REFERENCES Department
 );
 
+-- differents inpatients cannot have the same daily_report id, doesn't make sense ---> see UML
 CREATE TABLE Inpatient(
-    code integer PRIMARY KEY,
+    code integer PRIMARY KEY ,
     visiting_hours text,
     patient integer REFERENCES Patient,
     daily_report integer REFERENCES Report,
@@ -149,7 +155,7 @@ CREATE TABLE Department_Doctor(
     PRIMARY KEY (number, doctor)
 );
 
---Inserir dados:
+--Insert Data
 
 --Department  (não faço a minima ideia nas do nºd camas)
 INSERT INTO Department (number,name, total_beds) VALUES (1,'Cardiology', 20);
@@ -165,7 +171,7 @@ INSERT INTO Department (number,name, total_beds) VALUES (10,'Rheumatology', 15);
 
 --Patient  (depois podemos acrescentar mais)
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15991790,'Ana Marta Silva', 25, 926524200, 'AMarta@gmail.com', 'amart25');
-INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (14511630,'joão Maria Pereira', 62, 917849203, 'jojo@sapo.pt', 'jmp413');
+INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (14511630,'João Maria Pereira', 62, 917849203, 'jojo@sapo.pt', 'jmp413');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15726640,'Rita Faria', 78, 928423651, 'Faria@hotmail.com', 'riarita');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (12054713,'Maria Madalena Melo', 13, 964566667, 'triM@fe.up.com', 'm1m2m3');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (84310576,'André Fernandes Gonçalves', 17, 963634263, 'AndFerGon@gmail.com', 'gonçalvesAF');
@@ -188,16 +194,45 @@ INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (16351542,'Car
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha',??? , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('André Pereira',??? , 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
 
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality ) VALUES ('João Sousa' , 966754201,'DoctorJoão@gmail.com', 'joaodopulmao', 6);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Magalhães', 966754121,'DoctorAna@gmail.com', 'AnaMag', 4);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Machado' , 966451201,'DoctorMaria@gmail.com', 'MaMachado', 3);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes' , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 8);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha' , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Pereira', 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
+
 ---Nurse 
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('João Silva', 966752221,'NurseJoãoSilva@gmail.com', 'silvinha', 4);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Matilde Silva', 966788821,'NurseMS@gmail.com', 'matilvaa84', 4);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Teresa Amaro', 967856621,'Nursetete@gmail.com', 'amteresa', 3);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Marta cerqueira', 966658881,'NurseMartaC@gmail.com', '982Marta4', 2);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('jose Costa', 966733211,'NursejoseC@gmail.com', 'JCosta6451', 5);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('pedro ferreira', 924494571, 'jfjkhy', 8);
+INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Pedro ferreira', 924494571, 'jfjkhy', 8);
 INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Paulo Pedra',963524201, 'j5431vhg', 7);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('jorge Madureira',911204321, 'hhcjnkj2', 5);
+INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Jorge Madureira',911204321, 'hhcjnkj2', 5);
 INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Marta Pen',920014201, '543ghgkl', 5);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('vitor carvalho',963444209, 'vitorinhoCarvalhinho', 1);
+INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Vitor Carvalho',963444209, 'vitorinhoCarvalhinho', 1);
+
+
+-- BEDs
+INSERT INTO Bed VALUES(401, 4);
+INSERT INTO Bed VALUES(402, 4);
+INSERT INTO Bed VALUES(403, 4);
+INSERT INTO Bed VALUES(404, 4);
+INSERT INTO Bed VALUES(501, 5);
+INSERT INTO Bed VALUES(502, 5);
+INSERT INTO Bed VALUES(503, 5);
+INSERT INTO Bed VALUES(504, 5);
+
+
+-- Report 
+INSERT INTO Report( date, message) VALUES ( '2020-11-11', 'The patient had some vomits during the night, but now is more stable');
+INSERT INTO Report( date, message) VALUES ( '2020-11-11', 'During the day the patient as done some exams, now we are waiting for the results');
+
+-- Inpatient -- temos de ter cuidado em adicionar um médico que trabalhe no departamento em que o paciente está internado
+INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 1, 501, 2 );
+INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 1, 502, 2 );
+INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 2, 401, 4 );
+--INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); -- error - don't know why
 
 
