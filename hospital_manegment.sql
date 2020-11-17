@@ -1,5 +1,4 @@
 
-
 PRAGMA foreign_keys = ON;
 .mode column
 .headers ON
@@ -8,9 +7,8 @@ CREATE TABLE Department(
     number integer PRIMARY KEY,
     name text NOT NULL,
     total_beds integer NOT NULL,
-    n_beds_occupy integer
-
-    --- n_beds_available= total_beds- (SELECT)--- acabar
+    n_beds_occupy integer,
+    n_beds_available integer
 );
 
 CREATE TABLE Patient (

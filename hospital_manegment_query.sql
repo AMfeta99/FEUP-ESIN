@@ -29,6 +29,7 @@ UPDATE Department
         GROUP BY id_department) JOIN Department
    WHERE number = id_department);
 
+UPDATE Department SET n_beds_available=  total_beds-n_beds_occupy;
 
 SELECT *
 FROM Department;
