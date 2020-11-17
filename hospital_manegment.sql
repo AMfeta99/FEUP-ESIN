@@ -42,7 +42,7 @@ CREATE TABLE Nurse (
 );
 
 CREATE TABLE Block_time (
-	code integer PRIMARY KEY,
+	code integer PRIMARY KEY AUTOINCREMENT,
     begin_time Date NOT NULL, -- not sure if the type is datetime --> acho q é text
     end_time Date NOT NULL,
     week_day text NOT NULL CHECK (week_day = "MON" OR week_day = "TUE" OR week_day = "WED" OR week_day = "THU" OR week_day = "FRI" ),
@@ -158,16 +158,16 @@ CREATE TABLE Department_Doctor(
 --Insert Data
 
 --Department  (não faço a minima ideia nas do nºd camas)
-INSERT INTO Department (number,name, total_beds) VALUES (1,'Cardiology', 20);
-INSERT INTO Department (number,name, total_beds) VALUES (2,'Surgery', 25);
-INSERT INTO Department (number,name, total_beds) VALUES (3,'Dermatology', 15);
-INSERT INTO Department (number,name, total_beds) VALUES (4,'Orthopedics', 40);
-INSERT INTO Department (number,name, total_beds) VALUES (5,'Pediatrics', 38);
-INSERT INTO Department (number,name, total_beds) VALUES (6,'Pulmonology', 20);
+INSERT INTO Department (number,name, total_beds) VALUES (1,'Cardiology', 10);
+INSERT INTO Department (number,name, total_beds) VALUES (2,'Surgery', 15);
+INSERT INTO Department (number,name, total_beds) VALUES (3,'Dermatology', 5);
+INSERT INTO Department (number,name, total_beds) VALUES (4,'Orthopedics', 20);
+INSERT INTO Department (number,name, total_beds) VALUES (5,'Pediatrics', 25);
+INSERT INTO Department (number,name, total_beds) VALUES (6,'Pulmonology', 10);
 INSERT INTO Department (number,name, total_beds) VALUES (7,'Psychiatry', 0);
 INSERT INTO Department (number,name, total_beds) VALUES (8,'Radiology', 0);
-INSERT INTO Department (number,name, total_beds) VALUES (9,'Urology', 33);
-INSERT INTO Department (number,name, total_beds) VALUES (10,'Rheumatology', 15);
+INSERT INTO Department (number,name, total_beds) VALUES (9,'Urology', 10);
+INSERT INTO Department (number,name, total_beds) VALUES (10,'Rheumatology', 0);
 
 --Patient  (depois podemos acrescentar mais)
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15991790,'Ana Marta Silva', 25, 926524200, 'AMarta@gmail.com', 'amart25');
@@ -184,6 +184,9 @@ INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES 
 INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431264,'Carolina Lima', 64,'Carolima@gmail.com', 'C95Lima');
 INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156437,'Abel valerio', 55, 'abelval@gmail.com', 'AiValerio');
 INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (16351542,'Carlos Sousa', 11, 'carlitos@gmail.com', 'asdfdc42'); 
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431444,'Helena Lima', 6,'lima@gmail.com', 'Lima');
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156444,'tiago valerio', 25, 'val@gmail.com', 'Valerio');
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'jaime Sousa', 47, 'jiji@gmail.com', 'asc42'); 
 
 
 --Doctor (tenho q ver como se insere as variaveis do tipo blob)
@@ -215,6 +218,14 @@ INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Vitor Carva
 
 
 -- BEDs
+INSERT INTO Bed VALUES(201, 2);
+INSERT INTO Bed VALUES(202, 2);
+INSERT INTO Bed VALUES(203, 2);
+INSERT INTO Bed VALUES(204, 2);
+INSERT INTO Bed VALUES(301, 3);
+INSERT INTO Bed VALUES(302, 3);
+INSERT INTO Bed VALUES(303, 3);
+INSERT INTO Bed VALUES(304, 3);
 INSERT INTO Bed VALUES(401, 4);
 INSERT INTO Bed VALUES(402, 4);
 INSERT INTO Bed VALUES(403, 4);
@@ -233,6 +244,15 @@ INSERT INTO Report( date, message) VALUES ( '2020-11-11', 'During the day the pa
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 1, 501, 2 );
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 1, 502, 2 );
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 2, 401, 4 );
---INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); -- error - don't know why
+INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); -- error - don't know why ==> não tinhas esta cama na base de dados
 
+--Disease
+INSERT INTO Disease(name) VALUES ('Alzheimer')
+INSERT INTO Disease(name) VALUES ('Autism')
+INSERT INTO Disease(name) VALUES ('Asthma')
+INSERT INTO Disease(name) VALUES ('Cancer')
+INSERT INTO Disease(name) VALUES ('Anemia')
+INSERT INTO Disease(name) VALUES ('Diabetes')
 
+--- Block_time 
+---INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( , , 'MON')
