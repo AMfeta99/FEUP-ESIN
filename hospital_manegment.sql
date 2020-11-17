@@ -43,10 +43,10 @@ CREATE TABLE Nurse (
 
 CREATE TABLE Block_time (
 	code integer PRIMARY KEY AUTOINCREMENT,
-    begin_time Date NOT NULL, -- not sure if the type is datetime --> acho q é text
-    end_time Date NOT NULL,
+    begin_time time NOT NULL, -- not sure if the type is datetime --> acho q é text
+    end_time time NOT NULL,
     week_day text NOT NULL CHECK (week_day = "MON" OR week_day = "TUE" OR week_day = "WED" OR week_day = "THU" OR week_day = "FRI" ),
-    CHECK (Date(begin_time) < Date(end_time))
+    CHECK (time(begin_time) < time(end_time))
     
 );
 
@@ -84,7 +84,8 @@ CREATE TABLE Medicine (
 );
 
 CREATE TABLE Disease(
-    name text PRIMARY KEY
+    id integer PRIMARY KEY AUTOINCREMENT,
+    name text
 );
 
 CREATE TABLE AppointmentDiagnosis  (
@@ -247,12 +248,62 @@ INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) 
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); -- error - don't know why ==> não tinhas esta cama na base de dados
 
 --Disease
-INSERT INTO Disease(name) VALUES ('Alzheimer')
-INSERT INTO Disease(name) VALUES ('Autism')
-INSERT INTO Disease(name) VALUES ('Asthma')
-INSERT INTO Disease(name) VALUES ('Cancer')
-INSERT INTO Disease(name) VALUES ('Anemia')
-INSERT INTO Disease(name) VALUES ('Diabetes')
+INSERT INTO Disease (name) VALUES ('Alzheimer');
+INSERT INTO Disease (name) VALUES ('Autism');
+INSERT INTO Disease (name) VALUES ('Asthma');
+INSERT INTO Disease (name) VALUES ('Cancer');
+INSERT INTO Disease (name) VALUES ('Anemia');
+INSERT INTO Disease (name) VALUES ('Diabetes');
+INSERT INTO Disease (name) VALUES ('HIV/AIDS');
+INSERT INTO Disease (name) VALUES ('Epilepsy');
+INSERT INTO Disease (name) VALUES ('Stroke');
+INSERT INTO Disease (name) VALUES ('Hepatitis');
+INSERT INTO Disease (name) VALUES ('Ebola');
+
 
 --- Block_time 
----INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( , , 'MON')
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'FRI');
