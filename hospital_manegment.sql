@@ -1,7 +1,29 @@
 
+--Projeto ESIN FEUP--
+
 PRAGMA foreign_keys = ON;
-.mode column
-.headers ON
+
+-- DROPS--
+DROP TABLE IF EXISTS Department;
+DROP TABLE IF EXISTS Patient;
+DROP TABLE IF EXISTS Doctor;
+DROP TABLE IF EXISTS Nurse;
+DROP TABLE IF EXISTS Block_time;
+DROP TABLE IF EXISTS Reservation;
+DROP TABLE IF EXISTS Appointment;
+DROP TABLE IF EXISTS Prescription;
+DROP TABLE IF EXISTS Medicine;
+DROP TABLE IF EXISTS Disease;
+DROP TABLE IF EXISTS AppointmentDiagnosis ;
+DROP TABLE IF EXISTS Block_time_and_Doctor;
+DROP TABLE IF EXISTS PrescriptionOfMedicine;
+DROP TABLE IF EXISTS ReceiveNotification;
+DROP TABLE IF EXISTS Report;
+DROP TABLE IF EXISTS Bed;
+DROP TABLE IF EXISTS Inpatient;
+DROP TABLE IF EXISTS MedicationAdministered;
+DROP TABLE IF EXISTS NursesOfInpatient;
+DROP TABLE IF EXISTS Department_Doctor;
 
 CREATE TABLE Department(
     number integer PRIMARY KEY,
@@ -58,7 +80,7 @@ CREATE TABLE Reservation(
 );
 
 CREATE TABLE Appointment(
-    id integer PRIMARY KEY, 
+    id integer PRIMARY KEY AUTOINCREMENT, 
     date Date NOT NULL, -- tipo 11-11-2021
     time integer NOT NULL REFERENCES Block_time, -- the primary key of block time is an integer
     doctor integer NOT NULL REFERENCES Doctor, 
@@ -124,7 +146,6 @@ CREATE TABLE Bed(
     id_department integer NOT NULL REFERENCES Department
 );
 
--- differents inpatients cannot have the same daily_report id, doesn't make sense ---> see UML
 CREATE TABLE Inpatient(
     code integer PRIMARY KEY ,
     visiting_hours text,
@@ -199,9 +220,10 @@ INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'jai
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality ) VALUES ('João Sousa' , 966754201,'DoctorJoão@gmail.com', 'joaodopulmao', 6);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Magalhães', 966754121,'DoctorAna@gmail.com', 'AnaMag', 4);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Machado' , 966451201,'DoctorMaria@gmail.com', 'MaMachado', 3);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes' , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 8);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes' , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 5);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha' , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Pereira', 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
+
 
 ---Nurse 
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('João Silva', 966752221,'NurseJoãoSilva@gmail.com', 'silvinha', 4);
@@ -243,7 +265,7 @@ INSERT INTO Report( date, message) VALUES ( '2020-11-11', 'During the day the pa
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 1, 501, 2 );
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 1, 502, 2 );
 INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 2, 401, 4 );
-INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); -- error - don't know why ==> não tinhas esta cama na base de dados
+INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); 
 
 --Disease
 INSERT INTO Disease (name) VALUES ('Alzheimer');
@@ -305,3 +327,14 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', '
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'FRI');
+
+
+-- Appointment
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 5, 15431264);
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 3 , 5, 15726640);
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 6, 14511630);
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 3, 12054713);
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 4 , 5, 14511630);
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 5 , 5, 15341150);
+INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 4, 15991790);
+
