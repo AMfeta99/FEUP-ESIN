@@ -70,7 +70,7 @@ CREATE TABLE Nurse (
 
 CREATE TABLE Block_time (
 	code integer PRIMARY KEY AUTOINCREMENT,
-    begin_time time NOT NULL, -- not sure if the type is datetime --> acho q é text --> I think this was already solved
+    begin_time time NOT NULL, 
     end_time time NOT NULL,
     week_day text NOT NULL CHECK (week_day = "MON" OR week_day = "TUE" OR week_day = "WED" OR week_day = "THU" OR week_day = "FRI" ),
     CHECK (time(begin_time) < time(end_time))
@@ -79,7 +79,7 @@ CREATE TABLE Block_time (
 
 CREATE TABLE Reservation(
     id integer PRIMARY KEY AUTOINCREMENT, 
-    date Date NOT NULL, -- tipo 11-11-2021 --- não sei se é assim!
+    date Date NOT NULL, -- tipo 11-11-2021 
     time integer NOT NULL REFERENCES Block_time, -- the primary key of block time is an integer
     doctor integer NOT NULL REFERENCES Doctor, 
     patient integer NOT NULL REFERENCES Patient
@@ -142,11 +142,7 @@ CREATE TABLE ReceiveNotification (
     PRIMARY KEY (id, doctor, patient)
 );
 
-CREATE TABLE Report (
-    id integer PRIMARY KEY AUTOINCREMENT,
-    date Date NOT NULL,
-    message text NOT NULL
-);
+
 
 CREATE TABLE Bed(
     number integer PRIMARY KEY,
@@ -157,10 +153,18 @@ CREATE TABLE Inpatient(
     code integer PRIMARY KEY ,
     visiting_hours text,
     patient integer REFERENCES Patient,
-    daily_report integer REFERENCES Report,
     bed integer REFERENCES Bed,
     doctor integer REFERENCES Doctor
 
+);
+
+-- a relação entre inpatient and report deve ser de 1 para * 
+-- Ou seja, cada paciente tem vários daily report mas cada report apenas tem um paciente
+CREATE TABLE Report ( 
+    id integer PRIMARY KEY AUTOINCREMENT,
+    date Date NOT NULL,
+    message text NOT NULL,
+    inpatient integer UNIQUE REFERENCES Inpatient
 );
 
 CREATE TABLE MedicationAdministered(
@@ -175,13 +179,6 @@ CREATE TABLE NursesOfInpatient(
     PRIMARY KEY(nurse, inpatient)
 );
 
--- acho que podemos eliminar esta tabela uma vez que pusemos a relação de muitos * para 1
---acho q aquilo do medico e departmento tem q ser assim e talvez fazer um check para ser pelo menos 1 (não sei ) 
-CREATE TABLE Department_Doctor(
-    number integer REFERENCES Department,
-    doctor integer REFERENCES Doctor,
-    PRIMARY KEY (number, doctor)
-);
 
 /*----------------------Insertion of Data -------------------*/
 
@@ -265,16 +262,17 @@ INSERT INTO Bed VALUES(503, 5);
 INSERT INTO Bed VALUES(504, 5);
 
 
--- Report 
-INSERT INTO Report( date, message) VALUES ( '2020-11-11', 'The patient had some vomits during the night, but now is more stable');
-INSERT INTO Report( date, message) VALUES ( '2020-11-11', 'During the day the patient as done some exams, now we are waiting for the results');
-
 -- Inpatient -- temos de ter cuidado em adicionar um médico que trabalhe no departamento em que o paciente está internado
--- não faz sentido pacientes diferentes terem o mesmo daily_report (relação de 1 para 1)
-INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 1, 501, 2 );
-INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 1, 502, 2 );
-INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 2, 401, 4 );
-INSERT INTO Inpatient(code, visiting_hours, patient, daily_report, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 2, 301, 3 ); 
+
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 501, 2 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 502, 2 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 401, 4 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 301, 3 ); 
+
+-- Report 
+INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-11', 'The patient had some vomits during the night, but now is more stable',2020110901);
+INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-11', 'During the day the patient as done some exams, now we are waiting for the results',2020110902);
+INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-23', 'The patient was submitted to an ECG', 2020110903);
 
 --Disease
 INSERT INTO Disease (name) VALUES ('Alzheimer');
