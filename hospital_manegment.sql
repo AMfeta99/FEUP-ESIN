@@ -1,5 +1,12 @@
 
 --Projeto ESIN FEUP--
+/* 
+    Hospital Manegment System
+    Grupo F
+    @authors: 
+        Ana Filipa Ferreira, up201705530
+        Ana Maria Sousa, up2017
+ */
 
 PRAGMA foreign_keys = ON;
 
