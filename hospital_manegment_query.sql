@@ -7,6 +7,10 @@ FROM Bed;
 SELECT *
 FROM Inpatient;
 
+SELECT *
+FROM Department;
+-- pensei em adicionar um DEFAULT para n_beds_occupy , zero, que vai somando sempre que entra um novo paciente internado naquele departamento
+
 -- this tables gives the number of beds occupy for each department
 SELECT id_department, COUNT (*) as n_beds_oc
 FROM Bed JOIN Inpatient 
