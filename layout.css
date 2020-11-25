@@ -1,0 +1,57 @@
+/* layout.css (positioning the main components),.*/
+/*
+body {
+    width:80rem;
+    float:center;
+}*/
+
+body> header> #simbolo{
+    display:grid;
+    grid-template-columns:[imagem] 0.05fr [nome]auto;
+}
+body>header img {
+    grid-area: imagem;
+}
+
+body>header h1 {
+    grid-area: nome;
+}
+
+#frase_menu{
+    display:grid;
+    grid-template-columns:[frase] 2fr [aa] 1fr[menu] 5fr;
+}
+
+body>header h2 {
+    grid-area: frase;
+    padding: 5px;
+}
+
+#links{
+    grid-area: menu;
+    float: right;
+}
+
+#back{
+    display:grid;
+    grid-template-columns:[frase] 2fr [aa] auto[back] 5%;
+}
+
+#back a{
+    grid-area: back;
+    font-size: 1rem;
+
+}
+
+/*
+    
+body> form{
+    display:grid;
+    grid-template-columns:[marg]2fr[submition]5fr[cancelation]auto [marg2]2fr;
+    grid-template-rows: [title] 2fr [cenas]auto[buttons]1fr;
+
+    grid-template-areas: "margem forms forms margem"
+                        "margem forms forms margem"
+                        "margem submition cancelation margem";
+}
+*/

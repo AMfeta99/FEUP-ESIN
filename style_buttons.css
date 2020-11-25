@@ -1,0 +1,60 @@
+
+/*style_buttons.css (styling of the buttons)*/
+
+/*--------------------buttons e X------------------------*/
+/* The Close Button */
+.close {
+/* Position it in the top right corner outside of the modal */
+position: absolute;
+right: 25px;
+top: 0;
+color: #000;
+font-size: 40px;
+font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+#out:hover{
+color: red;
+cursor: pointer;
+zoom: 1.1;
+}
+
+.close {
+float: right;
+padding-top: 16px;
+}
+
+/*buttons e X*/
+button:hover {
+  opacity: 0.8;
+  background-color: rgb(98, 179, 211);
+  color: white;
+}
+
+/* Set a style submit buttons */
+button {
+  color: rgb(255, 255, 255);
+  padding: 15px 20px;
+  margin: 7px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+button{
+  background-color: rgba(118, 111, 151, 0.8);
+}
+
+[type=submit]:hover {
+  opacity: 0.8;
+}
+
+[type=submit] {
+  background-color: #4ba34ef1;
+}
+
+.cancel{
+  background-color:  rgba(167, 14, 14, 0.705);
+}
