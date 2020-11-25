@@ -1,0 +1,162 @@
+<!-- Pagina inicial-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="style.css" rel="stylesheet">
+      <link href="style_buttons.css" rel="stylesheet">
+      <link href="layout.css" rel="stylesheet">
+      <link href="slicer.css" rel="stylesheet">
+      <link href="forms.css" rel="stylesheet">
+
+      <link rel="icon" type="imagem/jpg" href="Hospital.jpg" />
+      <title>Hospital</title>
+  </head>
+
+  <body>
+      <header>
+        <div id="simbolo">
+          <h1><a href="index.html">Hospital</a></h1>
+          <img src="t2.png" alt="simbolo" width="30">
+          <!-- barra de pesquisa ... ainda não sei fazer mas seria fixe se conseguirmos
+          <input type="text" name="search" placeholder="Search..">-->
+        </div>
+        <div id="frase_menu">
+          <h2><a>The best care just a click away!</a></h2>
+          
+          <div id="links">
+            <a href="about.html">About us</a>
+            <a href="index.html">Track Impatient</a>
+            <a href="register.html">Register</a>
+            <a href="index.html">Login</a>
+          </div> </div>
+      </header>  
+      
+      <section id="presentation">
+        <!--imagens em slides com texto descrivo e funcionalidades do website-->
+          <article class="slideContainer">
+
+            <div class="mySlide">
+              <img src="http://www.comerciarios.net/img/medico.jpg" alt="1 " style="width:100%">
+              <div class="descritext" >The best health professionals at your service come to know!</div>
+            </div>
+          
+            <div class="mySlide">
+              <div class="titletext">Patient Profile</div>
+              <img src="6.jpg" alt="2" style="width:100%">
+              <div class="descritext">The profile allows you to consult scheduled appointments, prescriptions and see your entire medical history</div>
+            </div>
+          
+            <div class="mySlide">
+              <div class="titletext">Departments and Doctors</div>
+              <img src="5.png" alt="3 " style="width:100%">
+              <div class="descritext">Discover the services that we have to offer and our healthcare professionals</div>
+            </div>
+          
+            <div class="mySlide">
+              <div class="titletext">Appointment</div>
+              <img src="https://saudebusiness.com/wp-content/uploads/2019/03/consultas-medicas.jpg" alt="4 " style="width:100%">
+              <div class="descritext">Schedule an appointment with any doctor</div>
+            </div>
+          
+            <div class="mySlide">
+              <div class="titletext">The best care just a click away!</div>
+              <img src="http://portaldocoracao.com.br/wp-content/uploads/2008/11/cardiologista.jpg" alt="5 " style="width:100%">
+              <div><a href="register.html" id="join" class="descritext" style="font-size: 30px;">Join us</a> </div>
+            </div>
+          
+          </article>
+          <br>
+          
+          <!---pontos/bolas do slicer-->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+          </div>
+
+        <div>
+          <p>In this hospital you can find any medical specialty. It can be finding help for any health problem.</p>
+        </div>
+    
+        <article id="login">
+            
+            <form id="doctor" action="login.php" method="get">
+              <header>
+                <h2>Login</h2>
+              </header>
+              <div>
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="name" required>
+            
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+  
+                <button type="submit" >Submit</button>
+              </div>
+            </form>
+
+        </article>
+
+        <div>
+          <p>A ideia nestas frase é parecida com o website da CUF ... frases em grande a valorizar o hospital ou assim... falat Css nestas frases</p>
+        </div>
+
+        <article id="impatient">
+          <!---<img src="https://s.hdnux.com/photos/73/01/67/15474130/3/920x920.jpg" alt="" >-->
+          <form id="track" action="impatient.php" method="get">
+            <header>
+              <h2>Impatient</h2>
+            </header>
+            <div>
+              <label><b>Username</b></label>
+              <input type="text" placeholder="Enter code" name="code" required>
+          
+              <button type="submit" >Submit</button>
+
+              <p>a minha ideia era meter este alinhado à direita ...acho q fica bem mais uma vez estou a ver a ideia do da CUF </p>
+            </div>
+          </form>
+        </article>
+
+      </section>  
+
+    <footer>
+      <h3>Contacts</h3>
+      <p>address: sdfgsjjdhkgzlfg bskfdjsçjhkfjsnflsfsf jsfldgçsg </p>
+    </footer>
+
+
+    <script>
+  //este script permite passar os slides
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlide");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+  </body>
+
+</html>
