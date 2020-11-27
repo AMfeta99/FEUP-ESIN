@@ -184,15 +184,15 @@ CREATE TABLE NursesOfInpatient(
 
 --Department  (não faço a minima ideia nas do nºd camas)
 INSERT INTO Department (number,name, total_beds) VALUES (1,'Cardiology', 10);
-INSERT INTO Department (number,name, total_beds) VALUES (2,'Surgery', 15);
+INSERT INTO Department (number,name, total_beds) VALUES (2,'Neurology', 15);
 INSERT INTO Department (number,name, total_beds) VALUES (3,'Dermatology', 5);
-INSERT INTO Department (number,name, total_beds) VALUES (4,'Orthopedics', 20);
-INSERT INTO Department (number,name, total_beds) VALUES (5,'Pediatrics', 25);
+INSERT INTO Department (number,name, total_beds) VALUES (4,'Orthopaedic', 20);
+INSERT INTO Department (number,name, total_beds) VALUES (5,'Paediatrics', 25);
 INSERT INTO Department (number,name, total_beds) VALUES (6,'Pulmonology', 10);
 INSERT INTO Department (number,name, total_beds) VALUES (7,'Psychiatry', 0);
-INSERT INTO Department (number,name, total_beds) VALUES (8,'Radiology', 0);
+INSERT INTO Department (number,name, total_beds) VALUES (8,'Surgery', 20);
 INSERT INTO Department (number,name, total_beds) VALUES (9,'Urology', 10);
-INSERT INTO Department (number,name, total_beds) VALUES (10,'Rheumatology', 0);
+INSERT INTO Department (number,name, total_beds) VALUES (10,'Osbtetrics', 15);
 
 --Patient  (depois podemos acrescentar mais)
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15991790,'Ana Marta Silva', 25, 926524200, 'AMarta@gmail.com', 'amart25');

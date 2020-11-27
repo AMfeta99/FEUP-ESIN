@@ -28,7 +28,7 @@
           
           <div id="links">
             <a href="about.html">About us</a>
-            <a href="index.html">Track Impatient</a>
+            <a href="index.html">Track Inpatient</a>
             <a href="register.html">Register</a>
             <a href="index.html">Login</a>
           </div> </div>
@@ -79,50 +79,143 @@
             <span class="dot" onclick="currentSlide(5)"></span> 
           </div>
 
-        <div>
-          <p>In this hospital you can find any medical specialty. It can be finding help for any health problem.</p>
-        </div>
-    
-        <article id="login">
+        <section class = "about">
+      
+          <h2 class="heading">ABOUT US</h2>
+          <div class = "hospital-img" >
+            <img src="hos.jpg" class="img-fluid" alt="6" style="width:100%">
+          </div>
+
+          <div class = "text-block">
+          <h3>We make a Difference in your lives</h3>
+            <p>introdução</p>
+            <br>
+            <p> Falar dos departamentos e da equipa médica bla bla bla</p>
+          </div>
+          
+        </section>
+
+        <!-- Departments -->
+        <section class = "departments">
+
+          <h2>Departments</h2>
+          <p>Our hospital has about 10 different services </p>
+
+          <div class = "departments_block">
+   
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href = >
+                  <img src="cardiology.jpg" style="width: 100%; height: 160px;">
+                  <p>Cardiology</p>  
+              </div></a>
+            </div>
             
-            <form id="doctor" action="login.php" method="get">
+          
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href = >
+                  <img src="ortopaedic.jpeg" style="width: 100%; height: 160px;"  >
+                  <p>Orthopaedic</p>  
+              </div></a>  
+            </div>
+        
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href =>
+                  <img src="obstetrics.jpeg" style="width: 100%; height: 160px;">
+                  <p>Obstetrics &amp; Gynaecology</p>  
+              </div></a>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href= >
+                <img src="neuro.jpg" style="width: 100%; height: 160px;">
+                <p>Neurology</p>  
+              </div></a>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href=>
+                  <img src="paedriatics.jpeg" style="width: 100%; height: 160px;" >
+                  <p>Paediatrics</p>    
+              </div></a>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href="">
+                <img src="dermatology.png"  style="width: 100%; height: 160px;">
+                <p>Dermatology</p>  
+              </div></a>
+            </div>
+        
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href="">
+                <img src="urology.jpeg" style="width: 100%; height: 160px;">
+                <p>Urology</p>  
+              </div></a>
+            </div>
+     
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href= "">
+                  <img src="pulmonology.jpeg" style="width: 100%; height: 160px;">
+                  <p>Pulmonology</p>  
+              </div></a>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href= "">
+                  <img src="psychiatry.png" style="width: 100%; height: 160px;">
+                  <p>Psychiatry</p>  
+              </div></a>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              <div class="speciality_cards"><a href= "">
+                  <img src="surgery.jpeg" style="width: 100%; height: 160px;">
+                  <p>Surgery</p>  
+              </div></a>
+            </div>
+                
+      </div>
+
+        </section>
+
+        <section id = "logins">
+          <article id="login">
+              
+              <form id="doctor" action="login.php" method="get">
+                <header>
+                  <h2>Login</h2>
+                </header>
+                <div>
+                  <label><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="name" required>
+              
+                  <label><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" required>
+    
+                  <button type="submit" >Submit</button>
+                </div>
+              </form>
+
+          </article>
+
+        
+
+          <article id="inpatient">
+            <!---<img src="https://s.hdnux.com/photos/73/01/67/15474130/3/920x920.jpg" alt="" >-->
+            <form id="track" action="inpatient.php" method="get">
               <header>
-                <h2>Login</h2>
+                <h2>Inpatient</h2>
               </header>
               <div>
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="name" required>
+                <input type="text" placeholder="Enter code" name="code" required>
             
-                <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-  
                 <button type="submit" >Submit</button>
+
               </div>
             </form>
-
-        </article>
-
-        <div>
-          <p>A ideia nestas frase é parecida com o website da CUF ... frases em grande a valorizar o hospital ou assim... falat Css nestas frases</p>
-        </div>
-
-        <article id="impatient">
-          <!---<img src="https://s.hdnux.com/photos/73/01/67/15474130/3/920x920.jpg" alt="" >-->
-          <form id="track" action="impatient.php" method="get">
-            <header>
-              <h2>Impatient</h2>
-            </header>
-            <div>
-              <label><b>Username</b></label>
-              <input type="text" placeholder="Enter code" name="code" required>
-          
-              <button type="submit" >Submit</button>
-
-              <p>a minha ideia era meter este alinhado à direita ...acho q fica bem mais uma vez estou a ver a ideia do da CUF </p>
-            </div>
-          </form>
-        </article>
-
+          </article>
+        </section>
       </section>  
 
     <footer>

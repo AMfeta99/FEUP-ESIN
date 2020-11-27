@@ -43,6 +43,101 @@ body>header h2 {
 
 }
 
+#logins {
+    display:grid;
+    grid-template-columns: [start_login] 2fr [end_login_start_inpatient] 2fr [end_inpatient]; 
+    grid-template-areas: "login inpatient_code"
+                        
+}
+
+#logins > #login{
+    grid-area: login;
+}
+
+#logins > #inpatient{
+    grid-area: inpatient_code;
+}
+
+/* Introduction */
+
+.about{
+    display:grid;
+    grid-template-rows: [about_begin] auto [about_end_info_start] auto [info_end];
+    grid-template-columns: [start_img] 2fr [end_img_start_text] 3fr [end_text]; 
+    grid-template-areas: "about about"
+                        "img text"
+          
+}
+
+.about .hospital-img{
+    grid-area: img;
+}
+
+.about .text-block{
+    grid-area: text;
+}
+
+.about .heading{
+    grid-area: about;
+}
+
+/* Tentei por o flex no centro mas não estou a conseguir
+
+
+/* .departments{
+    display: grid;
+    text-align: center;
+    grid-template-rows: [title] auto [h2] auto [block_start] auto [block_end];
+    grid-template-columns: [blank] 1fr [info_begin] 6fr [info_end] 1fr [blank2];
+    grid-template-areas: "blank title blank"
+                        "blank paragraph blank"
+                        "blank info blank"
+} 
+
+.departments >h2{
+    grid-area: title;
+}
+
+.departments >p {
+    grid-area: paragraph;
+}
+
+.departments .departments_block{
+    grid-area: info;
+}
+*/
+.departments_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    width: 800px;
+}
+
+/* Flex Container */
+.col-6 {
+	max-width: 400px;
+	margin: 0 auto;
+	display: flex;
+}
+/* Flex Item */
+.speciality_cards {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+	flex: 1;
+	margin: 5px;
+	background: rgb(131, 221, 206);
+	text-align: center;
+    font-size: 1.5em;
+    width: 150px;
+}
+
+
+
+
+
+
 /*
     
 body> form{
