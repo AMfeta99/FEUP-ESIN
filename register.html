@@ -26,23 +26,27 @@
           <a href="index.html" id="out">Back</a>
         </div>
        </header>
-
+      
+       
        <section id= "register_option">
+         <h2 class="pagtitle"> Register</h2>
          <p>Escrever aqui qualquer coisa e ajustar os espaços==> aqui e nos forms ....sgdhfkjsdks kfsajdnfkn sfkjaskndjbsa nsldfjasl skdfkn jknkjdnfka dfk</p>
-         <h2> Register</h2>
+         
+         <div id="register_choose">
           <button onclick="document.getElementById('doctorModal').style.display='block'">Doctor</button>
           <button onclick="document.getElementById('NurseModal').style.display='block'">Nurse</button>
           <button onclick="document.getElementById('patientModal').style.display='block'">Patient</button>
+          </div>
         </section>
 
         <div id="doctorModal" class="modal">
           <span onclick="document.getElementById('doctorModal').style.display='none'" class="close" title="Close">&times;</span> 
           
-          <form id="doctor" class="ModalContent animate" action="register.php" method="get">
+          <form id="doctor" class="ModalContent" action="register.php" method="get">
             <header>
               <h2><a>Doctor Register</a></h2>
             </header>
-            <div>
+            <div class="ModalContent2">
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
@@ -54,11 +58,11 @@
 
               <label><b>Profile Photo</b></label>
               <input type="file" name="Photo">
-
-              <button type="submit">Submit</button>
+              
             </div>
 
             <footer>
+              <button type="submit">Submit</button>
               <button type="button" onclick="document.getElementById('doctorModal').style.display='none'" class="cancel">Cancel</button>
             </footer>
           </form>
@@ -68,11 +72,11 @@
         <div id="NurseModal" class="modal">
           <span onclick="document.getElementById('NurseModal').style.display='none'" class="close" title="Close">&times;</span> 
           
-          <form id="Nurse" class="ModalContent animate" action="register.php" method="get">
+          <form id="Nurse" class="ModalContent" action="register.php" method="get">
             <header>
               <h2><a>Nurse Register</a></h2>
             </header>
-            <div>
+            <div class="ModalContent2">
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
@@ -82,9 +86,10 @@
               <label><b>Email</b></label>
               <input type="email" placeholder="Enter Email" name="email" required>
           
-              <button type="submit">Submit</button>
             </div> 
+
             <footer>
+              <button type="submit">Submit</button>
               <button type="button" onclick="document.getElementById('NurseModal').style.display='none'" class="cancel">Cancel</button>
             </footer>
           </form>
@@ -94,11 +99,11 @@
         <div id="patientModal" class="modal">
           <span onclick="document.getElementById('patientModal').style.display='none'" class="close" title="Close">&times;</span> 
           
-          <form id="patient" class="ModalContent animate" action="register.php" method="get">
+          <form class="ModalContent" action="register.php" method="get">
             <header>
               <h2><a>Patient Register</a></h2>
             </header>
-            <div>
+            <div class="ModalContent2">
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
@@ -116,14 +121,14 @@
 
               <label><b>Phone Number</b></label>
               <input type="text" name="phone_number">
-
-              <button type="submit" id="regist">Submit</button>
+            
             </div>
-            <footer>
+            <footer> 
+              <button type="submit" id="regist">Submit</button>
               <button type="button" onclick="document.getElementById('patientModal').style.display='none'" class="cancel">Cancel</button>
             </footer>
+            
           </form>
-          
         </div>
 
     <footer>

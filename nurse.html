@@ -1,4 +1,4 @@
-<!-- Pagina após login-->
+<!-- Pagina após login nurse-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,15 +19,10 @@
           <h1><a href="index.html">Hospital</a></h1>
           <img src="t2.png" alt="" width="30">
         </div>
-        <div id="frase_menu">
+        <div id="back">
           <h2><a>The best care just a click away!</a></h2>
+          <a href="index.html" id="out">Log Out</a>
           
-          <ul id="links">
-            <li><a href="Appointment.html">Appointment</a></li>
-            <li><a href="index.html">Track Impatient</a></li>
-            <li><a href="department.html">Departments&Doctors</a></li>
-            <li><a href="index.html" id="out">Log Out</a></li>
-          </ul>
         </div>
       </header>  
       
@@ -36,13 +31,19 @@
           <header>
             <h2><a href="index_f_login.html">Profile</a></h2> 
           </header>
-
+          <!--
+          <input type="checkbox" id="hamburger"> 
+          <label class="hamburger" for="hamburger"></label>-->
           <aside>
              <ul id="link_profile">
-               <li><a href="">Appointment schedule</a></li>
-               <li><a href="">My Appointment </a></li>
-               <li><a href="">Medical prescriptions</a></li>
+               <li><a href="">Department</a></li><ul>
+                   <li><a href="">beds</a></li>
+                   <li><a href="">Appointments</a></li>
+                   <li><a href="">Doctors</a></li>
+                </ul>
                <li><a href="">Impatient Profile</a></li>
+               <li><a href="department.html">Departments&Doctors</a></li>
+               <li><a href="">Log out</a></li>
                </ul> 
             </aside>
 
