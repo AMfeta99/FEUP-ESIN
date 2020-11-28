@@ -185,3 +185,21 @@ aside {
   body > footer {
     align-self: end;
   }
+
+/*____________________departement&Doctors_____________*/
+
+.especialista{
+    display: grid;
+  grid-template-columns: [start] 1fr [middle] 4fr [end];
+  grid-template-rows:  [start] auto [info] 2fr [end];
+}
+
+.especialista h4{
+    grid-column: middle/end;
+    grid-row: start/end;
+}
+
+.especialista img{
+    grid-column: start/middle;
+    grid-row: info/end;
+}

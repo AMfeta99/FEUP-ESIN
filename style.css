@@ -50,7 +50,7 @@ body > header a {
     text-decoration: none;
 } 
 
-#links {
+#links{
   width: 100%;
   background-color: #555;
   display: flex;
@@ -155,7 +155,7 @@ body > footer p {
 #speciality_cards {
 /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
 flex: 1;
-margin: 5px;
+margin: 0px;
 background: rgb(131, 221, 206);
 text-align: center;
   font-size: 1.5em;
@@ -246,7 +246,6 @@ text-align: center;
 
 #link_profile li{
   flex-grow: 1;
-  text-align: left;
   padding: 20px 0;
   font-size: 20px;
   list-style-type: none;
@@ -262,16 +261,22 @@ text-align: center;
   margin-bottom: 10px;
 }
 
-#profile_pag h2{
+#profile_pag header{
   background-color:White;
   margin: 0;
   padding: 5px;
   text-align: center;
 }
+
+#dados *{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 #profile_pag a{
   color:  rgba(85, 85, 85, 0.795);
   text-decoration: none;
 }
+
 
 #profile_pag li:hover{
   background-color: rgba(132, 111, 151, 0.8); /*#037d5891;*/
@@ -284,9 +289,60 @@ text-align: center;
 
 aside{
   border-right: 5px solid #862fe9c0;
+  margin-top: 10px;
 }
 
 /*
 aside li {
   border-right-color: 5px purple;
 }*/
+
+/*fotos*/
+.circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/*____________________department&Doctors_____________*/
+.especialista{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+
+  background-color:whitesmoke;
+  border-style: solid;
+  border-width: 2px 2px 2px 0;
+  border-left: 5px solid #862fe9c0;
+  list-style-type: none;
+}
+
+.especialista:hover {
+  background-color: white;
+  transform: scale(1.1);
+  border-color:  #862fe9c0;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
+}
+
+.especialista h4, .circle{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.Doctors_list{
+  background-color: rgba(155, 92, 211, 0.4);
+  padding-bottom: 5px;
+}
+
