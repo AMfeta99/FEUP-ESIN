@@ -2,12 +2,14 @@
 
 /*  input fields */
 input {
-width: 50%;
+width: 60%;
 padding: 12px 20px;
 margin: 8px 0;
 display: flex;
+flex-wrap: wrap;
 border: 1px solid #ccc;
 box-sizing: border-box;
+border-radius: 7px;
 }
 
 /*___________________________registo___________________________ */
@@ -15,6 +17,18 @@ box-sizing: border-box;
 #registo> #register_option, form{
 font-family: Arial, Helvetica, sans-serif;
 }
+
+#register_choose {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#register_choose> button{
+    margin-left: 2%;
+}
+
 
 /* The Modal (fundo) */
 .modal {
@@ -33,7 +47,74 @@ padding-top: 60px;
 .ModalContent {
 background-color: rgba(255, 255, 255, 0.7);
 margin: 5px auto;
-width: 60%;
-height: 90%;
-margin: 5% auto 15% auto; 
+max-width: 70%;
+max-height: 100%;
+margin: 5% auto 15% auto;
 }
+
+
+.ModalContent> header h2{
+    text-align: center;
+    padding-top: 35px;
+    position: relative;
+    color: #037d71;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+/*----------layout--------*/
+
+.ModalContent2 {
+    margin-left:28%;
+    /*align-items: center;*/
+}                   
+/*tentativa 1
+#patient{
+    display:grid;
+    grid-template-columns:[start]auto [start_registo] 2fr; 
+    grid-template-rows: [header] auto[ inputs] 2fr [buttons] auto;
+    grid-template-areas: "header header"
+                         "start inputs"
+                         "buttons buttons";}
+    /*margin-left:30%;*/
+
+
+/*tentaiva 2
+.ModalContent{
+    display:grid;
+    grid-template-columns:[start]auto [start_registo] 5fr; 
+    grid-template-rows: [header] auto[form] 2fr [buttons] auto;
+    grid-template-areas: "header header"
+                         "start inputs" 
+                         "buttons buttons"
+                        
+}
+.ModalContent> header h2{
+    position: relative;
+    color: #037d71;
+    font-weight: 700;
+    letter-spacing: 1px;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start:1;
+    grid-column-end:4;
+}
+
+
+.ModalContent2
+{
+    grid-column-start:2;
+    grid-column-end:4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /*grid-area:inputs;*/
+/*}
+
+.ModalContent>footer
+{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start:2;
+    grid-column-end:4;
+    /*grid-area:buttons;*/
+/*}
+

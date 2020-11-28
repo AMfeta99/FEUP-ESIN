@@ -41,10 +41,12 @@ button {
   border: none;
   cursor: pointer;
   width: 20%;
+  font-size: 1em
 }
 
 button{
   background-color: rgba(118, 111, 151, 0.8);
+  border-radius: 10px;
 }
 
 [type=submit]:hover {
@@ -52,9 +54,18 @@ button{
 }
 
 [type=submit] {
-  background-color: #4ba34ef1;
+  /*background-color: #4ba34ef1;*/
+  background-color: #037d58da;
 }
 
 .cancel{
   background-color:  rgba(167, 14, 14, 0.705);
+  margin-left: 3%;
+}
+
+ form>footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
 }
