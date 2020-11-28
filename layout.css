@@ -71,6 +71,7 @@ body>header h2 {
 
 .about{
     display:grid;
+    margin-left: 15%;
     grid-template-rows: [about_begin] auto [about_end_info_start] auto [info_end];
     grid-template-columns: [start_img] 2fr [end_img_start_text] 3fr [end_text]; 
     grid-template-areas: "about about"
@@ -90,31 +91,8 @@ body>header h2 {
     grid-area: about;
 }
 
-/* Tentei por o flex no centro mas não estou a conseguir
+/* Departments */
 
-
-/* .departments{
-    display: grid;
-    text-align: center;
-    grid-template-rows: [title] auto [h2] auto [block_start] auto [block_end];
-    grid-template-columns: [blank] 1fr [info_begin] 6fr [info_end] 1fr [blank2];
-    grid-template-areas: "blank title blank"
-                        "blank paragraph blank"
-                        "blank info blank"
-} 
-
-.departments >h2{
-    grid-area: title;
-}
-
-.departments >p {
-    grid-area: paragraph;
-}
-
-.departments .departments_block{
-    grid-area: info;
-}
-*/
 .departments_block {
     display: flex;
     flex-direction: row;

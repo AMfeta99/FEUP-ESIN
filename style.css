@@ -154,10 +154,10 @@ body > footer p {
 /* Flex Item */
 #speciality_cards {
 /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
-flex: 1;
-margin: 0px;
-background: rgb(131, 221, 206);
-text-align: center;
+  flex: 1;
+  margin: 0px;
+  background: rgb(131, 221, 206);
+  text-align: center;
   font-size: 1.5em;
   width: 150px;
 }
