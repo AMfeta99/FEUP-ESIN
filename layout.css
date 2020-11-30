@@ -93,6 +93,32 @@ body>header h2 {
 
 /* Departments */
 
+#departments .indexdepartment{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#departments .indexdepartment article{
+    background-color: rgb(120, 239, 243);
+    padding: 0em;
+    margin: 1em;
+    display: grid;
+    justify-items: center;
+}
+
+#departments .indexdepartment article a{
+    text-decoration: none;
+    color: black;
+}
+#departments .indexdepartment article h3{
+    text-align: center;
+    margin: 1em;
+}
+#departments .indexdepartment article img{
+    margin: 0em;
+}
 
 
 
@@ -153,4 +179,43 @@ aside {
 .especialista img{
     grid-column: start/middle;
     grid-row: info/end;
+}
+
+/*____________________departement_____________*/
+
+#speciality_cards_dep:hover{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0,2), 0 6px 20px 0 rgba(0,0,0,0,19) ;
+    transform: scale(1,1);
+    transition: 0.4s;
+}
+
+#speciality_cards_dep ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+#speciality_cards_dep ul li{
+    flex: 1;
+    display: block;
+    flex-grow: 1;
+    padding: 0em;
+    margin: 1em;
+
+    background-color: rgb(120, 239, 243);
+    text-align: center;
+    font-size: 1em;
+    width: 350px;
+}
+#speciality_cards_dep a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    
+}
+
+#speciality_cards_dep ul li img{
+    margin: 0em;
 }

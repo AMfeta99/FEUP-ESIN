@@ -58,99 +58,25 @@
           <section class = "departments">
            
           <div id="pagdepartment" class = "departments_block">
-     
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href = "departments&doctors.html">
-                <ul>
-                <?php if ($err == null) { ?> <!--if there was no error -->
-                  <?php foreach ($result as $row) { ?>
-                    <li>
-                    <a href="departament&doctors.html" ><?php echo $row["name"] ?></a>
-                  </li>
-
-                  <?php } ?>
-                <?php } else {?> 
-                  <p><?php echo "There was an error retrieving the categories"; ?></p>
-                <?php } ?>
-                </ul>
-                </a></div>
-
-              </div>
-          </div>
-            <!-- <div id="pagdepartment" class = "departments_block">
-     
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href = "departments&doctors.html">
-                    <a href="departament&doctors.html"><img src="cardiology.jpg" alt="7" style="width: 100%; height: 350px;"> </a>
-                    <p>Cardiology</p>  
-                  </a></div>
-              </div>
               
-            
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href = >
-                  <a href="departament&doctors.html"><img src="ortopaedic.jpeg" alt="8" style="width: 100%; height: 350px;"  ></a>
-                    <p>Orthopaedic</p>  
-                  </a></div>  
-              </div>
-          
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href =>
-                  <a href="departament&doctors.html"><img src="obstetrics.jpeg" alt="9" style="width: 100%; height: 350px;"></a>
-                    <p>Obstetrics &amp; Gynaecology</p>  
-                </a></div>
-              </div>
-  
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href= >
-                  <a href="departament&doctors.html"><img src="neuro.jpg" alt="10" style="width: 100%; height: 350px;"></a>
-                  <p>Neurology</p>  
-                </a></div>
-              </div>
-  
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href=>
-                  <a href="departament&doctors.html"><img src="pediatria2.jpg" alt="11" style="width: 100%; height: 350px;" ></a>
-                    <p>Paediatrics</p>    
-                  </a></div>
-              </div>
-  
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href="">
-                  <a href="departament&doctors.html"><img src="dermatology.png" alt="12" style="width: 100%; height: 350px;"></a>
-                  <p>Dermatology</p>  
-                </a></div>
-              </div>
-          
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href="">
-                  <a href="departament&doctors.html"><img src="urology.jpeg" alt="13" style="width: 100%; height: 350px;"></a>
-                  <p>Urology</p>  
-                </a></div>
-              </div>
-       
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href= "">
-                  <a href="departament&doctors.html"><img src="pulmonology.jpeg" alt="14" style="width: 100%; height: 350px;"></a>
-                    <p>Pulmonology</p>  
-                </a></div>
-              </div>
-  
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href= "">
-                  <a href="departament&doctors.html"><img src="psychiatry.png" alt="15" style="width: 100%; height: 350px;"></a>
-                    <p>Psychiatry</p>  
-                </a></div>
-              </div>
-  
-              <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href= "">
-                  <a href="departament&doctors.html"><img src="surgery.jpeg" alt="16" style="width: 100%; height: 350px;"></a>
-                    <p>Surgery</p>  
-                </a></div>
-              </div>   
-        </div> -->
+            <div id="speciality_cards_dep"><a href = "departments&doctors.html">
+            <ul>
+            <?php if ($err == null) { ?> <!--if there was no error -->
+              <?php foreach ($result as $row) { ?>
+                <li>
+                <a href="departament&doctors.html" ><?php echo $row["name"] ?></a>
+                <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 140px; height: 160px;" >
+              </li>
 
+              <?php } ?>
+            <?php } else {?> 
+              <p><?php echo "There was an error retrieving the categories"; ?></p>
+            <?php } ?>
+            </ul>
+            </a></div>
+
+          </div>
+          </section>
         </article>
       </section> 
 

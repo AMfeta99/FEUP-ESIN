@@ -1,5 +1,19 @@
 <!-- Pagina inicial-->
-
+<?php
+  $dbh = new PDO ('sqlite:hospital_manegment.db');
+  
+  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+  try{
+    $stmt = $dbh->prepare('SELECT * FROM Department');
+    $stmt->execute();
+    $result = $stmt->fetchAll(); // array of arrays
+  } catch(PDOException $e){
+    $err = $e-> getMessage();
+    exit(0);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head >
@@ -102,112 +116,31 @@
 
           <h2 class="heading">Departments</h2>
           <p>Our hospital has about 10 different services </p>
-          <section class="indexdepartment" >
-            <article><a href="departments&doctors.html">
-              <h3>Cardiology</h3>        
-                <img src="images/departments/cardiology.jpg" alt="7">
-            </a>
-            </article>
+
+          <section class = "departments">
+           
+          <div id="pagdepartment" class = "departments_block">
+              
+            <div id="speciality_cards_dep"><a href = "departments&doctors.html">
+            <ul>
+            <?php if ($err == null) { ?> <!--if there was no error -->
+              <?php foreach ($result as $row) { ?>
+                <li>
+                <a href="departament&doctors.html" ><?php echo $row["name"] ?></a>
+                <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 140px; height: 160px;" >
+              </li>
+
+              <?php } ?>
+            <?php } else {?> 
+              <p><?php echo "There was an error retrieving the categories"; ?></p>
+            <?php } ?>
+            </ul>
+            </a></div>
+
+          </div>
           </section>
 
-          <section class="indexdepartment">
-            <article><a href="departments&doctors.html"></a>
-              <h3>Orthopaedic</h3>        
-                <img src="images/departments/cardiology.jpg" alt="7">
-              </a>
-            </article>
-          </section>
-          <section class="indexdepartment" >
-            <article><a href="departments&doctors.html">
-              <h3>Cardiology</h3>        
-                <img src="images/departments/cardiology.jpg" alt="7">
-            </a>
-            </article>
-          </section>
-
-          <section class="indexdepartment">
-            <article><a href="departments&doctors.html"></a>
-              <h3>Orthopaedic</h3>        
-                <img src="images/departments/cardiology.jpg" alt="7">
-              </a>
-            </article>
-          </section>
-
-          
-          <!-- <div id="indexdepartment" class = "departments_block">
-   
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href = >
-                  <img src="cardiology.jpg" alt="7" style="width: 100%; height: 160px;">
-                  <p>Cardiology</p>  
-                </a></div>
-            </div>
-            
-          
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href = >
-                  <img src="ortopaedic.jpeg" alt="8" style="width: 100%; height: 160px;"  >
-                  <p>Orthopaedic</p>  
-                </a></div>  
-            </div>
-        
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href =>
-                  <img src="obstetrics.jpeg" alt="9" style="width: 100%; height: 160px;">
-                  <p>Obstetrics &amp; Gynaecology</p>  
-              </a></div>
-            </div>
-
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href= >
-                <img src="neuro.jpg" alt="10" style="width: 100%; height: 160px;">
-                <p>Neurology</p>  
-              </a></div>
-            </div>
-
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href=>
-                  <img src="paedriatics.jpeg" alt="11" style="width: 100%; height: 160px;" >
-                  <p>Paediatrics</p>    
-                </a></div>
-            </div>
-
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href="">
-                <img src="dermatology.png" alt="12" style="width: 100%; height: 160px;">
-                <p>Dermatology</p>  
-              </a></div>
-            </div>
-        
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href="">
-                <img src="urology.jpeg" alt="13" style="width: 100%; height: 160px;">
-                <p>Urology</p>  
-              </a></div>
-            </div>
-     
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href= "">
-                  <img src="pulmonology.jpeg" alt="14" style="width: 100%; height: 160px;">
-                  <p>Pulmonology</p>  
-              </a></div>
-            </div>
-
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href= "">
-                  <img src="psychiatry.png" alt="15" style="width: 100%; height: 160px;">
-                  <p>Psychiatry</p>  
-              </a></div>
-            </div>
-
-            <div class="col-6 ">
-              <div id="speciality_cards"><a href= "">
-                  <img src="surgery.jpeg" alt="16" style="width: 100%; height: 160px;">
-                  <p>Surgery</p>  
-              </a></div>
-            </div>
-                
-      </div> -->
+ 
         </section>
         <p>asfzdxgtchgfdesdfghjkjhgfdes escrever alguma coisa informativa sobre impatient </p>
 
