@@ -1,4 +1,21 @@
 <!-- Pagina após login-->
+<?php
+  $dbh = new PDO ('sqlite:hospital_manegment.db');
+  
+  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+  try{
+    $stmt = $dbh->prepare('SELECT * FROM Department');
+    $stmt->execute();
+    $result = $stmt->fetchAll(); // array of arrays
+  } catch(PDOException $e){
+    $err = $e-> getMessage();
+    exit(0);
+  }
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +26,7 @@
       <link href="style_buttons.css" rel="stylesheet">
       <link href="layout.css" rel="stylesheet">
 
-      <link rel="icon" type="imagem/jpg" href="Hospital.jpg" />
+      <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>
   </head>
 
@@ -17,7 +34,7 @@
       <header>
         <div id="simbolo">
           <h1><a href="index.html">Hospital</a></h1>
-          <img src="t2.png" alt="" width="30">
+          <img src="images/t2.png" alt="" width="30">
         </div>
         <div id="frase_menu">
           <h2><a>The best care just a click away!</a></h2>
@@ -25,7 +42,7 @@
           <ul id="links">
             <li><a href="index_f_login.html">Profile</a></li>
             <li><a href="Appointment.html">Appointment</a></li>
-            <li><a href="impatient.html">Track Impatient</a></li>
+            <li><a href="impatient.html">Track Inpatient</a></li>
             <li><a href="department.html">Departments&Doctors</a></li>
             <li><a href="index.html" id="out">Log Out</a></li>
           </ul> </div>
@@ -40,10 +57,30 @@
 
           <section class = "departments">
            
-            <div id="pagdepartment" class = "departments_block">
+          <div id="pagdepartment" class = "departments_block">
      
               <div class="col-6 ">
-                <div id="speciality_cards_dep"><a href = >
+                <div id="speciality_cards_dep"><a href = "departments&doctors.html">
+                <ul>
+                <?php if ($err == null) { ?> <!--if there was no error -->
+                  <?php foreach ($result as $row) { ?>
+                    <li>
+                    <a href="departament&doctors.html" ><?php echo $row["name"] ?></a>
+                  </li>
+
+                  <?php } ?>
+                <?php } else {?> 
+                  <p><?php echo "There was an error retrieving the categories"; ?></p>
+                <?php } ?>
+                </ul>
+                </a></div>
+
+              </div>
+          </div>
+            <!-- <div id="pagdepartment" class = "departments_block">
+     
+              <div class="col-6 ">
+                <div id="speciality_cards_dep"><a href = "departments&doctors.html">
                     <a href="departament&doctors.html"><img src="cardiology.jpg" alt="7" style="width: 100%; height: 350px;"> </a>
                     <p>Cardiology</p>  
                   </a></div>
@@ -112,7 +149,7 @@
                     <p>Surgery</p>  
                 </a></div>
               </div>   
-        </div>
+        </div> -->
 
         </article>
       </section> 

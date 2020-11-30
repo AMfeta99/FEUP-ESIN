@@ -11,7 +11,7 @@
       <link href="slicer.css" rel="stylesheet">
       <link href="forms.css" rel="stylesheet">
 
-      <link rel="icon" type="imagem/jpg" href="Hospital.jpg" />
+      <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>
   </head>
 
@@ -19,7 +19,7 @@
       <header>
         <div id="simbolo">
           <h1><a href="index.html">Hospital</a></h1>
-          <img src="t2.png" alt="simbolo" width="30">
+          <img src="images/t2.png" alt="simbolo" width="30">
           <!-- barra de pesquisa ... ainda não sei fazer mas seria fixe se conseguirmos
           <input type="text" name="search" placeholder="Search..">-->
         </div>
@@ -30,6 +30,7 @@
           <ul id="links">
             <li><a href="index.html">About us</a></li>
             <li><a href="#logins">Track Inpatient</a></li>
+            <li><a href="department.html">Departments&Doctors</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="#logins">Login</a></li>
           </ul> </div>
@@ -46,13 +47,13 @@
           
             <div class="mySlide">
               <div class="titletext">Patient Profile</div>
-              <img src="6.jpg" alt="2" style="width:100%">
+              <img src="images/6.jpg" alt="2" style="width:100%">
               <div class="descritext">The profile allows you to consult scheduled appointments, prescriptions and see your entire medical history</div>
             </div>
           
             <div class="mySlide">
               <div class="titletext">Departments and Doctors</div>
-              <img src="5.png" alt="3 " style="width:100%">
+              <img src="images/5.png" alt="3 " style="width:100%">
               <div class="descritext">Discover the services that we have to offer and our healthcare professionals</div>
             </div>
           
@@ -84,7 +85,7 @@
       
           <h2 class="heading">ABOUT US</h2>
           <div class = "hospital-img" >
-            <img src="hos.jpg" class="img-fluid" alt="6" style="width:100%">
+            <img src="images/hos.jpg" class="img-fluid" alt="6" style="width:100%">
           </div>
 
           <div class = "text-block">
@@ -97,12 +98,43 @@
         </section>
 
         <!-- Departments -->
-        <section class = "departments">
+        <section id = "departments">
 
           <h2 class="heading">Departments</h2>
           <p>Our hospital has about 10 different services </p>
+          <section class="indexdepartment" >
+            <article><a href="departments&doctors.html">
+              <h3>Cardiology</h3>        
+                <img src="images/departments/cardiology.jpg" alt="7">
+            </a>
+            </article>
+          </section>
 
-          <div id="indexdepartment" class = "departments_block">
+          <section class="indexdepartment">
+            <article><a href="departments&doctors.html"></a>
+              <h3>Orthopaedic</h3>        
+                <img src="images/departments/cardiology.jpg" alt="7">
+              </a>
+            </article>
+          </section>
+          <section class="indexdepartment" >
+            <article><a href="departments&doctors.html">
+              <h3>Cardiology</h3>        
+                <img src="images/departments/cardiology.jpg" alt="7">
+            </a>
+            </article>
+          </section>
+
+          <section class="indexdepartment">
+            <article><a href="departments&doctors.html"></a>
+              <h3>Orthopaedic</h3>        
+                <img src="images/departments/cardiology.jpg" alt="7">
+              </a>
+            </article>
+          </section>
+
+          
+          <!-- <div id="indexdepartment" class = "departments_block">
    
             <div class="col-6 ">
               <div id="speciality_cards"><a href = >
@@ -175,7 +207,7 @@
               </a></div>
             </div>
                 
-      </div>
+      </div> -->
         </section>
         <p>asfzdxgtchgfdesdfghjkjhgfdes escrever alguma coisa informativa sobre impatient </p>
 
