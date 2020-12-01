@@ -46,8 +46,9 @@ FROM Patient;
 
 -- To find out if the patient is registered it is necessary to see the names of the patients in the database
 -- Name of Patient
-SELECT name
-FROM Patient;
+SELECT *
+FROM Patient
+WHERE cc=15991790;
 
 -- To find out if the patient is registered it is necessary to check the name-password correspondence
 SELECT name, password

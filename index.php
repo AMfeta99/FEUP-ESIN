@@ -40,11 +40,10 @@
         <div id="frase_menu">
           <h2><a>The best care just a click away!</a></h2>
           
-          <!---<ul></ul>-->
           <ul id="links">
             <li><a href="index.html">About us</a></li>
             <li><a href="#logins">Track Inpatient</a></li>
-            <li><a href="department.html">Departments&Doctors</a></li>
+            <li><a href="department.php">Departments&Doctors</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="#logins">Login</a></li>
           </ul> </div>
@@ -119,25 +118,26 @@
 
           <section class = "departments">
            
-          <div id="pagdepartment" class = "departments_block">
-              
-            <div id="speciality_cards_dep"><a href = "departments&doctors.html">
-            <ul>
-            <?php if ($err == null) { ?> <!--if there was no error -->
-              <?php foreach ($result as $row) { ?>
-                <li>
-                <a href="departament&doctors.html" ><?php echo $row["name"] ?></a>
-                <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 140px; height: 160px;" >
-              </li>
+            <div id="indexdepartment" class = "departments_block">
+
+               <?php if ($err == null) { ?> <!--if there was no error -->
+               <?php foreach ($result as $row) { ?> 
+
+              <div class="col-6 ">
+                <div id="speciality_cards"><a href="departament&doctors.html" >
+                      <div>
+                      <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 100%; height: 160px;" >
+                      <p><?php echo $row["name"] ?></p>
+                    </a></div>
+               </div>
+              </div> 
 
               <?php } ?>
-            <?php } else {?> 
-              <p><?php echo "There was an error retrieving the categories"; ?></p>
-            <?php } ?>
-            </ul>
-            </a></div>
+              <?php } else {?> 
+                <p><?php echo "There was an error retrieving the categories"; ?></p>
+              <?php } ?>
 
-          </div>
+            </div>
           </section>
 
  

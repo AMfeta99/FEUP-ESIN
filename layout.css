@@ -71,7 +71,6 @@ body>header h2 {
 
 .about{
     display:grid;
-    margin-left: 15%;
     grid-template-rows: [about_begin] auto [about_end_info_start] auto [info_end];
     grid-template-columns: [start_img] 2fr [end_img_start_text] 3fr [end_text]; 
     grid-template-areas: "about about"
@@ -91,51 +90,62 @@ body>header h2 {
     grid-area: about;
 }
 
-/* Departments */
+/* Tentei por o flex no centro mas não estou a conseguir
 
-#departments .indexdepartment{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: stretch;
-}
 
-#departments .indexdepartment article{
-    background-color: rgb(120, 239, 243);
-    padding: 0em;
-    margin: 1em;
+/* .departments{
     display: grid;
-    justify-items: center;
-}
-
-#departments .indexdepartment article a{
-    text-decoration: none;
-    color: black;
-}
-#departments .indexdepartment article h3{
     text-align: center;
-    margin: 1em;
+    grid-template-rows: [title] auto [h2] auto [block_start] auto [block_end];
+    grid-template-columns: [blank] 1fr [info_begin] 6fr [info_end] 1fr [blank2];
+    grid-template-areas: "blank title blank"
+                        "blank paragraph blank"
+                        "blank info blank"
+} 
+
+.departments >h2{
+    grid-area: title;
 }
-#departments .indexdepartment article img{
-    margin: 0em;
+
+.departments >p {
+    grid-area: paragraph;
 }
 
-
-
-
-
-/*
-    
-body> form{
-    display:grid;
-    grid-template-columns:[marg]2fr[submition]5fr[cancelation]auto [marg2]2fr;
-    grid-template-rows: [title] 2fr [cenas]auto[buttons]1fr;
-
-    grid-template-areas: "margem forms forms margem"
-                        "margem forms forms margem"
-                        "margem submition cancelation margem";
+.departments .departments_block{
+    grid-area: info;
 }
 */
+.departments_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+   /* margin-left: 20%;*/
+}
+
+#indexdepartment{
+    max-width: 900px;
+}
+
+#pagdepartment{
+    max-width: 90%;
+}
+
+/* Flex Container */
+#indexdepartment>.col-6 {
+	max-width: 500px;
+    display: flex;
+    margin:4px;
+}
+
+#pagdepartment>.col-6 {
+	max-width: 600px;
+    display: flex;
+    margin:4px;
+}
+
 
 /*______________________index_f_login.html___________________*/
 body> #profile_pag{
@@ -168,54 +178,14 @@ aside {
 .especialista{
     display: grid;
   grid-template-columns: [start] 1fr [middle] 4fr [end];
-  grid-template-rows:  [start] auto [info] 2fr [end];
+ 
 }
 
-.especialista h4{
+.especialista >h4{
     grid-column: middle/end;
-    grid-row: start/end;
 }
+
 
 .especialista img{
     grid-column: start/middle;
-    grid-row: info/end;
-}
-
-/*____________________departement_____________*/
-
-#speciality_cards_dep:hover{
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0,2), 0 6px 20px 0 rgba(0,0,0,0,19) ;
-    transform: scale(1,1);
-    transition: 0.4s;
-}
-
-#speciality_cards_dep ul{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-}
-
-#speciality_cards_dep ul li{
-    flex: 1;
-    display: block;
-    flex-grow: 1;
-    padding: 0em;
-    margin: 1em;
-
-    background-color: rgb(120, 239, 243);
-    text-align: center;
-    font-size: 1em;
-    width: 350px;
-}
-#speciality_cards_dep a{
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    
-}
-
-#speciality_cards_dep ul li img{
-    margin: 0em;
 }

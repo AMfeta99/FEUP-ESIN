@@ -1,5 +1,5 @@
-<!-- Pagina após login-->
 <?php
+
   $dbh = new PDO ('sqlite:hospital_manegment.db');
   
   $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -40,44 +40,42 @@
           <h2><a>The best care just a click away!</a></h2>
           
           <ul id="links">
-            <li><a href="index_f_login.html">Profile</a></li>
-            <li><a href="Appointment.html">Appointment</a></li>
-            <li><a href="impatient.html">Track Inpatient</a></li>
-            <li><a href="department.html">Departments&Doctors</a></li>
-            <li><a href="index.html" id="out">Log Out</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="departament&doctors.php">Doctors</a></li>
+            <li><a href="index.php">Track Inpatient</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="index.php">Login</a></li>
           </ul> </div>
       </header>  
       
       <section id="department">
-      <article>
-          <header>
-            <h2 class="pagtitle">Departments</h2>
-          </header>
-          <p>departamentos bla bla bla.</p>
+        <article>
+            <header>
+              <h2 class="pagtitle">Departments</h2>
+            </header>
+            <p>departamentos bla bla bla.</p>
 
-          <section class = "departments">
-           
-          <div id="pagdepartment" class = "departments_block">
-              
-            <div id="speciality_cards_dep"><a href = "departments&doctors.html">
-            <ul>
-            <?php if ($err == null) { ?> <!--if there was no error -->
-              <?php foreach ($result as $row) { ?>
-                <li>
-                <a href="departament&doctors.html" ><?php echo $row["name"] ?></a>
-                <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 140px; height: 160px;" >
-              </li>
+            <section class = "departments">
+            
+              <div id="pagdepartment" class = "departments_block">
+                <?php if ($err == null) { ?> <!--if there was no error -->
+                <?php foreach ($result as $row) { ?>  
 
-              <?php } ?>
-            <?php } else {?> 
-              <p><?php echo "There was an error retrieving the categories"; ?></p>
-            <?php } ?>
-            </ul>
-            </a></div>
+                <div class="col-6">
+                  <div id="speciality_cards_dep"><a href="departament&doctors.php?dep=<?php echo $row["number"]?>&name=<?php echo $row["name"]?>">
+                      <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width:100%; height: 250px;" >
+                      <p><?php echo $row["name"] ?></p>
+                </div></a>   
+                </div>
 
-          </div>
-          </section>
-        </article>
+                    <?php } ?>
+                    <?php } else {?> 
+                      <p><?php echo "There was an error retrieving the categories"; ?></p>
+                    <?php } ?>
+              </div>
+
+            </section>
+          </article>
       </section> 
 
       <footer>

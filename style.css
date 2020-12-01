@@ -2,7 +2,7 @@
 
 /* ________________________Geral___________________________________*/
 body > header {
-    background-image: url("c.jpg") ;
+    background-image: url(c.jpg) ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,18 +116,51 @@ body > footer p {
 
 /* Departments */
 
+.departments .departments_block  a{
+    text-decoration: none;
+    color: black;
+    
+}
+#speciality_cards p{
+  font-size: 15px;
+}
 
+#speciality_cards{
+  margin: 5px;
+	text-align: center;
+  font-size: 1.5em;
+ /* padding: 0; / não sei porque esta a assumir padding 1 e width 80 px / 
+  width: 150px;*/
+}
 
 
 /* _______________________index.html__________________________*/
 
+/*departments*/
+.col-6:hover {
+  /*transform: scale(1.1);*/
+  /*background-color: rgba(131, 221, 206, 0.8);*/
+  background-color: rgba(60, 71, 70, 0.322);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+}
+
+.departments{
+  margin-top: 40px;
+  margin-left: 15%;
+}
+
 /* Flex Item */
-/* Departments */
-/* Ao inspecionar a pagina não aparece estas condiçoes*/
-
-
-
-
+#speciality_cards {
+/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+flex: 1;
+margin: 0px;
+background: rgb(131, 221, 206);
+text-align: center;
+font-size: 1.5em;
+width: 150px;
+}
 
 /*login*/
 
@@ -171,6 +204,35 @@ body > footer p {
   margin-top: 0;
 }
 
+#speciality_cards_dep{
+  /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+  flex: 1;
+  margin: 5px;
+  background: rgb(131, 221, 206);
+  text-align: center;
+    font-size: 1.5em;
+    width: 350px;
+  }
+/*
+  #speciality_cards_dep{
+    font-size: 20px;
+  }*/
+  
+  #speciality_cards_dep{
+    margin: 15px;
+    text-align: center;
+    font-size: 1em;
+    list-style-type: none;
+   /* padding: 0; / não sei porque esta a assumir padding 1 e width 80 px / 
+    width: 150px;*/
+  }
+
+  #speciality_cards_dep:hover {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.1);
+    transition: 0.4s;
+  }
   
 /*______________________index_f_login.html_____________*/
 
