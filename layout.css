@@ -188,4 +188,7 @@ aside {
 
 .especialista img{
     grid-column: start/middle;
+
+    /*grid-row: info/end;*/
+
 }

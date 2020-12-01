@@ -67,6 +67,7 @@
               <?php foreach ($result as $row) { ?>  
                <ul>
                 <a href="index.html" ><il class="especialista">
+
                     <h4> <?php echo $row["name"] ?><br></h4>
                     <img class="circle" src="w3.PNG" alt="16" style="width: 150px;">
                     <h4> <br><br><?php echo $row["phone_number"] ?><br> <?php echo $row["mail_address"] ?></h4>
