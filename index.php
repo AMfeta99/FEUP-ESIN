@@ -124,7 +124,7 @@
                <?php foreach ($result as $row) { ?> 
 
               <div class="col-6 ">
-                <div id="speciality_cards"><a href="departament&doctors.html" >
+                <div id="speciality_cards"><a href="departament&doctors.php?dep=<?php echo $row["number"]?>&name=<?php echo $row["name"]?>" >
                       <div>
                       <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 100%; height: 160px;" >
                       <p><?php echo $row["name"] ?></p>

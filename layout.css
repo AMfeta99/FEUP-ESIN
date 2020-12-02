@@ -155,18 +155,20 @@ body> #profile_pag{
 }
 
 #profile_pag > header {
-    grid-column: start / end;
-    grid-row: start/news;
+    grid-column: start ;
+    grid-row: start;
   }
   
 aside {
-    grid-column: start/middle;
-    grid-row: start / end;
+    grid-column: start;
+    grid-row: news / end;
   }
 
-#profile_pag> p {
-    grid-column-start:2;
-    grid-column-end:3;
+#profile_pag > #info  {
+    /*grid-column-start:2;
+    grid-column-end:3;*/
+    grid-column: middle;
+    grid-row: start/ end;
   }
   
   body > footer {

@@ -41,7 +41,6 @@
           
           <ul id="links">
             <li><a href="index.php">Home</a></li>
-            <li><a href="departament&doctors.php">Doctors</a></li>
             <li><a href="index.php">Track Inpatient</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="index.php">Login</a></li>

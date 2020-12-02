@@ -8,7 +8,12 @@
   try{
     $stmt = $dbh->prepare("SELECT * FROM Doctor WHERE id=?");
     $stmt->execute(array($doctor_id));
-    $result = $stmt->fetchAll; // array of arrays
+    $result = $stmt->fetch(); 
+
+    $stmt = $dbh->prepare("SELECT Department.name as Sname FROM Department JOIN Doctor ON Department.number=speciality WHERE id=?");
+    $stmt->execute(array($doctor_id));
+    $result2 = $stmt->fetch(); 
+
   } catch(PDOException $e){
     $err = $e-> getMessage();
     exit(0);
@@ -45,10 +50,9 @@
       <section id="profile_pag">
         <article>
           <header id="dados">
-            <!--<h2>Profile</h2>-->
-            <img class="circle" src="images/w3.png" alt="" width="130">
-            <h4><?php echo  $result["name"] ?>o mesmo erroAna Filipa Ferreira</h4> 
-            <h5>especialidade/departamento</h5>
+            <img class="circle" src="images/w3.PNG" alt="" width="130">
+            <h4><?php echo  $result["name"] ?></h4> 
+            <h5><?php echo  $result2["Sname"] ?></h5>
 
           </header>
         
@@ -61,8 +65,12 @@
                <li><a href="index.html">Log out</a></li>
             </ul> 
           </aside>
-
         </article>
+
+        <div class="info">
+         <p> ghvbsdkaskldfj asfhaskdjfoi </p>
+        </div>
+
       </section> 
       
       <footer>
