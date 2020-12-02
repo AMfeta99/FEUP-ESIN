@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS Department_Doctor;
 CREATE TABLE Department(
     number integer PRIMARY KEY,
     name text NOT NULL,
-    total_beds integer NOT NULL,
+    total_beds integer NOT NULL, -- remover estes atributos
     n_beds_occupy integer,
     n_beds_available integer
 );
@@ -52,9 +52,9 @@ CREATE TABLE Patient (
 CREATE TABLE Doctor (
 	id integer PRIMARY KEY AUTOINCREMENT, 
 	name text NOT NULL,
-    -- photo BLOB -- não sei como por ==> aula min 25
+    photo text, -- não esquecer colocar uma foto como default, para caso um médico não adicione foto
     phone_number integer,
-	mail_address text NOT NULL,
+	mail_address text NOT NULL UNIQUE,
     password text NOT NULL,
     speciality integer NOT NULL REFERENCES Department
 );
@@ -86,12 +86,9 @@ CREATE TABLE Reservation(
     
 );
 
+-- relação de 0...1 para 1, ou seja a uma reserva pode estar associada ou não uma consulta
 CREATE TABLE Appointment(
-    id integer PRIMARY KEY AUTOINCREMENT, 
-    date Date NOT NULL, -- tipo 11-11-2021
-    time integer NOT NULL REFERENCES Block_time, -- the primary key of block time is an integer
-    doctor integer NOT NULL REFERENCES Doctor, 
-    patient integer NOT NULL REFERENCES Patient
+    reservation integer PRIMARY KEY REFERENCES Reservation
     
 );
 
@@ -146,7 +143,8 @@ CREATE TABLE ReceiveNotification (
 
 CREATE TABLE Bed(
     number integer PRIMARY KEY,
-    id_department integer NOT NULL REFERENCES Department
+    id_department integer NOT NULL REFERENCES Department,
+    occupy integer DEFAULT 0 -- not occupy
 );
 
 CREATE TABLE Inpatient(
@@ -160,6 +158,7 @@ CREATE TABLE Inpatient(
 
 -- a relação entre inpatient and report deve ser de 1 para * 
 -- Ou seja, cada paciente tem vários daily report mas cada report apenas tem um paciente
+
 CREATE TABLE Report ( 
     id integer PRIMARY KEY AUTOINCREMENT,
     date Date NOT NULL,
@@ -221,46 +220,118 @@ INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'jai
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes',??? , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 8);
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha',??? , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('André Pereira',??? , 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Sousa', 966754201,'DoctorAFsousa@gmail.com', 'anafsousa', 1);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Barrias', 964754121,'DoctorACbarrias@gmail.com', 'anacbarrias', 1);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Ribeiro', 966751201,'DoctorMRibeiro@gmail.com', 'MaRibeiro', 1);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('João Ferreira', 952144277,'DoctorJFerreira@gmail.com', 'jferreira1', 1);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Carolina Rocha', 969953201,'DoctorCarol@gmail.com', 'carolR', 1);
 
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality ) VALUES ('João Sousa' , 966754201,'DoctorJoão@gmail.com', 'joaodopulmao', 6);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Oliveira', 935442201,'DoctorAndreO@gmail.com', 'andreO25', 2);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Sofia Sousa', 926754201,'DoctorSofsousa@gmail.com', 'sofia_sousa', 2);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Anabela Silva', 964754111,'DoctorASilva@gmail.com', 'anabela1999', 2);
+INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('João Ribeiro', 'images/doctors/9.jpg', 966711201,'DoctorJRibeiro@gmail.com', 'JRibeiro1', 2);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('José Ferreira', 922144477,'DoctorJoseFerreira@gmail.com', 'jferr1', 2);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Machado', 924451201,'DoctorMaria@gmail.com', 'MaMachado', 3);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Pereira', 927462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Jorge Ribeiro', 966571201,'DoctorJorgeRibeiro@gmail.com', 'JRibeiro1999', 3);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Silva', 935842201,'DoctorAndreSilva@gmail.com', 'andreS28', 4);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Benedita Antunes', 926749201,'DoctorBenedita@gmail.com', 'BenAnt2', 4);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Joana Silva', 964844121,'DoctorJoanaSilva@gmail.com', 'jSilva', 4);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('João Magalhães', 966713211,'DoctorJMagalhaes@gmail.com', 'JMagalhaes1', 4);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Sousa', 922148477,'DoctorMariaS@gmail.com', 'MarSousa', 4);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Magalhães', 966754121,'DoctorAna@gmail.com', 'AnaMag', 4);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Machado' , 966451201,'DoctorMaria@gmail.com', 'MaMachado', 3);
+
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes' , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 5);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha' , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Pereira', 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('João Sousa' , 966754201,'DoctorJoao@gmail.com', 'joaodopulmao', 6);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Silva', 935782201,'DoctorAndreSilva11@gmail.com', 'andreSil11', 6);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Isabel Sousa', 926738201,'DoctorIsabel@gmail.com', 'iSaBelSousa', 6);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Jorge Ferreira', 964844121,'DoctorJorgeF@gmail.com', 'jFerr1', 6);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Joana Gomes' , 922124577,'DoctorJo@gmail.com', 'JoGomes32', 7);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Filipa Coelho' , 969454201,'DoctorPipaCoelho@gmail.com', 'FilCoelho', 7);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Vítor Sousa' , 925954201,'DoctorVsousa@gmail.com', 'Vsousa24', 7);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Vanessa Sousa' , 966754289,'DoctorVanessa@gmail.com', 'vanSousa1', 8);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Carlos Silva', 935782401,'DoctorCarloSilva11@gmail.com', 'carloSil2', 8);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Cátia Sousa', 926739401,'DoctorCatSousa@gmail.com', 'catSousa21', 8);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Juliana Sousa', 967844121,'DoctorJuSousa@gmail.com', 'juSousa3', 8);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('João Ferreira', 951244277,'DoctorJFerreira2@gmail.com', 'jfer1980', 9);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Patrícia Rocha', 969955201,'DoctorPRocha@gmail.com', 'pRocha11', 9);
+
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Eduarda Carvalho' , 966755889,'DoctorDuda@gmail.com', 'dudaCarvalho11', 10);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Beatriz Moreira', 935784901,'DoctorBeaMor@gmail.com', 'beasmoreira', 10);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Carina Oliveira', 926479401,'DoctorCarinaOl@gmail.com', 'oliveira21', 10);
+INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Catarina Sousa', 963844121,'DoctorCatarinaSousa@gmail.com', 'cat1999Sousa', 10);
 
 
 ---Nurse 
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('João Silva', 966752221,'NurseJoãoSilva@gmail.com', 'silvinha', 4);
-INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Matilde Silva', 966788821,'NurseMS@gmail.com', 'matilvaa84', 4);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Matilde Silva', 966788821,'NurseMS@gmail.com', 'matilvaa84', 9);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Teresa Amaro', 967856621,'Nursetete@gmail.com', 'amteresa', 3);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Marta cerqueira', 966658881,'NurseMartaC@gmail.com', '982Marta4', 2);
-INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('jose Costa', 966733211,'NursejoseC@gmail.com', 'JCosta6451', 5);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Pedro ferreira', 924494571, 'jfjkhy', 8);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('jose Costa', 966733211,'NursejoseC@gmail.com', 'JCosta6451', 10);
+INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Pedro Ferreira', 924494571, 'jfjkhy', 8);
 INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Paulo Pedra',963524201, 'j5431vhg', 7);
 INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Jorge Madureira',911204321, 'hhcjnkj2', 5);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Marta Pen',920014201, '543ghgkl', 5);
+INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Marta Pereira',920014201, '543ghgkl', 6);
 INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Vitor Carvalho',963444209, 'vitorinhoCarvalhinho', 1);
 
 
 -- BEDs
-INSERT INTO Bed VALUES(201, 2);
-INSERT INTO Bed VALUES(202, 2);
-INSERT INTO Bed VALUES(203, 2);
-INSERT INTO Bed VALUES(204, 2);
-INSERT INTO Bed VALUES(301, 3);
-INSERT INTO Bed VALUES(302, 3);
-INSERT INTO Bed VALUES(303, 3);
-INSERT INTO Bed VALUES(304, 3);
-INSERT INTO Bed VALUES(401, 4);
-INSERT INTO Bed VALUES(402, 4);
-INSERT INTO Bed VALUES(403, 4);
-INSERT INTO Bed VALUES(404, 4);
-INSERT INTO Bed VALUES(501, 5);
-INSERT INTO Bed VALUES(502, 5);
-INSERT INTO Bed VALUES(503, 5);
-INSERT INTO Bed VALUES(504, 5);
+INSERT INTO Bed(number, id_department, occupy) VALUES(101, 1, 0);
+INSERT INTO Bed VALUES(102, 1, 0);
+INSERT INTO Bed VALUES(103, 1, 0);
+INSERT INTO Bed VALUES(104, 1, 1);
 
+INSERT INTO Bed VALUES(201, 2, 0);
+INSERT INTO Bed VALUES(202, 2, 0);
+INSERT INTO Bed VALUES(203, 2, 0);
+INSERT INTO Bed VALUES(204, 2, 1);
+
+INSERT INTO Bed VALUES(301, 3, 0);
+INSERT INTO Bed VALUES(302, 3, 0);
+INSERT INTO Bed VALUES(303, 3, 0);
+INSERT INTO Bed VALUES(304, 3, 1);
+
+INSERT INTO Bed VALUES(401, 4, 0);
+INSERT INTO Bed VALUES(402, 4, 1);
+INSERT INTO Bed VALUES(403, 4, 0);
+INSERT INTO Bed VALUES(404, 4, 1);
+
+INSERT INTO Bed VALUES(501, 5, 0);
+INSERT INTO Bed VALUES(502, 5, 0);
+INSERT INTO Bed VALUES(503, 5, 1);
+INSERT INTO Bed VALUES(504, 5, 0);
+
+INSERT INTO Bed VALUES(601, 6, 0);
+INSERT INTO Bed VALUES(602, 6, 0);
+INSERT INTO Bed VALUES(603, 6, 0);
+INSERT INTO Bed VALUES(604, 6, 1);
+
+INSERT INTO Bed VALUES(701, 7, 0);
+INSERT INTO Bed VALUES(702, 7, 1);
+INSERT INTO Bed VALUES(703, 7, 0);
+INSERT INTO Bed VALUES(704, 7, 1);
+
+INSERT INTO Bed VALUES(801, 8, 0);
+INSERT INTO Bed VALUES(802, 8, 0);
+INSERT INTO Bed VALUES(803, 8, 1);
+INSERT INTO Bed VALUES(804, 8, 0);
+
+INSERT INTO Bed VALUES(901, 9, 1);
+INSERT INTO Bed VALUES(902, 9, 0);
+INSERT INTO Bed VALUES(903, 9, 0);
+INSERT INTO Bed VALUES(904, 9, 1);
+
+INSERT INTO Bed VALUES(1001, 10, 0);
+INSERT INTO Bed VALUES(1002, 10, 0);
+INSERT INTO Bed VALUES(1003, 10, 1);
+INSERT INTO Bed VALUES(1004, 10, 1);
 
 -- Inpatient -- temos de ter cuidado em adicionar um médico que trabalhe no departamento em que o paciente está internado
 
@@ -336,13 +407,13 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', '
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'FRI');
 
 
--- Appointment
+-- Reservation
 -- acho que deviamos de fazer um check qualquer porque a data da consulta e o block_time tem de coincidir com o mesmo dia da semana
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 5, 15431264);
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 3 , 5, 15726640);
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 6, 14511630);
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 3, 12054713);
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 4 , 5, 14511630);
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 5 , 5, 15341150);
-INSERT INTO Appointment (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 4, 15991790);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 5, 15431264);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 3 , 5, 15726640);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 6, 14511630);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 3, 12054713);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 4 , 5, 14511630);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 5 , 5, 15341150);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 4, 15991790);
 

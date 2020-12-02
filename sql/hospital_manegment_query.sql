@@ -99,6 +99,11 @@ WHERE speciality= 5;
 SELECT *
 FROM Department;
 
+SELECT Department.name 
+FROM Department JOIN Doctor
+ON Department.number = speciality
+WHERE id = 3;
 ---algumas coisas q vamos precisar tbm
 -- disease of a patient
 -- check that the patient is hospitalized
+
