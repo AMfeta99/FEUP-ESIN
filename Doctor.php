@@ -1,6 +1,6 @@
 <?php
   $doctor_id=$_GET['id'];
-  $dbh = new PDO ('sqlite:hospital_manegment.db');
+  $dbh = new PDO ('sqlite:sql/hospital_manegment1.db');
   
   $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -50,7 +50,8 @@
       <section id="profile_pag">
         <article>
           <header id="dados">
-            <img class="circle" src="images/w3.PNG" alt="" width="130">
+            <!-- <img class="circle" src="images/doctors/9.jpg" alt="" width="130"> -->
+            <img class="circle" src="<?php echo  $result["photo"] ?>" alt="" width="130">
             <h4><?php echo  $result["name"] ?></h4> 
             <h5><?php echo  $result2["Sname"] ?></h5>
 
