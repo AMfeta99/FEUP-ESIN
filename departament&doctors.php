@@ -36,8 +36,8 @@
   <body>
       <header>
         <div id="simbolo">
-          <h1><a href="index.html">Hospital</a></h1>
-          <img src="t2.png" alt="" width="30">
+          <h1><a href="index.php">Hospital</a></h1>
+          <img src="images/t2.png" alt="" width="30">
         </div>
         <div id="frase_menu">
           <h2><a>The best care just a click away!</a></h2>

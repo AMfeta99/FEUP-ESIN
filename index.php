@@ -32,7 +32,7 @@
   <body>
       <header>
         <div id="simbolo">
-          <h1><a href="index.html">Hospital</a></h1>
+          <h1><a href="index.php">Hospital</a></h1>
           <img src="images/t2.png" alt="simbolo" width="30">
           <!-- barra de pesquisa ... ainda não sei fazer mas seria fixe se conseguirmos
           <input type="text" name="search" placeholder="Search..">-->
@@ -41,7 +41,7 @@
           <h2><a>The best care just a click away!</a></h2>
           
           <ul id="links">
-            <li><a href="index.html">About us</a></li>
+            <li><a href="#about_us">About us</a></li>
             <li><a href="#logins">Track Inpatient</a></li>
             <li><a href="department.php">Departments&Doctors</a></li>
             <li><a href="register.html">Register</a></li>
@@ -94,7 +94,7 @@
             <span class="dot" onclick="currentSlide(5)"></span> 
           </div>
 
-        <section class = "about">
+        <section id = "about_us" class = "about">
       
           <h2 class="heading">ABOUT US</h2>
           <div class = "hospital-img" >
