@@ -1,28 +1,25 @@
 <?php
   $patient_cc=$_GET['cc'];
-  $dbh = new PDO ('sqlite:hospital_manegment.db');
-  
-  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
+  require_once('config/init.php');
+  require_once('database/patient.php');
   try{
-    $stmt = $dbh->prepare("SELECT * FROM Patient WHERE Patient.cc=?");
-    $stmt->execute(array($patient_cc));
-    $result = $stmt->fetch(); // array of arrays
+    $result = getPatientById($patient_cc); // array of arrays
   } catch(PDOException $e){
     $err = $e-> getMessage();
     exit(0);
   }
 ?>
 
+
 <!DOCTYPE html>
+
 <html lang="en">
   <head >
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="style.css" rel="stylesheet">
-      <link href="style_buttons.css" rel="stylesheet">
-      <link href="layout.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/style_buttons.css" rel="stylesheet">
+      <link href="css/layout.css" rel="stylesheet">
 
       <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>
@@ -55,7 +52,7 @@
                <li><a href="">Appointment schedule</a></li>
                <li><a href="">My Appointment </a></li>
                <li><a href="">Medical prescriptions</a></li>
-               <li><a href="">Impatient Profile</a></li>
+               <li><a href="">Inpatient Profile</a></li>
                </ul> 
             </aside>
            
