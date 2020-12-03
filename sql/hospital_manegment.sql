@@ -220,11 +220,11 @@ INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'jai
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes',??? , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 8);
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha',??? , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('André Pereira',??? , 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Sousa', 966754201,'DoctorAFsousa@gmail.com', 'anafsousa', 1);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Ana Barrias', 964754121,'DoctorACbarrias@gmail.com', 'anacbarrias', 1);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Maria Ribeiro', 966751201,'DoctorMRibeiro@gmail.com', 'MaRibeiro', 1);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('João Ferreira', 952144277,'DoctorJFerreira@gmail.com', 'jferreira1', 1);
-INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Carolina Rocha', 969953201,'DoctorCarol@gmail.com', 'carolR', 1);
+INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Ana Sousa','images/doctors/1.png', 966754201,'DoctorAFsousa@gmail.com', 'anafsousa', 1);
+INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Ana Barrias','images/doctors/2.jpg', 964754121,'DoctorACbarrias@gmail.com', 'anacbarrias', 1);
+INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Maria Ribeiro','images/doctors/3.jpg', 966751201,'DoctorMRibeiro@gmail.com', 'MaRibeiro', 1);
+INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('João Ferreira','images/doctors/4.png', 952144277,'DoctorJFerreira@gmail.com', 'jferreira1', 1);
+INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Carolina Rocha', 'images/doctors/5.jpg', 969953201,'DoctorCarol@gmail.com', 'carolR', 1);
 
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('André Oliveira', 935442201,'DoctorAndreO@gmail.com', 'andreO25', 2);
 INSERT INTO Doctor (name, phone_number, mail_address, password,speciality) VALUES ('Sofia Sousa', 926754201,'DoctorSofsousa@gmail.com', 'sofia_sousa', 2);
