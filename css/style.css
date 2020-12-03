@@ -2,7 +2,7 @@
 
 /* ________________________Geral___________________________________*/
 body > header {
-    background-image: url(c.jpg) ;
+    background-image: url("images/c.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
