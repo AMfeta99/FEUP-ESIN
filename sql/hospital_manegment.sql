@@ -55,7 +55,7 @@ CREATE TABLE Doctor (
     photo text, -- não esquecer colocar uma foto como default, para caso um médico não adicione foto
     phone_number integer,
 	mail_address text NOT NULL UNIQUE,
-    password text NOT NULL,
+    password text NOT NULL UNIQUE,
     speciality integer NOT NULL REFERENCES Department
 );
 
@@ -63,8 +63,8 @@ CREATE TABLE Nurse (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	name text NOT NULL,
     phone_number integer NOT NULL,
-	mail_address text ,
-    password text NOT NULL,
+	mail_address text UNIQUE ,
+    password text NOT NULL UNIQUE,
     department integer NOT NULL REFERENCES Department
 );
 
