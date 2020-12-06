@@ -25,10 +25,10 @@
           <h2><a>The best care just a click away!</a></h2>
           
           <ul id="links">
-            <li><a href="#about_us">About us</a></li>
-            <li><a href="#logins">Track Inpatient</a></li>
+            <li><a href="index.php#about_us">About us</a></li>
+            <li><a href="index.php#logins">Track Inpatient</a></li>
             <li><a href="department.php">Departments&Doctors</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="#logins">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+            <li><a href="index.php#logins">Login</a></li>
           </ul> </div>
       </header>  
