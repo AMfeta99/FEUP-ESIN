@@ -1,34 +1,6 @@
-<!--pagina para registar se na plataforma-->
+   
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <link href="style_buttons.css" rel="stylesheet">
-    <link href="layout.css" rel="stylesheet">
-    <link href="animation.css" rel="stylesheet">
-    <link href="forms.css" rel="stylesheet">
-
-    <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
-    <title>Hospital</title>
- </head>
-
-  <body id="registo">
-      <header>
-        <div id="simbolo"> 
-          <h1><a href="index.php">Hospital</a></h1>
-          <img src="images/t2.png" alt="" width="30">
-        </div>
-        <div id="back">
-          <h2><a>The best care just a click away!</a></h2>
-          <a href="index.php" id="out">Back</a>
-        </div>
-       </header>
-      
-       
-       <section id= "register_option">
+<section id= "register_option">
          <h2 class="pagtitle"> Register</h2>
          <p>Escrever aqui qualquer coisa e ajustar os espaços==> aqui e nos forms ....sgdhfkjsdks kfsajdnfkn sfkjaskndjbsa nsldfjasl skdfkn jknkjdnfka dfk</p>
          
@@ -42,7 +14,7 @@
         <div id="doctorModal" class="modal">
           <span onclick="document.getElementById('doctorModal').style.display='none'" class="close" title="Close">&times;</span> 
           
-          <form id="doctor" class="ModalContent" action="register.php" method="get">
+          <form id="doctor" class="ModalContent" action="register_action.php" method="post">
             <header>
               <h2><a>Doctor Register</a></h2>
             </header>
@@ -56,7 +28,13 @@
               <label><b>Email</b></label>
               <input type="email" placeholder="Enter Email" name="email" required>
 
-              <label><b>Profile Photo</b></label>
+              <label><b>Department</b></label>
+              <input type="text"  name="speciality" required>
+
+              <label><b>Phone Number (optional) </b></label>
+              <input type="number"  name="phone_number">
+              
+              <label><b>Profile Photo (optional) </b></label>
               <input type="file" name="Photo">
               
             </div>
@@ -72,7 +50,7 @@
         <div id="NurseModal" class="modal">
           <span onclick="document.getElementById('NurseModal').style.display='none'" class="close" title="Close">&times;</span> 
           
-          <form id="Nurse" class="ModalContent" action="register.php" method="get">
+          <form id="Nurse" class="ModalContent" action="register_action.php" method="post">
             <header>
               <h2><a>Nurse Register</a></h2>
             </header>
@@ -83,8 +61,14 @@
               <label><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="password" required>
 
-              <label><b>Email</b></label>
-              <input type="email" placeholder="Enter Email" name="email" required>
+              <label><b>Phone Number</b></label>
+              <input type="number"  name="phone_number" required>
+
+              <label><b>Department</b></label>
+              <input type="text"  name="department" required> 
+            
+              <label><b>Email (optional)</b></label>
+              <input type="email" placeholder="Enter Email" name="email">
           
             </div> 
 
@@ -99,7 +83,7 @@
         <div id="patientModal" class="modal">
           <span onclick="document.getElementById('patientModal').style.display='none'" class="close" title="Close">&times;</span> 
           
-          <form class="ModalContent" action="register.php" method="get">
+          <form class="ModalContent" action="register_action.php" method="post">
             <header>
               <h2><a>Patient Register</a></h2>
             </header>
@@ -119,7 +103,7 @@
               <label><b>CC</b></label>
               <input type="text" name="CC" required>
 
-              <label><b>Phone Number</b></label>
+              <label><b>Phone Number (optional)</b></label>
               <input type="text" name="phone_number">
             
             </div>
@@ -130,11 +114,3 @@
             
           </form>
         </div>
-
-    <footer>
-      <h3>Contacts</h3>
-      <p>address: sdfgsjjdhkgzlfg bskfdjsçjhkfjsnflsfsf jsfldgçsg </p>
-    </footer>   
-     
-  </body>
-</html>

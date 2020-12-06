@@ -2,6 +2,7 @@
 <?php
   require_once('config/init.php');
   require_once('database/department.php');
+  
   try{
     $result = getListDepartments(); // array of arrays
   } catch(PDOException $e){

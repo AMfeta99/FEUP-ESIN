@@ -17,7 +17,13 @@
         <a href="index.html" ><il class="especialista">
 
             <h4> <?php echo $row["name"] ?><br></h4>
-            <img class="circle" src="images/w3.PNG" alt="16" style="width: 150px;">
+            <!-- não sei pq é q isto não está a dar ....-->
+            <?php if( $row["photo"] != "images/w3.PNG") { ?>
+                <img class="circle" src="<?php echo $row["photo"] ?>" alt="" style="width: 150px;">
+            <?php } else { ?>
+                <img class="circle" src="images/w3.PNG" alt="16" style="width: 150px;">
+            <?php } ?>
+
             <h4> <br><br><?php echo $row["phone_number"] ?><br> <?php echo $row["mail_address"] ?></h4>
             
         </il></a>

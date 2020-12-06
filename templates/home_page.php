@@ -97,7 +97,7 @@
         <section id = "logins">
           <article id="login">
               
-              <form id="doctor" action="login.php" method="get">
+              <form action="login_action.php" method="post">
                 <header>
                   <h2>Login</h2>
                 </header>
@@ -109,6 +109,7 @@
                   <input type="password" placeholder="Enter Password" name="password" required>
     
                   <button type="submit" >Submit</button>
+                  <!-- <input class="submit" type="submit"  value="Login" ></input> -->
                 </div>
               </form>
 
