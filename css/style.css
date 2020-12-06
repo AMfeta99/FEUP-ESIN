@@ -2,7 +2,8 @@
 
 /* ________________________Geral___________________________________*/
 body > header {
-    background-image: url("images/c.jpg") ;
+    /*background-image: url("images/c.jpg") ;   este caminho está mal ... isto seria se tivesse na pasta principal mas tbm não se como fazer tbm */
+    background-image: url("c.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

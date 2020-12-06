@@ -12,6 +12,8 @@ box-sizing: border-box;
 border-radius: 7px;
 }
 
+
+
 /*___________________________registo___________________________ */
     
 #registo> #register_option, form{
@@ -67,54 +69,3 @@ margin: 5% auto 15% auto;
     margin-left:28%;
     /*align-items: center;*/
 }                   
-/*tentativa 1
-#patient{
-    display:grid;
-    grid-template-columns:[start]auto [start_registo] 2fr; 
-    grid-template-rows: [header] auto[ inputs] 2fr [buttons] auto;
-    grid-template-areas: "header header"
-                         "start inputs"
-                         "buttons buttons";}
-    /*margin-left:30%;*/
-
-
-/*tentaiva 2
-.ModalContent{
-    display:grid;
-    grid-template-columns:[start]auto [start_registo] 5fr; 
-    grid-template-rows: [header] auto[form] 2fr [buttons] auto;
-    grid-template-areas: "header header"
-                         "start inputs" 
-                         "buttons buttons"
-                        
-}
-.ModalContent> header h2{
-    position: relative;
-    color: #037d71;
-    font-weight: 700;
-    letter-spacing: 1px;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start:1;
-    grid-column-end:4;
-}
-
-
-.ModalContent2
-{
-    grid-column-start:2;
-    grid-column-end:4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    /*grid-area:inputs;*/
-/*}
-
-.ModalContent>footer
-{
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start:2;
-    grid-column-end:4;
-    /*grid-area:buttons;*/
-/*}
-
