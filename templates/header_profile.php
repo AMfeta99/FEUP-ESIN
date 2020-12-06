@@ -7,6 +7,7 @@
       <link href="css/style.css" rel="stylesheet">
       <link href="css/style_buttons.css" rel="stylesheet">
       <link href="css/layout.css" rel="stylesheet">
+      <link href="css/profile.css" rel="stylesheet">
 
       <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>

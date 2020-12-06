@@ -29,7 +29,7 @@
             <div class="mySlide">
               <div class="titletext">The best care just a click away!</div>
               <img src="http://portaldocoracao.com.br/wp-content/uploads/2008/11/cardiologista.jpg" alt="5 " style="width:100%">
-              <div><a href="register.html" id="join" class="descritext" style="font-size: 30px;">Join us</a> </div>
+              <div><a href="register.php" id="join" class="descritext" style="font-size: 30px;">Join us</a> </div>
             </div>
           
           </article>
