@@ -95,6 +95,7 @@
         <p>asfzdxgtchgfdesdfghjkjhgfdes escrever alguma coisa informativa sobre impatient </p>
 
         <section id = "logins">
+        
           <article id="login">
               
               <form action="login_action.php" method="post">
@@ -102,8 +103,8 @@
                   <h2>Login</h2>
                 </header>
                 <div>
-                  <label><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="name" required>
+                  <label><b>Email</b></label>
+                  <input type="text" placeholder="Enter email" name="name" required>
               
                   <label><b>Password</b></label>
                   <input type="password" placeholder="Enter Password" name="password" required>
@@ -112,6 +113,7 @@
                   <!-- <input class="submit" type="submit"  value="Login" ></input> -->
                 </div>
               </form>
+              <span><?php echo $msg ;?></span>
 
           </article>
 
@@ -124,7 +126,7 @@
                 <h2>Inpatient</h2>
               </header>
               <div>
-                <label><b>Username</b></label>
+                <label><b>Code</b></label>
                 <input type="text" placeholder="Enter code" name="code" required>
             
                 <button type="submit" >Submit</button>
