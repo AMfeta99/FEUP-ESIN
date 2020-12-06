@@ -5,7 +5,7 @@
     Grupo F
     @authors: 
         Ana Filipa Ferreira, up201705530
-        Ana Maria Sousa, up201707312
+        Ana Maria Sousa, up2017
  */
 
 PRAGMA foreign_keys = ON;
@@ -34,7 +34,10 @@ DROP TABLE IF EXISTS Department_Doctor;
 
 CREATE TABLE Department(
     number integer PRIMARY KEY,
-    name text NOT NULL
+    name text NOT NULL,
+    total_beds integer NOT NULL, -- remover estes atributos
+    n_beds_occupy integer,
+    n_beds_available integer
 );
 
 CREATE TABLE Patient (
@@ -42,7 +45,7 @@ CREATE TABLE Patient (
 	name text NOT NULL,
     age integer NOT NULL,
     phone_number integer,
-	mail_address text NOT NULL UNIQUE,
+	mail_address text NOT NULL,
     password text NOT NULL
 );
 
@@ -179,16 +182,16 @@ CREATE TABLE NursesOfInpatient(
 /*----------------------Insertion of Data -------------------*/
 
 --Department  (não faço a minima ideia nas do nºd camas)
-INSERT INTO Department (number,name) VALUES (1,'Cardiology');
-INSERT INTO Department (number,name) VALUES (2,'Neurology');
-INSERT INTO Department (number,name) VALUES (3,'Dermatology');
-INSERT INTO Department (number,name) VALUES (4,'Orthopaedic');
-INSERT INTO Department (number,name) VALUES (5,'Paediatrics');
-INSERT INTO Department (number,name) VALUES (6,'Pulmonology');
-INSERT INTO Department (number,name) VALUES (7,'Psychiatry');
-INSERT INTO Department (number,name) VALUES (8,'Surgery');
-INSERT INTO Department (number,name) VALUES (9,'Urology');
-INSERT INTO Department (number,name) VALUES (10,'Osbtetrics');
+INSERT INTO Department (number,name, total_beds) VALUES (1,'Cardiology', 10);
+INSERT INTO Department (number,name, total_beds) VALUES (2,'Neurology', 15);
+INSERT INTO Department (number,name, total_beds) VALUES (3,'Dermatology', 5);
+INSERT INTO Department (number,name, total_beds) VALUES (4,'Orthopaedic', 20);
+INSERT INTO Department (number,name, total_beds) VALUES (5,'Paediatrics', 25);
+INSERT INTO Department (number,name, total_beds) VALUES (6,'Pulmonology', 10);
+INSERT INTO Department (number,name, total_beds) VALUES (7,'Psychiatry', 0);
+INSERT INTO Department (number,name, total_beds) VALUES (8,'Surgery', 20);
+INSERT INTO Department (number,name, total_beds) VALUES (9,'Urology', 10);
+INSERT INTO Department (number,name, total_beds) VALUES (10,'Osbtetrics', 15);
 
 --Patient  (depois podemos acrescentar mais)
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15991790,'Ana Marta Silva', 25, 926524200, 'AMarta@gmail.com', 'amart25');
@@ -289,7 +292,6 @@ INSERT INTO Bed VALUES(201, 2, 0);
 INSERT INTO Bed VALUES(202, 2, 0);
 INSERT INTO Bed VALUES(203, 2, 0);
 INSERT INTO Bed VALUES(204, 2, 1);
-INSERT INTO Bed VALUES(205, 2, 1);
 
 INSERT INTO Bed VALUES(301, 3, 0);
 INSERT INTO Bed VALUES(302, 3, 0);
@@ -415,8 +417,3 @@ INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 4 , 5
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 5 , 5, 15341150);
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 4, 15991790);
 
--- Appointments
-
-INSERT INTO Appointment (reservation) VALUES(1);
-INSERT INTO Appointment (reservation) VALUES(3);
-INSERT INTO Appointment (reservation) VALUES(5);
