@@ -18,7 +18,7 @@
     //     return $stmt->fetch();
     // }
     
-    if(IsThatAInpatient($code)){
+    if(getInpatientByCode($code)){
         header('Location: inpatient_pag.php');
     }
     else{

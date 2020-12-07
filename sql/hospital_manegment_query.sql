@@ -100,3 +100,7 @@ WHERE patient=14511630;
 -- disease of a patient
 -- check that the patient is hospitalized
 
+/* Inpatient */
+SELECT * FROM Inpatient 
+JOIN Patient ON Inpatient.patient=Patient.cc
+WHERE Inpatient.code=2020110901";
