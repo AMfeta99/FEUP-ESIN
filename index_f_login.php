@@ -1,4 +1,8 @@
 <?php
+   session_start();
+   $msg=$_SESSION["msg"] ;
+   unset($_SESSION["msg"] );
+
    $patient_cc=$_GET['cc'];
   require_once('config/init.php');
   require_once('database/patient.php');

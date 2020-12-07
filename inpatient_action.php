@@ -1,10 +1,10 @@
 <?php
     session_start();
+
     require_once('config/init.php');
     require_once('database/inpatient.php');
     
 
-    // $funtion=$_POST["funtion"]
     $code=$_POST["code"];
 
 
@@ -22,7 +22,7 @@
         header('Location: inpatient_pag.php');
     }
     else{
-        $_SESSION["msg"]="Something goes wrong :(. There is no such Inpatient";
+        $_SESSION["msg_inpatient"]="Something goes wrong :(. There is no such Inpatient";
     }
     
 

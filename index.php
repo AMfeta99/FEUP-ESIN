@@ -1,6 +1,15 @@
 <!-- Pagina inicial-->
 <?php
-  
+  session_start();
+  $msg_log=$_SESSION["msg_log"] ;
+  unset($_SESSION["msg_log"] );
+
+  $msg_inpatient=$_SESSION["msg_inpatient"] ;
+  unset($_SESSION["msg_inpatient"] );
+
+  $msg=$_SESSION["msg"] ;
+  unset($_SESSION["msg"] );
+
   require_once('config/init.php');
   require_once('database/department.php');
   

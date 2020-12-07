@@ -1,6 +1,9 @@
 <!--pagina para registar se na plataforma-->
 <?php
   session_start();
+  $msg=$_SESSION["msg"] ;
+  unset($_SESSION["msg"] );
+
   require_once('config/init.php');
 
 ?>

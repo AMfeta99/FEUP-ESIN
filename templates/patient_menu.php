@@ -21,6 +21,7 @@
  
           <div class="info">
             <h2>Profile</h2>
+            <span><?php echo $msg ?></span>
             
             <article class="info_section">
                 <h4 >Personal identification: </h4>
@@ -38,7 +39,7 @@
 
             <article class="info_section">
                 <h4 class="info_section">Diagnosed disease: </h4>
-                <?php if (strlen($result2['patient'])>0){?>
+                <?php if (strlen($result2["patient"])>0){?>
                 <h5 class="atribute">Name: <p><?php echo  $result2['patient']; ?></p></h5>
                 
                 <?php }else { ?>

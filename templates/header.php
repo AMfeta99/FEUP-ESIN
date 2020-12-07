@@ -29,6 +29,12 @@
             <li><a href="index.php#logins">Track Inpatient</a></li>
             <li><a href="department.php">Departments&Doctors</a></li>
             <li><a href="register.php">Register</a></li>
+
+            <?php if(!isset($_SESSION["user"])) { ?>
             <li><a href="index.php#logins">Login</a></li>
+            <?php }else{?>
+            <!-- acrecentar buttons para Log out -->
+            <!-- <li><a href="index.php#logins">Logout</a></li> -->
+            <?php } ?>
           </ul> </div>
       </header>  

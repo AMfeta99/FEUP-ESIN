@@ -36,7 +36,7 @@
 
         global $dbh;
         $stmt=$dbh->prepare("SELECT * FROM $table WHERE mail_address=? AND password=?");
-        $stmt->execute(array($mail_address,shal($password)));
+        $stmt->execute(array($mail_address,sha1($password)));
         return $stmt->fetch();
     }
 
@@ -44,37 +44,46 @@
     function loginValid($mail_address,$password){
         
         if(IsthatDoctor($mail_address)!= FALSE){
-            
-            if(Validating($mail_address,$password,["Doctor"])){
+            $table=["Doctor"];
+            if(Validating($mail_address,$password,$table)){
+                $_SESSION["user"]=$mail_address;
                 header('Location: Doctor.php');
             }else{
-                $_SESSION["msg"]="Login failed! Wrong Password.";
-                die(header('Location: index.php'));
+                $_SESSION["msg_log"]="Login failed! Wrong Password.";
+                header('Location: index.php#logins');
+                // die();
             }
         }
         elseif(IsthatPatient($mail_address)!= FALSE){
-            if(Validating($mail_address,$password,Patient)){
+            $table=["Patient"];
+            if(Validating($mail_address,$password,$table)){
+                $_SESSION["user"]=$mail_address;
                 header('Location: index_f_login.php');
             }else{
-                $_SESSION["msg"]="Login failed! Wrong Password.";
-                die(header('Location: index.php'));
+                $_SESSION["msg_log"]="Login failed! Wrong Password.";
+                header('Location: index.php#logins');
+                die();
             }
         }
         elseif(IsthatNurse($mail_address)!= FALSE){
-
-            if(Validating($mail_address,$password,Nurse)){
+            $table=["Nurse"];
+            if(Validating($mail_address,$password, $table)){
+                $_SESSION["user"]=$mail_address;
                 header('Location: nurse.php');
             }else{
-                $_SESSION["msg"]="Login failed! Wrong Password.";
-                die(header('Location: index.php'));
+                $_SESSION["msg_log"]="Login failed! Wrong Password.";
+                header('Location: index.php#logins');
+                die();
             }
         }
         else{
-            $_SESSION["msg"]="Login failed! There is no such user";
-            die(header('Location: index.php#logins'));
+            $_SESSION["msg_log"]="Login failed! There is no such user";
+            header('Location: index.php#logins');
+            die();
         }
     }
 
+    loginValid($mail_address,$password);
 
 ?>
   

@@ -20,6 +20,7 @@
           </article>
 
           <div class="info">
+          <span><?php echo $msg ?></span>
           <p> ghvbsdkaskldfj asfhaskdjfoi </p>
           </div>
 

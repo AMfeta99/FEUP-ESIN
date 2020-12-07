@@ -1,4 +1,4 @@
-
+    
     <section id="profile_pag">
     <article>
         <header id="dados">
@@ -8,9 +8,7 @@
         <h5><?php echo  $result2["Sname"] ?></h5>
         </header>
 
-        <!--
-        <input type="checkbox" id="hamburger"> 
-        <label class="hamburger" for="hamburger"></label>-->
+        
         <aside>
             <ul id="link_profile">
             <li><a href="">My Profile</a></li>
@@ -26,6 +24,7 @@
         </article>
 
         <div class="info">
+        <span><?php echo $msg ?></span>
         <p> ghvbsdkaskldfj asfhaskdjfoi </p>
     </div>
 

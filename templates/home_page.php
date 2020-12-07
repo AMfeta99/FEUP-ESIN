@@ -1,4 +1,6 @@
 
+   
+    <span><?php echo $msg ;?></span>
     <section id="presentation">
         <!--imagens em slides com texto descrivo e funcionalidades do website-->
           <article class="slideContainer">
@@ -113,7 +115,7 @@
                   <!-- <input class="submit" type="submit"  value="Login" ></input> -->
                 </div>
               </form>
-              <span><?php echo $msg ;?></span>
+              <span><?php echo $msg_log ;?></span>
 
           </article>
 
@@ -130,7 +132,7 @@
                 <input type="text" placeholder="Enter code" name="code" required>
             
                 <button type="submit" >Submit</button>
-                <span><?php echo $msg ;?></span>
+                <span><?php echo $msg_inpatient;?></span>
               </div>
             </form>
           </article>
