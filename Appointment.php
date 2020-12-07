@@ -27,6 +27,17 @@
       return $stmt->fetchAll();
   }
     $result2 = getDoctorInfo($dep_number); 
+
+  //   function getDepId($dep_name){
+  //     global $dbh;
+  //     $stmt = $dbh->prepare("SELECT Department.number
+  //                             FROM Department 
+  //                             WHERE Department.name=?");
+  
+  //     $stmt->execute(array($dep_name));
+  //     return $stmt->fetchAll();
+  // }
+
 ?>
 
 <!DOCTYPE html>
@@ -56,29 +67,35 @@
         </div>
       </header> 
 
-      <div class="specialization-select" style="width:200px;">
-        <select id="dep">
+      <form action="" method="post" class="specialization-select">
+      
+        <select name="dep">
           <option value="0">--Select Specialization--</option>
 
           <?php if ($err == null) { ?> 
-          <?php foreach ($result as $row) { ?>  
-          <option value= "<?php echo $row["number"]?>" > <?php echo $row["name"]?> </option>
-          <?php } ?>
-          <?php } ?>
+            <?php foreach ($result as $row) { ?>  
+            <!-- <option value= "<?php echo $row["number"]?>"><button type="submit"  values="Select"><?php echo $row["name"]?></button></option> -->
+            <option value= "<?php echo $row["number"]?>"><?php echo $row["name"]?></option>
             
+            <?php } ?>
+          <?php } ?>
         </select>
-      </div>
+        <input type="submit" name="submit" values="Select">
+      </form>
 
       
       <div class="specialization-select" style="width:200px;">
         <select>
           <option value="<?php echo $i ?>" >--Select Doctor--</option>
 
-          <?php $result2 = getDoctorInfo( 5); #ajuda! como achas number do dep
+          <?php      
+           $dep=$_POST['dep'];
+           $result2 = getDoctorInfo($dep); #ajuda! como achas number do dep
+          
           if ($err == null) { ?> 
           <?php foreach ($result2 as $row2) { 
             $i=$i+1; ?>  
-          <option value= "<?php echo $i ?>" > <?php echo $row2["name"]?> </option>
+          <option  > <?php echo $row2["name"]?> </option>
           <?php } ?>
           <?php } ?>
             
