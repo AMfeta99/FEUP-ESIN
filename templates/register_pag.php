@@ -1,5 +1,4 @@
    
-
 <section id= "register_option">
          <h2 class="pagtitle"> Register</h2>
          <p>Escrever aqui qualquer coisa e ajustar os espaços==> aqui e nos forms ....sgdhfkjsdks kfsajdnfkn sfkjaskndjbsa nsldfjasl skdfkn jknkjdnfka dfk</p>
@@ -19,6 +18,7 @@
               <h2><a>Doctor Register</a></h2>
             </header>
             <div class="ModalContent2">
+              <?php $_SESSION["funtion"]="Doctor" ?>
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
@@ -56,6 +56,8 @@
             </header>
             <div class="ModalContent2">
               <label><b>Username</b></label>
+              <?php $_SESSION["funtion"]="Nurse" ?>
+
               <input type="text" placeholder="Enter Username" name="name" required>
           
               <label><b>Password</b></label>
@@ -88,6 +90,7 @@
               <h2><a>Patient Register</a></h2>
             </header>
             <div class="ModalContent2">
+            <?php $_SESSION["funtion"]="Patient" ?>
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
