@@ -35,6 +35,16 @@
                 <?php if (strlen($result["phone_number"])>0){?>
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
+
+            <article class="info_section">
+                <h4 class="info_section">Diagnosed disease: </h4>
+                <?php if (strlen($result2['patient'])>0){?>
+                <h5 class="atribute">Name: <p><?php echo  $result2['patient']; ?></p></h5>
+                
+                <?php }else { ?>
+                  <h5 class="atribute"> <p> Fortunately, you have no diagnosed disease! (falta subtituir pela query das disease)</p></h5>
+                <?php ; }?>
+            </article> 
            
          </div>
  

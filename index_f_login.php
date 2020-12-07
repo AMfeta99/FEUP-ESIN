@@ -5,6 +5,7 @@
 
   try{
     $result = getPatientById($patient_cc); // array of arrays
+    $result2=  getPatientAppointment($patient_cc);
   } catch(PDOException $e){
     $err = $e-> getMessage();
     exit(0);
