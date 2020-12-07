@@ -121,7 +121,7 @@
 
           <article id="inpatient">
             <!---<img src="https://s.hdnux.com/photos/73/01/67/15474130/3/920x920.jpg" alt="" >-->
-            <form id="track" action="inpatient.php" method="get">
+            <form id="track" action="inpatient_action.php" method="post">
               <header>
                 <h2>Inpatient</h2>
               </header>
@@ -130,7 +130,7 @@
                 <input type="text" placeholder="Enter code" name="code" required>
             
                 <button type="submit" >Submit</button>
-
+                <span><?php echo $msg ;?></span>
               </div>
             </form>
           </article>
