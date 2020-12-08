@@ -162,7 +162,7 @@ CREATE TABLE Report (
     id integer PRIMARY KEY AUTOINCREMENT,
     date Date NOT NULL,
     message text NOT NULL,
-    inpatient integer UNIQUE REFERENCES Inpatient
+    inpatient integer REFERENCES Inpatient
 );
 
 CREATE TABLE MedicationAdministered(
@@ -193,7 +193,7 @@ INSERT INTO Department (number,name) VALUES (9,'Urology');
 INSERT INTO Department (number,name) VALUES (10,'Osbtetrics');
 
 --Patient  (depois podemos acrescentar mais)
-INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15991790,'Ana Marta Silva', 25, 926524200, 'AMarta@gmail.com', 'amart25');
+INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15991790,'Ana Marta Silva', 12, 926524200, 'AMarta@gmail.com', 'amart25');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (14511630,'João Maria Pereira', 62, 917849203, 'jojo@sapo.pt', 'jmp413');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15726640,'Rita Faria', 78, 928423651, 'Faria@hotmail.com', 'riarita');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (12054713,'Maria Madalena Melo', 13, 964566667, 'triM@fe.up.com', 'm1m2m3');
@@ -340,8 +340,21 @@ INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 20201
 INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 401, 4 );
 INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 301, 3 ); 
 
+-- Medicine -- the instructions should be add by the doctor
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001824, 'Paracetamol', '1000 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001825, 'Paracetamol', '500 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001826, 'Ibuprofeno', '400 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001827, 'Ibuprofeno', '200 mg', '8 em 8 horas');
+
+-- MedicationAdministered
+INSERT INTO MedicationAdministered(code_medicine, inpatient) VALUES(10001825, 2020110901);
+INSERT INTO MedicationAdministered(code_medicine, inpatient) VALUES(10001827, 2020110901);
+INSERT INTO MedicationAdministered(code_medicine, inpatient) VALUES(10001827, 2020110902);
+
+
 -- Report 
 INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-11', 'The patient had some vomits during the night, but now is more stable',2020110901);
+INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-12', 'The patient is stable, will probably be discharged tomorrow',2020110901);
 INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-11', 'During the day the patient as done some exams, now we are waiting for the results',2020110902);
 INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-23', 'The patient was submitted to an ECG', 2020110903);
 
