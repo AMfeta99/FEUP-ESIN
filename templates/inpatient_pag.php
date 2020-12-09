@@ -57,7 +57,6 @@
             </article> 
             
             <article class="info_section">
-                <h4 class="info_section">Vou colocar já aqui tudo mas é suposto isto estar conforme se carrega em cada parte: </h4>
                 <h4 class="info_section">Reports: </h4>
                 
                 <?php foreach ($result6 as $row) { ?> 

@@ -9,7 +9,9 @@
 
   try{
     $result = getPatientById($patient_cc); // array of arrays
-    $result2=  getPatientAppointment($patient_cc);
+    $result2 =  getPatientAppointment($patient_cc); // date, diagnosis, doctor, speciality
+    
+    $result3 =  getPrescriptionsOfPatient($patient_cc);
   } catch(PDOException $e){
     $err = $e-> getMessage();
     exit(0);
