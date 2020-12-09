@@ -20,8 +20,22 @@
           </article>
 
           <div class="info">
+          <h2>Profile</h2>
           <span><?php echo $msg ?></span>
-          <p> ghvbsdkaskldfj asfhaskdjfoi </p>
+
+          <article class="info_section">
+                <h4 >Personal identification: </h4>
+                <h5 class="atribute">Name: <p><?php echo  $result["name"] ?></p></h5>
+                <h5 class="atribute">Department:  <p><?php echo  $result2["Sname"] ?></p></h5>
+            </article> 
+
+            <article class="info_section">
+                <h4 class="info_section">Contacts: </h4>
+                <h5 class="atribute">Mail Address: <p><?php echo  $result["mail_address"] ?></p></h5>
+                <?php if (strlen($result["phone_number"])>0){?>
+                <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
+            </article> 
+
           </div>
 
         </section> 
