@@ -39,10 +39,7 @@
 -- SELECT name, password
 -- FROM Patient;
 
-/* Pagina do medico sobre um paciente*/
--- patient data
--- SELECT name, age, mail_address
--- FROM Patient;
+
 
 /* Appointment*/
 -- --patients appointments
@@ -74,58 +71,77 @@
 -- JOIN Department ON Doctor.speciality= Department.number
 -- WHERE patient=14511630;
 
--- SELECT date, Block_time.begin_time as Hour ,Disease.name , Doctor.name as Doctor, Department.name as speciality
--- FROM Appointment 
--- JOIN Reservation ON Reservation.id= reservation
--- JOIN Patient ON patient=Patient.cc
--- JOIN Block_time ON code=time
--- JOIN Doctor ON doctor=Doctor.id
--- JOIN Department ON Doctor.speciality= Department.number
--- JOIN AppointmentDiagnosis ON id_appointment=Appointment.reservation
--- JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
--- WHERE patient=14511630;
+-- Appointment Diagnosis
+
+SELECT date, Block_time.begin_time as Hour ,Disease.name as disease_name, Doctor.name as doctor, Department.name as speciality
+FROM Appointment 
+JOIN Reservation ON Reservation.id= reservation
+JOIN Patient ON patient=Patient.cc
+JOIN Block_time ON code=time
+JOIN Doctor ON doctor=Doctor.id
+JOIN Department ON Doctor.speciality= Department.number
+LEFT JOIN AppointmentDiagnosis ON id_appointment=Appointment.reservation
+JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
+WHERE patient=14511630;
+
+-- disease of a patient
+SELECT Disease.name as disease_name, id_appointment FROM AppointmentDiagnosis
+FULL JOIN Disease ON Disease.id = disease
+JOIN Appointment ON reservation = id_appointment
+JOIN Reservation ON Reservation.id= reservation
+JOIN Patient ON patient=Patient.cc
+WHERE Patient.cc = 14511630 ;
 
 -- -- all appointments of Department
--- SELECT date, Block_time.begin_time as Hour, week_day , Doctor.name as Doctor, Patient.name as Patient, Department.name as speciality
+-- SELECT date, Block_time.begin_time as Hour, Doctor.name as Doctor, Patient.name as Patient, Department.name as speciality
 -- FROM Appointment JOIN Patient ON patient=Patient.cc
+-- JOIN Reservation ON Reservation.id= reservation
 -- JOIN Block_time ON code=time
 -- JOIN Doctor ON doctor=Doctor.id
 -- JOIN Department ON Doctor.speciality= Department.number
 -- WHERE speciality= 5;
 
+--ALL Prescriptions of each doctor
+-- SELECT Prescription.id as id_prescription, date_limit FROM Prescription
+-- JOIN Appointment ON id_appointment = reservation
+-- JOIN Reservation ON Reservation.id= reservation
+-- JOIN Patient ON patient=Patient.cc
+-- WHERE Patient.cc = 15991790 ;
+
 /* Department*/
 
 ---algumas coisas q vamos precisar tbm
--- disease of a patient
+
+
 -- check that the patient is hospitalized
 
 /* Inpatient */
--- Inpatient Info
-SELECT * FROM Inpatient 
-JOIN Patient ON Inpatient.patient=Patient.cc
-WHERE Inpatient.code=2020110901;
+-- -- Inpatient Info
+-- SELECT * FROM Inpatient 
+-- JOIN Patient ON Inpatient.patient=Patient.cc
+-- WHERE Inpatient.code=2020110901;
 
--- Doctor of the inpatient
-SELECT * FROM Inpatient
-JOIN Doctor ON doctor= Doctor.id
-WHERE Inpatient.code=2020110901;
+-- -- Doctor of the inpatient
+-- SELECT * FROM Inpatient
+-- JOIN Doctor ON doctor= Doctor.id
+-- WHERE Inpatient.code=2020110901;
 
--- Todos as disease resultante dos appointments
+-- -- Todos as disease resultante dos appointments
 
 
--- Bed and department
-SELECT bed, Department.name FROM Inpatient
-JOIN Bed ON bed= Bed.number
-JOIN Department ON id_department = Department.number
-WHERE Inpatient.code=2020110901;
+-- -- Bed and department
+-- SELECT bed, Department.name FROM Inpatient
+-- JOIN Bed ON bed= Bed.number
+-- JOIN Department ON id_department = Department.number
+-- WHERE Inpatient.code=2020110901;
 
--- Medication Administered
-SELECT Medicine.name as name_med, Medicine.dose as dose FROM Inpatient
-JOIN MedicationAdministered ON Inpatient.code = inpatient
-JOIN Medicine ON code_medicine = Medicine.code
-WHERE Inpatient.code=2020110901;
+-- -- Medication Administered
+-- SELECT Medicine.name as name_med, Medicine.dose as dose FROM Inpatient
+-- JOIN MedicationAdministered ON Inpatient.code = inpatient
+-- JOIN Medicine ON code_medicine = Medicine.code
+-- WHERE Inpatient.code=2020110901;
 
--- Reports of each patient
-SELECT Report.id as report_id, date, message FROM Inpatient
-JOIN Report ON Inpatient.code = inpatient
-WHERE Inpatient.code=2020110901;
+-- -- Reports of each patient
+-- SELECT Report.id as report_id, date, message FROM Inpatient
+-- JOIN Report ON Inpatient.code = inpatient
+-- WHERE Inpatient.code=2020110901;

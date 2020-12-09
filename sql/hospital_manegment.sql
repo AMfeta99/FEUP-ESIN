@@ -130,8 +130,12 @@ CREATE TABLE PrescriptionOfMedicine(
     PRIMARY KEY (id_prescription, id_medicine)
 );
 
+-- é melhor associar a consulta , pois pode ter feito pedido de consultas diferentes,
+-- e para além disso, é mais fácil para depois associar a reserva à consulta se a mensagem for "reservation accepts"
+-- mas se fizermos assim não faz muito ter doctor e patient como atributos, visto que estes já fazem parte do reservation
+-- se ficasse assim até fazia mais sentido pq assegurava que estavamos a comunicar entre o doctor e o patient correto
 CREATE TABLE ReceiveNotification (
-    id integer,
+    id integer REFERENCES Reservation,
     doctor integer REFERENCES Doctor,
     patient integer REFERENCES Patient,
     message text NOT NULL CHECK (message ="reservation accept" OR message = "reservation denied"),
@@ -428,10 +432,29 @@ INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 6
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 3, 12054713);
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 4 , 5, 14511630);
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 5 , 5, 15341150);
-INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 4, 15991790);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 20, 15991790);
+INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-12-27', 2 , 20, 15991790);
 
+-- Receive Notification
+INSERT INTO ReceiveNotification (id, doctor, patient, message) VALUES (7, 20, 15991790, "reservation accept");
 -- Appointments
 
 INSERT INTO Appointment (reservation) VALUES(1);
 INSERT INTO Appointment (reservation) VALUES(3);
 INSERT INTO Appointment (reservation) VALUES(5);
+INSERT INTO Appointment (reservation) VALUES(7);
+INSERT INTO Appointment (reservation) VALUES(8);
+
+-- Prescription 
+INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-11-11','2021-02-11', 1); -- same id as reservation
+INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-11-11','2021-02-11', 3);
+INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-11-11','2021-02-11', 7);
+
+-- Prescription Medicine
+INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(1, 10001824, 3);
+INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(1, 10001826, 2);
+INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(3, 10001825, 2);
+
+-- AppointmentDiagnosis
+INSERT INTO AppointmentDiagnosis (id_appointment, disease) VALUES(7, 2);
+INSERT INTO AppointmentDiagnosis (id_appointment, disease) VALUES(8, 3);
