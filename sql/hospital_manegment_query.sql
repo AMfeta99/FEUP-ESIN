@@ -85,6 +85,7 @@ LEFT JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
 WHERE patient=14511630;
 
 -- disease of a patient
+<<<<<<< Updated upstream
 SELECT Disease.name as disease_name, id_appointment FROM AppointmentDiagnosis
 JOIN Disease ON Disease.id = disease
 JOIN Appointment ON reservation = id_appointment
@@ -97,6 +98,14 @@ JOIN Appointment ON reservation = id_appointment
 JOIN Reservation ON Reservation.id= reservation
 JOIN Patient ON patient=Patient.cc
 WHERE Patient.cc = 14511630 ;
+=======
+-- SELECT Disease.name as disease_name, id_appointment FROM AppointmentDiagnosis
+-- FULL JOIN Disease ON Disease.id = disease
+-- JOIN Appointment ON reservation = id_appointment
+-- JOIN Reservation ON Reservation.id= reservation
+-- JOIN Patient ON patient=Patient.cc
+-- WHERE Patient.cc = 14511630 ;
+>>>>>>> Stashed changes
 
 -- -- all appointments of Department
 -- SELECT date, Block_time.begin_time as Hour, Doctor.name as Doctor, Patient.name as Patient, Department.name as speciality
@@ -136,9 +145,12 @@ WHERE Patient.cc = 14511630 ;
 
 
 -- -- Bed and department
--- SELECT bed, Department.name FROM Inpatient
--- JOIN Bed ON bed= Bed.number
--- JOIN Department ON id_department = Department.number
+SELECT bed, Department.name, code , Patient.name as patient
+FROM Inpatient
+JOIN Bed ON bed= Bed.number
+JOIN Patient ON Patient.cc=patient
+JOIN Department ON id_department = Department.number
+WHERE Department.number=1;
 -- WHERE Inpatient.code=2020110901;
 
 -- -- Medication Administered

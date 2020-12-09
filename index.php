@@ -2,8 +2,8 @@
 <?php
   // session_start();
   require_once('config/init.php');
-  session_destroy();
-  die();
+  // session_destroy();
+  // die();
   $msg_log=$_SESSION["msg_log"] ;
   unset($_SESSION["msg_log"] );
 

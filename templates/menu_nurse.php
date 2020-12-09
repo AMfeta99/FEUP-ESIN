@@ -40,6 +40,37 @@
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
 
+            <article class="info_section">
+                <h4 class="info_section">Inpatients: </h4>
+               
+                <?php foreach ($result3 as $row) { ?>
+                  <h5 class="atribute"> 
+                    <p>Name: <?php echo  $row["patient"] ?></p>
+                    <h6 class= "subatribute"> <!-- Alterar Css -->
+                    <p>Alterar Css : margin-left: 4% </p>
+                    <p>code: <?php echo  $row["code"] ?> </p>
+                    <p>Bed: <?php echo  $row["bed"] ?></p>
+                    </h6>
+                  </h5>
+                <?php  }?>
+            </article> 
+
+            <article class="info_section">
+                <h4 class="info_section">Appointments: </h4>
+               
+                <?php foreach ($result4 as $row) { ?>
+                  <h5 class="atribute"> 
+                    <p>Name: <?php echo  $row["patient"] ?></p>
+                    <h6 class= "subatribute"> <!-- Alterar Css -->
+                    <p>Alterar Css : margin-left: 4% </p>
+                    <p>Doctor: <?php echo  $row["Doctor"] ?></p>
+                    <p>Date: <?php echo  $row["date"] ?> </p>
+                    <p>Hour: <?php echo  $row["Hour"] ?> </p>
+                    </h6>
+                  </h5>
+                <?php  }?>
+            </article> 
+
     </div>
 
     </section> 
