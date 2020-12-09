@@ -39,15 +39,15 @@
 
             <article class="info_section">
                 <h4 class="info_section">Diagnosed disease: </h4>
+
                 
-                <?php foreach ($result2 as $row) { ?> 
-                  <?php if (strlen($row["disease_name"])>0){?> <!-- Se tiver algum diagnóstico-->
-                    <h5 class="atribute">Name: <p><?php echo $row["disease_name"]; ?></p></h5>
-                   
-                  <?php }else { ?> <!-- não está a entrar neste else-->
-                    <h5 class="atribute"> <p> Fortunately, you have no diagnosed disease! (falta subtituir pela query das disease)</p></h5>
-                  <?php ; }?>
-                <?php } ?> 
+                  <?php foreach ($result2 as $row) { ?> <!-- Se tiver algum diagnóstico-->
+                    
+                    <?php if (!is_null($row['disease_name'])){?>
+                      <h5 class="atribute">Name: <p><?php echo $row["disease_name"]; ?></p></h5>
+                    
+                    <?php } ?>
+                  <?php } ?> 
             </article> 
 
             <article class="info_section">
@@ -60,7 +60,9 @@
                     <p>Alterar Css : margin-left: 4% </p>
                     <p>Doctor: <?php echo  $row["doctor"] ?></p>
                     <p>Date: <?php echo  $row["date"] ?> <tab> Hour: <?php echo  $row["Hour"] ?></p>
-                    <p>Diagnostic: <?php echo  $row["disease_name"] ?></p>
+                    <?php if (!is_null($row['disease_name'])){?>
+                      <p>Diagnostic: <?php echo  $row["disease_name"] ?></p>
+                      <?php } ?>
                     </h6>
                   </h5>
                 <?php  }?>
@@ -70,8 +72,10 @@
                 <h4 class="info_section">Prescriptions: </h4> <!-- colocar um if para o caso de não ter receitas -->
                 <!-- apenas mostrar as receitas que estão dentro da data limit, eliminar da base de dados as que já passaram -->
                 <?php foreach ($result3 as $row) { ?>
+                  <?php if ($row["date_limit"]> $today){?>
                   <h5 class="atribute"> <p> Prescription ID: <a href="index.php"> <?php echo  $row["id_prescription"] ?> Este link é suposto enviar para prescription_id (mostrar todos os medicamentos da receita etc) </a><br> Date limit: <?php echo  $row["date_limit"] ?> </p></h5>
                   <?php  }?>
+                <?php  }?>
             </article>     
             
             <article class="info_section">

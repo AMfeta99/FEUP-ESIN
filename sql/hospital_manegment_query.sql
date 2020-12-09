@@ -81,12 +81,18 @@ JOIN Block_time ON code=time
 JOIN Doctor ON doctor=Doctor.id
 JOIN Department ON Doctor.speciality= Department.number
 LEFT JOIN AppointmentDiagnosis ON id_appointment=Appointment.reservation
-JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
+LEFT JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
 WHERE patient=14511630;
 
 -- disease of a patient
 SELECT Disease.name as disease_name, id_appointment FROM AppointmentDiagnosis
-FULL JOIN Disease ON Disease.id = disease
+JOIN Disease ON Disease.id = disease
+JOIN Appointment ON reservation = id_appointment
+JOIN Reservation ON Reservation.id= reservation
+JOIN Patient ON patient=Patient.cc
+WHERE Patient.cc = 15991790 ;
+
+SELECT * FROM AppointmentDiagnosis
 JOIN Appointment ON reservation = id_appointment
 JOIN Reservation ON Reservation.id= reservation
 JOIN Patient ON patient=Patient.cc

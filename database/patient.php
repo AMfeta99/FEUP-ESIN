@@ -17,8 +17,8 @@ function getPatientAppointment($patient_id){
                                 JOIN Block_time ON code=time
                                 JOIN Doctor ON doctor=Doctor.id
                                 JOIN Department ON Doctor.speciality= Department.number
-                                JOIN AppointmentDiagnosis ON id_appointment=Appointment.reservation
-                                JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
+                                LEFT JOIN AppointmentDiagnosis ON id_appointment=Appointment.reservation
+                                LEFT JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
                                 WHERE patient=?");
         $stmt->execute(array($patient_id));
         return $stmt->fetchALL(); 

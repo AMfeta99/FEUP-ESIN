@@ -113,7 +113,7 @@ CREATE TABLE Disease(
 
 CREATE TABLE AppointmentDiagnosis  (
     id_appointment integer REFERENCES Appointment,
-	disease integer REFERENCES Disease,
+	disease integer DEFAULT 1 REFERENCES Disease,
 	PRIMARY KEY (id_appointment, disease)
 );
 
@@ -135,11 +135,9 @@ CREATE TABLE PrescriptionOfMedicine(
 -- mas se fizermos assim não faz muito ter doctor e patient como atributos, visto que estes já fazem parte do reservation
 -- se ficasse assim até fazia mais sentido pq assegurava que estavamos a comunicar entre o doctor e o patient correto
 CREATE TABLE ReceiveNotification (
-    id integer REFERENCES Reservation,
-    doctor integer REFERENCES Doctor,
-    patient integer REFERENCES Patient,
-    message text NOT NULL CHECK (message ="reservation accept" OR message = "reservation denied"),
-    PRIMARY KEY (id, doctor, patient)
+    id integer PRIMARY KEY REFERENCES Reservation,
+    message text NOT NULL CHECK (message ="reservation accept" OR message = "reservation denied")
+    
 );
 
 
@@ -436,7 +434,7 @@ INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 2
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-12-27', 2 , 20, 15991790);
 
 -- Receive Notification
-INSERT INTO ReceiveNotification (id, doctor, patient, message) VALUES (7, 20, 15991790, "reservation accept");
+INSERT INTO ReceiveNotification (id, message) VALUES (7, "reservation accept");
 -- Appointments
 
 INSERT INTO Appointment (reservation) VALUES(1);
@@ -449,6 +447,7 @@ INSERT INTO Appointment (reservation) VALUES(8);
 INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-11-11','2021-02-11', 1); -- same id as reservation
 INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-11-11','2021-02-11', 3);
 INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-11-11','2021-02-11', 7);
+INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-10-11','2020-11-11', 8);
 
 -- Prescription Medicine
 INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(1, 10001824, 3);
