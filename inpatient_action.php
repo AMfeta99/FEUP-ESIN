@@ -1,6 +1,4 @@
 <?php
-    
-
     require_once('config/init.php');
     require_once('database/inpatient.php');
     
@@ -19,7 +17,8 @@
     // }
     
     if(getInpatientByCode($code)){
-        header('Location: inpatient_pag.php');
+        header("Location: inpatient.php?code=$code");
+        //header("location: ", $_SERVER['HTTP_REFERER']);
     }
     else{
         $_SESSION["msg_inpatient"]="Something goes wrong :(. There is no such Inpatient";
