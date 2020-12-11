@@ -30,7 +30,7 @@ function getDoctorInpatient($code){
 // Bed and department
 function getBedDepartment($code){
     global $dbh;
-    $stmt=$dbh->prepare("SELECT bed, Department.name as dep_name FROM Inpatient
+    $stmt=$dbh->prepare("SELECT bed,visiting_hours, Department.name as dep_name FROM Inpatient
                         JOIN Bed ON bed= Bed.number
                         JOIN Department ON id_department = Department.number
                         WHERE Inpatient.code=?");

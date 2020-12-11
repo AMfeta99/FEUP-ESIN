@@ -10,6 +10,9 @@
   try{
     $result = getDoctorById($doctor_id); 
     $result2 = getDepartmentOfEachDoctor($doctor_id);
+    $result3= getDoctorAppointment($doctor_id);
+    $result4= getDoctorReservation($doctor_id);
+    $result_inpatient=getDoctorinpatient($doctor_id);
 
   } catch(PDOException $e){
     $err = $e-> getMessage();

@@ -11,8 +11,8 @@
             <aside>
               <ul id="link_profile">
                 <li><a href="">My Profile</a></li>
-                <li><a href="">Schedule</a></li>
                 <li><a href="">My Appointments</a></li>
+                <li><a href="">Schedule</a></li>
                 <li><a href="">Inpatients</a></li>
                 <li><a href="index.php">Log out</a></li>
               </ul> 
@@ -35,6 +35,55 @@
                 <?php if (strlen($result["phone_number"])>0){?>
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
+
+            <h2>Appointments</h2>
+            <article class="info_section">
+                <h4 class="info_section">Scheduled appointments: </h4>
+               
+                <?php foreach ($result3 as $row) { ?>
+                  <h5 class="atribute"> 
+                    <p>Name: <?php echo  $row["patient"] ?></p>
+                    <h6 class= "subatribute"> <!-- Alterar Css -->
+                    <p>Date: <?php echo  $row["date"] ?> </p>
+                    <p>Hour: <?php echo  $row["Hour"] ?> </p>
+                    </h6>
+                  </h5>
+                <?php  }?>
+                
+            </article> 
+
+            <article class="info_section">
+                <h4 class="info_section">Reservation without answer: </h4>
+                <?php foreach ($result4 as $row) { ?>
+                 
+                  <h5 class="atribute"> 
+                    <p>Name: <?php echo  $row["patient"] ?></p>
+                    <h6 class= "subatribute"> <!-- Alterar Css -->
+                    <p>Date: <?php echo  $row["date"] ?> </p>
+                    <p>Hour: <?php echo  $row["Hour"] ?> </p>
+                    </h6>
+                  </h5>
+                <?php  }?>
+                
+            </article> 
+
+            <h2>Inpatient</h2>
+            <article class="info_section">
+                <h4 class="info_section">Monitor inpatients: </h4>
+               
+                <?php foreach ($result_inpatient as $row) { ?>
+                 
+                  <h5 class="atribute"> 
+                    <p>Name: <?php echo  $row["name"] ?></p>
+                    <h6 class= "subatribute"> <!-- Alterar Css -->
+                    <p>Bed: <?php echo  $row["bed"] ?> </p>
+                    <p>Code: <?php echo  $row["code"] ?> </p>
+                    </h6>
+                  </h5>
+                <?php  }?>
+                <p> adicionar link para a pagina de cada paciente</p>
+            </article> 
+
 
           </div>
 

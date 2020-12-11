@@ -15,8 +15,8 @@
     text-align: center;
     padding: 2%;
     margin-top:0;
-}
-.atribute{
+ }
+.atribute{  
     margin-left: 2%;
     margin-top:0;
     margin-bottom:0;
@@ -26,6 +26,7 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
 
 .info_section h4{
     margin:0;
@@ -39,3 +40,10 @@
     background-color: white;
     margin-bottom: 1%;
 }
+
+
+/* .subatribute *{
+    margin-left: 2%;
+    margin-top:0;
+    margin-bottom:0;
+} */

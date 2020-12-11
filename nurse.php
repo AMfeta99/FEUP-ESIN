@@ -6,6 +6,7 @@
   $nurse_id=$_GET['id'];
   require_once('config/init.php');
   require_once('database/nurse.php');
+  require_once('database/department.php');
   
   try{
     $result = getNurseById($nurse_id); 
@@ -14,6 +15,9 @@
     $dep_id=$result2["dep_id"];
     $result3=getInpatientofDepartment($dep_id);
     $result4=getDepartmentOfAppointment($dep_id);
+
+    $result_Tbeds=getDepTotalNumberBed($dep_id);
+    $result_Occupybeds=getDepNumberBedOccupy($dep_id);
 
   } catch(PDOException $e){
     $err = $e-> getMessage();
