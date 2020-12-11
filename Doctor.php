@@ -1,5 +1,4 @@
 <?php
-  // session_start();
   require_once('config/init.php');
   $msg=$_SESSION["msg"] ;
   unset($_SESSION["msg"] );

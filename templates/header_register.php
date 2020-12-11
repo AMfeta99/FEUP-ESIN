@@ -9,6 +9,7 @@
 
     <link href="css_files/animation.css" rel="stylesheet">
     <link href="css_files/forms.css" rel="stylesheet">
+    <link href="css_files/responsive.css" rel="stylesheet">
 
     <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
     <title>Hospital</title>

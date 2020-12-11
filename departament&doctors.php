@@ -1,8 +1,8 @@
 <?php
-
+  require_once('config/init.php');
   $Department_name=$_GET['name'];
   $dep_number=$_GET['dep'];
-  require_once('config/init.php');
+  
   require_once('database/doctor.php');
   try{
     $result = getDoctorInfo($dep_number); // array of arrays

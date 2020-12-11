@@ -1,6 +1,7 @@
 <?php
-  $code=$_GET['code'];
+  
   require_once('config/init.php');
+  $code=$_GET['code'];
   require_once('database/inpatient.php');
 
   try{

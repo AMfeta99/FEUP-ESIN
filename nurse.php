@@ -1,10 +1,11 @@
 <?php
-  //  session_start();
+  require_once('config/init.php');
+  
    $msg=$_SESSION["msg"] ;
    unset($_SESSION["msg"] );
 
   $nurse_id=$_GET['id'];
-  require_once('config/init.php');
+  
   require_once('database/nurse.php');
   require_once('database/department.php');
   

@@ -1,4 +1,4 @@
-<!-- This section can be applied to Doctor.php; Nurse; Patient -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head >
@@ -8,6 +8,7 @@
       <link href="css_files/style_buttons.css" rel="stylesheet">
       <link href="css_files/layout.css" rel="stylesheet">
       <link href="css_files/profile.css" rel="stylesheet">
+      <link href="css_files/responsive.css" rel="stylesheet">
 
       <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>
