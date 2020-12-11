@@ -38,7 +38,7 @@ function getDepartmentOfAppointment($dep_id){
                             JOIN Block_time ON code=time
                             JOIN Doctor ON doctor=Doctor.id
                             JOIN Department ON Doctor.speciality= Department.number
-                            WHERE speciality= ?;");
+                            WHERE Department.number= ?;");
     $stmt->execute(array($dep_id));
     return $stmt->fetchALL();
 }

@@ -85,7 +85,7 @@ LEFT JOIN Disease ON AppointmentDiagnosis.disease =Disease.id
 WHERE patient=14511630;
 
 -- disease of a patient
-<<<<<<< Updated upstream
+
 SELECT Disease.name as disease_name, id_appointment FROM AppointmentDiagnosis
 JOIN Disease ON Disease.id = disease
 JOIN Appointment ON reservation = id_appointment
@@ -98,14 +98,14 @@ JOIN Appointment ON reservation = id_appointment
 JOIN Reservation ON Reservation.id= reservation
 JOIN Patient ON patient=Patient.cc
 WHERE Patient.cc = 14511630 ;
-=======
+
 -- SELECT Disease.name as disease_name, id_appointment FROM AppointmentDiagnosis
 -- FULL JOIN Disease ON Disease.id = disease
 -- JOIN Appointment ON reservation = id_appointment
 -- JOIN Reservation ON Reservation.id= reservation
 -- JOIN Patient ON patient=Patient.cc
 -- WHERE Patient.cc = 14511630 ;
->>>>>>> Stashed changes
+
 
 -- -- all appointments of Department
 -- SELECT date, Block_time.begin_time as Hour, Doctor.name as Doctor, Patient.name as Patient, Department.name as speciality
@@ -136,13 +136,28 @@ WHERE Patient.cc = 14511630 ;
 -- JOIN Patient ON Inpatient.patient=Patient.cc
 -- WHERE Inpatient.code=2020110901;
 
--- -- Doctor of the inpatient
--- SELECT * FROM Inpatient
--- JOIN Doctor ON doctor= Doctor.id
--- WHERE Inpatient.code=2020110901;
+-- Doctor of the inpatient
+SELECT * FROM Inpatient
+JOIN Doctor ON doctor= Doctor.id
+WHERE Inpatient.code=2020110901;
 
 -- -- Todos as disease resultante dos appointments
 
+--bed for department
+--total de camas
+SELECT Count(*), Bed.number
+FROM Bed JOIN Department ON id_department= Department.number
+WHERE id_department=3;
+
+-- camas ocupadas
+SELECT Count(*), Bed.number
+FROM Bed JOIN Department ON id_department= Department.number
+WHERE Bed.occupy=1 and id_department=3;
+
+--camas livres
+SELECT Count(*), Bed.number
+FROM Bed JOIN Department ON id_department= Department.number
+WHERE Bed.occupy=0 and id_department=3;
 
 -- -- Bed and department
 SELECT bed, Department.name, code , Patient.name as patient

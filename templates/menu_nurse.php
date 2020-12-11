@@ -12,10 +12,7 @@
         <aside>
             <ul id="link_profile">
             <li><a href="">My Profile</a></li>
-            <li><a href="">Department</a></li><ul>
-                <li><a href="">Beds</a></li>
-                <li><a href="">Appointments</a></li>
-            </ul>
+            <li><a href="">Department</a></li>
             <li><a href="">Inpatient Profile</a></li>
             <li><a href="">Log out</a></li>
             </ul> 
@@ -40,16 +37,25 @@
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
 
+          <h2>Department</h2>
+          <article class="info_section">
+                <h4>Beds: </h4>
+               
+                  <h5 class="atribute"> Total capacity:<p> <?php echo  $result_Tbeds["Total_beds"] ; ?> beds</p></h5> 
+                  <h5 class="atribute">Beds Occupy:<p> <?php echo  $result_Occupybeds["occupy"] ;?> </p></h5>
+             
+            </article> 
+
+
             <article class="info_section">
                 <h4 class="info_section">Inpatients: </h4>
-               
+                
                 <?php foreach ($result3 as $row) { ?>
                   <h5 class="atribute"> 
                     <p>Name: <?php echo  $row["patient"] ?></p>
-                    <h6 class= "subatribute"> <!-- Alterar Css -->
-                    <p>Alterar Css : margin-left: 4% </p>
-                    <p>code: <?php echo  $row["code"] ?> </p>
-                    <p>Bed: <?php echo  $row["bed"] ?></p>
+                    <h6 class= "subatribute">
+                      <p >code: <?php echo  $row["code"] ?> </p>
+                      <p >Bed: <?php echo  $row["bed"] ?></p>
                     </h6>
                   </h5>
                 <?php  }?>
@@ -57,6 +63,7 @@
 
             <article class="info_section">
                 <h4 class="info_section">Appointments: </h4>
+                <?php //if(strlen($result4["patient"])>0) { ?>
                
                 <?php foreach ($result4 as $row) { ?>
                   <h5 class="atribute"> 
@@ -69,6 +76,7 @@
                     </h6>
                   </h5>
                 <?php  }?>
+                
             </article> 
 
     </div>

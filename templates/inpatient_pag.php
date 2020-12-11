@@ -21,10 +21,10 @@
           </article>
 
           <div class="info">
-            <h2>Profile</h2>
+            <h2>Patient Info:</h2>
             
             <article class="info_section">
-                <h4 >Patient Info: </h4>
+                <!-- <h4 >Patient Info: </h4> -->
                 <h5 class="atribute">Name: <p><?php echo  $result2["name"] ?></p></h5>
                 <h5 class="atribute">Age:  <p><?php echo  $result2["age"] ?></p></h5>
                 <h5 class="atribute">CC:  <p><?php echo  $result2["cc"] ?></p></h5> 
@@ -34,18 +34,19 @@
                 <h5 class="atribute">Diagnosed disease: <p> As doenças estão associadas às appointments do patient</p></h5>
             </article>
             
+            <h2>Internment:</h2>
             <article class="info_section">
                 <h4 class="info_section">Internment Info: </h4>
                
-                <h5 class="atribute">Doctor: <p><?php echo  $result3["doctor_name"]; ?> Colocar link que referencie para doctor.php</p></h5> 
+                <h5 class="atribute">Doctor: <p><?php echo  $result3["doctor_name"]; ?> (  Colocar link que referencie para o doctor )</p></h5> 
                 <h5 class="atribute">Doctor mail: <p><?php echo  $result3["doctor_mail"]; ?></p></h5> 
                 <h5 class="atribute">Bed: <p><?php echo  $result4["bed"]; ?></p></h5> 
                 <h5 class="atribute">Department: <p><?php echo  $result4["dep_name"]; ?></p></h5> 
+                <h5 class="atribute">Visiting Hours: <p><?php echo  $result4["visiting_hours"]; ?></p></h5> 
             </article> 
 
             <!-- Vou colocar já aqui tudo mas é suposto isto estar conforme se carrega em cada parte-->
             <article class="info_section">
-                <h4 class="info_section">Vou colocar já aqui tudo mas é suposto isto estar conforme se carrega em cada parte: </h4>
                 <h4 class="info_section">Medication: </h4>
                 <?php if ($err == null) { ?> <!--if there was no error -->
                 <?php foreach ($result5 as $row) { ?> 

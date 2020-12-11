@@ -77,8 +77,6 @@ CREATE TABLE Block_time (
 CREATE TABLE Reservation(
     id integer PRIMARY KEY AUTOINCREMENT, 
     date Date NOT NULL, -- tipo 11-11-2021 
-    -- aproved integer,
-
     time integer NOT NULL REFERENCES Block_time, -- the primary key of block time is an integer
     doctor integer NOT NULL REFERENCES Doctor, 
     patient integer NOT NULL REFERENCES Patient
