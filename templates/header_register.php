@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <link href="style_buttons.css" rel="stylesheet">
-    <link href="layout.css" rel="stylesheet">
+    <link href="css_files/style.css" rel="stylesheet">
+    <link href="css_files/style_buttons.css" rel="stylesheet">
+    <link href="css_files/layout.css" rel="stylesheet">
 
-    <link href="animation.css" rel="stylesheet">
-    <link href="forms.css" rel="stylesheet">
+    <link href="css_files/animation.css" rel="stylesheet">
+    <link href="css_files/forms.css" rel="stylesheet">
 
     <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
     <title>Hospital</title>

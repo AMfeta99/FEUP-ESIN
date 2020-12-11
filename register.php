@@ -9,8 +9,8 @@
 
 ?>
   <!--não sei se é valido meter assim senão temos o header_register q é exatamente igual ao header_profile mas com estes links... ia ser repetir o codigo todo mas se achares melhor ...-->
-    <link href="css/animation.css" rel="stylesheet">
-    <link href="css/forms.css" rel="stylesheet">
+    <link href="css_files/animation.css" rel="stylesheet">
+    <link href="css_files/forms.css" rel="stylesheet">
 <?php
 
   include('templates/header_profile.php');

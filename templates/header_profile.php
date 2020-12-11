@@ -4,10 +4,10 @@
   <head >
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="css/style.css" rel="stylesheet">
-      <link href="css/style_buttons.css" rel="stylesheet">
-      <link href="css/layout.css" rel="stylesheet">
-      <link href="css/profile.css" rel="stylesheet">
+      <link href="css_files/style.css" rel="stylesheet">
+      <link href="css_files/style_buttons.css" rel="stylesheet">
+      <link href="css_files/layout.css" rel="stylesheet">
+      <link href="css_files/profile.css" rel="stylesheet">
 
       <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>
