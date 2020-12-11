@@ -5,46 +5,39 @@
         <!--imagens em slides com texto descrivo e funcionalidades do website-->
           <article class="slideContainer">
 
-            <div class="mySlide">
+            <div class="mySlide" id="slide_1" style="display: block">
+            <div class="titletext">Welcome ! <a href="#slide_2" class="setas"> ></a></div>
               <img src="http://www.comerciarios.net/img/medico.jpg" alt="1 " style="width:100%">
-              <div class="descritext" >The best health professionals at your service come to know!</div>
+              <div class="descritext" >The best health professionals at your service come to know! </div>
             </div>
           
-            <div class="mySlide">
-              <div class="titletext">Patient Profile</div>
-              <img src="images/6.jpg" alt="2" style="width:100%">
+            <div class="mySlide" id="slide_2" style="display: block">
+              <div class="titletext"><a href="#slide_1"> <</a>Patient Profile <a href="#slide_3"> ></a></div>
+              <img src="images/6.jpg" alt="2" style="width:100% ">
               <div class="descritext">The profile allows you to consult scheduled appointments, prescriptions and see your entire medical history</div>
             </div>
-          
-            <div class="mySlide">
-              <div class="titletext">Departments and Doctors</div>
-              <img src="images/5.png" alt="3 " style="width:100%">
+        
+            <div class="mySlide" id="slide_3" style="display: block">
+              <div class="titletext"><a href="#slide_2"> <</a>Departments and Doctors <a href="#slide_4"> ></a></div>
+              <img src="http://medintegra.es/wp-content/uploads/2012/09/Medicina-personalizada.jpg" alt="3 " style="width:100%">
               <div class="descritext">Discover the services that we have to offer and our healthcare professionals</div>
             </div>
           
-            <div class="mySlide">
-              <div class="titletext">Appointment</div>
-              <img src="https://saudebusiness.com/wp-content/uploads/2019/03/consultas-medicas.jpg" alt="4 " style="width:100%">
+            <div class="mySlide" id="slide_4" style="display: block">
+              <div class="titletext"><a href="#slide_3"> <</a> Appointment <a href="#slide_5"> ></a></div>
+              <img src="http://neuroser.pt/wp-content/uploads/2015/02/07.-Servi%C3%A7os-Planos-Interven%C3%A7%C3%A3o_filtro.jpg" alt="4 " style="width:100%">
               <div class="descritext">Schedule an appointment with any doctor</div>
             </div>
           
-            <div class="mySlide">
-              <div class="titletext">The best care just a click away!</div>
+            <div class="mySlide" id="slide_5" style="display: block">
+              <div class="titletext"><a href="#slide_4"> <</a>The best care just a click away!<a href="#slide_1"> ></a></div>
               <img src="http://portaldocoracao.com.br/wp-content/uploads/2008/11/cardiologista.jpg" alt="5 " style="width:100%">
-              <div><a href="register.php" id="join" class="descritext" style="font-size: 30px;">Join us</a> </div>
+              <div class="descritext"><a href="register.php" id="join"  style=" color:white; font-size: 30px; ">Join us</a> </div>
             </div>
           
           </article>
+
           <br>
-          
-          <!---pontos/bolas do slicer-->
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-            <span class="dot" onclick="currentSlide(4)"></span> 
-            <span class="dot" onclick="currentSlide(5)"></span> 
-          </div>
 
         <section id = "about_us" class = "about">
       

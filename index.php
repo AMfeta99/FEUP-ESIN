@@ -23,12 +23,11 @@
     exit(0);
   }
 ?>
-
 <?php
+
 
   include('templates/header.php');
   include('templates/home_page.php'); // content
-  include('templates/script_slides.php');
   include('templates/footer.php');
 
 ?>

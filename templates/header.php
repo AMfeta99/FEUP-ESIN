@@ -6,8 +6,8 @@
       <link href="css_files/style.css" rel="stylesheet">
       <link href="css_files/style_buttons.css" rel="stylesheet">
       <link href="css_files/layout.css" rel="stylesheet">
-      <link href="css_files/slicer.css" rel="stylesheet">
       <link href="css_files/forms.css" rel="stylesheet">
+      <link href="templates/slicer.css" rel="stylesheet">
 
       <link rel="icon" type="imagem/jpg" href="images/Hospital.jpg" />
       <title>Hospital</title>
