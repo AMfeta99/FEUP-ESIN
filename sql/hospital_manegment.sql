@@ -202,15 +202,15 @@ INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES 
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (18886451,'Francisco Pinto de Oliveira', 37, 916161336, 'oliveira@sapo.pt', 'pipinto');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (17213654,'Cláudia Oliveira', 49, 928425411, 'clod@hotmail.com', 'oliva49');
 INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15431203,'Diogo José Mendes', 83, 967776667, 'mendes@fe.up.com', 'jandjkmds');
-INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15798264,'Carolina de Almeida Peixoto', 96, 961010104, 'Carol@gmail.com', 'caramba96');
+INSERT INTO Patient (cc,name, age, phone_number, mail_address, password) VALUES (15798264,'Carolina de Almeida Peixoto', 29, 961010104, 'Carol@gmail.com', 'caramba96');
 -- testar casos de pacientes sem telemovel já q este não é obrigatorio
-INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431264,'Carolina Lima', 64,'Carolima@gmail.com', 'C95Lima');
-INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156437,'Abel valerio', 55, 'abelval@gmail.com', 'AiValerio');
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431264,'Carolina Lima', 34,'Carolima@gmail.com', 'C95Lima');
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156437,'Abel Valerio', 55, 'abelval@gmail.com', 'AiValerio');
 INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (16351542,'Carlos Sousa', 11, 'carlitos@gmail.com', 'asdfdc42'); 
-INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431444,'Helena Lima', 6,'lima@gmail.com', 'Lima');
-INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156444,'tiago valerio', 25, 'val@gmail.com', 'Valerio');
-INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'jaime Sousa', 47, 'jiji@gmail.com', 'asc42'); 
-
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431444,'Helena Lima', 30,'lima@gmail.com', 'Lima');
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156444,'Tiago Valerio', 25, 'val@gmail.com', 'Valerio');
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'Jaime Sousa', 47, 'jiji@gmail.com', 'asc42'); 
+INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431541,'José Sousa', 40, 'joseS@gmail.com', 'joses40'); 
 
 --Doctor (tenho q ver como se insere as variaveis do tipo blob)
 -- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality ) VALUES ('João Sousa',??? , 966754201,'DoctorJoão@gmail.com', 'joaodopulmao', 6);
@@ -283,29 +283,29 @@ INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Vitor Carva
 
 -- BEDs
 INSERT INTO Bed(number, id_department, occupy) VALUES(101, 1, 0);
-INSERT INTO Bed VALUES(102, 1, 0);
-INSERT INTO Bed VALUES(103, 1, 0);
+INSERT INTO Bed(number,id_department) VALUES(102, 1);
+INSERT INTO Bed(number,id_department) VALUES(103, 1);
 INSERT INTO Bed VALUES(104, 1, 1);
 
-INSERT INTO Bed VALUES(201, 2, 0);
-INSERT INTO Bed VALUES(202, 2, 0);
-INSERT INTO Bed VALUES(203, 2, 0);
+INSERT INTO Bed(number,id_department) VALUES(201, 2);
+INSERT INTO Bed(number,id_department) VALUES(202, 2);
+INSERT INTO Bed(number,id_department) VALUES(203, 2);
 INSERT INTO Bed VALUES(204, 2, 1);
-INSERT INTO Bed VALUES(205, 2, 1);
+INSERT INTO Bed(number,id_department) VALUES(205, 2);
 
-INSERT INTO Bed VALUES(301, 3, 0);
+INSERT INTO Bed VALUES(301, 3, 1);
 INSERT INTO Bed VALUES(302, 3, 0);
 INSERT INTO Bed VALUES(303, 3, 0);
-INSERT INTO Bed VALUES(304, 3, 1);
+INSERT INTO Bed VALUES(304, 3, 0);
 
-INSERT INTO Bed VALUES(401, 4, 0);
-INSERT INTO Bed VALUES(402, 4, 1);
+INSERT INTO Bed VALUES(401, 4, 1);
+INSERT INTO Bed VALUES(402, 4, 0);
 INSERT INTO Bed VALUES(403, 4, 0);
-INSERT INTO Bed VALUES(404, 4, 1);
+INSERT INTO Bed VALUES(404, 4, 0);
 
-INSERT INTO Bed VALUES(501, 5, 0);
-INSERT INTO Bed VALUES(502, 5, 0);
-INSERT INTO Bed VALUES(503, 5, 1);
+INSERT INTO Bed VALUES(501, 5, 1);
+INSERT INTO Bed VALUES(502, 5, 1);
+INSERT INTO Bed VALUES(503, 5, 0);
 INSERT INTO Bed VALUES(504, 5, 0);
 
 INSERT INTO Bed VALUES(601, 6, 0);
@@ -335,10 +335,25 @@ INSERT INTO Bed VALUES(1004, 10, 1);
 
 -- Inpatient -- temos de ter cuidado em adicionar um médico que trabalhe no departamento em que o paciente está internado
 
-INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 501, 2 );
-INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 502, 2 );
-INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 401, 4 );
-INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 301, 3 ); 
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 501, 20 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 502, 21 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110903,' 2pm- 8pm', 18886451, 401, 14 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110904,' 2pm- 8pm', 17213654, 301, 19 );
+
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110905,' 2pm- 8pm', 18156437, 101, 2 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110906,' 2pm- 8pm', 18156444 , 104, 2 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110907,' 2pm- 8pm', 13351542 , 604, 23 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110908,' 2pm- 8pm', 14511630 , 702, 27 ); 
+
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110909,' 2pm- 8pm', 15726640, 704, 27 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110910,' 2pm- 8pm', 15341150 , 803, 31 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110911,' 2pm- 8pm', 15431203, 901, 33 );
+
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110912,' 2pm- 8pm', 15431444, 904, 33 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110913,' 2pm- 8pm', 15431264, 1004, 35 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110914,' 2pm- 8pm', 15798264, 1003, 36 );
+INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110915,' 2pm- 8pm', 15431541, 204, 7 );
+
 
 -- Medicine -- the instructions should be add by the doctor
 INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001824, 'Paracetamol', '1000 mg', '8 em 8 horas');
