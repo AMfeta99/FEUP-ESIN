@@ -41,10 +41,10 @@
                 <h4 class="info_section">Diagnosed disease: </h4>
 
                 
-                  <?php foreach ($result2 as $row) { ?> <!-- Se tiver algum diagnóstico-->
+                  <?php foreach ($result2 as $row) { ?> 
                     
-                    <?php if (!is_null($row['disease_name'])){?>
-                      <h5 class="atribute">Name: <p><?php echo $row["disease_name"]; ?></p></h5>
+                    <?php if (!is_null($row['disease_name'])){?> <!-- Se tiver algum diagnóstico-->
+                      <h5 class="atribute">Name : <p><?php echo $row["disease_name"]; ?></p></h5>
                     
                     <?php } ?>
                   <?php } ?> 
@@ -57,7 +57,6 @@
                   <h5 class="atribute"> 
                     <p>Speciality: <?php echo  $row["speciality"] ?></p>
                     <h6 class= "subatribute"> <!-- Alterar Css -->
-                    <p>Alterar Css : margin-left: 4% </p>
                     <p>Doctor: <?php echo  $row["doctor"] ?></p>
                     <p>Date: <?php echo  $row["date"] ?> <tab> Hour: <?php echo  $row["Hour"] ?></p>
                     <?php if (!is_null($row['disease_name'])){?>
@@ -70,10 +69,10 @@
 
             <article class="info_section">
                 <h4 class="info_section">Prescriptions: </h4> <!-- colocar um if para o caso de não ter receitas -->
-                <!-- apenas mostrar as receitas que estão dentro da data limit, eliminar da base de dados as que já passaram -->
+                <!-- apenas mostrar as receitas que estão dentro da data limit -->
                 <?php foreach ($result3 as $row) { ?>
                   <?php if ($row["date_limit"]> $today){?>
-                  <h5 class="atribute"> <p> Prescription ID: <a href="index.php"> <?php echo  $row["id_prescription"] ?> Este link é suposto enviar para prescription_id (mostrar todos os medicamentos da receita etc) </a><br> Date limit: <?php echo  $row["date_limit"] ?> </p></h5>
+                  <h5 class="atribute"> <p> Prescription ID: <a href="prescription.php?id=<?php echo $row["id_prescription"]?>"> <?php echo  $row["id_prescription"] ?></a><br> Date limit: <?php echo  $row["date_limit"] ?> </p></h5>
                   <?php  }?>
                 <?php  }?>
             </article>     
@@ -82,8 +81,12 @@
                 <h4 class="info_section">Inpatient Profile: </h4> 
                 <!-- verificar se o paciente está registado na tabela inpatient -->
                 
-                  <h5 class="atribute"> <p> pomos a informação básica cama, departamento, etc? ou pomos um link para o inpatient.php?</p></h5>
-                  
+                <?php if (!is_null($result4['code'])){?>
+                <h5 class="atribute"> 
+                    <p> The patient is hospitalized with the code  <a href="inpatient.php?code=<?php echo $result4["code"]?>"> <?php echo  $result4["code"] ?></a>
+                    in the department of <?php echo  $result4["depart_name"]?>, and in bed number <?php echo  $result4["bed"]?>. </p></h5>
+                <?php  }?>
+            
             </article>  
           
          </div>

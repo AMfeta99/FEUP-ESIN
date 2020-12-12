@@ -114,8 +114,8 @@ body>header h2 {
 body> #profile_pag{
 
     display: grid;
-  grid-template-columns: [start] 1fr [middle] 4fr [end];
-  grid-template-rows: [start] auto [news] 1fr [footer] auto [end];
+    grid-template-columns: [start] 1fr [middle] 4fr [end];
+    grid-template-rows: [start] auto [news] 1fr [footer] auto [end];
 }
 
 #profile_pag > header {
@@ -138,6 +138,29 @@ aside {
   body > footer {
     align-self: end;
   }
+/* ____________________Prescription ____________________*/
+body> #prescription{
+
+    display: grid;
+    grid-template-columns: [start] 4fr [middle] 1.5fr [end];
+    grid-template-rows: [start] auto [news] auto [end];
+}
+
+
+#prescription > header {
+    grid-column: start ;
+    grid-row: start;
+  }
+  
+
+#profile_pag > #info  {
+    /*grid-column-start:2;
+    grid-column-end:3;*/
+    grid-column: middle;
+    grid-row: start/ end;
+  }
+
+
 
 /*____________________departement&Doctors_____________*/
 

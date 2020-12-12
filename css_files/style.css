@@ -290,9 +290,8 @@ width: 150px;
   transition: 1s;
 }
 #profile_pag a:hover{
-  color:white;
+  color: #000;
 }
-
 
 aside{
   border-right: 5px solid #862fe9c0;
@@ -317,6 +316,12 @@ aside li {
   bottom: 0;
   width: 100%;
 }
+/*____________________Prescription_____________*/
+#prescription {
+  padding: 50px;
+  background-color: white;
+}
+
 
 /*____________________department&Doctors_____________*/
 .especialista{

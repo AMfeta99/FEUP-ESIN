@@ -69,5 +69,16 @@ function getPrescriptionsOfPatient($patient_id){
     return $stmt->fetchALL();
 }
 
+function  getInpatientFromPatient($patient_id){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT code, bed, Department.name as depart_name FROM Patient
+                            JOIN Inpatient ON patient = Patient.cc
+                            JOIN Bed ON Bed = Bed.number
+                            JOIN Department ON id_department = Department.number
+                            WHERE Patient.cc = ?");
+    $stmt->execute(array($patient_id));
+    return $stmt->fetch();
+}
+
 
 ?>
