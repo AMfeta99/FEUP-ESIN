@@ -1,22 +1,13 @@
 <?php
-    require_once('config/init.php');
-    
-    /*for all*/
     $name=$_POST["name"];
     $phone_number=$_POST["phone_number"];
     $mail_address=$_POST["email"];
     $password=$_POST["password"];
-
-    /* register of Nurse and Doctor*/ 
     $departemt=$_POST["department"];
-
-    /* register Patiente*/ 
     $cc=$_POST["cc"];
     $age=$_POST["age"];
-
-    /* register Doctor*/ 
     $photo=$POST["photo"];
-
+    require_once('config/init.php');
 
     if(strlen($name)==0){
         $_SESSION["msg"]="Invalid Username!";
@@ -30,10 +21,10 @@
     }
 
     
-    function insertNurse($name,$phone_number, $email,$password,$department){
+    function insertNurse($name,$phone_number, $mail_address,$password,$department){
         global $dbh;
         $stmt= $dbh->prepare("INSERT INTO Nurse(name,phone_number, email,password,department) VALUES (?,?,?,?,?)");
-        $stmt->execute(array($name,$phone_number, $email,shal($password),$department));
+        $stmt->execute(array($name,$phone_number,$mail_address,shal($password),$department));
     }
 
     function insertPatient($cc,$name,$age,$phone_number,$mail_address,$password){
@@ -51,69 +42,34 @@
 
 
     try{
-         
         if($_SESSION["funtion"]=="Nurse"){
-            insertNurse($name,$phone_number, $mail_address,$password,$department);
-            $_SESSION["msg"]=" Nurse registe sucessful";
-            header('Location: index.php');
+        insertNurse($name,$phone_number, $mail_address,$password,$department);
+        $_SESSION["msg"]=" Nurse registe sucessful";
+        header("Location: register.php");
         }
         elseif($_SESSION["funtion"]=="Patient"){
             insertPatient($cc,$name,$age,$phone_number,$mail_address,$password);
-            $_SESSION["msg"]=" Patient Registe sucessful";
             header('Location: index.php');
+            $_SESSION["msg"]=" Patient Registe sucessful";
+            // header('Location: index.php');
         }
         elseif($_SESSION["funtion"]=="Doctor"){
-            insertDoctor($name,$photo,$phone_number,$email,$password,$departemt);
+            insertDoctor($name,$photo,$phone_number,$mail_address,$password,$departemt);
             $_SESSION["msg"]=" Doctor Register sucessful";
-            header('Location: index.php');
+            // header('Location: index.php');
         }
 
      }catch(PDOException $e){
+        
          if(strpos($e->getMessage(), "UNIQUE")){
             $_SESSION["msg"]="This User already exists";
          }
          else{
             $_SESSION["msg"]=" Register fail";
-         }
+        }
          header('Location: register.php');
-            // echo $e->getMessage();
+            // echo $e->getMessage(); 
      }
-
-
-
-
-
-
-    // /* register of Nurse*/ 
-    // $username=$_POST["username"];
-    // $phone_number=$_POST["phone_number"]
-    // $email=$_POST["email"];
-    // $password=$_POST["password"];
-    // $departemt=$_POST["department"]
-
-    // insertNurse($username,$password,$email)
-
-
-    // /* register Patiente*/ 
-    // $cc=$_POST["cc"];
-    // $name=$_POST["name"];
-    // $age=$_POST["age"];
-    // $phone_number=$_POST["phone_number"];  
-    // $email=$_POST["email"];
-    // $password=$_POST["password"];
-
-    // insertPatient($cc,$name,$age,$phone_number,$email,$password)
-
-
-    // /* register Doctor*/ 
-    // $name=$_POST["name"];
-    // $photo=$POST["photo"]
-    // $phone_number=$_POST["phone_number"];  
-    // $email=$_POST["email"];
-    // $password=$_POST["password"];
-    // $speciality=$_POST["speciality"];
-
-    // insertDoctor($name,$photo,$phone_number,$email,$password,$speciality)
 
 
 ?>

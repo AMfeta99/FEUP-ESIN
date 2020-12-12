@@ -1,5 +1,5 @@
-<?php
-  require_once('config/init.php');
+<?php 
+require_once('config/init.php');
   // session_destroy();
   // die();
   $msg_log=$_SESSION["msg_log"] ;

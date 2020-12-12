@@ -18,7 +18,7 @@
 ?>
 
 <?php 
-  include('templates/header_profile.php');
+include('templates/header_profile.php');
   include('templates/inpatient_pag.php');
   include('templates/footer.php');
 ?>

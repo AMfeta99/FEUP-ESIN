@@ -60,7 +60,7 @@ CREATE TABLE Nurse (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	name text NOT NULL,
     phone_number integer NOT NULL,
-	mail_address text UNIQUE ,
+	mail_address text NOT NULL UNIQUE ,
     password text NOT NULL UNIQUE,
     department integer NOT NULL REFERENCES Department
 );

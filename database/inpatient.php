@@ -1,5 +1,4 @@
 <?php 
-
 function getInpatientByCode($code){
         global $dbh;
         $stmt=$dbh->prepare("SELECT Inpatient.code FROM Inpatient 
@@ -61,6 +60,4 @@ function getReportsOfEachInpatient($code){
     return $stmt->fetchAll();
 }
 ?>
-
-
 

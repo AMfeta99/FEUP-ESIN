@@ -19,7 +19,7 @@
               <h2><a>Doctor Register</a></h2>
             </header>
             <div class="ModalContent2">
-              <?php $_SESSION["funtion"]="Doctor" ?>
+              <?php $_SESSION["funtion"]="Doctor"; ?>
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
@@ -57,7 +57,6 @@
             </header>
             <div class="ModalContent2">
               <label><b>Username</b></label>
-              <?php $_SESSION["funtion"]="Nurse" ?>
 
               <input type="text" placeholder="Enter Username" name="name" required>
           
@@ -70,14 +69,14 @@
               <label><b>Department</b></label>
               <input type="text"  name="department" required> 
             
-              <label><b>Email (optional)</b></label>
+              <label><b>Email</b></label>
               <input type="email" placeholder="Enter Email" name="email">
           
             </div> 
 
             <footer>
               <button type="submit">Submit</button>
-              <button type="button" onclick="document.getElementById('NurseModal').style.display='none'" class="cancel">Cancel</button>
+              <button type="button" onclick="document.getElementById('NurseModal').style.display='none' " class="cancel">Cancel</button>
             </footer>
           </form>
          
@@ -91,7 +90,7 @@
               <h2><a>Patient Register</a></h2>
             </header>
             <div class="ModalContent2">
-            <?php $_SESSION["funtion"]="Patient" ?>
+            <?php $_SESSION["funtion"]="Patient"; ?>
               <label><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="name" required>
           
