@@ -45,18 +45,18 @@
         if($_SESSION["funtion"]=="Nurse"){
         insertNurse($name,$phone_number, $mail_address,$password,$department);
         $_SESSION["msg"]=" Nurse registe sucessful";
-        header("Location: register.php");
+        die(header("Location: register.php"));
         }
         elseif($_SESSION["funtion"]=="Patient"){
             insertPatient($cc,$name,$age,$phone_number,$mail_address,$password);
-            header('Location: index.php');
-            $_SESSION["msg"]=" Patient Registe sucessful";
             // header('Location: index.php');
+            $_SESSION["msg"]=" Patient Registe sucessful";
+            die(header('Location: index.php'));
         }
         elseif($_SESSION["funtion"]=="Doctor"){
             insertDoctor($name,$photo,$phone_number,$mail_address,$password,$departemt);
             $_SESSION["msg"]=" Doctor Register sucessful";
-            // header('Location: index.php');
+            die(header('Location: index.php'));
         }
 
      }catch(PDOException $e){
@@ -70,7 +70,4 @@
          header('Location: register.php');
             // echo $e->getMessage(); 
      }
-
-
 ?>
-  

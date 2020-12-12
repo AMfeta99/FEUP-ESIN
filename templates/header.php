@@ -22,9 +22,13 @@
           <!-- barra de pesquisa ... ainda não sei fazer mas seria fixe se conseguirmos
           <input type="text" name="search" placeholder="Search..">-->
         </div>
-        <div id="frase_menu">
-          <h2><a>The best care just a click away!</a></h2>
           
+        <div id="frase_menu">
+          
+          <h2><a>The best care just a click away!</a></h2>
+
+          <input type="checkbox" id="hamburger">
+          <label class="hamburger" for="hamburger">
           <ul id="links">
             <li><a href="index.php#about_us">About us</a></li>
             <li><a href="index.php#logins">Track Inpatient</a></li>
@@ -37,5 +41,6 @@
             <!-- acrecentar buttons para Log out -->
             <!-- <li><a href="index.php#logins">Logout</a></li> -->
             <?php } ?>
-          </ul> </div>
+          </ul> </label>
+        </div>
       </header>  

@@ -1,5 +1,4 @@
-<?php 
-    require_once('config/init.php');
+<?php  require_once('config/init.php');
     require_once('database/inpatient.php');
     
     $code=$_POST["code"];

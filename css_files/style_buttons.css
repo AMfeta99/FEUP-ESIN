@@ -36,11 +36,11 @@ button:hover {
 /* Set a style submit buttons */
 button{
   color: rgb(255, 255, 255);
-  padding: 15px 20px;
+  padding: 15px 40px;
   margin: 7px 0;
   border: none;
   cursor: pointer;
-  width: 20%;
+  /* width: 40%; */
   font-size: 1em
 }
 

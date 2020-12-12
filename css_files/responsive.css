@@ -1,0 +1,125 @@
+@media(max-width:30em){
+/*slicer*/
+    .slideContainer {
+        width: 300px;
+        height: 300px;
+      }
+    .slideContainer * {
+        font-size: 15px;
+    }
+    /* button{
+        padding: 15px 100px;
+        text-align: center;
+      }
+       */
+    
+/*hamburger*/
+    body > header {
+        margin-bottom: 0px;
+    }
+
+    #frase_menu{
+        position: relative;
+        padding-bottom: 0;
+    }
+    #links{
+        flex-flow:column;
+        text-align: left;
+    }
+    #links li>a{
+        margin-left: 2px;
+        margin-top: 0;
+    }
+
+    #hamburger{
+        display: block;
+        top:1em;
+        font-size: 2em;
+        opacity:0;
+    }
+    input#hamburger{
+        font-size: 2em;
+        position: absolute;
+    }
+
+    .hamburger {
+        background-color: #2a2f33;
+        color: white;
+      }
+
+
+    label[for="hamburger"]{
+        padding: 0;
+        font-size: 2em;
+        color:white;
+    }
+    label[for="hamburger"]::before{
+        content:"\2630";
+    }
+
+    input#hamburger ~ label[for="hamburger"]>ul> li{
+        height:0;
+        padding: 0;
+        transition: all 1s ease;
+    }
+
+    input#hamburger:checked ~ label[for="hamburger"]>ul> li{
+        padding-top: 0.5em;
+        padding-bottom: 1.5em;
+    }
+
+
+    input#hamburger:checked ~ label[for="hamburger"]::before{
+        content:"\2715";
+    } 
+      
+}
+
+@media(min-width: 30em) and (max-width: 700px){ 
+
+    .slideContainer {
+        width: 550px;
+        height: 490px;
+      }
+}
+
+@media (max-width: 62em){ 
+    body{
+        width:100%;
+    }
+
+    #logins {
+        display:grid;
+        grid-template-columns: [content-start] auto [content-end];
+        grid-template-rows: [login-start] auto [login-end-inpatient-start] auto[ipatient-end];
+        
+        grid-template-areas: "login"
+                             "inpatient_code";
+                            
+    }
+
+
+    .about{
+        display:grid;
+        grid-template-columns: [content-start] auto [content-end];
+        grid-template-rows: [about-start] auto [about-end-img-start] auto[img-end-text-start] auto[text-end];
+        grid-template-areas: "about"
+                              "img "
+                              "text"
+              
+    }
+    
+    #frase_menu{
+        display:grid;
+        grid-template-columns: [frase] auto [menu];
+        grid-template-rows: [frase-start] auto [frase-end-menu-start] auto[menu-end];
+        grid-template-areas: "frase"
+                             "menu"
+    }
+
+    .departments{
+        margin-left: 0;
+    }
+
+    
+}

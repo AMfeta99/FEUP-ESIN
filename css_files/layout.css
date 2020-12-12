@@ -1,9 +1,9 @@
 /* layout.css (positioning the main components),.*/
 
 body> header> #simbolo{
-   
     display:grid;
     grid-template-columns:[imagem] 0.05fr [nome]auto;
+    grid-template-areas: "imagem nome"
 }
 body>header img {
     grid-area: imagem;
@@ -15,13 +15,19 @@ body>header h1 {
 
 #frase_menu{
     display:grid;
-    grid-template-columns:[frase] 2fr [aa] 1fr[menu] 5fr;
+    grid-template-columns:[frase] auto  [menu] 1fr;
+    grid-template-rows: [content-start] auto [content-end];
+    grid-template-areas: "frase menu";
 }
 
 body>header h2 {
     grid-area: frase;
     padding: 5px;
+    margin-right: 10px;
 }
+#hamburger{
+    display: none;
+  }
 
 #links{
     grid-area: menu;
@@ -30,17 +36,19 @@ body>header h2 {
 
 #back{
     display:grid;
-    grid-template-columns:[frase] 2fr [aa] auto[back] 5%;
+    grid-template-columns:[frase] 1fr [back] auto;
 }
 
 #back a{
     grid-area: back;
+    margin-right: 10px;
     font-size: 1rem;
 
 }
 
 #logins {
     display:grid;
+    grid-template-rows: [content-start] auto [content-end];
     grid-template-columns: [start_login] 2fr [end_login_start_inpatient] 2fr [end_inpatient]; 
     grid-template-areas: "login inpatient_code"
                         
@@ -61,7 +69,7 @@ body>header h2 {
     grid-template-rows: [about_begin] auto [about_end_info_start] auto [info_end];
     grid-template-columns: [start_img] 2fr [end_img_start_text] 3fr [end_text]; 
     grid-template-areas: "about about"
-                        "img text"
+                          "img text"
           
 }
 
@@ -114,8 +122,8 @@ body>header h2 {
 body> #profile_pag{
 
     display: grid;
-    grid-template-columns: [start] 1fr [middle] 4fr [end];
-    grid-template-rows: [start] auto [news] 1fr [footer] auto [end];
+  grid-template-columns: [start] 1fr [middle] 4fr [end];
+  grid-template-rows: [start] auto [news] 1fr [footer] auto [end];
 }
 
 #profile_pag > header {
@@ -138,6 +146,7 @@ aside {
   body > footer {
     align-self: end;
   }
+
 /* ____________________Prescription ____________________*/
 body> #prescription{
 
@@ -159,8 +168,6 @@ body> #prescription{
     grid-column: middle;
     grid-row: start/ end;
   }
-
-
 
 /*____________________departement&Doctors_____________*/
 

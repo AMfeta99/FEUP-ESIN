@@ -81,6 +81,7 @@ body > header a {
   transform: scale(1.1);
 }
 
+
 /*__footer_ */
 body > footer {
   background-color: #252a2e;
@@ -198,6 +199,12 @@ width: 150px;
   max-width: 700px;
 }
 
+/*____________________Prescription_____________*/
+#prescription {
+  padding: 50px;
+  background-color: white;
+}
+
 /*___________________departement.html_______________________*/
 
 .pagtitle{
@@ -290,8 +297,9 @@ width: 150px;
   transition: 1s;
 }
 #profile_pag a:hover{
-  color: #000;
+  color:white;
 }
+
 
 aside{
   border-right: 5px solid #862fe9c0;
@@ -316,12 +324,6 @@ aside li {
   bottom: 0;
   width: 100%;
 }
-/*____________________Prescription_____________*/
-#prescription {
-  padding: 50px;
-  background-color: white;
-}
-
 
 /*____________________department&Doctors_____________*/
 .especialista{
