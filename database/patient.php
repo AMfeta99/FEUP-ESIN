@@ -69,4 +69,5 @@ function getPrescriptionsOfPatient($patient_id){
     return $stmt->fetchALL();
 }
 
+
 ?>

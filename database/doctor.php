@@ -16,7 +16,7 @@ function getDepartmentOfEachDoctor($doctor_id){
 
 function getDoctorInfo($dep_number){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
+    $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
                             WHERE speciality=?");
 
