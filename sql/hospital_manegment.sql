@@ -434,6 +434,57 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', '
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '16:00','17:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', 'FRI');
 
+-- Horário
+
+---------- Doctor 1- department 1
+
+-- MONDAY
+--9:00 -> 12:00
+--14:00 -> 17:00
+INSERT INTO Block_time_and_Doctor(block_time, doctor) VALUES (2, 1); -- 9:00
+INSERT INTO Block_time_and_Doctor VALUES(3, 1); --10:00
+INSERT INTO Block_time_and_Doctor VALUES(4, 1); --11:00
+INSERT INTO Block_time_and_Doctor VALUES(6, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(7, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(8, 1); --16:00
+
+-- TUESDAY
+-- 14:00->17:00
+INSERT INTO Block_time_and_Doctor VALUES(15, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(16, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(17, 1); --16:00
+
+-- WEDNESDAY
+--9:00 -> 12:00
+--14:00 -> 17:00
+INSERT INTO Block_time_and_Doctor VALUES(20, 1); -- 9:00
+INSERT INTO Block_time_and_Doctor VALUES(21, 1); --10:00
+INSERT INTO Block_time_and_Doctor VALUES(22, 1); --11:00
+INSERT INTO Block_time_and_Doctor VALUES(24, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(25, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(26, 1); --16:00
+
+-- THURSDAY
+-- 14:00->17:00
+INSERT INTO Block_time_and_Doctor VALUES(33, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(34, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(35, 1); --16:00
+
+-- FRIDAY
+--9:00 -> 12:00
+--14:00 -> 17:00
+INSERT INTO Block_time_and_Doctor VALUES(38, 1); -- 9:00
+INSERT INTO Block_time_and_Doctor VALUES(39, 1); --10:00
+INSERT INTO Block_time_and_Doctor VALUES(40, 1); --11:00
+INSERT INTO Block_time_and_Doctor VALUES(42, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(43, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(44, 1); --16:00
+
+----------- Doctor 6- department 2
+
+
+
+
 
 -- Reservation
 -- acho que deviamos de fazer um check qualquer porque a data da consulta e o block_time tem de coincidir com o mesmo dia da semana
