@@ -274,11 +274,11 @@ INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Teresa Amaro', 967856621,'Nursetete@gmail.com', 'amteresa', 3);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Marta cerqueira', 966658881,'NurseMartaC@gmail.com', '982Marta4', 2);
 INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('jose Costa', 966733211,'NursejoseC@gmail.com', 'JCosta6451', 10);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Pedro Ferreira', 924494571, 'jfjkhy', 8);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Paulo Pedra',963524201, 'j5431vhg', 7);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Jorge Madureira',911204321, 'hhcjnkj2', 5);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Marta Pereira',920014201, '543ghgkl', 6);
-INSERT INTO Nurse (name,phone_number, password, department) VALUES ('Vitor Carvalho',963444209, 'vitorinhoCarvalhinho', 1);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Pedro Ferreira', 924494571, 'NursePedroF@gmail.com' ,'jfjkhy', 8);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Paulo Pedra',963524201, 'NursePauloP@gmail.com' ,'j5431vhg', 7);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Jorge Madureira',911204321, 'NurseJorgeMadur@gmail.com' ,'hhcjnkj2', 5);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Marta Pereira',920014201, 'NurseMartaP@gmail.com' ,'543ghgkl', 6);
+INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES ('Vitor Carvalho',963444209, 'NurseVitorCar@gmail.com' ,'vitorinhoCarvalhinho', 1);
 
 
 -- BEDs
