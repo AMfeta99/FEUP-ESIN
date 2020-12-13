@@ -466,6 +466,8 @@ INSERT INTO Prescription(date, date_limit, id_appointment) VALUES('2020-10-11','
 INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(1, 10001824, 3);
 INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(1, 10001826, 2);
 INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(3, 10001825, 2);
+INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(2, 10001825, 1);
+INSERT INTO PrescriptionOfMedicine (id_prescription, id_medicine, quantity) VALUES(4, 10001827, 2);
 
 -- AppointmentDiagnosis
 INSERT INTO AppointmentDiagnosis (id_appointment, disease) VALUES(7, 2);
