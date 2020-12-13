@@ -108,11 +108,13 @@
 
       <!-- Acho que deve ser tudo feito com o php para aceder à base de dados por causa do bloco de tempo e tudo-->
 
-      <!-- CALENDARIO - tentei usar isto mas não funciona como queremos -->
-      <!-- Calendly inline widget begin -->
-        <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/anafsferreira2/30min?background_color=e3cce3&text_color=ffffff&primary_color=8f6abd" style="min-width:320px;height:630px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script> -->
-        <!-- Calendly inline widget end -->
+    <section class ="calendar">
+            <form action="" method="post" class ="display_calendar">
+              <label>Date:  </label>
+              <input type="date" name="date">
+            </form>
+          
+    </section>
   </body>
 
 
