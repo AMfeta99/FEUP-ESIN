@@ -122,7 +122,7 @@ body>header h2 {
 body> #profile_pag{
 
     display: grid;
-  grid-template-columns: [start] 1fr [middle] 4fr [end];
+  grid-template-columns: [start] auto [middle] 1fr [end];
   grid-template-rows: [start] auto [news] 1fr [footer] auto [end];
 }
 
@@ -173,18 +173,22 @@ body> #prescription{
 
 .especialista{
     display: grid;
-  grid-template-columns: [start] 1fr [middle] 4fr [end];
+  grid-template-columns: [start] auto [middle] 1fr [end];
+  grid-template-rows:[start] auto [middle]auto [end];
+  grid-template-areas: "image nome"
+                        "image info";
  
 }
 
-.especialista >h4{
-    grid-column: middle/end;
+.especialista > #Dname{
+    grid-area:nome;  
+}
+.especialista > img{
+    grid-area:image; 
+    margin-top: 10px;
 }
 
 
-.especialista img{
-    grid-column: start/middle;
-
-    /*grid-row: info/end;*/
-
+.especialista #info{
+    grid-area:info;
 }
