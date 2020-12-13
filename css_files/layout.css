@@ -149,6 +149,12 @@ aside {
 
 /* ____________________Prescription ____________________*/
 body> #prescription{
+    
+    max-width: 700px;
+    position: relative;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 
     display: grid;
     grid-template-columns: [start] 4fr [middle] 1.5fr [end];
@@ -156,18 +162,37 @@ body> #prescription{
 }
 
 
-#prescription > header {
+#prescription > .header {
     grid-column: start ;
     grid-row: start;
-  }
-  
+    padding-bottom: 30px;
+}
 
-#profile_pag > #info  {
-    /*grid-column-start:2;
-    grid-column-end:3;*/
+h7.instructions {
+    font-size: 12px;
+    margin-left: 5%;
+}
+
+.list_medicines > h6:nth-child(1) {
+    padding: 20px;
+    border: 1px solid;
+    }
+
+div.medication {
+        margin-left: 20px;
+        border: 1px solid;
+        padding-top: 10px;
+        padding-bottom: 6px;
+}
+.quantity > h6{
     grid-column: middle;
-    grid-row: start/ end;
-  }
+    grid-row: news;
+    margin-left: 0;
+    padding: 20px;
+    border: 1px solid;
+}
+
+
 
 /*____________________departement&Doctors_____________*/
 

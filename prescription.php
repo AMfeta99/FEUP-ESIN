@@ -7,6 +7,7 @@
     try{
         $prescInfo = getPrescriptionInfo($prescription_id); // id, date-limit, appointment
         $doctor= getDoctorFromPrescription($prescription_id);
+        $patient= getPatientFromPrescription($prescription_id);
         $medications = getMedicationFromPrescription($prescription_id);
 
     }
