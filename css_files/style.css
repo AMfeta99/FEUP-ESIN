@@ -256,7 +256,9 @@ width: 150px;
   flex-direction: column;
   margin-top: 0;
 }
-
+#prof{
+  padding-left: 80px;
+}
 
 #link_profile li{
   flex-grow: 1;
@@ -283,7 +285,6 @@ width: 150px;
 }
 
 #dados *{
-  margin-bottom: 5px;
   margin-top: 5px;
 }
 #profile_pag a{
@@ -300,10 +301,13 @@ width: 150px;
   color:white;
 }
 
+#hamburgerp{
+  display: none;
+}
 
-aside{
+
+aside li {
   border-right: 5px solid #862fe9c0;
-  margin-top: 10px;
 }
 
 /*
@@ -354,6 +358,7 @@ aside li {
   margin-right: 10px;
   margin-left: 10px;
 }
+
 
 .Doctors_list{
   background-color: rgba(155, 92, 211, 0.4);

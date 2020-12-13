@@ -8,16 +8,21 @@
               <h5>Code: <?php echo  $result2["code"] ?></h5>
 
             </header>
-          
-            <aside>
-              <ul id="link_profile">
-                <li><a href="">Inpatient Info</a></li> <!-- bed, department,  -->
-                
-                <li><a href="">Medication</a></li>
-                <li><a href="">Daily Reports</a></li>
-                <li><a href="index.php">Log out</a></li>
-              </ul> 
-            </aside>
+            
+              <aside class="aside_profile">
+              <input type="checkbox" id="hamburger">
+              <label class="hamburger" id="prof" for="hamburger">
+                <ul id="link_profile">
+                  
+                      <li ><a href="">Inpatient Info</a></li>
+                      <li ><a href="">Medication</a></li>
+                      <li ><a href="">Daily Reports</a></li>
+                      <li ><a href="index.php">Log out</a></li>
+                    
+                </ul> 
+              </label>
+              </aside>
+         
           </article>
 
           <div class="info">

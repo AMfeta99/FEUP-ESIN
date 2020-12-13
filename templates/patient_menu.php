@@ -7,14 +7,17 @@
            </header>
  
           
-           <aside>
+           <aside class="aside_profile">
+              <input type="checkbox" id="hamburger">
+              <label class="hamburger" id="prof" for="hamburger">
               <ul id="link_profile">
                 <li><a href="">My Profile</a></li>
                 <li><a href="">Appointment schedule</a></li>
                 <li><a href="">My Appointments </a></li>
                 <li><a href="">Medical prescriptions</a></li>
                 <li><a href="">Inpatient Profile</a></li>
-                </ul> 
+                </ul>
+              </label>  
              </aside>
             
           </article>

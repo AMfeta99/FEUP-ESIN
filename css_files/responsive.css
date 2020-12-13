@@ -1,4 +1,5 @@
 @media(max-width:30em){
+/*----------index--------------*/
 /*slicer*/
     .slideContainer {
         width: 300px;
@@ -7,11 +8,6 @@
     .slideContainer * {
         font-size: 15px;
     }
-    /* button{
-        padding: 15px 100px;
-        text-align: center;
-      }
-       */
     
 /*hamburger*/
     body > header {
@@ -22,7 +18,7 @@
         position: relative;
         padding-bottom: 0;
     }
-    #links{
+    #links {
         flex-flow:column;
         text-align: left;
     }
@@ -47,10 +43,15 @@
         color: white;
       }
 
+    #prof{
+        background-color:  #862fe9c0;
+        color: white;
+
+    }
 
     label[for="hamburger"]{
         padding: 0;
-        font-size: 2em;
+        font-size: 1.5em;
         color:white;
     }
     label[for="hamburger"]::before{
@@ -68,25 +69,95 @@
         padding-bottom: 1.5em;
     }
 
+    input#hamburger ~ label[for="hamburger"]>#link_profile> li{
+        height:0;
+        padding: 0;
+        font-size: 0;
+        transition: all 1s ease;
+        border-right: 3px solid #862fe9c0;
+    }
+
+    input#hamburger:checked ~ label[for="hamburger"]>#link_profile> li{
+        padding-top: 0.8em;
+        padding-bottom: 2.5em;
+        font-size: 13px;
+    }
+
 
     input#hamburger:checked ~ label[for="hamburger"]::before{
         content:"\2715";
     } 
+    /*-------departments/register/--------*/
+    #department> article{
+        position: relative;
+        margin-top: 0;
+    }
+    .pagtitle{
+        color: white;
+        background-color: rgba(28, 28, 29, 0.7);
+        transition: 1s ease;
+      }
+            
+     /*____________________departement&Doctors_____________*/
+
+     .especialista{
+        display: grid;
+        margin-left:10px;
+      grid-template-columns: [start] auto [middle] 1fr [end];
+      grid-template-rows:[start_nome] auto [nome_end_img_start] 1fr [img_end-info_start] auto [info_end];
+      grid-template-areas:  "nome"
+                            "image"
+                            "info";
+    
+    }
+    .especialista #info{
+        margin-bottom:0;
+        margin-top:0px;
+    }
+    .especialista #Dname{
+        margin-bottom:0;
+    }
+
+    /*----------profiles---------------*/
+
+    #profile_pag img{
+        display: none;
+    }
+    .aside_profile {
+        position: relative;
+        padding-bottom: 0;
+    }
+    #profile_pag aside{
+        margin-top:0;
+    }
+
+    aside{
+        border-right: 0;
+      }
+
+    #dados *{
+        font-size: 15px;
+        margin-bottom:0px;
+    }
       
 }
 
 @media(min-width: 30em) and (max-width: 700px){ 
-
+/*----------index--------------*/
     .slideContainer {
         width: 550px;
         height: 490px;
       }
+
+    #profile_pag img{
+        display: none;
+    }
 }
 
 @media (max-width: 62em){ 
     body{
         width:100%;
-    }
+        }
 
     #logins {
         display:grid;
@@ -94,19 +165,15 @@
         grid-template-rows: [login-start] auto [login-end-inpatient-start] auto[ipatient-end];
         
         grid-template-areas: "login"
-                             "inpatient_code";
-                            
+                             "inpatient_code";                    
     }
-
-
     .about{
         display:grid;
         grid-template-columns: [content-start] auto [content-end];
         grid-template-rows: [about-start] auto [about-end-img-start] auto[img-end-text-start] auto[text-end];
         grid-template-areas: "about"
                               "img "
-                              "text"
-              
+                              "text";     
     }
     
     #frase_menu{
@@ -114,12 +181,15 @@
         grid-template-columns: [frase] auto [menu];
         grid-template-rows: [frase-start] auto [frase-end-menu-start] auto[menu-end];
         grid-template-areas: "frase"
-                             "menu"
+                             "menu";
     }
 
+    /*----- departments/Doctors/register--------*/
     .departments{
         margin-left: 0;
     }
 
-    
+    .especialista{
+        width: 90%;
+    }
 }

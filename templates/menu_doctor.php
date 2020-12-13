@@ -8,14 +8,17 @@
 
             </header>
           
-            <aside>
+            <aside class="aside_profile">
+              <input type="checkbox" id="hamburger">
+              <label class="hamburger" id="prof" for="hamburger">
               <ul id="link_profile">
                 <li><a href="">My Profile</a></li>
                 <li><a href="">My Appointments</a></li>
                 <li><a href="">Schedule</a></li>
                 <li><a href="">Inpatients</a></li>
                 <li><a href="index.php">Log out</a></li>
-              </ul> 
+              </ul>
+              </label> 
             </aside>
           </article>
 
