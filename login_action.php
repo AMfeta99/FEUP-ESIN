@@ -35,14 +35,14 @@
 
         global $dbh;
         $stmt=$dbh->prepare("SELECT * FROM $table WHERE mail_address=? AND password=?");
-        $stmt->execute(array($mail_address,sha1($password)));
+        $stmt->execute(array($mail_address,$password));
         return $stmt->fetch();
     }
 
     #verify usermail_address and after correspondent password
     function loginValid($mail_address,$password){
         
-        if(IsthatDoctor($mail_address)!= FALSE){
+        if(IsthatDoctor($mail_address)){
             $table=["Doctor"];
             if(Validating($mail_address,$password,$table)){
                 $_SESSION["user"]=$mail_address;
@@ -50,10 +50,10 @@
             }else{
                 $_SESSION["msg_log"]="Login failed! Wrong Password.";
                 header('Location: index.php#logins');
-                // die();
+                die();
             }
         }
-        elseif(IsthatPatient($mail_address)!= FALSE){
+        elseif(IsthatPatient($mail_address)){
             $table=["Patient"];
             if(Validating($mail_address,$password,$table)){
                 $_SESSION["user"]=$mail_address;
@@ -64,7 +64,7 @@
                 die();
             }
         }
-        elseif(IsthatNurse($mail_address)!= FALSE){
+        elseif(IsthatNurse($mail_address)){
             $table=["Nurse"];
             if(Validating($mail_address,$password, $table)){
                 $_SESSION["user"]=$mail_address;
