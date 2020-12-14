@@ -32,7 +32,7 @@
 ?>
 
 <?php
-  include('templates/header_profile.php');
+  include('templates/header.php');
   include('templates/doctor_info.php');
   include('templates/footer.php');
 

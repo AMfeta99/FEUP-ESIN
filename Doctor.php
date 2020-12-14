@@ -12,10 +12,25 @@
     $result3= getDoctorAppointment($doctor_id);
     $result4= getDoctorReservation($doctor_id);
     $result_inpatient=getDoctorinpatient($doctor_id);
+    $schedule= getDoctorSchedule($doctor_id);
 
   } catch(PDOException $e){
     $err = $e-> getMessage();
     exit(0);
+  }
+
+  function canMakeAppointment($schedule, $begin_hour, $day){
+    foreach ($schedule as $row) {
+      $time =  $row["begin_time"] . ' - ' . $row["end_time"];
+      
+      
+      $begin_hour= date( "H:i", strtotime( $begin_hour) );
+      
+      if($row["week_day"] == $day && $row["begin_time"] == $begin_hour){
+          echo "Doing Appointments";
+      }
+
+    }
   }
 ?>
 

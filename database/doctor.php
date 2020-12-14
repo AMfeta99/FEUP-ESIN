@@ -71,6 +71,17 @@ function getDoctorinpatient($doctor_id){
     return $stmt->fetchAll();
 }
 
+function getDoctorSchedule($doctor_id){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT begin_time, end_time, week_day from Doctor
+                            JOIN Block_time_and_Doctor ON doctor= Doctor.id
+                            JOIN Block_time ON block_time = Block_time.code
+                            WHERE Doctor.id=?");
+   $stmt->execute(array($doctor_id));
+   return $stmt->fetchAll();
+}
+
+
 
 
 ?>

@@ -14,7 +14,7 @@
         <?php if ($err == null) { ?> <!--if there was no error -->
         <?php foreach ($result as $row) { ?>  
         <ul>
-        <a href="index.php" ><il class="especialista">
+        <a href="Doctor_without_login.php?id=<?php echo $row["id"] ?>" ><il class="especialista">
 
             <h4 id="Dname"> <?php echo $row["name"] ?><br></h4>
             <!-- não sei pq é q isto não está a dar ....-->

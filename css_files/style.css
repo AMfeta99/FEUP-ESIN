@@ -365,3 +365,7 @@ aside li {
   padding-bottom: 5px;
 }
 
+/*____________________schedule_____________*/
+table, th, td {
+  border: 1px solid black;
+}
