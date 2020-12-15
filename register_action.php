@@ -4,6 +4,8 @@
     $name=$_POST["name"];
     $phone_number=$_POST["phone_number"];
     $mail_address=$_POST["email"];
+    $mail_address=strval($mail_address);
+
     $password=$_POST["password"];
     $department=$_POST["department"];
     $cc=$_POST["cc"];
@@ -87,12 +89,12 @@
                 header('Location: register_P.php');
                 die();
             }
-            // if(strlen($cc)<8){
+            // if(strlen(strval($cc))!=8){
             //     $_SESSION["msg"]="Invalid cc!";
             //     header('Location: register_P.php');
             //     die();
             // }
-            // if(strlen($cc)==0){
+            // if(strlen(strval($cc))==0){
             //     $_SESSION["msg"]="Invalid ! Please insert your CC";
             //     header('Location: register_P.php');
             //     die();
