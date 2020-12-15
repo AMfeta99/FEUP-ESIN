@@ -1,29 +1,14 @@
 
 /*style_buttons.css (styling of the buttons)*/
 
-/*--------------------buttons e X------------------------*/
-/* The Close Button */
-.close {
-/* Position it in the top right corner outside of the modal */
-position: absolute;
-right: 25px;
-top: 0;
-color: #000;
-font-size: 40px;
-font-weight: bold;
-}
+/*--------------------buttons-----------------------*/
 
-/* Close button on hover */
-.close:hover,
+
+/* button on hover */
 #out:hover{
 color: red;
 cursor: pointer;
 transform: scale(1.1);
-}
-
-.close {
-float: right;
-padding-top: 16px;
 }
 
 /*buttons e X*/
@@ -44,16 +29,17 @@ button{
   font-size: 1em
 }
 
-button{
+button {
   background-color: rgba(118, 111, 151, 0.8);
   border-radius: 10px;
 }
+
 
 [type=submit]:hover {
   opacity: 0.8;
 }
 
-[type=submit] {
+.enviar{
   /*background-color: #4ba34ef1;*/
   background-color: #037d58da;
 }
