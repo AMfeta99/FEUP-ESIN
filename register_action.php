@@ -5,7 +5,7 @@
     $phone_number=$_POST["phone_number"];
     $mail_address=$_POST["email"];
     $password=$_POST["password"];
-    $departemt=$_POST["department"];
+    $department=$_POST["department"];
     $cc=$_POST["cc"];
     $age=$_POST["age"];
     $photo=$POST["photo"];
@@ -41,10 +41,10 @@
         $stmt->execute(array($cc,$name,$age,$phone_number,$mail_address,sha1($password)));
     }
 
-    function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$departemt){
+    function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department){
         global $dbh;
         $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?,?)");
-        $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$departemt));
+        $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department));
     }
 
  
@@ -62,12 +62,12 @@
         if($_SESSION["funtion"]=="Nurse"){
             if(strlen($department)==0){
                 $_SESSION["msg"]="Registe Invalid! Please insert your Department!";
-                header('Location: register.php');
+                header('Location: register_N.php');
                 die();
             }
             if(!CheckDepartment($department)){
                 $_SESSION["msg"]="Registe Invalid! There is no such Department!";
-                header('Location: register.php');
+                header('Location: register_N.php');
                 die();
             }
 
@@ -79,24 +79,24 @@
 
             if(strlen($age)==0){
                 $_SESSION["msg"]="Registe Invalid! Please insert your age!";
-                header('Location: register.php');
+                header('Location: register_P.php');
                 die();
             }
             if(($age)<=0){
                 $_SESSION["msg"]="Invalid age!";
-                header('Location: register.php');
+                header('Location: register_P.php');
                 die();
             }
-            if(strlen($cc)<8){
-                $_SESSION["msg"]="Invalid cc!";
-                header('Location: register.php');
-                die();
-            }
-            if(strlen($cc)==0){
-                $_SESSION["msg"]="Invalid ! Please insert your CC";
-                header('Location: register.php');
-                die();
-            }
+            // if(strlen($cc)<8){
+            //     $_SESSION["msg"]="Invalid cc!";
+            //     header('Location: register_P.php');
+            //     die();
+            // }
+            // if(strlen($cc)==0){
+            //     $_SESSION["msg"]="Invalid ! Please insert your CC";
+            //     header('Location: register_P.php');
+            //     die();
+            // }
             insertPatient($cc,$name,$age,$phone_number,$mail_address,$password);
             // header('Location: index.php');
             $_SESSION["msg"]=" Patient Registe sucessful";
@@ -105,16 +105,16 @@
         elseif($_SESSION["funtion"]=="Doctor"){
             if(strlen($department)==0){
                 $_SESSION["msg"]="Registe Invalid! Please insert your Department!";
-                header('Location: register.php');
+                header('Location: register_D.php');
                 die();
             }
             if(!CheckDepartment($department)){
                 $_SESSION["msg"]="Registe Invalid! There is no such Department!";
-                header('Location: register.php');
+                header('Location: register_D.php');
                 die();
             }
 
-            insertDoctor($name,$photo,$phone_number,$mail_address,$password,$departemt);
+            insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department);
             $_SESSION["msg"]=" Doctor Register sucessful";
             header('Location: index.php');
         }
