@@ -26,7 +26,6 @@
       if($row["week_day"] == $day && $row["begin_time"] == $begin_hour){
           echo "Doing Appointments";
       }
-
     }
   }
 ?>

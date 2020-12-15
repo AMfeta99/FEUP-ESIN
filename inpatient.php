@@ -1,7 +1,9 @@
-<?php
-  require_once('config/init.php');
+<?php require_once('config/init.php');
   $code=$_GET['code'];
   require_once('database/inpatient.php');
+
+  $msg_inpatient=$_SESSION["msg_inpatient"] ;
+  unset($_SESSION["msg_inpatient"] );
 
   try{
     $result = getInpatientByCode($code); 
@@ -16,7 +18,6 @@
     exit(0);
   }
 ?>
-
 <?php 
 include('templates/header_profile.php');
   include('templates/inpatient_pag.php');

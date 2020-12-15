@@ -1,5 +1,4 @@
-<?php 
-function getInpatientByCode($code){
+<?php function getInpatientByCode($code){
         global $dbh;
         $stmt=$dbh->prepare("SELECT Inpatient.code FROM Inpatient 
                              JOIN Patient ON Inpatient.patient=Patient.cc
@@ -60,4 +59,3 @@ function getReportsOfEachInpatient($code){
     return $stmt->fetchAll();
 }
 ?>
-
