@@ -5,10 +5,27 @@
 
 
 /* button on hover */
-#out:hover{
+.out:hover, #out:hover{
 color: red;
 cursor: pointer;
 transform: scale(1.1);
+}
+
+.out:hover{
+  color: red;
+  background-color: #000;
+  transform: scale(1.1);
+  cursor: pointer;
+  }
+
+.out{
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  list-style-type: none;
+  background-color:rgba(85, 85, 85, 0.795);
+  border-color: rgba(85, 85, 85, 0.795);
+  text-align: Left;
 }
 
 /*buttons e X*/

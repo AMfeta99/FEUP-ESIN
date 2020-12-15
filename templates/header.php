@@ -21,10 +21,13 @@
           <h1><a href="index.php">Hospital</a></h1>
           <img src="images/t2.png" alt="simbolo" width="30">
         </div>
+          <h2 id="username"><?php if(isset($_SESSION["username"])) { 
+            echo $_SESSION["username"] ;}?></h2>
           
         <div id="frase_menu">
           
           <h2><a>The best care just a click away!</a></h2>
+          
 
           <input type="checkbox" id="hamburger">
           <label class="hamburger" for="hamburger">
@@ -32,13 +35,15 @@
             <li><a href="index.php#about_us">About us</a></li>
             <li><a href="index.php#logins">Track Inpatient</a></li>
             <li><a href="department.php">Departments&Doctors</a></li>
-            <li><a href="register.php">Register</a></li>
 
             <?php if(!isset($_SESSION["user"])) { ?>
             <li><a href="index.php#logins">Login</a></li>
+            <li><a href="register.php">Register</a></li>
             <?php }else{?>
-            <!-- acrecentar buttons para Log out -->
-            <!-- <li><a href="index.php#logins">Logout</a></li> -->
+              <li><a href="">Profile</a></li>
+              <li><form action="logout_action.php">
+                <button class="out" type="submit">Log out</button>
+             </form></li>
             <?php } ?>
           </ul> </label>
         </div>

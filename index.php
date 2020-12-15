@@ -20,7 +20,6 @@
 ?>
 <?php
 
-
   include('templates/header.php');
   include('templates/home_page.php'); // content
   include('templates/footer.php');

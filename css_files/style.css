@@ -44,7 +44,7 @@ body > header h1{
   padding: 0px 10px 5px 10px;
 }
 
-body > header h2{
+#frase_menu h2{
   margin: 0;
   text-align: left;
   font-size: 1.4rem;
@@ -81,6 +81,9 @@ body > header a {
   transform: scale(1.1);
 }
 
+#username{
+  text-align: right;
+}
 
 /*__footer_ */
 body > footer {
@@ -265,7 +268,7 @@ width: 150px;
   padding: 20px 0;
   font-size: 20px;
   list-style-type: none;
-  background-color:White;
+  /* background-color:White; */
   text-align: center;
 }
 /*

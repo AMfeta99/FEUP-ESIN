@@ -33,19 +33,26 @@ body>header h2 {
     grid-area: menu;
     float: right;
 }
-
+/*cabeçalho*/
 #back{
     display:grid;
-    grid-template-columns:[frase] 1fr [back] auto;
+    grid-template-columns:[frase-start] 1fr [frase-end] auto [form];
+    grid-template-areas:"frase form";
+
 }
 
-#back a{
-    grid-area: back;
+.name_back{
+    /* grid-area: back;
     margin-right: 10px;
-    font-size: 1rem;
+    font-size: 1rem; */
+    grid-area: form;
 
 }
 
+#back h2{
+    grid-area: frase;
+}
+/**---------------------*/
 #logins {
     display:grid;
     grid-template-rows: [content-start] auto [content-end];
