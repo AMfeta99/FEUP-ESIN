@@ -1,7 +1,7 @@
 <?php 
-require_once('config/init.php');
-  // session_destroy();
-  // die();
+  require_once('config/init.php');
+  require_once('database/department.php');
+
   $msg_log=$_SESSION["msg_log"] ;
   unset($_SESSION["msg_log"] );
 
@@ -10,9 +10,6 @@ require_once('config/init.php');
 
   $msg=$_SESSION["msg"] ;
   unset($_SESSION["msg"] );
-
-  // require_once('config/init.php');
-  require_once('database/department.php');
   
   try{
     $result = getListDepartments(); // array of arrays

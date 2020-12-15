@@ -87,7 +87,7 @@
 
  
         </section>
-        <p>asfzdxgtchgfdesdfghjkjhgfdes escrever alguma coisa informativa sobre impatient </p>
+        <p>Even when you're far away, you can always be around. You can accompany a family member or friend who is hospitalized, consult their status and evolution and always know the service, bed and time of visits. </p>
 
         <section id = "logins">
         
@@ -108,14 +108,11 @@
                   <!-- <input class="submit" type="submit"  value="Login" ></input> -->
                 </div>
               </form>
-              <span><?php echo $msg_log ;?></span>
+              <span><?php echo $msg_log ?></span>
 
           </article>
 
-        
-
           <article id="inpatient">
-            <!---<img src="https://s.hdnux.com/photos/73/01/67/15474130/3/920x920.jpg" alt="" >-->
             <form id="track" action="inpatient_action.php" method="post">
               <header>
                 <h2>Inpatient</h2>
@@ -125,7 +122,7 @@
                 <input type="text" placeholder="Enter code" name="code" required>
             
                 <button type="submit" class="enviar">Submit</button>
-                <span><?php echo $msg_inpatient;?></span>
+                <span><?php echo $msg_inpatient?></span>
               </div>
             </form>
           </article>

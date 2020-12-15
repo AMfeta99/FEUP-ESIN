@@ -1,7 +1,5 @@
 <?php
     require_once('config/init.php');
-    
-
     // $funtion=$_POST["funtion"]
     $mail_address=$_POST["mail_address"];
     $password=$_POST["password"];
@@ -83,6 +81,5 @@
     }
 
     loginValid($mail_address,$password);
-
 ?>
   

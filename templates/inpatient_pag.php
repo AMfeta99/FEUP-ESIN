@@ -1,8 +1,6 @@
 <section id="profile_pag">
           <article>
             <header id="dados">
-              <!-- <img class="circle" src="images/doctors/9.jpg" alt="" width="130"> -->
-              
 
               <h4><?php echo  $result2["name"] ?></h4> 
               <h5>Code: <?php echo  $result2["code"] ?></h5>
@@ -26,6 +24,7 @@
           </article>
 
           <div class="info">
+          <span><?php echo $msg_inpatient?></span>
             <h2>Patient Info:</h2>
             
             <article class="info_section">

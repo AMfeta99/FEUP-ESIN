@@ -20,8 +20,6 @@
         <div id="simbolo">
           <h1><a href="index.php">Hospital</a></h1>
           <img src="images/t2.png" alt="simbolo" width="30">
-          <!-- barra de pesquisa ... ainda não sei fazer mas seria fixe se conseguirmos
-          <input type="text" name="search" placeholder="Search..">-->
         </div>
           
         <div id="frase_menu">
