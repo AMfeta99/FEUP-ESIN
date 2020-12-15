@@ -99,7 +99,7 @@
                 </header>
                 <div>
                   <label><b>Email</b></label>
-                  <input type="text" placeholder="Enter email" name="email" required>
+                  <input type="email" placeholder="Enter email" name="email" required>
               
                   <label><b>Password</b></label>
                   <input type="password" placeholder="Enter Password" name="password" >

@@ -19,7 +19,7 @@
         <input type="number" name="age" required>
 
         <label><b>CC</b></label>
-        <input type="text" name="CC" required>
+        <input type="number" name="CC" required>
 
         <label><b>Phone Number (optional)</b></label>
         <input type="text" name="phone_number">

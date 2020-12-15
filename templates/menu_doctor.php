@@ -16,7 +16,7 @@
                 <li><a href="">My Appointments</a></li>
                 <li><a href="">Schedule</a></li>
                 <li><a href="">Inpatients</a></li>
-                <li><a href="index.php">Log out</a></li>
+                <li><a href="index.php">Home</a></li>
               </ul>
               </label> 
             </aside>

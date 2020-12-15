@@ -16,6 +16,7 @@
                 <li><a href="">My Appointments </a></li>
                 <li><a href="">Medical prescriptions</a></li>
                 <li><a href="">Inpatient Profile</a></li>
+                <li><a href="index">Home</a></li>
                 </ul>
               </label>  
              </aside>
