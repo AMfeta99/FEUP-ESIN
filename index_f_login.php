@@ -1,10 +1,10 @@
 <?php
-  
   require_once('config/init.php');
    $msg=$_SESSION["msg"] ;
    unset($_SESSION["msg"] );
 
    $patient_cc=$_GET['cc'];
+   $patient_email=$_SESSION['user'];
   // require_once('config/init.php');
   require_once('database/patient.php');
 

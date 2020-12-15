@@ -99,10 +99,10 @@
                 </header>
                 <div>
                   <label><b>Email</b></label>
-                  <input type="email" placeholder="Enter email" name="email" required>
+                  <input type="text" placeholder="Enter email" name="email" required>
               
                   <label><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="password" required>
+                  <input type="password" placeholder="Enter Password" name="password" >
     
                   <button type="submit" class="enviar" >Submit</button>
                   <!-- <input class="submit" type="submit"  value="Login" ></input> -->

@@ -191,8 +191,8 @@
         grid-template-columns: [content-start] auto [content-end];
         grid-template-rows: [login-start] auto [login-end-inpatient-start] auto[ipatient-end];
         
-        grid-template-areas: "login"
-                             "inpatient_code";                    
+        grid-template-areas:"login"
+                            "inpatient_code";                  
     }
     .about{
         display:grid;

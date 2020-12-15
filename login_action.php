@@ -1,8 +1,19 @@
 <?php
     require_once('config/init.php');
     // $funtion=$_POST["funtion"]
-    $mail_address=$_POST["mail_address"];
+    $mail_address=$_POST["email"];
     $password=$_POST["password"];
+
+    // if(strlen($password)==0){
+    //     $_SESSION["msg_log"]="Please Insert your Password!";
+    //     header('Location: index.php#logins');
+    //     die();
+    // }
+    if(strlen($mail_address)==0){
+        $_SESSION["msg_log"]="Please Insert your Mail Address!";
+        header('Location: index.php#logins');
+        die();
+    }
 
      #verify if is a Doctor
      function IsthatDoctor($mail_address){
@@ -41,10 +52,12 @@
     function loginValid($mail_address,$password){
         
         if(IsthatDoctor($mail_address)){
-            $table=["Doctor"];
+            $table="Doctor";
             if(Validating($mail_address,$password,$table)){
-                $_SESSION["user"]=$mail_address;
-                header('Location: Doctor.php');
+                $result=IsthatDoctor($mail_address);
+                $id=$result["id"];
+                $_SESSION["user"]=$id;
+                header("Location: Doctor.php?id=$id");
             }else{
                 $_SESSION["msg_log"]="Login failed! Wrong Password.";
                 header('Location: index.php#logins');
@@ -52,10 +65,13 @@
             }
         }
         elseif(IsthatPatient($mail_address)){
-            $table=["Patient"];
+            $table="Patient";
             if(Validating($mail_address,$password,$table)){
-                $_SESSION["user"]=$mail_address;
-                header('Location: index_f_login.php');
+                $result=IsthatPatient($mail_address);
+                $cc=$result["cc"];
+                $_SESSION["user"]=$cc;
+
+                header("Location: index_f_login.php?cc=$cc");
             }else{
                 $_SESSION["msg_log"]="Login failed! Wrong Password.";
                 header('Location: index.php#logins');
@@ -63,10 +79,12 @@
             }
         }
         elseif(IsthatNurse($mail_address)){
-            $table=["Nurse"];
+            $table="Nurse";
             if(Validating($mail_address,$password, $table)){
-                $_SESSION["user"]=$mail_address;
-                header('Location: nurse.php');
+                $result=IsthatNurse($mail_address);
+                $id=$result["id"];
+                $_SESSION["user"]=$id;
+                header("Location: nurse.php?id=$id");
             }else{
                 $_SESSION["msg_log"]="Login failed! Wrong Password.";
                 header('Location: index.php#logins');
