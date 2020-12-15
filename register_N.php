@@ -8,7 +8,6 @@
 <?php
 
   include('templates/header_register.php');
-  include('templates/register_choose.php');
-  // include('templates/register_pag.php'); // content
+  include('templates/register_nurse.php'); 
   include('templates/footer.php');
 ?>

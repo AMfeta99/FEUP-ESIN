@@ -104,7 +104,7 @@
                   <label><b>Password</b></label>
                   <input type="password" placeholder="Enter Password" name="password" required>
     
-                  <button type="submit" >Submit</button>
+                  <button type="submit" class="enviar" >Submit</button>
                   <!-- <input class="submit" type="submit"  value="Login" ></input> -->
                 </div>
               </form>
@@ -124,7 +124,7 @@
                 <label><b>Code</b></label>
                 <input type="text" placeholder="Enter code" name="code" required>
             
-                <button type="submit" >Submit</button>
+                <button type="submit" class="enviar">Submit</button>
                 <span><?php echo $msg_inpatient;?></span>
               </div>
             </form>

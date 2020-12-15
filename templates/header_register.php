@@ -7,7 +7,6 @@
     <link href="css_files/style_buttons.css" rel="stylesheet">
     <link href="css_files/layout.css" rel="stylesheet">
 
-    <link href="css_files/animation.css" rel="stylesheet">
     <link href="css_files/forms.css" rel="stylesheet">
     <link href="css_files/responsive.css" rel="stylesheet">
 
@@ -26,4 +25,4 @@
           <a href="index.php" id="out">Back</a>
         </div>
        </header>
-      
+       
