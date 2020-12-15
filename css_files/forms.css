@@ -2,8 +2,8 @@
 
 /*  input fields */
 input {
-width: 60%;
-padding: 12px 20px;
+width: 85%;
+padding: 10px 20px;
 margin: 8px 0;
 display: flex;
 flex-wrap: wrap;
@@ -32,8 +32,8 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* The Modal (fundo) */
-.modal {
+
+/* .modal {
 display: none; 
 position: fixed; 
 left: 0;
@@ -43,13 +43,13 @@ height: 100%;
 overflow: auto; 
 background-color: rgb(0,0,0,0.6); 
 padding-top: 60px;
-}
+}  */
 
 /* Modal Content/Box */
 .ModalContent {
 background-color: rgba(255, 255, 255, 0.7);
 margin: 5px auto;
-max-width: 70%;
+max-width: 80%;
 max-height: 100%;
 margin: 5% auto 15% auto;
 }
@@ -66,6 +66,7 @@ margin: 5% auto 15% auto;
 /*----------layout--------*/
 
 .ModalContent2 {
-    margin-left:28%;
-    /*align-items: center;*/
+    margin-left:auto;
+    margin-right:auto;
+    align-items: center;
 }                   
