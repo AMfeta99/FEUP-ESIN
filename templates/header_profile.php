@@ -18,13 +18,12 @@
         <div id="simbolo">
           <h1><a href="index.php">Hospital</a></h1>
           <img src="images/t2.png" alt="" width="30">
+          <h3 id="username"><?php echo $_SESSION["username"] ?></h3>
         </div>
 
         <div id="back">
           <h2><a>The best care just a click away!</a></h2>
-          
             <form class="name_back" action="logout_action.php">
-              <p><?php echo $_SESSION["username"] ?><p>
               <input class="out" type="submit" value="Log out">
             </form>
         </div>

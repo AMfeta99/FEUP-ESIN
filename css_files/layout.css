@@ -2,8 +2,9 @@
 
 body> header> #simbolo{
     display:grid;
-    grid-template-columns:[imagem] 0.05fr [nome]auto;
-    grid-template-areas: "imagem nome"
+    grid-template-columns:[imagem] 0.05fr [nome] auto [username] 1fr;
+    grid-template-rows:[start] 1fr [end];
+    grid-template-areas: "imagem nome username"
 }
 body>header img {
     grid-area: imagem;
@@ -11,6 +12,9 @@ body>header img {
 
 body>header h1 {
     grid-area: nome;
+}
+#username {
+    grid-area: username;
 }
 
 #frase_menu{
@@ -37,20 +41,17 @@ body>header h2 {
 #back{
     display:grid;
     grid-template-columns:[frase-start] 1fr [frase-end] auto [form];
+    grid-template-rows: [start]auto [end];
     grid-template-areas:"frase form";
 
 }
 
-.name_back{
-    /* grid-area: back;
-    margin-right: 10px;
-    font-size: 1rem; */
-    grid-area: form;
-
+.out{
+    grid-area: "form";
 }
 
 #back h2{
-    grid-area: frase;
+    grid-area: "frase";
 }
 /**---------------------*/
 #logins {
