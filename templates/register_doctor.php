@@ -16,7 +16,7 @@
         <input type="email" placeholder="Enter Email" name="email" required>
 
         <label><b>Department</b></label>
-        <input type="text" placeholder="Choose your speciality: cardiology, neurology, urology, ..."  name="speciality" required>
+        <input type="text" placeholder="Choose your speciality: cardiology, neurology, urology, ..."  name="department" required>
 
         <label><b>Phone Number (optional) </b></label>
         <input type="number"  name="phone_number">

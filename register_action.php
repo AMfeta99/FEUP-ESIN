@@ -46,7 +46,7 @@
 
     function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department){
         global $dbh;
-        $department_number = getDepId($department);
+        $department_number = getDepId(strtolower($department));
         $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department_number));
     }
