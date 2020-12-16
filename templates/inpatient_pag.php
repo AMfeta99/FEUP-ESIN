@@ -77,7 +77,7 @@
               <h4 class="info_section">New Reports: </h4>
               
               <textarea name="report" rows="15"  cols="100"></textarea>
-              <input type="hidden" name="time" value="<?php echo date() ?>" > <!--não tenho a certeza deste time, queria q fosse buscar a data-->
+              <input type="hidden" name="time" value="<?php echo date('Y-m-d') ?>" > <!--não tenho a certeza deste time, queria q fosse buscar a data-->
               <input type="hidden" name="inpatient" value="<?php echo  $result2["code"] ?>">
               
               <button type="submit" class="enviar">Submit</button>
