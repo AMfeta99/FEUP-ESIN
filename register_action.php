@@ -1,6 +1,6 @@
 <?php
     require_once('config/init.php');
-
+    require_once('database/department.php');
     $name=$_POST["name"];
     $phone_number=$_POST["phone_number"];
     $mail_address=$_POST["email"];
@@ -33,8 +33,9 @@
     
     function insertNurse($name,$phone_number, $mail_address,$password,$department){
         global $dbh;
+        $department_number = getDepId($department);
         $stmt= $dbh->prepare("INSERT INTO Nurse(name,phone_number, mail_address,password,department) VALUES (?,?,?,?,?)");
-        $stmt->execute(array($name,$phone_number,$mail_address,sha1($password),$department));
+        $stmt->execute(array($name,$phone_number,$mail_address,sha1($password),$department_number));
     }
 
     function insertPatient($cc,$name,$age,$phone_number,$mail_address,$password){
@@ -45,8 +46,9 @@
 
     function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department){
         global $dbh;
+        $department_number = getDepId($department);
         $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?,?)");
-        $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department));
+        $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department_number));
     }
 
  
@@ -100,7 +102,6 @@
             //     die();
             // }
             insertPatient($cc,$name,$age,$phone_number,$mail_address,$password);
-            // header('Location: index.php');
             $_SESSION["msg"]=" Patient Registe sucessful";
             header('Location: index.php');
         }

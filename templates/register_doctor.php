@@ -7,7 +7,7 @@
     <div class="ModalContent2">
         <?php $_SESSION["funtion"]="Doctor"; ?>
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="name" required>
+        <input type="text" placeholder="Enter Your Name" name="name" required>
     
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" required>
@@ -16,7 +16,7 @@
         <input type="email" placeholder="Enter Email" name="email" required>
 
         <label><b>Department</b></label>
-        <input type="text"  name="speciality" required>
+        <input type="text" placeholder="Choose your speciality: cardiology, neurology, urology, ..."  name="speciality" required>
 
         <label><b>Phone Number (optional) </b></label>
         <input type="number"  name="phone_number">

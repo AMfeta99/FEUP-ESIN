@@ -7,7 +7,7 @@
     <div class="ModalContent2">
         <?php $_SESSION["funtion"]="Patient"; ?>
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="name" required>
+        <input type="text" placeholder="Enter Your Name" name="name" required>
     
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" required>
