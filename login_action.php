@@ -58,6 +58,7 @@
                 $result=IsthatDoctor($mail_address);
                 $id=$result["id"];
                 $_SESSION["user"]=$id;
+                $_SESSION["funtion"]="Doctor";
                 $_SESSION["username"]=$result["name"];
                 header("Location: Doctor.php?id=$id");
             }else{
@@ -72,6 +73,7 @@
                 $result=IsthatPatient($mail_address);
                 $cc=$result["cc"];
                 $_SESSION["user"]=$cc;
+                $_SESSION["funtion"]="Patient";
                 $_SESSION["username"]=$result["name"];
 
                 header("Location: index_f_login.php?cc=$cc");
@@ -87,6 +89,7 @@
                 $result=IsthatNurse($mail_address);
                 $id=$result["id"];
                 $_SESSION["user"]=$id;
+                $_SESSION["funtion"]="Nurse";
                 $_SESSION["username"]=$result["name"];
                 
                 header("Location: nurse.php?id=$id");

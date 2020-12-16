@@ -15,7 +15,7 @@
             <ul id="link_profile">
             <li><a href="">My Profile</a></li>
             <li><a href="">Department</a></li>
-            <li><a href="">Inpatient Profile</a></li>
+            <li><a href="index.php#inpatient">Inpatient Profile</a></li>
             <li><a href="index.php">Home</a></li>
             </ul>
           </label> 
