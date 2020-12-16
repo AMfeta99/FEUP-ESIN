@@ -68,9 +68,22 @@
                   <h5 class="atribute">Date: <p><?php echo  $row["date"]; ?> </p></h5> 
                   <h5 class="atribute">Message: <p><?php echo  $row["message"]; ?></p></h5>
                 <?php } ?>
-                </article>     
-                
-                
+
+                </article>   
+
+            <!--criar restrição de só enfermeiras do departamento OU Só a enfermeira responsavel (Tabela NurseOfInpatient)-->
+            <?php if($_SESSION["funtion"]=="Nurse"){ ?> 
+              <form action="report_action.php" method="post" class="info_section" id="add_report">
+              <h4 class="info_section">New Reports: </h4>
+              
+              <textarea name="report" rows="15"  cols="100"></textarea>
+              <input type="hidden" name="time" value="<?php echo date() ?>" > <!--não tenho a certeza deste time, queria q fosse buscar a data-->
+              <input type="hidden" name="inpatient" value="<?php echo  $result2["code"] ?>">
+              
+              <button type="submit" class="enviar">Submit</button>
+              <span><?php echo $msg ?></span>
+            </form>    
+            <?php } ?>
             
           </div>
 
