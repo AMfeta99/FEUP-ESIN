@@ -33,7 +33,7 @@
     
     function insertNurse($name,$phone_number, $mail_address,$password,$department){
         global $dbh;
-        $department_number = getDepId($department);
+        $department_number = getDepId(strtolower($department));
         $stmt= $dbh->prepare("INSERT INTO Nurse(name,phone_number, mail_address,password,department) VALUES (?,?,?,?,?)");
         $stmt->execute(array($name,$phone_number,$mail_address,sha1($password),$department_number));
     }
@@ -47,7 +47,7 @@
     function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department){
         global $dbh;
         $department_number = getDepId(strtolower($department));
-        $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?,?)");
+        $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?)");
         $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department_number));
     }
 
@@ -132,6 +132,6 @@
             $_SESSION["msg"]=" Register fail";
         }
          header('Location: register.php');
-            // echo $e->getMessage(); 
+
      }
 ?>

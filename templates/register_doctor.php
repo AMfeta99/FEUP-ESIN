@@ -5,7 +5,7 @@
         <span><?php echo $msg ?></span>
     </header>
     <div class="ModalContent2">
-        <?php $_SESSION["funtion"]="Doctor"; ?>
+        <?php $_SESSION["funtion"]="Doctor"?>
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Your Name" name="name" required>
     
@@ -22,7 +22,7 @@
         <input type="number"  name="phone_number">
         
         <label><b>Profile Photo (optional) </b></label>
-        <input type="file" name="Photo">
+        <input type="text" name="Photo">
         
     </div>
 
