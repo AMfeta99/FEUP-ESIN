@@ -45,7 +45,7 @@
                       <td class ="block_time"> <?php echo $begin_hour?> - <?php echo $begin_hour+1;?>:00 </td>
 
                       <?php foreach($week_days as $day){ ?> <!-- Para cada coluna -->
-                        <td class ="mark_appointment"> 
+                        <td class ="mark_appointment">
                           <?php canMakeAppointment($schedule, $begin_hour, $day); ?>
                         </td>
                       <?php }?>
