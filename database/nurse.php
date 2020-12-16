@@ -30,6 +30,18 @@ function getInpatientofDepartment($dep_id){
 
 }
 
+function Check_InpatientAcess($dep_id, $code){
+    global $dbh;
+    $stmt= $dbh-> prepare("SELECT * FROM Inpatient
+                            JOIN Bed ON bed= Bed.number
+                            JOIN Patient ON Patient.cc=patient
+                            JOIN Department ON id_department = Department.number
+                            WHERE Department.number=? AND code=?");
+    $stmt->execute(array($dep_id, $code));
+    return $stmt->fetchAll(); 
+
+}
+
 function getDepartmentOfAppointment($dep_id){
     global $dbh;
     $stmt = $dbh->prepare("SELECT date, Block_time.begin_time as Hour, Doctor.name as Doctor, Patient.name as patient, Department.name as speciality

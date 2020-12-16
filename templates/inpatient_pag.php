@@ -72,18 +72,22 @@
                 </article>   
 
             <!--criar restrição de só enfermeiras do departamento OU Só a enfermeira responsavel (Tabela NurseOfInpatient)-->
-            <?php if($_SESSION["funtion"]=="Nurse"){ ?> 
-              <form action="report_action.php" method="post" class="info_section" id="add_report">
-              <h4 class="info_section">New Reports: </h4>
-              
-              <textarea name="report" rows="15"  cols="100"></textarea>
-              <input type="hidden" name="time" value="<?php echo date('Y-m-d') ?>" > <!--não tenho a certeza deste time, queria q fosse buscar a data-->
-              <input type="hidden" name="inpatient" value="<?php echo  $result2["code"] ?>">
-              
-              <button type="submit" class="enviar">Submit</button>
-              <span><?php echo $msg ?></span>
-            </form>    
-            <?php } ?>
+            <?php if($_SESSION["funtion"]=="Nurse"){ 
+                   $dep_id=$result_nurseD["dep_id"];
+                  
+                  if(Check_InpatientAcess($dep_id, $code)) { ?>
+                  
+                    <form action="report_action.php" method="post" class="info_section" id="add_report">
+                    <h4 class="info_section">New Reports: </h4>
+                    
+                    <textarea name="report" rows="15"  cols="100"></textarea>
+                    <input type="hidden" name="time" value="<?php echo date('Y-m-d') ?>" > <!--não tenho a certeza deste time, queria q fosse buscar a data-->
+                    <input type="hidden" name="inpatient" value="<?php echo  $result2["code"] ?>">
+                    
+                    <button type="submit" class="enviar">Submit</button>
+                    <span><?php echo $msg ?></span>
+                  </form>    
+            <?php } }?>
             
           </div>
 

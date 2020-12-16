@@ -1,6 +1,7 @@
 <?php require_once('config/init.php');
   $code=$_GET['code'];
   require_once('database/inpatient.php');
+  require_once('database/nurse.php');
 
   $msg_inpatient=$_SESSION["msg_inpatient"] ;
   unset($_SESSION["msg_inpatient"] );
@@ -12,6 +13,8 @@
     $result4 = getBedDepartment($code);
     $result5 = getMedOfEachInpatient($code); // array of arrays
     $result6 = getReportsOfEachInpatient($code);
+    
+    $result_nurseD=getDepartmentOfEachNurse($_SESSION["user"]);
  
   } catch(PDOException $e){
     $err = $e-> getMessage();
