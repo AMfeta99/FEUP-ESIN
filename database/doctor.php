@@ -27,7 +27,7 @@ function getDoctorInfo($dep_number){
 
 function getDoctorAppointment($doctor_id){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT date, Block_time.begin_time as Hour, Patient.name as patient
+    $stmt = $dbh->prepare("SELECT reservation as id, date, Block_time.begin_time as Hour, Patient.name as patient, Patient.cc as cc
                            FROM Appointment
                            JOIN Reservation ON Reservation.id= reservation
                            JOIN Patient ON patient=Patient.cc
@@ -90,7 +90,6 @@ function getDoctorScheduleByWeekDay($doctor_id, $week_day){
    $stmt->execute(array($doctor_id,$week_day));
    return $stmt->fetchAll();
 }
-
 
 
 ?>
