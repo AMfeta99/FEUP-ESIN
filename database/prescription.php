@@ -4,7 +4,7 @@ function getMedicationFromPrescription($prescription_id){
     $stmt = $dbh->prepare("SELECT * FROM Prescription
                             JOIN PrescriptionOfMedicine ON Prescription.id = id_prescription
                             JOIN Medicine ON code = id_medicine
-                            WHERE Prescription.id = ?");
+                            WHERE id_prescription= ?");
     $stmt->execute(array($prescription_id));
     return $stmt->fetchALL();                        
 }
