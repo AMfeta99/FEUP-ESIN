@@ -40,8 +40,16 @@
                 <?php if(!isset($_SESSION["user"])) { ?>
                 <li><a href="index.php#logins">Login</a></li>
                 <li><a href="register.php">Register</a></li>
-                <?php }else{?>
-                  <li><a href="">Profile</a></li>
+                <?php }else{ 
+                            $id=$_SESSION["user"]; ?>
+
+                  <?php if($_SESSION["funtion"]=="Doctor"){?>
+                   <li><a href='Doctor.php?id=<?php echo $id ?>'>Profile</a></li>
+                  <?php }elseif($_SESSION["funtion"]=="Nurse"){ ?>
+                    <li><a href=' Doctor.php?id=<?php echo $id ?>'>Profile</a></li>
+                  <?php }elseif($_SESSION["funtion"]=="Patient"){ ?>
+                    <li><a href=' index_f_login.php?id=<?php echo $id ?>'>Profile</a></li>
+                 <?php } ?>
                   <li><form action="logout_action.php">
                     <button class="out" type="submit">Log out</button>
                 </form></li>

@@ -134,38 +134,38 @@ WHERE Patient.cc = 14511630 ;
 -- -- Inpatient Info
 -- SELECT * FROM Inpatient 
 -- JOIN Patient ON Inpatient.patient=Patient.cc
+-- -- WHERE Inpatient.code=2020110901;
+
+-- -- Doctor of the inpatient
+-- SELECT * FROM Inpatient
+-- JOIN Doctor ON doctor= Doctor.id
 -- WHERE Inpatient.code=2020110901;
 
--- Doctor of the inpatient
-SELECT * FROM Inpatient
-JOIN Doctor ON doctor= Doctor.id
-WHERE Inpatient.code=2020110901;
+-- -- -- Todos as disease resultante dos appointments
 
--- -- Todos as disease resultante dos appointments
+-- --bed for department
+-- --total de camas
+-- SELECT Count(*), Bed.number
+-- FROM Bed JOIN Department ON id_department= Department.number
+-- WHERE id_department=3;
 
---bed for department
---total de camas
-SELECT Count(*), Bed.number
-FROM Bed JOIN Department ON id_department= Department.number
-WHERE id_department=3;
+-- -- camas ocupadas
+-- SELECT Count(*), Bed.number
+-- FROM Bed JOIN Department ON id_department= Department.number
+-- WHERE Bed.occupy=1 and id_department=3;
 
--- camas ocupadas
-SELECT Count(*), Bed.number
-FROM Bed JOIN Department ON id_department= Department.number
-WHERE Bed.occupy=1 and id_department=3;
+-- --camas livres
+-- SELECT Count(*), Bed.number
+-- FROM Bed JOIN Department ON id_department= Department.number
+-- WHERE Bed.occupy=0 and id_department=3;
 
---camas livres
-SELECT Count(*), Bed.number
-FROM Bed JOIN Department ON id_department= Department.number
-WHERE Bed.occupy=0 and id_department=3;
-
--- -- Bed and department
-SELECT bed, Department.name, code , Patient.name as patient
-FROM Inpatient
-JOIN Bed ON bed= Bed.number
-JOIN Patient ON Patient.cc=patient
-JOIN Department ON id_department = Department.number
-WHERE Department.number=1;
+-- -- -- Bed and department
+-- SELECT bed, Department.name, code , Patient.name as patient
+-- FROM Inpatient
+-- JOIN Bed ON bed= Bed.number
+-- JOIN Patient ON Patient.cc=patient
+-- JOIN Department ON id_department = Department.number
+-- WHERE Department.number=1;
 -- WHERE Inpatient.code=2020110901;
 
 -- -- Medication Administered
@@ -178,3 +178,8 @@ WHERE Department.number=1;
 -- SELECT Report.id as report_id, date, message FROM Inpatient
 -- JOIN Report ON Inpatient.code = inpatient
 -- WHERE Inpatient.code=2020110901;
+
+SELECT code FROM Medicine
+WHERE dose='1000 mg'and name='paracetamol';
+
+

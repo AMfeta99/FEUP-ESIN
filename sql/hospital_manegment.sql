@@ -356,10 +356,10 @@ INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 20201
 
 
 -- Medicine -- the instructions should be add by the doctor
-INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001824, 'Paracetamol', '1000 mg', '8 em 8 horas');
-INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001825, 'Paracetamol', '500 mg', '8 em 8 horas');
-INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001826, 'Ibuprofeno', '400 mg', '8 em 8 horas');
-INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001827, 'Ibuprofeno', '200 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001824, 'paracetamol', '1000 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001825, 'paracetamol', '500 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001826, 'ibuprofeno', '400 mg', '8 em 8 horas');
+INSERT INTO Medicine(code, name, dose, instructions) VALUES(10001827, 'ibuprofeno', '200 mg', '8 em 8 horas');
 
 -- MedicationAdministered
 INSERT INTO MedicationAdministered(code_medicine, inpatient) VALUES(10001825, 2020110901);
@@ -374,17 +374,17 @@ INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-11', 'During the
 INSERT INTO Report( date, message, inpatient) VALUES ( '2020-11-23', 'The patient was submitted to an ECG', 2020110903);
 
 --Disease
-INSERT INTO Disease (name) VALUES ('Alzheimer');
-INSERT INTO Disease (name) VALUES ('Autism');
-INSERT INTO Disease (name) VALUES ('Asthma');
-INSERT INTO Disease (name) VALUES ('Cancer');
-INSERT INTO Disease (name) VALUES ('Anemia');
-INSERT INTO Disease (name) VALUES ('Diabetes');
-INSERT INTO Disease (name) VALUES ('HIV/AIDS');
-INSERT INTO Disease (name) VALUES ('Epilepsy');
-INSERT INTO Disease (name) VALUES ('Stroke');
-INSERT INTO Disease (name) VALUES ('Hepatitis');
-INSERT INTO Disease (name) VALUES ('Ebola');
+INSERT INTO Disease (name) VALUES ('alzheimer');
+INSERT INTO Disease (name) VALUES ('autism');
+INSERT INTO Disease (name) VALUES ('asthma');
+INSERT INTO Disease (name) VALUES ('cancer');
+INSERT INTO Disease (name) VALUES ('anemia');
+INSERT INTO Disease (name) VALUES ('diabetes');
+INSERT INTO Disease (name) VALUES ('hiv/aids');
+INSERT INTO Disease (name) VALUES ('epilepsy');
+INSERT INTO Disease (name) VALUES ('stroke');
+INSERT INTO Disease (name) VALUES ('hepatitis');
+INSERT INTO Disease (name) VALUES ('ebola');
 
 
 --- Block_time 

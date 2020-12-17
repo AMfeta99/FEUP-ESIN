@@ -105,7 +105,6 @@
                   <input type="password" placeholder="Enter Password" name="password" >
     
                   <button type="submit" class="enviar" >Submit</button>
-                  <!-- <input class="submit" type="submit"  value="Login" ></input> -->
                 </div>
               </form>
               <span><?php echo $msg_log ?></span>

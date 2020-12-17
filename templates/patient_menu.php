@@ -16,7 +16,7 @@
                 <li><a href="">My Appointments </a></li>
                 <li><a href="">Medical prescriptions</a></li>
                 <li><a href="">Inpatient Profile</a></li>
-                <li><a href="index">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 </ul>
               </label>  
              </aside>
@@ -76,7 +76,7 @@
                 <!-- apenas mostrar as receitas que estão dentro da data limit -->
                 <?php foreach ($result3 as $row) { ?>
                   <?php if ($row["date_limit"]> $today){?>
-                  <h5 class="atribute"> <p> Prescription ID: <a href="prescription.php?id=<?php echo $row["id_prescription"]?>"> <?php echo  $row["id_prescription"] ?></a><br> Date limit: <?php echo  $row["date_limit"] ?> </p></h5>
+                  <h5 class="atribute"> <p><a href="prescription.php?id=<?php echo $row["id_prescription"]?>"> Prescription ID:<?php echo  $row["id_prescription"] ?></a><br> Date limit: <?php echo  $row["date_limit"] ?> </p></h5>
                   <?php  }?>
                 <?php  }?>
             </article>     

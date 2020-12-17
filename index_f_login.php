@@ -5,7 +5,6 @@
 
    $patient_cc=$_GET['cc'];
    $patient_email=$_SESSION['user'];
-  // require_once('config/init.php');
   require_once('database/patient.php');
 
   try{
