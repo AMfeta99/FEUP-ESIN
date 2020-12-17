@@ -3,9 +3,21 @@
     require_once('database/doctor.php');
     require_once('database/department.php');
 
+    
     $dep_number = $_POST['dep'];
+    if($dep_number){
+      $_SESSION["dep"]=$dep_number;
+    }
+    
     $doctor_id = $_POST['doctor'];
+    if($doctor_id){
+      $_SESSION["doctor"]=$doctor_id;
+    }
+    
     $date_select = $_POST['date'];
+    if($date_select){
+      $_SESSION["date"]=$date_select ;
+    }
 
     try{
       $result =  getListDepartments();

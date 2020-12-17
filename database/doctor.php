@@ -83,8 +83,8 @@ function getDoctorSchedule($doctor_id){
 
 function getDoctorScheduleByWeekDay($doctor_id, $week_day){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT begin_time, end_time, week_day from Doctor
-                            JOIN Block_time_and_Doctor ON doctor= Doctor.id
+    $stmt = $dbh->prepare("SELECT begin_time, end_time from Block_time_and_Doctor
+                            JOIN Doctor ON Block_time_and_Doctor.doctor= Doctor.id
                             JOIN Block_time ON block_time = Block_time.code
                             WHERE Doctor.id=? AND week_day=?");
    $stmt->execute(array($doctor_id,$week_day));
