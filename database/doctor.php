@@ -1,5 +1,4 @@
 <?php
-
 function getDoctorById($doctor_id){
     global $dbh;
     $stmt = $dbh->prepare("SELECT * FROM Doctor WHERE id=?");
@@ -23,6 +22,31 @@ function getDoctorInfo($dep_number){
     $stmt->execute(array($dep_number));
     return $stmt->fetchAll();
 }
+
+//for pagination
+// function getDoctorInfo($dep_number,$page){
+//     global $dbh;
+//     $page=$page-1;
+//     $offset=$page*2;
+//     $limit=2;
+//     $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
+//                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+//                             WHERE speciality=? LIMIT=? OFFSET=?");
+
+//     $stmt->execute(array($dep_number,$limit, $offset));
+//     return $stmt->fetchAll();
+// }
+
+//Search
+// function getDoctorBySearch($dep_number,$Dame){
+//     global $dbh;
+//     $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
+//                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+//                             WHERE speciality=? AND Doctor.name LIKE %?%");
+
+//     $stmt->execute(array($dep_number,$Dname));
+//     return $stmt->fetchAll();
+// }
 
 
 function getDoctorAppointment($doctor_id){
