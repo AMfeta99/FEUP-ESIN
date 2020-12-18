@@ -67,6 +67,7 @@
             <article class="info_section">
                 
                 <h4 class="info_section">Reservation without answer: </h4>
+
                 <?php foreach ($result4 as $row) { ?>
                  
                   <h5 class="atribute"> 
@@ -74,18 +75,6 @@
                     <h6 class= "subatribute"> <!-- Alterar Css -->
                     <p>Date: <?php echo  $row["date"] ?> </p>
                     <p>Hour: <?php echo  $row["Hour"] ?> </p>
-
-                    <form action="Accept_reservation.php" method="post">
-                      <input type="hidden" name="R_ID" value=<?php echo $row["id"]?>></input>
-                      <input type="hidden" name="D_ID" value=<?php echo $result["id"]?>></input>
-                      <input type="submit" value="Accept" ></input>
-                    </form>
-                    <form action="Reject_reservation.php" method="post">
-                      <input type="hidden" name="D_ID" value=<?php echo $result["id"]?>></input>
-                      <input type="hidden" name="R_ID" value=<?php echo $row["id"]?>></input>
-                      <input type="submit" value="Reject" ></input>
-                    </form>
-                    <span><?php echo $msg_R ?></span>
                     </h6>
                   </h5>
                 
