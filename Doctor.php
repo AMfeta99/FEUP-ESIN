@@ -4,6 +4,9 @@
   unset($_SESSION["msg"] );
 
   $doctor_id=$_GET['id'];
+  
+  $msg_R=$_SESSION["msg_R"] ;
+  unset($_SESSION["msg_R"]);
 
   require_once('database/doctor.php');
   try{
