@@ -83,7 +83,10 @@
             <input type="submit" value="Select">
             
         </form>
-        <?php echo $_SESSION["msg"] ?>
-
+        <?php echo $msg ?>
+        <?php echo $_SESSION["doctor"] ?>
+        <?php echo $_SESSION["date"] ?>
+        <?php echo $_SESSION["week"] ?>
+        <?php echo $_SESSION["b"] ?>
 
     </section>

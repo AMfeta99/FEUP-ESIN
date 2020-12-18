@@ -1,5 +1,5 @@
 
-    <form id="doctor" class="ModalContent" action="register_action.php" method="post">
+    <form id="doctor" class="ModalContent" action="register_action.php" method="post" enctype="multipart/form-data">
     <header>
         <h2><a>Doctor Register</a></h2>
         <span><?php echo $msg ?></span>
@@ -22,7 +22,7 @@
         <input type="number"  name="phone_number">
         
         <label><b>Profile Photo (optional) </b></label>
-        <input type="text" name="Photo">
+        <input type="file" name="Photo">
         
     </div>
 
