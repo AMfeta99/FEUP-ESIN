@@ -17,7 +17,7 @@
         $stmt = $dbh->prepare("SELECT code FROM Block_time
                                 WHERE begin_time=? AND week_day=?");
        $stmt->execute(array($time,$week_day));
-       return $stmt->fetch();
+       return $stmt->fetch()['code'];
     }
 
 

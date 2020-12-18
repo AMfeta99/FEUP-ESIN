@@ -3,6 +3,8 @@
     require_once('database/doctor.php');
     require_once('database/department.php');
 
+    $msg=$_SESSION["msg"];
+    unset($_SESSION["msg"]);
     
     $dep_number = $_POST['dep'];
     if($dep_number){
