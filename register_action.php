@@ -10,7 +10,9 @@
     $department=$_POST["department"];
     $cc=$_POST["cc"];
     $age=$_POST["age"];
-    $photo=$POST["photo"];
+    // $photo=$POST["photo"];
+
+    $photo=$_FILES['photo'];
     
 
     if(strlen($name)==0){
@@ -60,6 +62,10 @@
         return $stmt->fetch();
     }
 
+    //upload
+    // function saveProfilePicture($name){
+    //     move_uploaded_file($_FILES['photo']['tmp_name'],"images/doctors/$name");
+    // }
 
 
     try{
@@ -118,6 +124,7 @@
             }
 
             insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department);
+            // saveProfilePicture($name);
             $_SESSION["msg"]=" Doctor Register sucessful";
             header('Location: index.php');
         }
