@@ -378,7 +378,7 @@ th, td {
 .doctor_schedule {
   font-size: 1em;
   padding-bottom: 3%;
-  table-layout: fixed;
+  table-layout: auto;
   width: 100%
 }
 

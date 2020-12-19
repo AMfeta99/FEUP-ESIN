@@ -1,15 +1,16 @@
 
       <section class= book_appointment>
       <form action="Appointment.php" method="post" class="specialization-select"> <!-- Queria que ficasse a mostrar a especialidade que foi selecionade depois de fazer o submit-->
-        <label> Select Specializaton </label>
+        <label> Select Specialization </label>
         
         <select name="dep" required ="required">
 
-        <!-- <option value="0" >--Select Specializaton--</option> -->
         <option value="0" ><?php echo $_SESSION["dep"] ?></option>
           <?php if ($err == null) { ?> 
             <?php foreach ($result as $row) { ?>  
-              <option value= "<?php echo $row["number"]?>"><?php echo $row["name"]?></option>
+              <?php if($row["name"] != $_SESSION["dep"] ) {?>
+              <option value= "<?php echo $row["name"]?>"><?php echo $row["name"]?></option>
+              <?php } ?>
             <?php } ?>
           <?php } ?>
         </select>
@@ -26,7 +27,9 @@
           <?php foreach ($result2 as $row2) { 
             $i=$i+1; ?>  
           <option value= "<?php echo $row2["id"]?>" > <?php echo $row2["name"]?> </option>
+          
           <?php } ?>
+
           <?php } ?>
             
         </select>
@@ -71,7 +74,7 @@
             <br>
             <label>Time:  </label>
             <?php echo  $week_day?>
-            <?php $result3 = getDoctorScheduleByWeekDay($_SESSION["doctor"], $week_day);?>
+            <?php $result3 = getDoctorScheduleByWeekDay($_SESSION["id_doctor"], $week_day);?>
             <select name ="time">
             
             <?php foreach ($result3 as $row3) { ?>
@@ -84,7 +87,7 @@
             
         </form>
         <?php echo $msg ?>
-        <?php echo $_SESSION["doctor"] ?>
+        <?php echo $_SESSION["id_doctor"] ?>
         <?php echo $_SESSION["date"] ?>
         <?php echo $_SESSION["week"] ?>
         <?php echo $_SESSION["b"] ?>

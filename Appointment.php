@@ -6,14 +6,14 @@
     $msg=$_SESSION["msg"];
     unset($_SESSION["msg"]);
     
-    $dep_number = $_POST['dep'];
-    if($dep_number){
-      $_SESSION["dep"]=$dep_number;
+    $dep_name = $_POST['dep'];
+    if($dep_name){
+      $_SESSION["dep"]=$dep_name;
     }
     
-    $doctor_id = $_POST['doctor'];
-    if($doctor_id){
-      $_SESSION["doctor"]=$doctor_id;
+    $doctor_name = $_POST['doctor'];
+    if($doctor_name){
+      $_SESSION["doctor"]=$doctor_name;
     }
     
     $date_select = $_POST['date'];
@@ -23,7 +23,7 @@
 
     try{
       $result =  getListDepartments();
-      $result2 = getDoctorInfo($dep_number);
+      $result2 = getDoctorInfoByDepName($dep_name);
       
       
     } catch(PDOException $e){

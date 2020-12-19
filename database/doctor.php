@@ -23,6 +23,16 @@ function getDoctorInfo($dep_number){
     return $stmt->fetchAll();
 }
 
+function getDoctorInfoByDepName($dep_name){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name
+                            FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+                            WHERE Department.name=?");
+
+    $stmt->execute(array($dep_name));
+    return $stmt->fetchAll();
+}
+
 //for pagination
 // function getDoctorInfo($dep_number,$page){
 //     global $dbh;
