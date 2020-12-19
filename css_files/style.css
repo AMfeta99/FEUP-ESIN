@@ -399,12 +399,12 @@ td.mark_appointment{
   font-weight: bold;
   white-space: nowrap;
   font-size: .6em;
-}
+} 
 
 td.mark_appointment{
-  empty-cells: hide;
+  empty-cells: show;
 }
 
-td:empty{ /* not working */
-  background-color: ivory !important;
+td.mark_appointment:empty{ /* not working */
+  background-color: ivory;
 }

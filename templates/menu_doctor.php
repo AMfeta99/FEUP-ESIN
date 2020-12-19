@@ -113,8 +113,7 @@
             </article> 
             
             <h2>Schedule</h2>
-
-            <table id= "doctor schedule">
+            <table class= "doctor_schedule">
                   <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
                   <?php $begin_hours = array('8:00','9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
                   <tr> <!-- Linha 1-->
@@ -130,12 +129,18 @@
                   <?php foreach($begin_hours as $begin_hour){ ?> <!-- Para cada linha-->
                     <tr> 
                       
-                      <th class ="block_time"> <?php echo $begin_hour?> - <?php echo $begin_hour+1;?>:00 </th>
+                      <td class ="block_time"> <?php echo $begin_hour?> - <?php echo $begin_hour+1;?>:00 </td>
 
                       <?php foreach($week_days as $day){ ?> <!-- Para cada coluna -->
-                        <th class ="mark_appointment"> 
-                          <?php canMakeAppointment($schedule, $begin_hour, $day); ?>
-                        </th>
+                        
+                        <?php if(canMakeAppointment($schedule, $begin_hour, $day) == 1){ ?>
+                          <td class ="mark_appointment">
+                            <?php echo "Doing Appointments" ;?>
+                          </td>
+                        <?php } else { ?>
+                          <td class ="mark_appointment"></td>
+                        <?php } ?>
+
                       <?php }?>
                       
                     </tr>

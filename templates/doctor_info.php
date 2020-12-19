@@ -45,9 +45,15 @@
                       <td class ="block_time"> <?php echo $begin_hour?> - <?php echo $begin_hour+1;?>:00 </td>
 
                       <?php foreach($week_days as $day){ ?> <!-- Para cada coluna -->
-                        <td class ="mark_appointment">
-                          <?php canMakeAppointment($schedule, $begin_hour, $day); ?>
-                        </td>
+                        
+                        <?php if(canMakeAppointment($schedule, $begin_hour, $day) == 1){ ?>
+                          <td class ="mark_appointment">
+                            <?php echo "Doing Appointments" ;?>
+                          </td>
+                        <?php } else { ?>
+                          <td class ="mark_appointment"></td>
+                        <?php } ?>
+
                       <?php }?>
                       
                     </tr>
