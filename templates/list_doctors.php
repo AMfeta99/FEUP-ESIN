@@ -1,7 +1,7 @@
 
 <section id="department">
 <article>
-    <header> <!--não estou a entender pq não está a dar-->
+    <header> 
     <h2 class="pagtitle"><?php echo $Department_name ?></h2>
     </header>
     
@@ -18,7 +18,7 @@
     <p>não sei se ficou bonita esta pagina podes mudar se quiseres  sxdfcvghbkjngf dfcgvhbkjn dfhjlk .</p>
 
     
-        <?php if ($err == null) { ?> <!--if there was no error -->
+        <?php if ($err == null) { ?> 
             <?php foreach ($result as $row) { ?>  
             
             <ul>

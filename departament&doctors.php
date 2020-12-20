@@ -22,7 +22,7 @@
   try{
     if(isset($Dname)){
       $result=getDoctorBySearch($dep_number,$Dname);
-      print_r($result);
+      // print_r($result);
     }else{
       $result = getDoctorInfo2($dep_number,$page); // array of arrays
     }

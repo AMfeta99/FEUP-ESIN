@@ -21,9 +21,12 @@ try {
   $result2 =  getPatientAppointment($patient_cc); // date, diagnosis, doctor, speciality
   $result3 =  getPrescriptionsOfPatient($patient_cc);
   $result4 = getInpatientFromPatient($patient_cc);
+  $result5 =  getPatientNotification($patient_cc);
+
 } catch (PDOException $e) {
   $err = $e->getMessage();
-  exit(0);
+  echo $e-> getMessage();
+  //exit(0);
 }
 
 // Define todays date

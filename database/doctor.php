@@ -74,14 +74,14 @@ function getDoctorAppointment($doctor_id){
 
 function getDoctorReservation($doctor_id){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT date, Block_time.begin_time as Hour, Patient.name as patient
+    $stmt = $dbh->prepare("SELECT Reservation.id as id, date, Block_time.begin_time as Hour, Patient.name as patient
                            From Reservation 
                            JOIN Patient ON patient=Patient.cc
                            JOIN Block_time ON code=time
                            JOIN Doctor ON doctor=Doctor.id
                            WHERE doctor=?
                            EXCEPT
-                           SELECT date, Block_time.begin_time as Hour, Patient.name as patient
+                           SELECT Reservation.id as id, date, Block_time.begin_time as Hour, Patient.name as patient
                            FROM Appointment
                            JOIN Reservation ON Reservation.id= reservation
                            JOIN Patient ON patient=Patient.cc

@@ -86,11 +86,12 @@
                       <input type="hidden" name="R_ID" value=<?php echo $row["id"]?>></input>
                       <input type="submit" value="Reject" ></input>
                     </form>
-                    <span><?php echo $msg_R ?></span>
+                    
                     </h6>
                   </h5>
                 
                 <?php }?>
+                <span><?php echo $msg_R ?></span>
             </article> 
 
             <h2>Inpatient</h2>

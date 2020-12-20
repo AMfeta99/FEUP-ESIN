@@ -93,6 +93,16 @@
             
             </article>  
           
+
+            <article class="info_section">
+                <h4 class="info_section">Notification: </h4> 
+                
+                <?php if (!is_null($result5['message'])){?>
+                <h5 class="atribute"> 
+                <p> <?php echo $result5["message"]?> </a>
+                <?php  }?>
+            
+            </article>  
+          
          </div>
- 
        </section> 

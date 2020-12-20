@@ -76,5 +76,16 @@ function  getInpatientFromPatient($patient_id){
     return $stmt->fetch();
 }
 
+#NOTIFICATION
+function  getPatientNotification($patient_id){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT * FROM ReceiveNotification
+                            JOIN Reservation ON ReceiveNotification.id = Reservation.id
+                            JOIN Patient ON Reservation.patient = Patient.cc
+                            WHERE Patient.cc = ?");
+    $stmt->execute(array($patient_id));
+    return $stmt->fetchALL();
+}
+
 
 ?>
