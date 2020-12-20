@@ -33,30 +33,29 @@ function getDoctorInfoByDepName($dep_name){
     return $stmt->fetchAll();
 }
 
-//for pagination
-// function getDoctorInfo($dep_number,$page){
-//     global $dbh;
-//     $page=$page-1;
-//     $offset=$page*2;
-//     $limit=2;
-//     $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
-//                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
-//                             WHERE speciality=? LIMIT=? OFFSET=?");
+#pagination
+function getDoctorInfo2($dep_number,$page){
+    global $dbh;
+    $page=$page-1;
+    $offset=$page*2;
+    
+    $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
+                            FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+                            WHERE Doctor.speciality=? LIMIT 2  OFFSET ?;");
 
-//     $stmt->execute(array($dep_number,$limit, $offset));
-//     return $stmt->fetchAll();
-// }
+    $stmt->execute(array($dep_number, $offset));
+    return $stmt->fetchAll();
+}
 
-//Search
-// function getDoctorBySearch($dep_number,$Dame){
-//     global $dbh;
-//     $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
-//                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
-//                             WHERE speciality=? AND Doctor.name LIKE %?%");
+function getDoctorBySearch($dep_number,$Dname){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
+                            FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+                            WHERE Doctor.speciality=? AND Doctor.name LIKE '%?%' ");
 
-//     $stmt->execute(array($dep_number,$Dname));
-//     return $stmt->fetchAll();
-// }
+    $stmt->execute(array($dep_number,$Dname));
+    return $stmt->fetchAll();
+}
 
 
 function getDoctorAppointment($doctor_id){
