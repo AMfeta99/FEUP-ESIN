@@ -46,10 +46,17 @@
 
         <div id="pagination">
         <?php if($page>1){?>
-        <a href="?dep=<?php echo $dep_number?>&name=<?php echo $Department_name ?>&page=<?php echo $page-1?>">&lt;</a>
+            <a href="?dep=<?php echo $dep_number?>&name=<?php echo $Department_name ?>&page=<?php echo $page-1?>">&lt;</a>
+        <?php } else {?>
+            <a href="" id="lt">&lt;</a>
         <?php } ?>
-        <?php echo $page ?>
-         <a href="?dep=<?php echo $dep_number?>&name=<?php echo $Department_name ?>&page=<?php echo $page+1?>">&gt;</a>
+        <?php echo $page; ?>
+
+        <?php if($page < $n_pages){?>
+            <a href="?dep=<?php echo $dep_number?>&name=<?php echo $Department_name ?>&page=<?php echo $page+1?>">&gt;</a>
+        <?php } else {?>
+            <a href="" id="lt">&lt;</a>
+        <?php } ?>
         </div>
     </section>
 

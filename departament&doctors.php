@@ -5,8 +5,17 @@
   $dep_number=$_GET['dep'];
   $Dname=$_GET["Dname"];
 
+  $n_doctor = getNumberOfDoctorForDepartment($dep_number);
+  $n_pages = ceil($n_doctor / 2); // round up
   if(isset($_GET['page'])){
     $page=$_GET['page'];
+    if($page <1){
+      $page = 1;
+    }
+    else if($page > $n_pages) {
+      $page = $n_pages;
+    }
+    // limit the increasing of page
   
   }else{
     $page=1;

@@ -368,6 +368,20 @@ aside li {
   padding-bottom: 5px;
 }
 
+#pagination {
+  text-align: center;
+  font-size: 1em;
+}
+
+#pagination a{
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+#lt{
+  visibility: hidden;
+}
+
 /*____________________schedule_____________*/
 th, td {
   border: 1px solid black; 

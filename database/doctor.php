@@ -36,8 +36,7 @@ function getDoctorInfoByDepName($dep_name){
 #pagination
 function getDoctorInfo2($dep_number,$page){
     global $dbh;
-    $page=$page-1;
-    $offset=$page*2;
+    $offset=($page-1)*2;
     
     $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
@@ -57,6 +56,15 @@ function getDoctorBySearch($dep_number,$Dname){
     return $stmt->fetchAll();
 }
 
+function getNumberOfDoctorForDepartment($dep_number){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT COUNT(*) as n_doctors 
+                            FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+                            WHERE number=? ");
+
+    $stmt->execute(array($dep_number));
+    return $stmt->fetch()["n_doctors"];
+}
 
 function getDoctorAppointment($doctor_id){
     global $dbh;
