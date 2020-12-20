@@ -113,9 +113,13 @@
             </article> 
             
             <h2>Schedule</h2>
+
+            <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
+            <?php $begin_hours = array('08:00','09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
+
+            <?php if( $numRowsSchedule['num'] != 0) { ?> <!-- if has a schedule-->
             <table class= "doctor_schedule">
-                  <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
-                  <?php $begin_hours = array('8:00','9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
+                  
                   <tr> <!-- Linha 1-->
                     <th class ="b"> Hour</th>
                     <!-- for para correr todos os dias da semana -->
@@ -149,6 +153,50 @@
                   
 
             </table>
+            <?php } else { ?> <!-- create schedule -->
+              <h3>Create your schedule</h3>
+              <form action="action_create_schedule.php" method="post">
+              <table class= "doctor_schedule">
+                  
+                  <tr> <!-- Linha 1-->
+                    <th class ="b"> Hour</th>
+                    <!-- for para correr todos os dias da semana -->
+                    <th class ="b"> Monday </th>
+                    <th class ="b"> Tuesday </th>
+                    <th class ="b"> Wednesday </th>
+                    <th class ="b"> Thursday </th>
+                    <th class ="b"> Friday </th>
+                  
+                  </tr>
+                  <?php foreach($begin_hours as $begin_hour){ ?> <!-- Para cada linha-->
+                    <tr> 
+                      
+                      <td class ="block_time"> <?php echo $begin_hour?> - <?php echo $begin_hour+1;?>:00 </td>
+
+                      <?php foreach($week_days as $day){ ?> <!-- Para cada coluna -->
+                          <?php $_SESSION["hour"] = $begin_hour; ?>
+                          <?php $_SESSION["week_day"] = $day; ?>
+
+                          <td class ="mark_appointment">
+                          <input type="checkbox" name="check_list[]"
+                                  value= "<?php echo $begin_hour .'|'. $day ?>">
+                          </td>
+                      
+
+                      <?php }?>
+                      
+                    </tr>
+
+                  <?php }?>
+                  
+
+            </table>
+            <input type="submit" value="Submit">
+            
+              </form>
+            <?php }?> 
+
+            
           </div>
 
         </section> 

@@ -4,6 +4,7 @@
   unset($_SESSION["msg"] );
 
   $doctor_id=$_GET['id'];
+  $_SESSION["doctor_id"] = $doctor_id;
   
   $msg_R=$_SESSION["msg_R"] ;
   unset($_SESSION["msg_R"]);
@@ -16,6 +17,7 @@
     $result4= getDoctorReservation($doctor_id);
     $result_inpatient=getDoctorinpatient($doctor_id);
     $schedule= getDoctorSchedule($doctor_id);
+    $numRowsSchedule = countNumbersOfRowsSchedule($doctor_id);
 
   } catch(PDOException $e){
     $err = $e-> getMessage();

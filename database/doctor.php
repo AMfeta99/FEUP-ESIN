@@ -115,6 +115,16 @@ function getDoctorSchedule($doctor_id){
    return $stmt->fetchAll();
 }
 
+function countNumbersOfRowsSchedule($doctor_id){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT COUNT(*) as num FROM (SELECT begin_time, end_time, week_day from Doctor
+                            JOIN Block_time_and_Doctor ON doctor= Doctor.id
+                            JOIN Block_time ON block_time = Block_time.code
+                            WHERE Doctor.id=?)");
+   $stmt->execute(array($doctor_id));
+   return $stmt->fetch();
+}
+
 function getDoctorScheduleByWeekDay($doctor_id, $week_day){
     global $dbh;
     $stmt = $dbh->prepare("SELECT begin_time, end_time from Block_time_and_Doctor

@@ -388,7 +388,7 @@ INSERT INTO Disease (name) VALUES ('ebola');
 
 
 --- Block_time 
-INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00','09:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'MON');
