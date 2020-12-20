@@ -1,7 +1,7 @@
 <?php
     require_once('config/init.php');
 
-    $doctor_id=$_SESSION["doctor"];
+    $doctor_id=$_SESSION["doctor_id"];
     $date_select =$_SESSION["date"];
     $patient=$_SESSION["user"];
 

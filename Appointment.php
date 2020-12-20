@@ -9,11 +9,15 @@
     $dep_name = $_POST['dep'];
     if($dep_name){
       $_SESSION["dep"]=$dep_name;
+      unset($_SESSION["doctor_name"]);
     }
     
-    $doctor_name = $_POST['doctor'];
-    if($doctor_name){
-      $_SESSION["doctor"]=$doctor_name;
+    $doctor_id_name = $_POST['doctor'];
+    $doctor = explode("|", $_POST['doctor'] );
+    if($doctor_id_name){
+      $_SESSION["doctor"] = $doctor_id_name;
+      $_SESSION["doctor_name"]=$doctor[1];
+      $_SESSION["doctor_id"] = $doctor[0];
     }
     
     $date_select = $_POST['date'];
@@ -31,15 +35,12 @@
       exit(0);
     }  
 ?>
-<?php
 
-  $i=0;
-  $date_select="y-m-d";
-?>
 
 <?php
    include('templates/header_profile.php');
    include('templates/appointment_form.php');
    include('templates/footer.php');
 
+   
 ?>

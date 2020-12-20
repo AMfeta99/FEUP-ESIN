@@ -3,49 +3,52 @@
       <form action="Appointment.php" method="post" class="specialization-select"> <!-- Queria que ficasse a mostrar a especialidade que foi selecionade depois de fazer o submit-->
         <label> Select Specialization </label>
         
-        <select name="dep" required ="required">
+        <select name="dep" id="id_dep" required ="required">
 
-        <option value="0" ><?php echo $_SESSION["dep"] ?></option>
+        <option value="<?php echo $_SESSION["dep"]?>" > -- Select --</option>
           <?php if ($err == null) { ?> 
             <?php foreach ($result as $row) { ?>  
-              <?php if($row["name"] != $_SESSION["dep"] ) {?>
-              <option value= "<?php echo $row["name"]?>"><?php echo $row["name"]?></option>
-              <?php } ?>
+             
+              <option value= "<?php echo $row["name"];?>" 
+                <?php if(isset($_SESSION['dep']) && $_SESSION['dep']== $row["name"] )
+                echo 'selected = "selected"'; ?>
+              ><?php echo $row["name"];?></option>
+              
             <?php } ?>
           <?php } ?>
         </select>
-        <input type="submit"  value="Select">
+        <input type="submit"  value="Confirm">
         </form>
       
         <br>
         <form action="Appointment.php" method="post" class="specialization-select"> 
         <label> Select Doctor </label>
         <select name="doctor" required ="required">
-          <option value="<?php echo $i ?>" ><?php echo $_SESSION["doctor"] ?></option>
+          <option value="<?php echo $_SESSION["doctor_id"]?>" ><?php echo $_SESSION["doctor_name"] ?></option>
           <?php      
           if ($err == null) { ?> 
-          <?php foreach ($result2 as $row2) { 
-            $i=$i+1; ?>  
-          <option value= "<?php echo $row2["id"]?>" > <?php echo $row2["name"]?> </option>
+          <?php foreach ($result2 as $row2) {  ?>  
+          <option value= "<?php echo $row2["id"].'|'.$row2["name"]?>" > <?php echo $row2["name"]?> </option>
           
           <?php } ?>
 
           <?php } ?>
             
         </select>
-        <input type="submit"  value="Select">    
+        <input type="submit"  value="Confirm">    
         </form>
 
         <form action="Appointment.php" method="post" class="specialization-select">
           <br>
           <label>Date:  </label>
           
-          <input type="date" name="date" min="<?php echo date("Y-m-d");?>" value="<?php echo $date_select ?>" required ="required"/>
+          <input type="date" name="date" min="<?php echo date("Y-m-d");?>" value="<?php echo $_SESSION["date"]?>" required ="required"/>
           
-          <input type="submit" value="Select"/>
+          <input type="submit" value="Confirm"/>
         </form>
           
         <form action="action_date.php" method="post" class="specialization-select">
+        <?php if(isset($_SESSION["date"])){ ?>
           <?php $j= date('w', strtotime($_SESSION["date"])); ?>
           <?php switch ($j) {
                 case 0:
@@ -71,25 +74,26 @@
                     break;
               
             }?>
+
+          <?php } ?>
             <br>
             <label>Time:  </label>
-            <?php echo  $week_day?>
-            <?php $result3 = getDoctorScheduleByWeekDay($_SESSION["id_doctor"], $week_day);?>
+            
+            <?php $result3 = getDoctorScheduleByWeekDay($_SESSION["doctor_id"], $week_day);?>
             <select name ="time">
             
             <?php foreach ($result3 as $row3) { ?>
   
-              <option value= "<?php echo $row3["begin_time"]?>" > <?php echo $row3["begin_time"]?> </option>
+              <option value= "<?php echo $row3["begin_time"]?>" 
+              <?php if(isset($_SESSION['time']) && $_SESSION['time']== $row3["begin_time"] )
+                echo 'selected = "selected"'; ?>
+              > <?php echo $row3["begin_time"]?> </option>
             <?php } ?>
             </select>
             <input type="Hidden" name="week_day" value=<?php echo $week_day?> >
-            <input type="submit" value="Select">
+            <input type="submit" value="Submit">
             
         </form>
         <?php echo $msg ?>
-        <?php echo $_SESSION["id_doctor"] ?>
-        <?php echo $_SESSION["date"] ?>
-        <?php echo $_SESSION["week"] ?>
-        <?php echo $_SESSION["b"] ?>
 
     </section>
