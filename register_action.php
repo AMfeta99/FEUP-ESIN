@@ -10,10 +10,8 @@
     $department=$_POST["department"];
     $cc=$_POST["cc"];
     $age=$_POST["age"];
-    // $photo=$POST["photo"];
 
-    $photo=$_FILES['photo'];
-    
+    $photo=$_FILES["photo"];
 
     if(strlen($name)==0){
         $_SESSION["msg"]="Invalid Username!";
@@ -63,9 +61,9 @@
     }
 
     //upload
-    // function saveProfilePicture($name){
-    //     move_uploaded_file($_FILES['photo']['tmp_name'],"images/doctors/$name");
-    // }
+    function saveProfilePicture($name){
+        move_uploaded_file($_FILES['photo']['tmp_name'],"images/doctors/$name");
+    }
 
 
     try{
@@ -97,16 +95,11 @@
                 header('Location: register_P.php');
                 die();
             }
-            // if(strlen(strval($cc))!=8){
-            //     $_SESSION["msg"]="Invalid cc!";
-            //     header('Location: register_P.php');
-            //     die();
-            // }
-            // if(strlen(strval($cc))==0){
-            //     $_SESSION["msg"]="Invalid ! Please insert your CC";
-            //     header('Location: register_P.php');
-            //     die();
-            // }
+            if($cc==null){
+                $_SESSION["msg"]="Invalid ! Please insert your CC";
+                header('Location: register_P.php');
+                die();
+            }
             insertPatient($cc,$name,$age,$phone_number,$mail_address,$password);
             $_SESSION["msg"]=" Patient Registe sucessful";
             header('Location: index.php');
@@ -124,7 +117,7 @@
             }
 
             insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department);
-            // saveProfilePicture($name);
+            saveProfilePicture($name);
             $_SESSION["msg"]=" Doctor Register sucessful";
             header('Location: index.php');
         }

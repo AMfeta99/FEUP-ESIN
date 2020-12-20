@@ -6,14 +6,14 @@
   $Dname=$_GET["Dname"];
 
   if(isset($_GET['page'])){
-    $page=$_GET["page"];
+    $page=$_GET['page'];
   
   }else{
     $page=1;
   }
   var_dump($Dname);
    $dep_number=(int)$dep_number;
-  //  $page=(int)$page;
+   $page=(int)$page;
 
    var_dump($dep_number);
    var_dump($page);

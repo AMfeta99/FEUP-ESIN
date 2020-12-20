@@ -22,7 +22,7 @@
         <input type="number"  name="phone_number">
         
         <label><b>Profile Photo (optional) </b></label>
-        <input type="file" name="Photo">
+        <input type="file" name="photo">
         
     </div>
 
