@@ -50,9 +50,9 @@ function getDoctorBySearch($dep_number,$Dname){
     global $dbh;
     $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
                             FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
-                            WHERE Doctor.speciality=? AND Doctor.name LIKE '%?%' ");
+                            WHERE Doctor.speciality=? AND Doctor.name LIKE ?");
 
-    $stmt->execute(array($dep_number,$Dname));
+    $stmt->execute(array($dep_number,"%$Dname%"));
     return $stmt->fetchAll();
 }
 

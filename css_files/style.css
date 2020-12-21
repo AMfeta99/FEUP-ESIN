@@ -382,6 +382,16 @@ aside li {
   visibility: hidden;
 }
 
+#search{
+  display: flex;
+  /* border-bottom: 1px solid black; */
+}
+
+#search input{
+  flex-grow: 1;
+  margin: 1em;
+}
+
 /*____________________schedule_____________*/
 th, td {
   border: 1px solid black; 
