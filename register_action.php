@@ -1,6 +1,7 @@
 <?php
     require_once('config/init.php');
     require_once('database/department.php');
+    require_once('database/user.php');
     $name=$_POST["name"];
     $phone_number=$_POST["phone_number"];
     $mail_address=$_POST["email"];
@@ -12,7 +13,7 @@
     $age=$_POST["age"];
 
     $photo=$_FILES["photo"];
-
+    //var_dump($photo);
     if(strlen($name)==0){
         $_SESSION["msg"]="Invalid Username!";
         header('Location: register.php');
@@ -28,41 +29,6 @@
         $_SESSION["msg"]="Registe Invalid! Please insert your Mail Address!";
         header('Location: register.php');
         die();
-    }
-
-    
-    function insertNurse($name,$phone_number, $mail_address,$password,$department){
-        global $dbh;
-        $department_number = getDepId(strtolower($department))["number"];
-        $stmt= $dbh->prepare("INSERT INTO Nurse(name,phone_number, mail_address,password,department) VALUES (?,?,?,?,?)");
-        $stmt->execute(array($name,$phone_number,$mail_address,sha1($password),$department_number));
-    }
-
-    function insertPatient($cc,$name,$age,$phone_number,$mail_address,$password){
-        global $dbh;
-        $stmt= $dbh->prepare("INSERT INTO Patient(cc,name,age,phone_number,mail_address,password) VALUES (?,?,?,?,?,?)");
-        $stmt->execute(array($cc,$name,$age,$phone_number,$mail_address,sha1($password)));
-    }
-
-    function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department){
-        global $dbh;
-        $department_number = getDepId(strtolower($department))["number"];
-        $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?)");
-        $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department_number));
-    }
-
- 
-    function CheckDepartment($department){
-        global $dbh;
-        $stmt=$dbh->prepare("SELECT number FROM Department 
-                            WHERE Department.name=?");
-        $stmt->execute(array(strtolower($department)));
-        return $stmt->fetch();
-    }
-
-    //upload
-    function saveProfilePicture($name){
-        move_uploaded_file($_FILES['photo']['tmp_name'],"images/doctors/$name");
     }
 
 
@@ -115,7 +81,8 @@
                 header('Location: register_D.php');
                 die();
             }
-            
+            $pic_name = $_FILES['photo']['name'];
+            $photo= "images/doctors/$pic_name";
             insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department);
             saveProfilePicture($name);
             $_SESSION["msg"]=" Doctor Register sucessful";
