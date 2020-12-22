@@ -4,7 +4,6 @@
     <header>
         <h2 class="pagtitle">Departments</h2>
     </header>
-    <p>departamentos bla bla bla.</p>
 
     <section class = "departments">
     

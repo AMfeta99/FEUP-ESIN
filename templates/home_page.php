@@ -48,9 +48,10 @@
 
           <div class = "text-block">
           <h3>We make a Difference in your lives</h3>
-            <p>introdução</p>
             <br>
-            <p> Falar dos departamentos e da equipa médica bla bla bla</p>
+            <p> We have taken care of your health for years and we take care of you from the first moment</p>
+            <p> We have at your disposal the best health professionals in the country, always ready to help you take care of your health and your family.</p>
+            <p> We are proud of our national network of hospitals and clinics that offer a wide range of services</p>
           </div>
           
         </section>

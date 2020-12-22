@@ -4,6 +4,7 @@
             <h2 class="pagtitle"><?php echo $Department_name ?></h2>
         </header>
 
+        <h3>Are you looking for a specific doctor? </h3>
         <form action="departament&doctors.php" id="search">
             <input type="hidden" name="dep" value="<?php echo $dep_number; ?> ">
             <input type="hidden" name="name" value="<?php echo $Department_name; ?> ">
@@ -12,9 +13,10 @@
         </form>
 
         <section class="Doctors_list">
-            <p>departamento bla bla bla sxdfcvghbkjngf dfcgvhbkjn dfhjlk .</p>
-            <p>só uma mini descrição bla bla bla sxdfcvghbkjngf dfcgvhbkjn dfhjlk .</p>
-            <p>não sei se ficou bonita esta pagina podes mudar se quiseres sxdfcvghbkjngf dfcgvhbkjn dfhjlk .</p>
+            <p>Welcome to the <?php echo $Department_name; ?>  service. These are our specialized doctors</p>
+            <p>Here you can consult all the information you need: Doctor's name, contact, mail address.</p>
+            <p>if you want to schedule an appointment, here you can see the schedule at which each doctor is making appointments.</p>
+            
 
 
             <?php if ($err == null) { ?>
