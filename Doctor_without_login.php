@@ -10,6 +10,7 @@
     $result = getDoctorById($doctor_id); 
     $result2 = getDepartmentOfEachDoctor($doctor_id);
     $schedule= getDoctorSchedule($doctor_id);
+    $numRowsSchedule = countNumbersOfRowsSchedule($doctor_id);
 
   } catch(PDOException $e){
     $err = $e-> getMessage();
