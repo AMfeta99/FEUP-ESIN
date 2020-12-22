@@ -1,5 +1,6 @@
 <?php
   require_once('config/init.php');
+  require_once('database/doctor.php');
   $msg=$_SESSION["msg"] ;
   unset($_SESSION["msg"] );
 
@@ -12,7 +13,9 @@
   $msg_H=$_SESSION["msg_H"] ;
   unset($_SESSION["msg_H"]);
 
-  require_once('database/doctor.php');
+  $msg_d=$_SESSION["msg_d"] ;
+  unset($_SESSION["msg_d"]);
+
   try{
     $result = getDoctorById($doctor_id); 
     $result2 = getDepartmentOfEachDoctor($doctor_id);

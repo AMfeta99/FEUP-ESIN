@@ -11,7 +11,7 @@
 
     function RejectNotification($id){
         global $dbh;
-        $stmt= $dbh->prepare("INSERT INTO (id,message) ReceiveNotification VALUE (?,?");
+        $stmt= $dbh->prepare("INSERT INTO ReceiveNotification (id,message) VALUES (?,?)");
         $stmt->execute(array($id,"reservation denied"));
     }
  
@@ -22,6 +22,7 @@
         header("Location: Doctor.php?id=$Doctor");
        
      }catch(PDOException $e){
+        echo $e-> getMessage();
         $_SESSION["msg_R"]="Reservation Rejected NOT succefull";
         header("Location: Doctor.php?id=$Doctor");
      }

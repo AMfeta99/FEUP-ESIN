@@ -193,6 +193,7 @@
               </form>
             <?php }?> 
 
+            <article class="info_section">
             <h2>Hospitalize patient</h2>
               <form action="action_Hospitalize.php" method="post">
               <label><b>Patient's cc</b></label>
@@ -203,13 +204,20 @@
                 <input type="submit" value="Submit">
                 <span><?php echo $msg_H ?></span>
               </form>
-                 
+              </article>
+
+              <article class="info_section">  
               <h2>Discharge an inpatient</h2>
               <form action="action_discharge.php" method="post">
-              
+              <label><b>Inpatient code</b></label>
+              <input type="text" name="code" required>
+              <input type="hidden" name="Dep_ID" value=<?php echo $result["speciality"]?>></input>
                       
               <input type="submit" value="Submit">
+              <span><?php echo $msg_d ?></span>
             </form>
+            </article>
+
           </div>
 
         </section> 
