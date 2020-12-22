@@ -182,22 +182,34 @@
                           <input type="checkbox" name="check_list[]"
                                   value= "<?php echo $begin_hour .'|'. $day ?>">
                           </td>
-                      
 
                       <?php }?>
-                      
                     </tr>
 
                   <?php }?>
-                  
 
             </table>
             <input type="submit" value="Submit">
-            
               </form>
             <?php }?> 
 
-            
+            <h2>Hospitalize patient</h2>
+              <form action="action_Hospitalize.php" method="post">
+              <label><b>Patient's cc</b></label>
+              <input type="text" name="cc" required>
+              <input type="hidden" name="Dep_ID" value=<?php echo $result["speciality"]?>></input>
+              
+                      
+                <input type="submit" value="Submit">
+                <span><?php echo $msg_H ?></span>
+              </form>
+                 
+              <h2>Discharge an inpatient</h2>
+              <form action="action_discharge.php" method="post">
+              
+                      
+              <input type="submit" value="Submit">
+            </form>
           </div>
 
         </section> 

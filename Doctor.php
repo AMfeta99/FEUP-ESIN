@@ -9,6 +9,9 @@
   $msg_R=$_SESSION["msg_R"] ;
   unset($_SESSION["msg_R"]);
 
+  $msg_H=$_SESSION["msg_H"] ;
+  unset($_SESSION["msg_H"]);
+
   require_once('database/doctor.php');
   try{
     $result = getDoctorById($doctor_id); 
