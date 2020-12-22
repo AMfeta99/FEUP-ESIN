@@ -15,7 +15,6 @@
                       <li ><a href="">Inpatient Info</a></li>
                       <li ><a href="">Medication</a></li>
                       <li ><a href="">Daily Reports</a></li>
-                      <li ><a href="index.php">Log out</a></li>
                     
                 </ul> 
               </label>

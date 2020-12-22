@@ -18,7 +18,7 @@
         <div id="simbolo">
           <h1><a href="index.php">Hospital</a></h1>
           <img src="images/t2.png" alt="" width="30">
-          <h3 id="username"><?php echo $_SESSION["username"] ?></h3>
+          <h3 id="username"><a href=""><?php echo $_SESSION["username"] ?></a></h3>
         </div>
 
         <div id="back">

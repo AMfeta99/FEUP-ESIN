@@ -1,7 +1,6 @@
 <section id="profile_pag">
           <article>
             <header id="dados">
-              <!-- <img class="circle" src="images/doctors/9.jpg" alt="" width="130"> -->
               <img class="circle" src="<?php echo  $result["photo"] ?>" alt="" width="130">
               <h4><?php echo  $result["name"] ?></h4> 
               <h5><?php echo  $result2["Sname"] ?></h5>

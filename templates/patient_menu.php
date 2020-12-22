@@ -98,8 +98,9 @@
                 <h4 class="info_section">Notification: </h4> 
                 
                 <h5 class="atribute"> 
-                <span> <?php echo $result5["message"]?> </span>
-            
+                <?php foreach ($result5 as $row) { ?>
+                <span> <p><?php echo $row["message"]?> </p></span>
+                <?php  }?>
             </article>  
           
          </div>

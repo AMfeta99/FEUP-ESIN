@@ -9,7 +9,7 @@
 
     if(strlen($report)==0){
         $_SESSION["msg"]="The Report is empty!";
-        header("Location: inpatient.php?code=$code");
+        header("Location: inpatient.php?code=$inpatient_code");
         die();
     }
     
@@ -22,11 +22,11 @@
     try{
         insertReport($date,$report, $inpatient_code);
         $_SESSION["msg"]="The Report was submited with sucess!";
-        header("Location: inpatient.php?code=$code");
+        header("Location: inpatient.php?code=$inpatient_code");
 
      }catch(PDOException $e){
         $_SESSION["msg"]="Report submission failed!";
-        header("Location: inpatient.php?code=$code");
+        header("Location: inpatient.php?code=$inpatient_code");
             // echo $e->getMessage(); 
      }
 ?>
