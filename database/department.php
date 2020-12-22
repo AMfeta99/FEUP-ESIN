@@ -38,4 +38,17 @@
         $stmt->execute(array($dep_number));
         return $stmt->fetch();
     }
+
+    function getDepBedAvailable($dep_number){
+        global $dbh;
+        $stmt = $dbh->prepare("SELECT Count(*) as occupy, Bed.number as beds
+                               FROM Bed JOIN Department 
+                               ON id_department= Department.number
+                               WHERE Bed.occupy=0 and id_department=?;");
+    
+        $stmt->execute(array($dep_number));
+        return $stmt->fetch();
+    }
+
+
 ?>

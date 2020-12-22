@@ -16,6 +16,7 @@ function getInpatientInfo($code){
     return $stmt->fetch();
 }
 
+
 // Doctor of the inpatient
 function getDoctorInpatient($code){
     global $dbh;
