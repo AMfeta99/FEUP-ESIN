@@ -40,7 +40,7 @@ function InsertPrescriptionOfMedicine ($id_Prescription,$Medicine_code,$quantity
 
 function getAppointmentPrescriptionId($date,$date_limit,$id_appointment){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT id FROM Prescription WHERE date=? AND date_limit=? AND id_appointment=?");
+    $stmt = $dbh->prepare("SELECT MAX(id) as id FROM Prescription WHERE date=? AND date_limit=? AND id_appointment=?");
     $stmt->execute(array($date,$date_limit,$id_appointment));
     return $stmt->fetch(); 
 }
@@ -59,6 +59,7 @@ if(strlen($dname)==0){
 
         if($date_limit>$date){
             if($quantity>=1){
+
             InsertAppointmentPrescription ($date,$date_limit,$id_appointment);
             $Result_idAP=getAppointmentPrescriptionId($date,$date_limit,$id_appointment);
 

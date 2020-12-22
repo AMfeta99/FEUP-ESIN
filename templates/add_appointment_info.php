@@ -20,10 +20,15 @@
             <form action="diagnosis_action.php" method="post" class="info_section" id="add_report">
             <h4 class="info_section">Diagnosis: </h4>
                 
-                <h5 class="atribute">Diseases already diagnosed:
+                <h5 class="atribute">Diseases already diagnosed: </h5>
+                <ul>
                 <?php foreach ($result3 as $row) { ?>
-                 <p><?php echo  $row['disease_name'] ?></p></h5>
-                 <?php } ?>
+                  <?php if(!is_null($row['disease_name'])) { ?> 
+                    <li><?php echo  $row['disease_name'] ?></li>
+                  <?php } ?>
+                <?php } ?>
+                </ul>
+                 
 
                 <label><b>Diseases</b></label>
                 <input type="text" name="disease_name" >

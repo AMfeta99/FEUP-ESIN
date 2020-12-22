@@ -25,7 +25,7 @@
 
             
             <h2>Schedule</h2>
-
+            <?php if( $numRowsSchedule['num'] != 0) { ?> <!-- if has a schedule-->
             <table class= "doctor_schedule">
                   <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
                   <?php $begin_hours = array('8:00','9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
@@ -62,6 +62,9 @@
                   
 
             </table>
+            <?php } else { ?> <!-- Show message -->
+              <p>The Doctor does not have a schedule for Appointments.</p>
+            <?php } ?>
           </div>
 
         </section> 
