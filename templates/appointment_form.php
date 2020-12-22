@@ -1,7 +1,8 @@
 
       <section class= book_appointment>
+        <h2>Book Appointment</h2>
       <form action="Appointment.php" method="post" class="specialization-select"> <!-- Queria que ficasse a mostrar a especialidade que foi selecionade depois de fazer o submit-->
-        <label> Select Specialization </label>
+        <label> Select Specialization: </label>
         
         <select name="dep" id="id_dep" required ="required">
 
@@ -17,12 +18,12 @@
             <?php } ?>
           <?php } ?>
         </select>
-        <input type="submit"  value="Confirm">
+        <input  class ="confirm" type="submit"  value="Confirm">
         </form>
       
         <br>
         <form action="Appointment.php" method="post" class="specialization-select"> 
-        <label> Select Doctor </label>
+        <label> Select Doctor: </label>
         <select name="doctor" required ="required">
           <option value="<?php echo $_SESSION["doctor_id"]?>" ><?php echo $_SESSION["doctor_name"] ?></option>
           <?php      
@@ -35,7 +36,7 @@
           <?php } ?>
             
         </select>
-        <input type="submit"  value="Confirm">    
+        <input class ="confirm" type="submit"  value="Confirm">    
         </form>
 
         <form action="Appointment.php" method="post" class="specialization-select">
@@ -44,7 +45,7 @@
           
           <input type="date" name="date" min="<?php echo date("Y-m-d");?>" value="<?php echo $_SESSION["date"]?>" required ="required"/>
           
-          <input type="submit" value="Confirm"/>
+          <input  class ="confirm" type="submit" value="Confirm"/>
         </form>
           
         <form action="action_date.php" method="post" class="specialization-select">
@@ -91,7 +92,8 @@
             <?php } ?>
             </select>
             <input type="Hidden" name="week_day" value=<?php echo $week_day?> >
-            <input type="submit" value="Submit">
+            <p></p>
+            <input class="request_reservation" type="submit" value="Submit">
             
         </form>
         <?php echo $msg ?>

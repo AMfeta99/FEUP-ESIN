@@ -437,3 +437,37 @@ td.mark_appointment{
 td.mark_appointment:empty{ /* not working */
   background-color: ivory;
 }
+
+/*____________________Appointment.php_____________*/
+
+.book_appointment {
+  border: 3px solid rgb(0, 132, 255);
+  width: 25em;
+  margin: 0 auto;
+  background-color:rgb(172, 222, 241);
+  display: block;
+  padding: 2em;
+  border-radius: 2em;
+  margin-bottom: 2em;
+  margin-top: 1.5em;
+}
+form.specialization-select{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+form.specialization-select > label{
+  color: #000;
+}
+
+
+.request_reservation {
+  padding: 15px 40px;
+  background: rgb(45, 155, 189);
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+  color: beige;
+}
