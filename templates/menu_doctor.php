@@ -43,6 +43,7 @@
                 <h4 class="info_section">Scheduled appointments: </h4>
                <?php if($numRowsAppointment['num']!= 0){?>
                 <?php foreach ($result3 as $row) { ?>
+                  
                   <?php if ($row["date"]> $today){?>
                     <h5 class="atribute"> 
                       <p>Name: <?php echo  $row["patient"] ?></p>
@@ -59,9 +60,8 @@
                       </h6>
                     </h5>
               
-                  <?php } else{ ?>
-                    <p >There is no Scheduled appointments</p> 
-                  <?php break; }?>
+                  <?php }  ?>
+                   
                 <?php  } ?>
                  <?php }else{ ?>
                   <p >There is no Scheduled appointments</p> 
