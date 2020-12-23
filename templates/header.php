@@ -27,8 +27,7 @@
           else if ($_SESSION["funtion"] == "Patient")
             $ref = "index_f_login.php?cc=" . $_SESSION["user"];
           ?>
-          <h3 id="username"><?php if(isset($_SESSION["username"])) { 
-            echo $_SESSION["username"] ;}?></h3>
+          <h3 id="username"><a href="<?php echo $ref ?>"><?php echo $_SESSION["username"] ?></a></h3>
         </div>
           
           
