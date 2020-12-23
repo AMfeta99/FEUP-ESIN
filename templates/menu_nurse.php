@@ -13,9 +13,9 @@
           <input type="checkbox" id="hamburger">
           <label class="hamburger" id="prof" for="hamburger">
             <ul id="link_profile">
-            <li><a href="">My Profile</a></li>
-            <li><a href="">Department</a></li>
-            <li><a href="index.php#inpatient">Inpatient Profile</a></li>
+            <li><a href="#profile">My Profile</a></li>
+            <li><a href="#department">Department</a></li>
+            <li><a href="#inpatients">Inpatient Profile</a></li>
             <li><a href="index.php">Home</a></li>
             </ul>
           </label> 
@@ -24,7 +24,7 @@
         </article>
 
         <div class="info">
-        <h2>Profile</h2>
+        <h2 id="profile">Profile</h2>
         <span><?php echo $msg ?></span>
 
             <article class="info_section">
@@ -40,7 +40,7 @@
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
 
-          <h2>Department</h2>
+          <h2 id="department">Department</h2>
           <article class="info_section">
                 <h4>Beds: </h4>
                
@@ -50,7 +50,7 @@
             </article> 
 
 
-            <article class="info_section">
+            <article class="info_section" id="inpatients">
                 <h4 class="info_section">Inpatients: </h4>
                 
                 <?php foreach ($result3 as $row) { ?>

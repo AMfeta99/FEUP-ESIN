@@ -11,11 +11,12 @@
               <input type="checkbox" id="hamburger">
               <label class="hamburger" id="prof" for="hamburger">
               <ul id="link_profile">
-                <li><a href="">My Profile</a></li>
+                <li><a href="#profile">My Profile</a></li>
                 <li><a href="Appointment.php">Book Appointment</a></li>
-                <li><a href="">My Appointments </a></li>
-                <li><a href="">Medical prescriptions</a></li>
-                <li><a href="">Inpatient Profile</a></li>
+                <li><a href="#appointments">My Appointments </a></li>
+                <li><a href="#medical">Medical prescriptions</a></li>
+                <li><a href="#inpatients">Inpatient Profile</a></li>
+                <li><a href="#Notifications">Notifications</a></li>
                 <li><a href="index.php">Home</a></li>
                 </ul>
               </label>  
@@ -24,7 +25,7 @@
           </article>
  
           <div class="info">
-            <h2>Profile</h2>
+            <h2 Id="profile">Profile</h2>
             <span><?php echo $msg ?></span>
             
             <article class="info_section">
@@ -54,7 +55,7 @@
                   <?php } ?> 
             </article> 
 
-            <article class="info_section">
+            <article class="info_section" id="appointments">
                 <h4 class="info_section">Appointments: </h4>
                 <!-- estamos a ter um problema pq se o disease_name for null a tabela de retorno é vazia-->
                 <?php foreach ($result2 as $row) { ?>
@@ -71,7 +72,7 @@
                 <?php  }?>
             </article> 
 
-            <article class="info_section">
+            <article class="info_section" id="medical">
                 <h4 class="info_section">Prescriptions: </h4> <!-- colocar um if para o caso de não ter receitas -->
                 <!-- apenas mostrar as receitas que estão dentro da data limit -->
                 <?php foreach ($result3 as $row) { ?>
@@ -80,8 +81,8 @@
                   <?php  }?>
                 <?php  }?>
             </article>     
-            
-            <article class="info_section">
+          
+            <article class="info_section" id="inpatients">
                 <h4 class="info_section">Inpatient Profile: </h4> 
                 <!-- verificar se o paciente está registado na tabela inpatient -->
                 
@@ -94,7 +95,7 @@
             </article>  
           
 
-            <article class="info_section">
+            <article class="info_section" id="Notifications">
                 <h4 class="info_section">Notification: </h4> 
  
                   <?php foreach ($result5 as $row) { ?> 

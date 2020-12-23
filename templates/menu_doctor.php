@@ -11,10 +11,10 @@
               <input type="checkbox" id="hamburger">
               <label class="hamburger" id="prof" for="hamburger">
               <ul id="link_profile">
-                <li><a href="">My Profile</a></li>
-                <li><a href="">My Appointments</a></li>
-                <li><a href="">Schedule</a></li>
-                <li><a href="index.php#inpatient">Inpatients</a></li>
+                <li><a href="#profile">My Profile</a></li>
+                <li><a href="#appointments">My Appointments</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#inpatients">Inpatients</a></li>
                 <li><a href="index.php">Home</a></li>
               </ul>
               </label> 
@@ -22,7 +22,7 @@
           </article>
 
           <div class="info">
-          <h2>Profile</h2>
+          <h2 id="profile"> Profile</h2>
           <span><?php echo $msg ?></span>
 
           <article class="info_section">
@@ -38,7 +38,7 @@
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
 
-            <h2>Appointments</h2>
+            <h2 id="appointments">Appointments</h2>
             <article class="info_section">
                 <h4 class="info_section">Scheduled appointments: </h4>
                <?php //if($result3["patient"]){?>
@@ -65,7 +65,7 @@
 
             <article class="info_section">
                 
-                <h4 class="info_section">Reservation without answer: </h4>
+                <h4 class="info_section" id="reservation">Reservation without answer: </h4>
 
                 <?php foreach ($result4 as $row) { ?>
                  <?php if(getDoctorReservationWithAnswer($row["id"],$result["id"])==FALSE){ ?>
@@ -97,7 +97,7 @@
               
             </article> 
 
-            <h2>Inpatient</h2>
+            <h2 id="inpatients">Inpatient</h2>
             <article class="info_section">
                 <h4 class="info_section">Monitor inpatients: </h4>
                 <?php //if($result_inpatient["name"]){?>
@@ -116,7 +116,7 @@
                 <?php }?>
             </article> 
             
-            <h2>Schedule</h2>
+            <h2 id="schedule">Schedule</h2>
 
             <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
             <?php $begin_hours = array('08:00','09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
@@ -198,7 +198,8 @@
 
             <article class="info_section">
             <h2>Hospitalize patient</h2>
-              <form action="action_Hospitalize.php" method="post">
+            <p> Insert the cc of Patient that you want Hospitalize: </p>
+              <form action="action_Hospitalize.php" class="atribute" method="post">
               <label><b>Patient's cc</b></label>
               <input type="text" name="cc" required>
               <input type="hidden" name="Dep_ID" value=<?php echo $result["speciality"]?>></input>
@@ -211,7 +212,8 @@
 
               <article class="info_section">  
               <h2>Discharge an inpatient</h2>
-              <form action="action_discharge.php" method="post">
+              <p > Enter the code of the inpatient who wishes to be discharged: </p>
+              <form action="action_discharge.php" class="atribute" method="post">
               <label><b>Inpatient code</b></label>
               <input type="text" name="code" required>
               <input type="hidden" name="Dep_ID" value=<?php echo $result["speciality"]?>></input>

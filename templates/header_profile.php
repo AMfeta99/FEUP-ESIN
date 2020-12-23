@@ -23,8 +23,13 @@
 
         <div id="back">
           <h2><a>The best care just a click away!</a></h2>
+         <?php if(isset($_SESSION['user'])) {?>
             <form class="name_back" action="logout_action.php">
               <input class="out" type="submit" value="Log out">
             </form>
+            <?php }else{?>
+              <p><a href="index.php" class="out">Back</a></p>
+          <?php  } ?>
+
         </div>
       </header> 
