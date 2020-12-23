@@ -7,7 +7,7 @@
       <link href="css_files/style_buttons.css" rel="stylesheet">
       <link href="css_files/layout.css" rel="stylesheet">
       <link href="css_files/forms.css" rel="stylesheet">
-      <link href="templates/slicer.css" rel="stylesheet">
+      <link href="css_files/slicer.css" rel="stylesheet">
       <link href="css_files/responsive.css" rel="stylesheet">
       <link href="css_files/profile.css" rel="stylesheet">
 
@@ -20,6 +20,13 @@
         <div id="simbolo">
           <h1><a href="index.php">Hospital</a></h1>
           <img src="images/t2.png" alt="simbolo" width="30">
+          <?php if ($_SESSION["funtion"] == "Doctor") {
+            $ref = "Doctor.php?id=" . $_SESSION["user"];
+          } else if ($_SESSION["funtion"] == "Nurse")
+            $ref = "nurse.php?id=" . $_SESSION["user"];
+          else if ($_SESSION["funtion"] == "Patient")
+            $ref = "index_f_login.php?cc=" . $_SESSION["user"];
+          ?>
           <h3 id="username"><?php if(isset($_SESSION["username"])) { 
             echo $_SESSION["username"] ;}?></h3>
         </div>
