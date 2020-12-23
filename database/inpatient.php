@@ -41,7 +41,7 @@ function getBedDepartment($code){
 // Medication of each patient
 function getMedOfEachInpatient($code){
     global $dbh;
-    $stmt=$dbh->prepare("SELECT Medicine.name as name_med, Medicine.dose as dose FROM Inpatient
+    $stmt=$dbh->prepare("SELECT Medicine.name as name_med, Medicine.dose as dose, instructions FROM Inpatient
                         JOIN MedicationAdministered ON Inpatient.code = inpatient
                         JOIN Medicine ON code_medicine = Medicine.code
                         WHERE Inpatient.code=?");

@@ -51,7 +51,6 @@
 
     #verify usermail_address and after correspondent password
     function loginValid($mail_address,$password){
-        
         if(IsthatDoctor($mail_address)){
             $table="Doctor";
             if(Validating($mail_address,$password,$table)){
@@ -106,6 +105,13 @@
         }
     }
 
-    loginValid($mail_address,$password);
+    if(isset($_SESSION['user'])){
+        $_SESSION["msg_log"]="Login failed!You must log out before trying to log in again";
+        header('Location: index.php#logins');
+        die();
+    }else{
+         loginValid($mail_address,$password);
+    }
+   
 ?>
   
