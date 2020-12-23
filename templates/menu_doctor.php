@@ -68,6 +68,8 @@
                 <h4 class="info_section">Reservation without answer: </h4>
 
                 <?php foreach ($result4 as $row) { ?>
+                 <?php if(getDoctorReservationWithAnswer($row["id"],$result["id"])==FALSE){ ?>
+
                  
                   <h5 class="atribute"> 
                     <p>Name: <?php echo  $row["patient"] ?></p>
@@ -90,7 +92,9 @@
                   </h5>
                 
                 <?php }?>
+                <?php }?>
                 <span><?php echo $msg_R ?></span>
+              
             </article> 
 
             <h2>Inpatient</h2>

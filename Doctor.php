@@ -21,6 +21,7 @@
     $result2 = getDepartmentOfEachDoctor($doctor_id);
     $result3= getDoctorAppointment($doctor_id);
     $result4= getDoctorReservation($doctor_id);
+
     $result_inpatient=getDoctorinpatient($doctor_id);
     $schedule= getDoctorSchedule($doctor_id);
     $numRowsSchedule = countNumbersOfRowsSchedule($doctor_id);
