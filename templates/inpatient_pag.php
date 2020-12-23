@@ -48,7 +48,7 @@
                 <h5 class="atribute">Visiting Hours: <p><?php echo  $result4["visiting_hours"]; ?></p></h5> 
             </article> 
 
-            <!-- Vou colocar já aqui tudo mas é suposto isto estar conforme se carrega em cada parte-->
+         
             <article class="info_section">
                 <h4 class="info_section">Medication: </h4>
                 <?php if ($err == null) { ?> <!--if there was no error -->
