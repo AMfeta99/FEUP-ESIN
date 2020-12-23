@@ -41,7 +41,7 @@
             <h2>Appointments</h2>
             <article class="info_section">
                 <h4 class="info_section">Scheduled appointments: </h4>
-               <?php //if($result3["patient"]){?>
+               <?php if($numRowsAppointment['num']!= 0){?>
                 <?php foreach ($result3 as $row) { ?>
                   <h5 class="atribute"> 
                     <p>Name: <?php echo  $row["patient"] ?></p>
@@ -57,8 +57,9 @@
                     </form>
                     </h6>
                   </h5>
-                  <?php // } }else{ ?>
-                  <!-- <p >There is no Scheduled appointments</p> -->
+                  <?php  } ?>
+                 <?php }else{ ?>
+                  <p >There is no Scheduled appointments</p> 
                 <?php }?>
                
             </article> 
@@ -67,8 +68,9 @@
                 
                 <h4 class="info_section">Reservation without answer: </h4>
 
+                <?php if($numRowsReservation['num']!= 0) { ?>
                 <?php foreach ($result4 as $row) { ?>
-                 
+                  
                   <h5 class="atribute"> 
                     <p>Name: <?php echo  $row["patient"] ?></p>
                     <h6 class= "subatribute"> <!-- Alterar Css -->
@@ -88,7 +90,10 @@
                     
                     </h6>
                   </h5>
-                
+                  
+                <?php }?>
+                <?php } else {?>
+                    <p>There is no Reservation Request.</p>
                 <?php }?>
                 <span><?php echo $msg_R ?></span>
             </article> 
@@ -96,7 +101,7 @@
             <h2>Inpatient</h2>
             <article class="info_section">
                 <h4 class="info_section">Monitor inpatients: </h4>
-                <?php //if($result_inpatient["name"]){?>
+                <?php if($numRowsInpatient['num']!=0){?>
                 <?php foreach ($result_inpatient as $row) { ?>
                  
                   <h5 class="atribute"> 
@@ -107,8 +112,9 @@
                     <a href='inpatient.php?code=<?php echo $row["code"] ?>'>consult</a>
                     </h6>
                   </h5>
-                  <!-- <?php // } }else{ ?>
-                  <p >You are not monitoring an inpatient</p> -->
+                  <?php  } ?>
+                <?php }else{ ?>
+                  <p >You are not monitoring any inpatient.</p>
                 <?php }?>
             </article> 
             

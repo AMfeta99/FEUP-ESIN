@@ -24,7 +24,9 @@
     $result_inpatient=getDoctorinpatient($doctor_id);
     $schedule= getDoctorSchedule($doctor_id);
     $numRowsSchedule = countNumbersOfRowsSchedule($doctor_id);
-
+    $numRowsAppointment = countNumbersOfRowsAppointment($doctor_id);
+    $numRowsReservation = countNumbersOfRowsReservation($doctor_id);
+    $numRowsInpatient = countNumbersOfRowsInpatient($doctor_id);
   } catch(PDOException $e){
     $err = $e-> getMessage();
     exit(0);
