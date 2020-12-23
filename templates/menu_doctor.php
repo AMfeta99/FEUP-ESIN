@@ -11,10 +11,10 @@
               <input type="checkbox" id="hamburger">
               <label class="hamburger" id="prof" for="hamburger">
               <ul id="link_profile">
-                <li><a href="">My Profile</a></li>
-                <li><a href="">My Appointments</a></li>
-                <li><a href="">Schedule</a></li>
-                <li><a href="index.php#inpatient">Inpatients</a></li>
+                <li><a href="Doctor.php?id=<?php echo $doctor_id ?>">My Profile</a></li>
+                <li><a href="Doctor.php?id=<?php echo $doctor_id ?>#appointment">My Appointments</a></li>
+                <li><a href="Doctor.php?id=<?php echo $doctor_id ?>#schedule">Schedule</a></li>
+                <li><a href="Doctor.php?id=<?php echo $doctor_id ?>#doctor_inpatient">Inpatients</a></li>
                 <li><a href="index.php">Home</a></li>
               </ul>
               </label> 
@@ -37,7 +37,8 @@
                 <?php if (strlen($result["phone_number"])>0){?>
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
-
+            
+            <section id = "appointment">
             <h2>Appointments</h2>
             <article class="info_section">
                 <h4 class="info_section">Scheduled appointments: </h4>
@@ -107,7 +108,8 @@
                 <span><?php echo $msg_R ?></span>
               
             </article> 
-
+            </section>
+            <section id= "doctor_inpatient">
             <h2>Inpatient</h2>
             <article class="info_section">
                 <h4 class="info_section">Monitor inpatients: </h4>
@@ -127,7 +129,8 @@
                   <p >You are not monitoring any inpatient.</p>
                 <?php }?>
             </article> 
-            
+            </section>
+            <section id="schedule">
             <h2>Schedule</h2>
 
             <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
@@ -207,7 +210,7 @@
             <input type="submit" value="Submit">
               </form>
             <?php }?> 
-
+            </section>
             <article class="info_section">
             <h2>Hospitalize patient</h2>
               <form action="action_Hospitalize.php" method="post">
