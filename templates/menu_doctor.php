@@ -11,6 +11,7 @@
               <input type="checkbox" id="hamburger">
               <label class="hamburger" id="prof" for="hamburger">
               <ul id="link_profile">
+
                 <li><a href="#profile">My Profile</a></li>
                 <li><a href="#appointments">My Appointments</a></li>
                 <li><a href="#schedule">Schedule</a></li>
@@ -38,11 +39,13 @@
                 <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
             </article> 
 
+
             <h2 id="appointments">Appointments</h2>
             <article class="info_section">
                 <h4 class="info_section">Scheduled appointments: </h4>
                <?php if($numRowsAppointment['num']!= 0){?>
                 <?php foreach ($result3 as $row) { ?>
+                  
                   <?php if ($row["date"]> $today){?>
                     <h5 class="atribute"> 
                       <p>Name: <?php echo  $row["patient"] ?></p>
@@ -59,9 +62,8 @@
                       </h6>
                     </h5>
               
-                  <?php } else{ ?>
-                    <p >There is no Scheduled appointments</p> 
-                  <?php break; }?>
+                  <?php }  ?>
+                   
                 <?php  } ?>
                  <?php }else{ ?>
                   <p >There is no Scheduled appointments</p> 
@@ -108,6 +110,7 @@
               
             </article> 
 
+
             <h2 id="inpatients">Inpatient</h2>
             <article class="info_section">
                 <h4 class="info_section">Monitor inpatients: </h4>
@@ -127,9 +130,9 @@
                   <p >You are not monitoring any inpatient.</p>
                 <?php }?>
             </article> 
+
             
             <h2 id="schedule">Schedule</h2>
-
             <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
             <?php $begin_hours = array('08:00','09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
 
