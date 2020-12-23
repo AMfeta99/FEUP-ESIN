@@ -28,15 +28,22 @@
           $result2 = getDepartmentOfEachDoctor($doctor_id);
           $result3= getDoctorAppointment($doctor_id);
           $result4= getDoctorReservation($doctor_id);
-
+          
           $result_inpatient=getDoctorinpatient($doctor_id);
           $schedule= getDoctorSchedule($doctor_id);
           $numRowsSchedule = countNumbersOfRowsSchedule($doctor_id);
-
+          $numRowsAppointment = countNumbersOfRowsAppointment($doctor_id);
+          $numRowsReservation = countNumbersOfRowsReservation($doctor_id);
+          $numRowsInpatient = countNumbersOfRowsInpatient($doctor_id);
+   
         } catch(PDOException $e){
           $err = $e-> getMessage();
           exit(0);
         }
+        // Define todays date
+        date_default_timezone_set('Portugal/Lisbon');
+        $today = date('Y-m-d');
+
 ?>
 
 <?php

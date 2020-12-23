@@ -41,24 +41,30 @@
             <h2 id="appointments">Appointments</h2>
             <article class="info_section">
                 <h4 class="info_section">Scheduled appointments: </h4>
-               <?php //if($result3["patient"]){?>
+               <?php if($numRowsAppointment['num']!= 0){?>
                 <?php foreach ($result3 as $row) { ?>
-                  <h5 class="atribute"> 
-                    <p>Name: <?php echo  $row["patient"] ?></p>
-                    <h6 class= "subatribute"> <!-- Alterar Css -->
-                    <p>Date: <?php echo  $row["date"] ?> </p>
-                    <p>Hour: <?php echo  $row["Hour"] ?> </p> 
-                    
-                    <form action="appointment_info.php" method="post">
+                  <?php if ($row["date"]> $today){?>
+                    <h5 class="atribute"> 
+                      <p>Name: <?php echo  $row["patient"] ?></p>
+                      <h6 class= "subatribute"> <!-- Alterar Css -->
+                      <p>Date: <?php echo  $row["date"] ?> </p>
+                      <p>Hour: <?php echo  $row["Hour"] ?> </p> 
                       
-                      <?php $_SESSION["patient_cc"]=$row["cc"] ;
-                            $_SESSION["appointment"]=$row["id"] ; ?>
-                     <input type="submit" value="Appointment file" ></input>
-                    </form>
-                    </h6>
-                  </h5>
-                  <?php // } }else{ ?>
-                  <!-- <p >There is no Scheduled appointments</p> -->
+                      <form action="appointment_info.php" method="post">
+                        
+                        <?php $_SESSION["patient_cc"]=$row["cc"] ;
+                              $_SESSION["appointment"]=$row["id"] ; ?>
+                      <input type="submit" value="Appointment file" ></input>
+                      </form>
+                      </h6>
+                    </h5>
+              
+                  <?php } else{ ?>
+                    <p >There is no Scheduled appointments</p> 
+                  <?php break; }?>
+                <?php  } ?>
+                 <?php }else{ ?>
+                  <p >There is no Scheduled appointments</p> 
                 <?php }?>
                
             </article> 
@@ -67,7 +73,9 @@
                 
                 <h4 class="info_section" id="reservation">Reservation without answer: </h4>
 
+                <?php if($numRowsReservation['num']!= 0) { ?>
                 <?php foreach ($result4 as $row) { ?>
+                  
                  <?php if(getDoctorReservationWithAnswer($row["id"],$result["id"])==FALSE){ ?>
 
                  
@@ -90,8 +98,11 @@
                     
                     </h6>
                   </h5>
-                
+                  
                 <?php }?>
+                <?php }?>
+                <?php } else {?>
+                    <p>There is no Reservation Request.</p>
                 <?php }?>
                 <span><?php echo $msg_R ?></span>
               
@@ -100,7 +111,7 @@
             <h2 id="inpatients">Inpatient</h2>
             <article class="info_section">
                 <h4 class="info_section">Monitor inpatients: </h4>
-                <?php //if($result_inpatient["name"]){?>
+                <?php if($numRowsInpatient['num']!=0){?>
                 <?php foreach ($result_inpatient as $row) { ?>
                  
                   <h5 class="atribute"> 
@@ -111,8 +122,9 @@
                     <a href='inpatient.php?code=<?php echo $row["code"] ?>'>consult</a>
                     </h6>
                   </h5>
-                  <!-- <?php // } }else{ ?>
-                  <p >You are not monitoring an inpatient</p> -->
+                  <?php  } ?>
+                <?php }else{ ?>
+                  <p >You are not monitoring any inpatient.</p>
                 <?php }?>
             </article> 
             
