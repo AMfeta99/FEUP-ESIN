@@ -22,11 +22,18 @@
                 
                 <h5 class="atribute">Diseases already diagnosed: </h5>
                 <ul>
+                <?php $i = 0; $sum_null = 0 ?>
                 <?php foreach ($result3 as $row) { ?>
+                  <?php $i = $i+1; ?>
                   <?php if(!is_null($row['disease_name'])) { ?> 
                     <li><?php echo  $row['disease_name'] ?></li>
-                  <?php } ?>
+                  <?php } else {
+                    $sum_null = $sum_null +1;
+                 } ?>
                 <?php } ?>
+                <?php if ($sum_null == $i){ ?>
+                  <p> No disease diagnosed until now. </p>
+                  <?php } ?>
                 </ul>
                  
 

@@ -12,9 +12,9 @@
               <label class="hamburger" id="prof" for="hamburger">
                 <ul id="link_profile">
                   
-                      <li ><a href="">Inpatient Info</a></li>
-                      <li ><a href="">Medication</a></li>
-                      <li ><a href="">Daily Reports</a></li>
+                      <li ><a href="#info">Inpatient Info</a></li>
+                      <li ><a href="#medication">Medication</a></li>
+                      <li ><a href="#reports">Daily Reports</a></li>
                     
                 </ul> 
               </label>
@@ -22,7 +22,7 @@
          
           </article>
 
-          <div class="info">
+          <div id="info" class="info">
           <span><?php echo $msg_inpatient?></span>
             <h2>Patient Info:</h2>
             
@@ -41,14 +41,14 @@
             <article class="info_section">
                 <h4 class="info_section">Internment Info: </h4>
                
-                <h5 class="atribute">Doctor: <p><?php echo  $result3["doctor_name"]; ?> (  Colocar link que referencie para o doctor )</p></h5> 
+                <h5 class="atribute">Doctor: <a href ="Doctor_without_login.php?id=<?php echo $result3["doctor_id"] ?>" ><p><?php echo  $result3["doctor_name"]; ?> </p></a></h5> 
                 <h5 class="atribute">Doctor mail: <p><?php echo  $result3["doctor_mail"]; ?></p></h5> 
                 <h5 class="atribute">Bed: <p><?php echo  $result4["bed"]; ?></p></h5> 
                 <h5 class="atribute">Department: <p><?php echo  $result4["dep_name"]; ?></p></h5> 
                 <h5 class="atribute">Visiting Hours: <p><?php echo  $result4["visiting_hours"]; ?></p></h5> 
             </article> 
 
-         
+            <section id = "medication">
             <article class="info_section">
                 <h4 class="info_section">Medication: </h4>
                 <?php if ($err == null) { ?> <!--if there was no error -->
@@ -59,7 +59,9 @@
                 <p><?php echo "There was an error retrieving the categories"; ?></p>
             <?php } ?>
             </article> 
-            
+            </section>
+
+            <section id = "reports">
             <article class="info_section">
                 <h4 class="info_section">Reports: </h4>
                 
@@ -87,7 +89,7 @@
                     <span><?php echo $msg ?></span>
                   </form>    
             <?php } }?>
-            
+            </section>
           </div>
 
         </section> 

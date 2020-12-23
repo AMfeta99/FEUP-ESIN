@@ -11,11 +11,11 @@
             <input type="text" name="Dname" placeholder="name of Doctor">
             <!-- <input type="text" name="email" placeholder="mail address">
             <input type="number" name="phone_number" placeholder="phone_number"> -->
-            <input type="submit" value="SEARCH">
+            <input id="button_search" type="submit" value="SEARCH">
         </form>
 
         <section class="Doctors_list">
-            <p>Welcome to the <?php echo $Department_name; ?>  service. These are our specialized doctors</p>
+            <p>Welcome to the <?php echo $Department_name; ?>  service. These are our specialized doctors.</p>
             <p>Here you can consult all the information you need: Doctor's name, contact, mail address.</p>
             <p>if you want to schedule an appointment, here you can see the schedule at which each doctor is making appointments.</p>
             

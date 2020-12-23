@@ -49,9 +49,9 @@
           <div class = "text-block">
           <h3>We make a Difference in your lives</h3>
             <br>
-            <p> We have taken care of your health for years and we take care of you from the first moment</p>
+            <p> We have taken care of your health for years and we take care of you from the first moment.</p>
             <p> We have at your disposal the best health professionals in the country, always ready to help you take care of your health and your family.</p>
-            <p> We are proud of our national network of hospitals and clinics that offer a wide range of services</p>
+            <p> We are proud of our national network of hospitals and clinics that offer a wide range of services.</p>
           </div>
           
         </section>
@@ -60,7 +60,7 @@
         <section id = "departments">
 
           <h2 class="heading">Departments</h2>
-          <p>Our hospital has about 10 different services </p>
+          <p>Our hospital has about 10 different services. In this section you can find them and search for their doctors. </p>
 
           <section class = "departments">
            
@@ -88,6 +88,7 @@
 
  
         </section>
+        <br>
         <p>Even when you're far away, you can always be around. You can accompany a family member or friend who is hospitalized, consult their status and evolution and always know the service, bed and time of visits. </p>
 
         <section id = "logins">

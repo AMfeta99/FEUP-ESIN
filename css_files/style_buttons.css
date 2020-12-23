@@ -13,7 +13,7 @@ transform: scale(1.1);
 
 .out:hover{
   color: red;
-  background-color: #000;
+  background-color:transparent;
   transform: scale(1.1);
   cursor: pointer;
   }
@@ -23,9 +23,10 @@ transform: scale(1.1);
   margin: 0;
   font-size: 20px;
   list-style-type: none;
-  background-color:rgba(85, 85, 85, 0.795);
-  border-color: rgba(85, 85, 85, 0.795);
+  background-color: transparent;
+  border-color: transparent;
   text-align: Left;
+  color:white;
 }
 
 /*buttons e X*/

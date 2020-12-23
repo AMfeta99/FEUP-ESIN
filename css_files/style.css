@@ -97,6 +97,9 @@ body > footer p {
 }
 
 /* About */
+.text-block > p{
+  text-align: justify;
+}
 .text-block{
   position: relative;
   width: 100%;
@@ -290,6 +293,7 @@ width: 150px;
 #dados *{
   margin-top: 5px;
 }
+
 #profile_pag a{
   color:  rgba(85, 85, 85, 0.795);
   text-decoration: none;
@@ -301,7 +305,7 @@ width: 150px;
   transition: 1s;
 }
 #profile_pag a:hover{
-  color:white;
+  color:rgb(176, 85, 194);
 }
 
 #hamburgerp{
@@ -333,6 +337,10 @@ aside li {
 }
 
 /*____________________department&Doctors_____________*/
+
+.Doctors_list {
+  padding: 1em;
+  }
 .especialista{
   display:flex;
   flex-direction: column;
@@ -366,6 +374,7 @@ aside li {
 .Doctors_list{
   background-color: rgba(155, 92, 211, 0.4);
   padding-bottom: 5px;
+  padding: 1%;
 }
 
 #pagination {
@@ -381,15 +390,23 @@ aside li {
 #lt{
   visibility: hidden;
 }
+/* search */
 
-#search{
+#button_search:hover{
+  background-color: rgb(194, 113, 194);
+}
+
+#search {
   display: flex;
+  margin-bottom: 1%;
   /* border-bottom: 1px solid black; */
 }
 
+
 #search input{
   flex-grow: 1;
-  margin: 1em;
+  color: black;
+  margin:1%;
 }
 
 /*____________________schedule_____________*/

@@ -20,12 +20,13 @@ function getInpatientInfo($code){
 // Doctor of the inpatient
 function getDoctorInpatient($code){
     global $dbh;
-    $stmt=$dbh->prepare("SELECT Doctor.name as doctor_name, Doctor.mail_address as doctor_mail FROM Inpatient
+    $stmt=$dbh->prepare("SELECT Doctor.id as doctor_id, Doctor.name as doctor_name, Doctor.mail_address as doctor_mail FROM Inpatient
                         JOIN Doctor ON doctor= Doctor.id
                         WHERE Inpatient.code=?");
     $stmt->execute(array($code));
     return $stmt->fetch();
 }
+
 // Bed and department
 function getBedDepartment($code){
     global $dbh;
