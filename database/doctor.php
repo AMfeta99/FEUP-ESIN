@@ -136,6 +136,18 @@ function countNumbersOfRowsReservation($doctor_id){
     return $stmt->fetch();
 }
 
+function getDoctorReservationWithAnswer($reservation_id,$doctor_id){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT Reservation.id as id
+                           From Reservation 
+                           JOIN Doctor ON doctor=Doctor.id
+                           JOIN ReceiveNotification ON ReceiveNotification.id=Reservation.id
+                           WHERE Reservation.id=? AND doctor=?");
+
+    $stmt->execute(array($reservation_id,$doctor_id));
+    return $stmt->fetch();
+}
+
 function getDoctorinpatient($doctor_id){
     global $dbh;
     $stmt = $dbh->prepare("SELECT Patient.name as name, bed, code FROM Inpatient

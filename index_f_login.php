@@ -3,8 +3,11 @@ require_once('config/init.php');
 $msg = $_SESSION["msg"];
 unset($_SESSION["msg"]);
 
+$msg_N = $_SESSION["msg_N"];
+unset($_SESSION["msg_N"]);
+
 $patient_cc = $_GET['cc'];
-$patient_email = $_SESSION['user'];
+// $patient_email = $_SESSION['user'];
 require_once('database/patient.php');
 
 unset($_SESSION["dep"]);
@@ -25,8 +28,7 @@ try {
 
 } catch (PDOException $e) {
   $err = $e->getMessage();
-  echo $e-> getMessage();
-  //exit(0);
+  exit(0);
 }
 
 // Define todays date

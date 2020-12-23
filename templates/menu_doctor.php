@@ -76,6 +76,9 @@
                 <?php if($numRowsReservation['num']!= 0) { ?>
                 <?php foreach ($result4 as $row) { ?>
                   
+                 <?php if(getDoctorReservationWithAnswer($row["id"],$result["id"])==FALSE){ ?>
+
+                 
                   <h5 class="atribute"> 
                     <p>Name: <?php echo  $row["patient"] ?></p>
                     <h6 class= "subatribute"> <!-- Alterar Css -->
@@ -97,10 +100,12 @@
                   </h5>
                   
                 <?php }?>
+                <?php }?>
                 <?php } else {?>
                     <p>There is no Reservation Request.</p>
                 <?php }?>
                 <span><?php echo $msg_R ?></span>
+              
             </article> 
 
             <h2>Inpatient</h2>
