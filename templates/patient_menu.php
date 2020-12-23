@@ -96,11 +96,25 @@
 
             <article class="info_section">
                 <h4 class="info_section">Notification: </h4> 
+ 
+                  <?php foreach ($result5 as $row) { ?> 
+
+                  <form action="Action_receive_Notification.php" method="post">
+                  <span><p> Your reservation for an appointment for day <?php echo $row["date"]?> at <?php echo $row["time"]?>
+                  for <?php echo $row["department"]?> Doctor <?php echo $row["doctor"]?> has <?php echo $row["message"]?> </p></span>
+
+                  <input type="hidden" name="message" value=<?php echo $row["message"]?>></input>
+                  <input type="hidden" name="notification_ID" value=<?php echo $row["id"]?>></input>
+                  <input type="hidden" name="reserv_ID" value=<?php echo $row["reservation"]?>></input>
+                  <input type="hidden" name="patient_cc" value=<?php echo $_SESSION['user']?>></input>
+                  <input type="submit" value="received" ></input>
+                  <?php  }?>
+                  
+                  <span><?php  echo $msg_N  ?></span>
+                  </form>
+
+                  
                 
-                <h5 class="atribute"> 
-                <?php foreach ($result5 as $row) { ?>
-                <span> <p><?php echo $row["message"]?> </p></span>
-                <?php  }?>
             </article>  
           
          </div>

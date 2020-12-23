@@ -3,11 +3,11 @@
     $id= $_POST['R_ID'];
     $Doctor=$_POST['D_ID'];
     
-    function DeleteReservation($id){
-        global $dbh;
-        $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
-        $stmt->execute(array($id));
-    }
+    // function DeleteReservation($id){
+    //     global $dbh;
+    //     $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
+    //     $stmt->execute(array($id));
+    // }
 
     function RejectNotification($id){
         global $dbh;
@@ -17,7 +17,7 @@
  
     try{
         RejectNotification($id);
-        DeleteReservation($id);
+        // DeleteReservation($id);
         $_SESSION["msg_R"]="Reservation Rejected succefull";
         header("Location: Doctor.php?id=$Doctor");
        
