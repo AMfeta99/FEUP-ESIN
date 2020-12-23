@@ -43,21 +43,26 @@
                 <h4 class="info_section">Scheduled appointments: </h4>
                <?php if($numRowsAppointment['num']!= 0){?>
                 <?php foreach ($result3 as $row) { ?>
-                  <h5 class="atribute"> 
-                    <p>Name: <?php echo  $row["patient"] ?></p>
-                    <h6 class= "subatribute"> <!-- Alterar Css -->
-                    <p>Date: <?php echo  $row["date"] ?> </p>
-                    <p>Hour: <?php echo  $row["Hour"] ?> </p> 
-                    
-                    <form action="appointment_info.php" method="post">
+                  <?php if ($row["date"]> $today){?>
+                    <h5 class="atribute"> 
+                      <p>Name: <?php echo  $row["patient"] ?></p>
+                      <h6 class= "subatribute"> <!-- Alterar Css -->
+                      <p>Date: <?php echo  $row["date"] ?> </p>
+                      <p>Hour: <?php echo  $row["Hour"] ?> </p> 
                       
-                      <?php $_SESSION["patient_cc"]=$row["cc"] ;
-                            $_SESSION["appointment"]=$row["id"] ; ?>
-                     <input type="submit" value="Appointment file" ></input>
-                    </form>
-                    </h6>
-                  </h5>
-                  <?php  } ?>
+                      <form action="appointment_info.php" method="post">
+                        
+                        <?php $_SESSION["patient_cc"]=$row["cc"] ;
+                              $_SESSION["appointment"]=$row["id"] ; ?>
+                      <input type="submit" value="Appointment file" ></input>
+                      </form>
+                      </h6>
+                    </h5>
+              
+                  <?php } else{ ?>
+                    <p >There is no Scheduled appointments</p> 
+                  <?php break; }?>
+                <?php  } ?>
                  <?php }else{ ?>
                   <p >There is no Scheduled appointments</p> 
                 <?php }?>

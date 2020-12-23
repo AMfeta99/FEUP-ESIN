@@ -31,7 +31,9 @@
     $err = $e-> getMessage();
     exit(0);
   }
-
+  // Define todays date
+  date_default_timezone_set('Portugal/Lisbon');
+  $today = date('Y-m-d');
 ?>
 
 <?php
