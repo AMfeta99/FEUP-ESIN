@@ -8,7 +8,10 @@
     
     function Hospitalize($patient, $bed, $doctor){
         $visiting_hours=' 2pm- 8pm';
-        $code=$patient;
+        $code=(string)$patient;
+        $rand =(string) rand(10,99);
+        $code = intval($rand.$code);
+        
         global $dbh;
         $stmt= $dbh->prepare("INSERT INTO Inpatient(code,visiting_hours,patient,bed,doctor) VALUES (?,?,?,?,?)");
         $stmt->execute(array($code, $visiting_hours, $patient,$bed,$doctor));

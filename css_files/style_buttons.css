@@ -73,3 +73,22 @@ button {
   justify-content: center;
   align-items: stretch;
 }
+
+button.button_appointment{
+  color: black;
+  margin: 7px 0;
+  padding: 8px 20px;
+  font-size: 0.7em;
+  cursor: pointer;
+
+}
+
+button.submit_prescription{
+  padding: 8px 20px;
+  border: 0 none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font-size: 0.7em;
+  color:black;
+}

@@ -149,7 +149,7 @@ CREATE TABLE Bed(
 CREATE TABLE Inpatient(
     code integer PRIMARY KEY ,
     visiting_hours text,
-    patient integer REFERENCES Patient,
+    patient integer UNIQUE REFERENCES Patient,
     bed integer REFERENCES Bed,
     doctor integer REFERENCES Doctor
 
@@ -392,6 +392,7 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00','09:00', '
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'MON');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '12:00','13:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'MON');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'MON');
@@ -401,6 +402,7 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'TUE');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'TUE');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'TUE');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '12:00','13:00', 'TUE');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'TUE');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'TUE');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'TUE');
@@ -410,6 +412,7 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'WED');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'WED');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'WED');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '12:00','13:00', 'WED');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'WED');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'WED');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'WED');
@@ -419,6 +422,7 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'THU');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'THU');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'THU');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '12:00','13:00', 'THU');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'THU');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'THU');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'THU');
@@ -428,6 +432,7 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '08:00', '09:00', 
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '09:00','10:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '10:00','11:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '11:00','12:00', 'FRI');
+INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '12:00','13:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '13:00','14:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '14:00','15:00', 'FRI');
 INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '15:00','16:00', 'FRI');

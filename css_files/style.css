@@ -488,3 +488,12 @@ form.specialization-select > label{
   font-size: 15px;
   color: beige;
 }
+
+/*____________________Appointment_info.php_____________*/
+
+.date {
+  display: block ruby;
+  padding: 10px;
+  padding-bottom: 20px;
+  }
+

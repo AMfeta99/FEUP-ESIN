@@ -59,7 +59,7 @@
                     <h6 class= "subatribute">
                       <p >code: <?php echo  $row["code"] ?> </p>
                       <p >Bed: <?php echo  $row["bed"] ?></p>
-                      <a href='inpatient.php?code=<?php echo $row["code"] ?>'>consult</a>
+                      <p>You can consult more info about the inpatient <a href='inpatient.php?code=<?php echo $row["code"] ?>'>here.</a> </p>
                     </h6>
                   </h5>
                 <?php  }?>
