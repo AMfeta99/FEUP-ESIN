@@ -51,13 +51,33 @@
             <section id = "medication">
             <article class="info_section">
                 <h4 class="info_section">Medication: </h4>
-                <?php if ($err == null) { ?> <!--if there was no error -->
+                <?php if ($err == null) { ?> 
                 <?php foreach ($result5 as $row) { ?> 
                   <h5 class="atribute">Name: <p><?php echo  $row["name_med"]; ?> <tab> Dose: <?php echo  $row["dose"]; ?></p></h5> 
+                  <h5 class="atribute">Instructions: <p><?php echo  $row["instructions"]; ?> </p></h5> 
                 <?php } ?>
                 <?php } else {?> 
                 <p><?php echo "There was an error retrieving the categories"; ?></p>
             <?php } ?>
+            
+            <?php if ( $_SESSION["funtion"]=="Doctor"){?>
+              <?php if ($result7["doctor_id"]==$_SESSION["user"]){ ?>
+              <form action="Medicine_Inpatient_action.php" method="post" >
+              
+              <legend>Prescription Of Medicine:</legend>
+                <label><b>Instructions</b></label>
+                <textarea name="instrutions" rows="10"  cols="140"></textarea>
+                <label><b>Name</b></label>
+                <input type="text" name="Medicine_name">
+                <label><b>Dose</b></label>
+                <input type="text" name="dose" placeholder="...mg">
+                <input type="hidden" name="inpatient" value="<?php echo $_SESSION['inpatient']?>">
+                
+                <button type="submit" class="submit_prescription">Submit</button>
+                <?php echo $msg_Med_imp ?>
+                </form>
+              <?php }?>
+            <?php }?>
             </article> 
             </section>
 

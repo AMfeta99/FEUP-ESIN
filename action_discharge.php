@@ -25,12 +25,19 @@
         $stmt->execute(array($code));
     }
 
+    function DeleteMedicationAdministered ($code){
+        global $dbh;
+        $stmt= $dbh->prepare("DELETE FROM MedicationAdministered  WHERE inpatient=?");
+        $stmt->execute(array($code));
+    }
+
     try{
         if(getInpatientInfo($code)){
 
             $result=getInpatientInfo($code);
             $bed=$result["bed"];
 
+            DeleteMedicationAdministered ($code);
             DeleteReports($code);
             discharge($code);
             UpdateBedsAvailable($bed,$id_dep);
