@@ -5,9 +5,6 @@
     margin-left: 2%;
 }
 
-/* .info_in {
-    background-color:white;
-}  */
 
 .info h2{
     background-color: #862fe981;
@@ -16,8 +13,8 @@
     padding: 2%;
     margin-top:0;
  }
-.atribute{  
-    margin-left: 2%;
+.atribute{ 
+    margin-left: 2%; 
     margin-top:0;
     margin-bottom:0;
 
@@ -54,6 +51,10 @@
 
 .info_section > form > input{
     margin-left: 1%;
+}
+
+.info_section> p{
+    margin-left: 2%;
 }
 
 /* Doctor.php */

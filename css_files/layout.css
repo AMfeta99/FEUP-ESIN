@@ -50,7 +50,7 @@ body>header h2 {
     grid-area: "form";
 }
 
-#back h2{
+#back> h2{
     grid-area: "frase";
 }
 /**---------------------*/
