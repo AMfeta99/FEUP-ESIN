@@ -98,7 +98,7 @@ CREATE TABLE Prescription (
 );
 
 CREATE TABLE Medicine (
-    code integer PRIMARY KEY, 
+    code integer PRIMARY KEY AUTOINCREMENT, 
     name text NOT NULL, -- paracetamol
     dose text NOT NULL, -- 1000 mg, 500 mg ....
     instructions text NOT NULL
@@ -137,7 +137,6 @@ CREATE TABLE ReceiveNotification (
     message text NOT NULL CHECK (message ="reservation accept" OR message = "reservation denied")
     
 );
-
 
 
 CREATE TABLE Bed(
@@ -212,13 +211,7 @@ INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (18156444,'Tia
 INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (13351542,'Jaime Sousa', 47, 'jiji@gmail.com', 'asc42'); 
 INSERT INTO Patient (cc,name, age, mail_address, password) VALUES (15431541,'José Sousa', 40, 'joseS@gmail.com', 'joses40'); 
 
---Doctor (tenho q ver como se insere as variaveis do tipo blob)
--- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality ) VALUES ('João Sousa',??? , 966754201,'DoctorJoão@gmail.com', 'joaodopulmao', 6);
--- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Ana Magalhães',??? , 966754121,'DoctorAna@gmail.com', 'AnaMag', 4);
--- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Maria Machado',??? , 966451201,'DoctorMaria@gmail.com', 'MaMachado', 3);
--- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Antonio Gomes',??? , 952154277,'DoctorTo@gmail.com', 'AntGomes45', 8);
--- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('Filipa Rocha',??? , 969954201,'DoctorPipa@gmail.com', 'FillRocha4', 5);
--- INSERT INTO Doctor (name,photo, phone_number, mail_address, password,speciality) VALUES ('André Pereira',??? , 975462201,'DoctorAndre@gmail.com', '54631Pereira', 3);
+
 INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Ana Sousa','images/doctors/1.png', 966754201,'DoctorAFsousa@gmail.com', 'anafsousa', 1);
 INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Ana Barrias','images/doctors/2.jpg', 964754121,'DoctorACbarrias@gmail.com', 'anacbarrias', 1);
 INSERT INTO Doctor (name, photo, phone_number, mail_address, password,speciality) VALUES ('Maria Ribeiro','images/doctors/3.jpg', 966751201,'DoctorMRibeiro@gmail.com', 'MaRibeiro', 1);

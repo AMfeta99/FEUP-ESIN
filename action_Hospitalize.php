@@ -52,7 +52,7 @@
         if(strpos($e->getMessage(), "UNIQUE")){
             $_SESSION["msg_H"]="This patient is already hospitalized.";
          }else{
-        $_SESSION["msg_H"]="Hospitalization NOT succefull";
+            $_SESSION["msg_H"]="Hospitalization NOT succefull";
         
          }
        header("Location: Doctor.php?id=$Doctor");
