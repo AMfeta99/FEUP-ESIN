@@ -1,6 +1,7 @@
 <?php
     require_once('config/init.php');
-
+    require_once('database/schedule.php');
+    require_once('database/reservation.php');
     $doctor_id=$_SESSION["doctor_id"];
     $date_select =$_SESSION["date"];
     $patient=$_SESSION["user"];
@@ -12,20 +13,6 @@
     $_SESSION["week"]=$week_day;
 
 
-    function getBlock_time($time ,$week_day){
-        global $dbh;
-        $stmt = $dbh->prepare("SELECT code FROM Block_time
-                                WHERE begin_time=? AND week_day=?");
-       $stmt->execute(array($time,$week_day));
-       return $stmt->fetch()['code'];
-    }
-
-
-    function insertReservation($date_select, $Block_time, $doctor_id,$patient){
-        global $dbh;
-        $stmt= $dbh->prepare("INSERT INTO Reservation(date, time, doctor,patient)VALUES (?,?,?,?)");
-        $stmt->execute(array($date_select, $Block_time, $doctor_id,$patient));
-    }
 
     try{
         $Block_time=getBlock_time($time,$week_day);

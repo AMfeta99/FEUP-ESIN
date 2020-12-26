@@ -76,6 +76,7 @@
       <?php foreach ($result2 as $row) { ?>
         <?php $i = $i + 1; ?>
         <?php if (!is_null($row['doctor'])) { ?>
+          <?php if ($row["date"] > $today) { ?>
           <h5 class="atribute">
             <p>Speciality: <?php echo  $row["speciality"] ?></p>
             <h6 class="subatribute">
@@ -87,6 +88,7 @@
               <?php } ?>
             </h6>
           </h5>
+          <?php } ?>
         <?php } else {
           $sum_null = $sum_null + 1;
         } ?>
@@ -143,7 +145,7 @@
           <form action="Action_receive_Notification.php" method="post">
             <span>
               <p> Your reservation for an appointment for day <?php echo $row["date"] ?> at <?php echo $row["begin_time"] ?>
-                for <?php echo $row["department"] ?> Doctor <?php echo $row["doctor"] ?> has <?php echo $row["message"] ?>the reservation</p>
+                for <?php echo $row["department"] ?> Doctor <?php echo $row["doctor"] ?> has been <?php echo $row["message"] ?></p>
             </span>
 
             <input type="hidden" name="message" value=<?php echo $row["message"] ?>></input>

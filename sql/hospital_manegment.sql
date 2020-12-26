@@ -128,13 +128,10 @@ CREATE TABLE PrescriptionOfMedicine(
     PRIMARY KEY (id_prescription, id_medicine)
 );
 
--- é melhor associar a consulta , pois pode ter feito pedido de consultas diferentes,
--- e para além disso, é mais fácil para depois associar a reserva à consulta se a mensagem for "reservation accepts"
--- mas se fizermos assim não faz muito ter doctor e patient como atributos, visto que estes já fazem parte do reservation
--- se ficasse assim até fazia mais sentido pq assegurava que estavamos a comunicar entre o doctor e o patient correto
+
 CREATE TABLE ReceiveNotification (
     id integer PRIMARY KEY REFERENCES Reservation,
-    message text NOT NULL CHECK (message ="reservation accept" OR message = "reservation denied")
+    message text NOT NULL CHECK (message ="accept" OR message = "denied")
     
 );
 
@@ -492,7 +489,7 @@ INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 2
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-12-27', 2 , 20, 15991790);
 
 -- Receive Notification
-INSERT INTO ReceiveNotification (id, message) VALUES (7, "reservation accept");
+INSERT INTO ReceiveNotification (id, message) VALUES (7, "accept");
 -- Appointments
 
 INSERT INTO Appointment (reservation) VALUES(1);

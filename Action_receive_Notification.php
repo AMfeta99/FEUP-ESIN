@@ -1,5 +1,6 @@
 <?php
     require_once('config/init.php');
+    
     $id_reservation= $_POST['reserv_ID'];
     $id_notification= $_POST['notification_ID'];
     $message= $_POST['message'];
