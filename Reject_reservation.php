@@ -1,5 +1,6 @@
 <?php
     require_once('config/init.php');
+    require_once('database/reservation.php');
     $id= $_POST['R_ID'];
     $Doctor=$_POST['D_ID'];
     
@@ -8,16 +9,15 @@
     //     $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
     //     $stmt->execute(array($id));
     // }
-
-    //require_once('database/reservation.php');
+   
     function RejectNotification($id){
         global $dbh;
         $stmt= $dbh->prepare("INSERT INTO ReceiveNotification (id,message) VALUES (?,?)");
-        $stmt->execute(array($id,"reservation denied"));
+        $stmt->execute(array($id,"denied"));
     }
+
     try{
         RejectNotification($id);
-        // DeleteReservation($id);
         $_SESSION["msg_R"]="Reservation Rejected succefull";
         header("Location: Doctor.php?id=$Doctor");
        

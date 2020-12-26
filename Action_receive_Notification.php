@@ -18,7 +18,7 @@
     }
  
     try{
-        if($message=='reservation denied'){
+        if($message=="denied"){
             DeleteNotification($id_notification);
             DeleteReservation($id_reservation);
         }else{

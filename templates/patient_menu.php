@@ -143,7 +143,7 @@
           <form action="Action_receive_Notification.php" method="post">
             <span>
               <p> Your reservation for an appointment for day <?php echo $row["date"] ?> at <?php echo $row["begin_time"] ?>
-                for <?php echo $row["department"] ?> Doctor <?php echo $row["doctor"] ?> has <?php echo $row["message"] ?> </p>
+                for <?php echo $row["department"] ?> Doctor <?php echo $row["doctor"] ?> has <?php echo $row["message"] ?>the reservation</p>
             </span>
 
             <input type="hidden" name="message" value=<?php echo $row["message"] ?>></input>

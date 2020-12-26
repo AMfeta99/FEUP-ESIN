@@ -4,7 +4,7 @@
 input {
     width: 75%;
     padding: 10px 20px;
-    margin: 8px auto;
+    margin: 8px 0;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #ccc;
@@ -64,6 +64,8 @@ input {
 
 .ModalContent2 input{           
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ModalContent2 b{  
