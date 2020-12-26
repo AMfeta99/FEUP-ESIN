@@ -9,12 +9,12 @@
     //     $stmt->execute(array($id));
     // }
 
+    //require_once('database/reservation.php');
     function RejectNotification($id){
         global $dbh;
         $stmt= $dbh->prepare("INSERT INTO ReceiveNotification (id,message) VALUES (?,?)");
         $stmt->execute(array($id,"reservation denied"));
     }
- 
     try{
         RejectNotification($id);
         // DeleteReservation($id);

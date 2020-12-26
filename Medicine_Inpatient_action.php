@@ -54,7 +54,7 @@ if(strlen($dname)==0){
         $Medicine_result=check_Medicine($name,$dose);
         $code= $Medicine_result["code"];
         InsertMedicationAdministered ($code,$inpatient);
-        $_SESSION["msg_Med_imp"]="Medicine found in the system.Prescription Of Medicine sucefull!";
+        $_SESSION["msg_Med_imp"]="Medicine found in the system.Prescription Of Medicine successful!";
         header("Location: inpatient.php?code=$inpatient");
 
     }else{
@@ -62,7 +62,7 @@ if(strlen($dname)==0){
         $Mcode=getMedicinecode($name,$dose);
         $code=$Mcode['code'];
         InsertMedicationAdministered ($code,$inpatient);
-        $_SESSION["msg_Med_imp"]="This medication was added to the system,Prescription Of Medicine sucefull!";
+        $_SESSION["msg_Med_imp"]="This medication was added to the system,Prescription Of Medicine successful!";
         header("Location: inpatient.php?code=$inpatient");
     }
     

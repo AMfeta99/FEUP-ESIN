@@ -275,7 +275,7 @@ INSERT INTO Nurse (name,phone_number, mail_address, password, department) VALUES
 
 
 -- BEDs
-INSERT INTO Bed(number, id_department, occupy) VALUES(101, 1, 0);
+INSERT INTO Bed(number, id_department, occupy) VALUES(101, 1, 1);
 INSERT INTO Bed(number,id_department) VALUES(102, 1);
 INSERT INTO Bed(number,id_department) VALUES(103, 1);
 INSERT INTO Bed VALUES(104, 1, 1);
@@ -326,7 +326,7 @@ INSERT INTO Bed VALUES(1002, 10, 0);
 INSERT INTO Bed VALUES(1003, 10, 1);
 INSERT INTO Bed VALUES(1004, 10, 1);
 
--- Inpatient -- temos de ter cuidado em adicionar um médico que trabalhe no departamento em que o paciente está internado
+-- Inpatient -- 
 
 INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110901,' 2pm- 8pm', 15991790, 501, 20 );
 INSERT INTO Inpatient(code, visiting_hours, patient, bed, doctor) VALUES ( 2020110902,' 2pm- 8pm', 84310576, 502, 21 );
@@ -442,45 +442,41 @@ INSERT INTO Block_time(begin_time,end_time,week_day) VALUES ( '17:00','18:00', '
 INSERT INTO Block_time_and_Doctor(block_time, doctor) VALUES (2, 1); -- 9:00
 INSERT INTO Block_time_and_Doctor VALUES(3, 1); --10:00
 INSERT INTO Block_time_and_Doctor VALUES(4, 1); --11:00
-INSERT INTO Block_time_and_Doctor VALUES(6, 1); --14:00
-INSERT INTO Block_time_and_Doctor VALUES(7, 1); --15:00
-INSERT INTO Block_time_and_Doctor VALUES(8, 1); --16:00
+INSERT INTO Block_time_and_Doctor VALUES(7, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(8, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(9, 1); --16:00
 
 -- TUESDAY
 -- 14:00->17:00
-INSERT INTO Block_time_and_Doctor VALUES(15, 1); --14:00
-INSERT INTO Block_time_and_Doctor VALUES(16, 1); --15:00
-INSERT INTO Block_time_and_Doctor VALUES(17, 1); --16:00
+INSERT INTO Block_time_and_Doctor VALUES(17, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(18, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(19, 1); --16:00
 
 -- WEDNESDAY
 --9:00 -> 12:00
 --14:00 -> 17:00
-INSERT INTO Block_time_and_Doctor VALUES(20, 1); -- 9:00
-INSERT INTO Block_time_and_Doctor VALUES(21, 1); --10:00
-INSERT INTO Block_time_and_Doctor VALUES(22, 1); --11:00
-INSERT INTO Block_time_and_Doctor VALUES(24, 1); --14:00
-INSERT INTO Block_time_and_Doctor VALUES(25, 1); --15:00
-INSERT INTO Block_time_and_Doctor VALUES(26, 1); --16:00
+INSERT INTO Block_time_and_Doctor VALUES(22, 1); -- 9:00
+INSERT INTO Block_time_and_Doctor VALUES(23, 1); --10:00
+INSERT INTO Block_time_and_Doctor VALUES(24, 1); --11:00
+INSERT INTO Block_time_and_Doctor VALUES(27, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(28, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(29, 1); --16:00
 
 -- THURSDAY
 -- 14:00->17:00
-INSERT INTO Block_time_and_Doctor VALUES(33, 1); --14:00
-INSERT INTO Block_time_and_Doctor VALUES(34, 1); --15:00
-INSERT INTO Block_time_and_Doctor VALUES(35, 1); --16:00
+INSERT INTO Block_time_and_Doctor VALUES(37, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(38, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(39, 1); --16:00
 
 -- FRIDAY
 --9:00 -> 12:00
 --14:00 -> 17:00
-INSERT INTO Block_time_and_Doctor VALUES(38, 1); -- 9:00
-INSERT INTO Block_time_and_Doctor VALUES(39, 1); --10:00
-INSERT INTO Block_time_and_Doctor VALUES(40, 1); --11:00
-INSERT INTO Block_time_and_Doctor VALUES(42, 1); --14:00
-INSERT INTO Block_time_and_Doctor VALUES(43, 1); --15:00
-INSERT INTO Block_time_and_Doctor VALUES(44, 1); --16:00
-
------------ Doctor 6- department 2
-
-
+INSERT INTO Block_time_and_Doctor VALUES(42, 1); -- 9:00
+INSERT INTO Block_time_and_Doctor VALUES(43, 1); --10:00
+INSERT INTO Block_time_and_Doctor VALUES(44, 1); --11:00
+INSERT INTO Block_time_and_Doctor VALUES(47, 1); --14:00
+INSERT INTO Block_time_and_Doctor VALUES(48, 1); --15:00
+INSERT INTO Block_time_and_Doctor VALUES(49, 1); --16:00
 
 
 

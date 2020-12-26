@@ -60,4 +60,18 @@ function getReportsOfEachInpatient($code){
     $stmt->execute(array($code));
     return $stmt->fetchAll();
 }
+
+function getHistoryDiagnosis($code){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT Disease.name as disease_name FROM AppointmentDiagnosis
+                            JOIN Disease ON Disease.id = disease
+                            JOIN Appointment ON reservation = id_appointment
+                            JOIN Reservation ON Reservation.id= reservation
+                            JOIN Patient ON Reservation.patient=Patient.cc
+                            JOIN Inpatient ON Inpatient.patient = Patient.cc
+                            WHERE Inpatient.code = ?");
+
+    $stmt->execute(array($code));
+    return $stmt->fetchALL();
+}
 ?>

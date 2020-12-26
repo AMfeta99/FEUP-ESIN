@@ -34,7 +34,23 @@
                 <h5 class="atribute">Mail Address: <p><?php echo  $result2["mail_address"] ?></p></h5>
                 <?php if (strlen($result2["phone_number"])>0){?>
                 <h5 class="atribute">Phone Number: <p><?php echo  $result2["phone_number"]; }?></p></h5>
-                <h5 class="atribute">Diagnosed disease: <p> As doenças estão associadas às appointments do patient</p></h5>
+                <h5 class="atribute">Diseases already diagnosed: </h5>
+                <ul>
+                  <?php $i = 0;
+                  $sum_null = 0 ?>
+                  <?php foreach ($diagnosis as $row) { ?>
+                    <?php $i = $i + 1; ?>
+                    <?php if (!is_null($row['disease_name'])) { ?>
+                      <li><?php echo  $row['disease_name'] ?></li>
+                    <?php } else {
+                      $sum_null = $sum_null + 1;
+                    } ?>
+                  <?php } ?>
+                  <?php if ($sum_null == $i) { ?>
+                    <p> No disease diagnosed until now. </p>
+                  <?php } ?>
+                </ul>
+                
             </article>
             
             <h2>Internment:</h2>
@@ -51,10 +67,20 @@
             <section id = "medication">
             <article class="info_section">
                 <h4 class="info_section">Medication: </h4>
+                <?php $i = 0;
+                $sum_null = 0; ?>
                 <?php if ($err == null) { ?> 
                 <?php foreach ($result5 as $row) { ?> 
-                  <h5 class="atribute">Name: <p><?php echo  $row["name_med"]; ?> <tab> Dose: <?php echo  $row["dose"]; ?></p></h5> 
-                  <h5 class="atribute">Instructions: <p><?php echo  $row["instructions"]; ?> </p></h5> 
+                  <?php $i = $i + 1; ?>
+                  <?php if (!is_null($row["name_med"])) { ?>
+                    <h5 class="atribute">Name: <p><?php echo  $row["name_med"]; ?> <tab> Dose: <?php echo  $row["dose"]; ?></p></h5> 
+                    <h5 class="atribute">Instructions: <p><?php echo  $row["instructions"]; ?> </p></h5> 
+                  <?php } else {
+                    $sum_null = $sum_null + 1;
+                  } ?>
+                <?php } ?>
+                <?php if ($sum_null == $i) { ?>
+                  <p> The medication has not been updated yet. </p>
                 <?php } ?>
                 <?php } else {?> 
                 <p><?php echo "There was an error retrieving the categories"; ?></p>
@@ -84,19 +110,28 @@
             <section id = "reports">
             <article class="info_section">
                 <h4 class="info_section">Reports: </h4>
-                
-                <?php foreach ($result6 as $row) { ?> 
-                  <h5 class="atribute">Date: <p><?php echo  $row["date"]; ?> </p></h5> 
-                  <h5 class="atribute">Message: <p><?php echo  $row["message"]; ?></p></h5>
+                <?php $i = 0;
+                $sum_null = 0; ?>
+                <?php foreach ($result6 as $row) { ?>
+                  
+                  <?php $i = $i + 1; ?>
+                  <?php if (!is_null($row["date"])) { ?>
+                    <h5 class="atribute">Date: <p><?php echo  $row["date"]; ?> </p></h5> 
+                    <h5 class="atribute">Message: <p><?php echo  $row["message"]; ?></p></h5>
+                  <?php } else {
+                    $sum_null = $sum_null + 1;
+                  } ?>
                 <?php } ?>
+                <?php if ($sum_null == $i) { ?>
+                  <p> The patient still doesn't have any report. </p>
+                <?php } ?>
+            </article>   
 
-                </article>   
-
-            <!--criar restrição de só enfermeiras do departamento OU Só a enfermeira responsavel (Tabela NurseOfInpatient)-->
+            
             <?php if($_SESSION["funtion"]=="Nurse"){ 
                    $dep_id=$result_nurseD["dep_id"];
                   
-                  if(Check_InpatientAcess($dep_id, $code)) { ?>
+                  if(Check_InpatientAcess($dep_id, $code)) { ?> <!-- só enfermeiros do mesmo departamento é que podem adicionar reports-->
                   
                     <form action="report_action.php" method="post" class="info_section" id="add_report">
                     <h4 class="info_section">New Reports: </h4>

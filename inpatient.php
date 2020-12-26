@@ -20,6 +20,7 @@
     $result4 = getBedDepartment($code);
     $result5 = getMedOfEachInpatient($code); // array of arrays
     $result6 = getReportsOfEachInpatient($code);
+    $diagnosis = getHistoryDiagnosis($code);
     
     $result_nurseD=getDepartmentOfEachNurse($_SESSION["user"]);
     $result7=getDoctorInpatient($code);
