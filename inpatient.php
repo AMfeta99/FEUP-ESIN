@@ -5,7 +5,9 @@
   }
   
   require_once('database/inpatient.php');
+  require_once('database/medication.php');
   require_once('database/nurse.php');
+  require_once('database/report.php');
 
   $msg_Med_imp=$_SESSION["msg_Med_imp"] ;
   unset($_SESSION["msg_Med_imp"] );

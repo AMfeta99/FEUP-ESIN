@@ -1,6 +1,9 @@
 <?php
     require_once('config/init.php');
-    // $funtion=$_POST["funtion"]
+    require_once('database/user.php');
+    require_once('database/doctor.php');
+    require_once('database/nurse.php');
+    require_once('database/patient.php');
     $mail_address=$_POST["email"];
     $mail_address=strval($mail_address);
     $password=$_POST["password"];
@@ -16,38 +19,38 @@
         die();
     }
 
-     #verify if is a Doctor
-     function IsthatDoctor($mail_address){
-        global $dbh;
-        $stmt=$dbh->prepare("SELECT * FROM Doctor WHERE mail_address=? ");
-        $stmt->execute(array($mail_address));
-        return $stmt->fetch();
-    }
+    //  #verify if is a Doctor
+    //  function IsthatDoctor($mail_address){
+    //     global $dbh;
+    //     $stmt=$dbh->prepare("SELECT * FROM Doctor WHERE mail_address=? ");
+    //     $stmt->execute(array($mail_address));
+    //     return $stmt->fetch();
+    // }
 
-     #verify if is a Patient
-    function IsthatPatient($mail_address){
-        global $dbh;
-        $stmt=$dbh->prepare("SELECT * FROM Patient WHERE mail_address=? ");
-        $stmt->execute(array($mail_address));
-        return $stmt->fetch();
-    }
+    //  #verify if is a Patient
+    // function IsthatPatient($mail_address){
+    //     global $dbh;
+    //     $stmt=$dbh->prepare("SELECT * FROM Patient WHERE mail_address=? ");
+    //     $stmt->execute(array($mail_address));
+    //     return $stmt->fetch();
+    // }
 
-    #verify if is a Nurse
-    function IsthatNurse($mail_address){
-        global $dbh;
-        $stmt=$dbh->prepare("SELECT * FROM Nurse WHERE mail_address=? ");
-        $stmt->execute(array($mail_address));
-        return $stmt->fetch();
-    }
+    // #verify if is a Nurse
+    // function IsthatNurse($mail_address){
+    //     global $dbh;
+    //     $stmt=$dbh->prepare("SELECT * FROM Nurse WHERE mail_address=? ");
+    //     $stmt->execute(array($mail_address));
+    //     return $stmt->fetch();
+    // }
     
-    #verify usermail_address/password
-    function Validating($mail_address,$password,$table){
+    // #verify usermail_address/password
+    // function Validating($mail_address,$password,$table){
 
-        global $dbh;
-        $stmt=$dbh->prepare("SELECT * FROM $table WHERE mail_address=? AND password=?");
-        $stmt->execute(array($mail_address,$password));
-        return $stmt->fetch();
-    }
+    //     global $dbh;
+    //     $stmt=$dbh->prepare("SELECT * FROM $table WHERE mail_address=? AND password=?");
+    //     $stmt->execute(array($mail_address,sha1($password)));
+    //     return $stmt->fetch();
+    // }
 
     #verify usermail_address and after correspondent password
     function loginValid($mail_address,$password){

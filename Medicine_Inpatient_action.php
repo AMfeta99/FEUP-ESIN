@@ -1,5 +1,7 @@
 <?php require_once('config/init.php');
 require_once('database/patient.php');
+require_once('database/medicine.php');
+require_once('database/medication.php');
 
 $dname=$_POST["Medicine_name"];
 $name = strtolower($dname); 
@@ -9,37 +11,37 @@ $instrutions=$_POST["instrutions"];
 $inpatient= $_POST['inpatient'];
 
 
-function check_Medicine($name,$dose){
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT * FROM Medicine
-                            WHERE Medicine.name = ? and Medicine.dose=?");
+// function check_Medicine($name,$dose){
+//     global $dbh;
+//     $stmt = $dbh->prepare("SELECT * FROM Medicine
+//                             WHERE Medicine.name = ? and Medicine.dose=?");
 
-    $stmt->execute(array($name,$dose));
-    return $stmt->fetch();
-}
+//     $stmt->execute(array($name,$dose));
+//     return $stmt->fetch();
+// }
 
-function InsertMedicine($name, $dose, $instrutions){
-    global $dbh;
-    $stmt = $dbh->prepare("INSERT INTO  Medicine ( name, dose, instructions) VALUES (?,?,?) ");
+// function InsertMedicine($name, $dose, $instrutions){
+//     global $dbh;
+//     $stmt = $dbh->prepare("INSERT INTO  Medicine ( name, dose, instructions) VALUES (?,?,?) ");
 
-    $stmt->execute(array( $name, $dose, $instrutions));
-}
+//     $stmt->execute(array( $name, $dose, $instrutions));
+// }
 
-function getMedicinecode($name,$dose){
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT code FROM Medicine
-                            WHERE Medicine.name = ? and Medicine.dose=?");
+// function getMedicinecode($name,$dose){
+//     global $dbh;
+//     $stmt = $dbh->prepare("SELECT code FROM Medicine
+//                             WHERE Medicine.name = ? and Medicine.dose=?");
 
-    $stmt->execute(array($name,$dose));
-    return $stmt->fetch();
-}
+//     $stmt->execute(array($name,$dose));
+//     return $stmt->fetch();
+// }
 
 
-function InsertMedicationAdministered ($code_medicine,$inpatient){
-    global $dbh;
-    $stmt= $dbh->prepare("INSERT INTO MedicationAdministered (code_medicine,inpatient )  VALUES (?,?)");
-    $stmt->execute(array($code_medicine,$inpatient));
-}
+// function InsertMedicationAdministered ($code_medicine,$inpatient){
+//     global $dbh;
+//     $stmt= $dbh->prepare("INSERT INTO MedicationAdministered (code_medicine,inpatient )  VALUES (?,?)");
+//     $stmt->execute(array($code_medicine,$inpatient));
+// }
 
 
 if(strlen($dname)==0){

@@ -21,6 +21,9 @@ if(isset($_SESSION['funtion'])){
       unset($_SESSION["b"]);
 
       require_once('database/patient.php');
+      require_once('database/notification.php');
+      require_once('database/prescription.php');
+      require_once('database/appointmentphp');
 
       try {
         $result = getPatientById($patient_cc); // array of arrays

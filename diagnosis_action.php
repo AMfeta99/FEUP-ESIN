@@ -1,24 +1,12 @@
 <?php require_once('config/init.php');
+ require_once('database/appointment.php');
+ require_once('database/disease.php');
 
 $disease=$_POST["disease_name"];
 $disease = strtolower($disease); 
 
 $id_appointment=$_SESSION["appointment"];
 
-function check_disease($disease){
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT * FROM Disease
-                            WHERE Disease.name = ?");
-
-    $stmt->execute(array($disease));
-    return $stmt->fetch();
-}
-
-function InsertAppointmentDiagnosis($id_appointment,$disease){
-    global $dbh;
-    $stmt= $dbh->prepare("INSERT INTO AppointmentDiagnosis (id_appointment, disease)  VALUES (?,?)");
-    $stmt->execute(array($id_appointment,$disease));
-}
 
 if(strlen($disease)==0){
     $_SESSION["msg_disease"]=" Please insert the diagnosed disease !";
