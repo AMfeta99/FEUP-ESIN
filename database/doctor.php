@@ -201,6 +201,7 @@ function getDoctorScheduleByWeekDay($doctor_id, $week_day){
    return $stmt->fetchAll();
 }
 
+//esta devia ir para appointment
 function canMakeAppointment($schedule, $begin_hour, $day){
     foreach ($schedule as $row) {
       $time =  $row["begin_time"] . ' - ' . $row["end_time"];
@@ -215,4 +216,29 @@ function canMakeAppointment($schedule, $begin_hour, $day){
     return 0;
   }
 
+  function getDoctorFromPrescription($prescription_id){
+    global $dbh;
+    $stmt = $dbh->prepare( "SELECT Doctor.name as doctor_name, Doctor.mail_address as doctor_mail FROM Prescription
+                        JOIN Appointment ON id_appointment= reservation
+                        JOIN Reservation ON Reservation.id = reservation
+                        JOIN Doctor ON Doctor.id=doctor
+                        WHERE Prescription.id =?");
+    $stmt->execute(array($prescription_id));
+    return $stmt->fetch();                    
+}
+
+#verify if is a Doctor
+function IsthatDoctor($mail_address){
+    global $dbh;
+    $stmt=$dbh->prepare("SELECT * FROM Doctor WHERE mail_address=? ");
+    $stmt->execute(array($mail_address));
+    return $stmt->fetch();
+}
+
+function insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department){
+    global $dbh;
+    $department_number = getDepId(strtolower($department))["number"];
+    $stmt= $dbh->prepare("INSERT INTO Doctor(name,photo,phone_number,mail_address,password,speciality) VALUES (?,?,?,?,?,?)");
+    $stmt->execute(array($name,$photo,$phone_number,$mail_address,sha1($password),$department_number));
+}
 ?>

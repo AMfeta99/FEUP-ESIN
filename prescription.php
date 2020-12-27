@@ -3,6 +3,8 @@
 
     $prescription_id= $_GET['id'];
     require_once('database/prescription.php');
+    require_once('database/doctor.php');
+    require_once('database/patient.php');
 
     try{
         $prescInfo = getPrescriptionInfo($prescription_id); // id, date-limit, appointment

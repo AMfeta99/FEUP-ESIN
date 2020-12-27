@@ -1,22 +1,24 @@
 <?php
     require_once('config/init.php');
-    
+    require_once('database/reservation.php');
+    require_once('database/notification.php');
+
     $id_reservation= $_POST['reserv_ID'];
     $id_notification= $_POST['notification_ID'];
     $message= $_POST['message'];
     $cc_patient=$_POST['patient_cc'];
     
-    function DeleteReservation($id){
-        global $dbh;
-        $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
-        $stmt->execute(array($id));
-    }
+    // function DeleteReservation($id){
+    //     global $dbh;
+    //     $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
+    //     $stmt->execute(array($id));
+    // }
 
-    function DeleteNotification($id){
-        global $dbh;
-        $stmt= $dbh->prepare("DELETE FROM ReceiveNotification WHERE id=?");
-        $stmt->execute(array($id));
-    }
+    // function DeleteNotification($id){
+    //     global $dbh;
+    //     $stmt= $dbh->prepare("DELETE FROM ReceiveNotification WHERE id=?");
+    //     $stmt->execute(array($id));
+    // }
  
     try{
         if($message=="denied"){

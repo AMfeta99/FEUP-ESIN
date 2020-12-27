@@ -1,5 +1,8 @@
 <?php
   require_once('config/init.php');
+  require_once('database/bed.php');
+  require_once('database/nurse.php');
+  // require_once('database/department.php');
 
   if(isset($_SESSION['funtion'])){ 
     if($_SESSION['funtion']=='Nurse'){
@@ -12,8 +15,7 @@
       
       unset($_SESSION["msg"] );
       
-      require_once('database/nurse.php');
-      require_once('database/department.php');
+      
       
       try{
         $result = getNurseById($nurse_id); 

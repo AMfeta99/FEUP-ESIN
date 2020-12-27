@@ -1,5 +1,4 @@
 <?php
-   
 
    function AddAppointment($id){
     global $dbh;
@@ -25,5 +24,13 @@
         $stmt= $dbh->prepare("INSERT INTO Reservation(date, time, doctor,patient)VALUES (?,?,?,?)");
         $stmt->execute(array($date_select, $Block_time, $doctor_id,$patient));
     }
+
+        
+    function DeleteReservation($id){
+        global $dbh;
+        $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
+        $stmt->execute(array($id));
+    }
+
 
 ?>

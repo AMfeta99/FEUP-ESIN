@@ -7,6 +7,20 @@ function getPatientById($patient_id){
     return $stmt->fetch(); // array of arrays
 }
 
+  #verify if is a Patient
+  function IsthatPatient($mail_address){
+    global $dbh;
+    $stmt=$dbh->prepare("SELECT * FROM Patient WHERE mail_address=? ");
+    $stmt->execute(array($mail_address));
+    return $stmt->fetch();
+}
+
+function insertPatient($cc,$name,$age,$phone_number,$mail_address,$password){
+    global $dbh;
+    $stmt= $dbh->prepare("INSERT INTO Patient(cc,name,age,phone_number,mail_address,password) VALUES (?,?,?,?,?,?)");
+    $stmt->execute(array($cc,$name,$age,$phone_number,$mail_address,sha1($password)));
+}
+
 // getting Appointment of a Patient
 function getPatientAppointment($patient_id){
         global $dbh;
@@ -40,30 +54,30 @@ function getPatientAppointmentbyID($appointment_id){
 }
 
 
-function getAppointmentDiagnosis($patient_id){
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT Disease.name as disease_name FROM AppointmentDiagnosis
-                            JOIN Disease ON Disease.id = disease
-                            JOIN Appointment ON reservation = id_appointment
-                            JOIN Reservation ON Reservation.id= reservation
-                            JOIN Patient ON patient=Patient.cc
-                            WHERE Patient.cc = ?");
+// function getAppointmentDiagnosis($patient_id){
+//     global $dbh;
+//     $stmt = $dbh->prepare("SELECT Disease.name as disease_name FROM AppointmentDiagnosis
+//                             JOIN Disease ON Disease.id = disease
+//                             JOIN Appointment ON reservation = id_appointment
+//                             JOIN Reservation ON Reservation.id= reservation
+//                             JOIN Patient ON patient=Patient.cc
+//                             WHERE Patient.cc = ?");
 
-    $stmt->execute(array($patient_id));
-    return $stmt->fetchALL();
-}
+//     $stmt->execute(array($patient_id));
+//     return $stmt->fetchALL();
+// }
 
-function getPrescriptionsOfPatient($patient_id){
+// function getPrescriptionsOfPatient($patient_id){
 
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT Prescription.id as id_prescription, date_limit FROM Prescription
-                            JOIN Appointment ON id_appointment = reservation
-                            JOIN Reservation ON Reservation.id= reservation
-                            JOIN Patient ON patient=Patient.cc
-                            WHERE Patient.cc = ?");
-    $stmt->execute(array($patient_id));
-    return $stmt->fetchALL();
-}
+//     global $dbh;
+//     $stmt = $dbh->prepare("SELECT Prescription.id as id_prescription, date_limit FROM Prescription
+//                             JOIN Appointment ON id_appointment = reservation
+//                             JOIN Reservation ON Reservation.id= reservation
+//                             JOIN Patient ON patient=Patient.cc
+//                             WHERE Patient.cc = ?");
+//     $stmt->execute(array($patient_id));
+//     return $stmt->fetchALL();
+// }
 
 function  getInpatientFromPatient($patient_id){
     global $dbh;
@@ -76,20 +90,30 @@ function  getInpatientFromPatient($patient_id){
     return $stmt->fetch();
 }
 
-#NOTIFICATION
-function  getPatientNotification($patient_id){
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT message, ReceiveNotification.id as id, Reservation.id as reservation, Doctor.name as doctor, Department.name as department, Reservation.date as date, Reservation.time as time, begin_time
-                            FROM ReceiveNotification
-                            JOIN Reservation ON ReceiveNotification.id = Reservation.id
-                            JOIN Block_time ON Block_time.code=Reservation.time
-                            JOIN Doctor ON Doctor.id=Reservation.doctor
-                            JOIN Department ON Department.number=Doctor.speciality
-                            JOIN Patient ON Reservation.patient = Patient.cc
-                            WHERE Patient.cc = ?");
-    $stmt->execute(array($patient_id));
-    return $stmt->fetchALL();
-}
+// #NOTIFICATION
+// function  getPatientNotification($patient_id){
+//     global $dbh;
+//     $stmt = $dbh->prepare("SELECT message, ReceiveNotification.id as id, Reservation.id as reservation, Doctor.name as doctor, Department.name as department, Reservation.date as date, Reservation.time as time, begin_time
+//                             FROM ReceiveNotification
+//                             JOIN Reservation ON ReceiveNotification.id = Reservation.id
+//                             JOIN Block_time ON Block_time.code=Reservation.time
+//                             JOIN Doctor ON Doctor.id=Reservation.doctor
+//                             JOIN Department ON Department.number=Doctor.speciality
+//                             JOIN Patient ON Reservation.patient = Patient.cc
+//                             WHERE Patient.cc = ?");
+//     $stmt->execute(array($patient_id));
+//     return $stmt->fetchALL();
+// }
 
+function getPatientFromPrescription($prescription_id){
+    global $dbh;
+    $stmt = $dbh->prepare( "SELECT Patient.name as patient_name FROM Prescription
+                        JOIN Appointment ON id_appointment= reservation
+                        JOIN Reservation ON Reservation.id = reservation
+                        JOIN Patient ON Patient.cc = patient
+                        WHERE Prescription.id =?");
+    $stmt->execute(array($prescription_id));
+    return $stmt->fetch();                    
+}
 
 ?>

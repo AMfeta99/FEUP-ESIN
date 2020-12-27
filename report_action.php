@@ -1,5 +1,6 @@
 <?php
     require_once('config/init.php');
+    require_once('database/report.php');
 
     $report=$_POST["report"];
     $date=$_POST["time"];
@@ -13,11 +14,11 @@
         die();
     }
     
-    function insertReport($date,$report, $inpatient_code){
-        global $dbh;
-        $stmt= $dbh->prepare("INSERT INTO Report(date,message, inpatient) VALUES (?,?,?)");
-        $stmt->execute(array($date,$report, $inpatient_code));
-    }
+    // function insertReport($date,$report, $inpatient_code){
+    //     global $dbh;
+    //     $stmt= $dbh->prepare("INSERT INTO Report(date,message, inpatient) VALUES (?,?,?)");
+    //     $stmt->execute(array($date,$report, $inpatient_code));
+    // }
  
     try{
         insertReport($date,$report, $inpatient_code);
@@ -27,6 +28,5 @@
      }catch(PDOException $e){
         $_SESSION["msg"]="Report submission failed!";
         header("Location: inpatient.php?code=$inpatient_code");
-            // echo $e->getMessage(); 
      }
 ?>

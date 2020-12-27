@@ -42,18 +42,18 @@ function Check_InpatientAcess($dep_id, $code){
 
 }
 
-function getDepartmentOfAppointment($dep_id){
+function insertNurse($name,$phone_number, $mail_address,$password,$department){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT date, Block_time.begin_time as Hour, Doctor.name as Doctor, Patient.name as patient, Department.name as speciality
-                            FROM Appointment JOIN Patient ON patient=Patient.cc
-                            JOIN Reservation ON Reservation.id= reservation
-                            JOIN Block_time ON code=time
-                            JOIN Doctor ON doctor=Doctor.id
-                            JOIN Department ON Doctor.speciality= Department.number
-                            WHERE Department.number= ?;");
-    $stmt->execute(array($dep_id));
-    return $stmt->fetchALL();
+    $department_number = getDepId(strtolower($department))["number"];
+    $stmt= $dbh->prepare("INSERT INTO Nurse(name,phone_number, mail_address,password,department) VALUES (?,?,?,?,?)");
+    $stmt->execute(array($name,$phone_number,$mail_address,sha1($password),$department_number));
 }
 
-
+#verify if is a Nurse
+function IsthatNurse($mail_address){
+    global $dbh;
+    $stmt=$dbh->prepare("SELECT * FROM Nurse WHERE mail_address=? ");
+    $stmt->execute(array($mail_address));
+    return $stmt->fetch();
+}
 ?>

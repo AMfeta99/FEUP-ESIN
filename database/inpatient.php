@@ -39,27 +39,27 @@ function getBedDepartment($code){
 
 }
 
-// Medication of each patient
-function getMedOfEachInpatient($code){
-    global $dbh;
-    $stmt=$dbh->prepare("SELECT Medicine.name as name_med, Medicine.dose as dose, instructions FROM Inpatient
-                        JOIN MedicationAdministered ON Inpatient.code = inpatient
-                        JOIN Medicine ON code_medicine = Medicine.code
-                        WHERE Inpatient.code=?");
-    $stmt->execute(array($code));
-    return $stmt->fetchAll();
-}
+// // Medication of each patient
+// function getMedOfEachInpatient($code){
+//     global $dbh;
+//     $stmt=$dbh->prepare("SELECT Medicine.name as name_med, Medicine.dose as dose, instructions FROM Inpatient
+//                         JOIN MedicationAdministered ON Inpatient.code = inpatient
+//                         JOIN Medicine ON code_medicine = Medicine.code
+//                         WHERE Inpatient.code=?");
+//     $stmt->execute(array($code));
+//     return $stmt->fetchAll();
+// }
 
 // Reports of each patient
-function getReportsOfEachInpatient($code){
-    global $dbh;
-    $stmt=$dbh->prepare("SELECT Report.id as report_id, date, message FROM Inpatient
-                        JOIN Report ON Inpatient.code = inpatient
-                        WHERE Inpatient.code=?");
+// function getReportsOfEachInpatient($code){
+//     global $dbh;
+//     $stmt=$dbh->prepare("SELECT Report.id as report_id, date, message FROM Inpatient
+//                         JOIN Report ON Inpatient.code = inpatient
+//                         WHERE Inpatient.code=?");
 
-    $stmt->execute(array($code));
-    return $stmt->fetchAll();
-}
+//     $stmt->execute(array($code));
+//     return $stmt->fetchAll();
+// }
 
 function getHistoryDiagnosis($code){
     global $dbh;
@@ -73,5 +73,23 @@ function getHistoryDiagnosis($code){
 
     $stmt->execute(array($code));
     return $stmt->fetchALL();
+}
+
+    
+function Hospitalize($patient, $bed, $doctor){
+    $visiting_hours=' 2pm- 8pm';
+    $code=(string)$patient;
+    $rand =(string) rand(10,99);
+    $code = intval($rand.$code);
+    
+    global $dbh;
+    $stmt= $dbh->prepare("INSERT INTO Inpatient(code,visiting_hours,patient,bed,doctor) VALUES (?,?,?,?,?)");
+    $stmt->execute(array($code, $visiting_hours, $patient,$bed,$doctor));
+}
+
+function discharge($code){
+    global $dbh;
+    $stmt= $dbh->prepare("DELETE FROM Inpatient WHERE code=?");
+    $stmt->execute(array($code));
 }
 ?>
