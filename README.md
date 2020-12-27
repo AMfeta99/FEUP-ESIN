@@ -3,8 +3,8 @@ Authors: Ana Filipa Ferreira & Ana Maria Sousa
 
 Na página inicial do website [index.php](./index.php), pode ser consultada alguma informação acerca do hospital, assim como, através desta pode ser feito o login e o rastreamento de um paciente internado, através da inserção de um código. 
 O formulário do registo tambem pode ser acedido atravez do index.php. O registo é diferente dependendo do papel a desempenhar no hospital (patient, doctor, nurse). O login é feito através do mail que é inserido no registo.
-Para além disso é possvel aceder a informações dos departamentos como medicos do departamento em department.php acedido através d "Department&Doctors" do index.php. 
-Após selecionar o departamente terá acesso aos medicos do departamento e poderá consultar as informações de cada medico. 
+Para além disso, é possível aceder a informações dos departamentos, como medicos do departamento em [department.php](.department.php) acedido através do "Department&Doctors" do [index.php](./index.php). 
+Após selecionar o departamento terá acesso aos médicos do departamento e poderá consultar as informações de cada médico. 
 
 ### Papel do médico
 - Se fizer login e for um doctor, é reencaminhado para o file [Doctor.php](./Doctor.php), nesta página poderá criar o seu horário, consultar os seus pacientes internados e dar alta ou hospitalizar um novo paciente. Esse paciente será automaticamente inserido numa cama pertencente ao mesmo departamento do médico que o adicionou, e será monitorizado tanto pelo médico que o adicionou como pelos enfermeiros pertencentes ao mesmo departamento.
