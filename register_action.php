@@ -2,6 +2,9 @@
     require_once('config/init.php');
     require_once('database/department.php');
     require_once('database/user.php');
+    require_once('database/doctor.php');
+    require_once('database/nurse.php');
+    require_once('database/patient.php');
     $name=$_POST["name"];
     $phone_number=$_POST["phone_number"];
     $mail_address=$_POST["email"];
@@ -13,7 +16,6 @@
     $age=$_POST["age"];
 
     $photo=$_FILES["photo"];
-    //var_dump($photo);
     if(strlen($name)==0){
         $_SESSION["msg"]="Invalid Username!";
         header('Location: register.php');
@@ -95,7 +97,6 @@
             $_SESSION["msg"]="This User already exists";
          }
          else{
-            //  echo $e->getMessage(); 
             $_SESSION["msg"]=" Register fail";
         }
          header('Location: register.php');
