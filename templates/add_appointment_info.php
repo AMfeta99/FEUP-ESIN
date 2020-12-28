@@ -4,12 +4,12 @@
     <h2>Patient Info:</h2>
 
     <article class="info_section">
-      <h5 class="atribute">Name: <p><?php echo  $result["name"] ?></p>
-      </h5>
-      <h5 class="atribute">Age: <p><?php echo  $result["age"] ?></p>
-      </h5>
-      <h5 class="atribute">CC: <p><?php echo  $result["cc"] ?></p>
-      </h5>
+      <h5 class="atribute">Name:</h5> <p><?php echo  $result["name"] ?></p>
+      
+      <h5 class="atribute">Age: </h5><p><?php echo  $result["age"] ?></p>
+      
+      <h5 class="atribute">CC:</h5> <p><?php echo  $result["cc"] ?></p>
+      
 
     </article>
 

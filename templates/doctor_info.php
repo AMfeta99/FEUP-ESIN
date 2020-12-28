@@ -17,9 +17,9 @@
 
             <article class="info_section">
                 <h4 class="info_section">Contacts: </h4>
-                <h5 class="atribute">Mail Address: <p><?php echo  $result["mail_address"] ?></p></h5>
+                <h5 class="atribute">Mail Address:</h5> <p><?php echo  $result["mail_address"] ?></p>
                 <?php if (strlen($result["phone_number"])>0){?>
-                <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"]; }?></p></h5>
+                <h5 class="atribute">Phone Number:</h5> <p><?php echo  $result["phone_number"]; }?></p>
             </article> 
 
             

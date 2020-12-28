@@ -4,7 +4,7 @@
     <article class="header">
     
         <h5 class ="atribute">Patient:<?php echo  $patient["patient_name"];?></h5>
-        <h5 class ="atribute">Prescript by:<p><?php echo  $doctor["doctor_name"];?></p></h5>
+        <h5 class ="atribute">Prescript by:<?php echo  $doctor["doctor_name"];?></h5>
         <h5 class ="atribute">Mail Address:<?php echo  $doctor["doctor_mail"];?></h5>
     </article>
 
