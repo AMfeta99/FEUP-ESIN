@@ -28,20 +28,20 @@
 
     <article class="info_section">
       <h4>Personal identification: </h4>
-      <h5 class="atribute">Name: <p><?php echo  $result["name"] ?></p>
-      </h5>
-      <h5 class="atribute">Department: <p><?php echo  $result2["Sname"] ?></p>
-      </h5>
+      <h5 class="atribute">Name:</h5> <p><?php echo  $result["name"] ?></p>
+      
+      <h5 class="atribute">Department:</h5> <p><?php echo  $result2["Sname"] ?></p>
+      
     </article>
 
     <article class="info_section">
       <h4 class="info_section">Contacts: </h4>
-      <h5 class="atribute">Mail Address: <p><?php echo  $result["mail_address"] ?></p>
-      </h5>
+      <h5 class="atribute">Mail Address: </h5> <p><?php echo  $result["mail_address"] ?></p>
+     
       <?php if (strlen($result["phone_number"]) > 0) { ?>
-        <h5 class="atribute">Phone Number: <p><?php echo  $result["phone_number"];
+        <h5 class="atribute">Phone Number:</h5> <p><?php echo  $result["phone_number"];
                                             } ?></p>
-        </h5>
+        
     </article>
 
 
