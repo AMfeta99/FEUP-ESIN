@@ -23,7 +23,7 @@ if(isset($_SESSION['funtion'])){
       require_once('database/patient.php');
       require_once('database/notification.php');
       require_once('database/prescription.php');
-      require_once('database/appointmentphp');
+      require_once('database/appointment.php');
 
       try {
         $result = getPatientById($patient_cc); // array of arrays
