@@ -56,12 +56,12 @@ body>header h2 {
 }
 
 .out{
-    grid-area: "form";
+    grid-area: form;
 }
 
 /* "The best care just a click away!"*/
 #back> h2{
-    grid-area: "frase";
+    grid-area: frase;
 }
 
 /*----------login e inpatient-----------*/
