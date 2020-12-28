@@ -43,7 +43,6 @@ button{
   margin: 7px 0;
   border: none;
   cursor: pointer;
-  /* width: 40%; */
   font-size: 1em
 }
 
@@ -58,7 +57,6 @@ button {
 }
 
 .enviar{
-  /*background-color: #4ba34ef1;*/
   background-color: #037d58da;
 }
 

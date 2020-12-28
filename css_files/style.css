@@ -2,7 +2,6 @@
 
 /* ________________________Geral___________________________________*/
 body > header {
-    /*background-image: url("images/c.jpg") ;   este caminho está mal ... isto seria se tivesse na pasta principal mas tbm não se como fazer tbm */
     background-image: url("c.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,8 +142,6 @@ body > footer p {
   margin: 5px;
 	text-align: center;
   font-size: 1.5em;
- /* padding: 0; / não sei porque esta a assumir padding 1 e width 80 px / 
-  width: 150px;*/
 }
 
 
@@ -152,8 +149,6 @@ body > footer p {
 
 /*departments*/
 .col-6:hover {
-  /*transform: scale(1.1);*/
-  /*background-color: rgba(131, 221, 206, 0.8);*/
   background-color: rgba(60, 71, 70, 0.322);
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -167,7 +162,6 @@ body > footer p {
 
 /* Flex Item */
 #speciality_cards {
-/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
 flex: 1;
 margin: 0px;
 background: rgb(131, 221, 206);
@@ -187,8 +181,6 @@ width: 150px;
   padding: 1em;
   margin-top: 40px;
   opacity: 0.8;
- /* background-position: left;
-  background-repeat: no-repeat;*/
   background-size: cover;
   position: relative;
   max-width: 700px;
@@ -225,7 +217,6 @@ width: 150px;
 }
 
 #speciality_cards_dep{
-  /* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
   flex: 1;
   margin: 5px;
   background: rgb(131, 221, 206);
@@ -233,18 +224,13 @@ width: 150px;
     font-size: 1.5em;
     width: 350px;
   }
-/*
-  #speciality_cards_dep{
-    font-size: 20px;
-  }*/
+
   
   #speciality_cards_dep{
     margin: 15px;
     text-align: center;
     font-size: 1em;
     list-style-type: none;
-   /* padding: 0; / não sei porque esta a assumir padding 1 e width 80 px / 
-    width: 150px;*/
   }
 
   #speciality_cards_dep:hover {
@@ -274,10 +260,6 @@ width: 150px;
   background-color:White;
   text-align: center;
 }
-/*
-#link_profile li:hover {
-  background-color: rgba(0, 0, 0, 0.795);
-}*/
 
 #header_profile{
   margin-bottom: 10px;
@@ -301,7 +283,7 @@ width: 150px;
 
 
 #profile_pag li:hover{
-  background-color: rgba(132, 111, 151, 0.8); /*#037d5891;*/
+  background-color: rgba(132, 111, 151, 0.8); 
   transition: 1s;
 }
 #profile_pag a:hover{
@@ -317,10 +299,6 @@ aside li {
   border-right: 5px solid #862fe9c0;
 }
 
-/*
-aside li {
-  border-right-color: 5px purple;
-}*/
 
 /*fotos*/
 .circle {
@@ -399,7 +377,6 @@ aside li {
 #search {
   display: flex;
   margin-bottom: 1%;
-  /* border-bottom: 1px solid black; */
 }
 
 
@@ -451,7 +428,7 @@ td.mark_appointment{
   empty-cells: show;
 }
 
-td.mark_appointment:empty{ /* not working */
+td.mark_appointment:empty{ 
   background-color: ivory;
 }
 

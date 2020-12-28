@@ -27,8 +27,8 @@ body>header h1 {
 body>header h2 {
     grid-area: frase;
     padding: 5px;
-    /* margin-right: 10px; */
 }
+
 #hamburger{
     display: none;
   }
@@ -37,6 +37,7 @@ body>header h2 {
     grid-area: menu;
     float: right;
 }
+
 /*cabeçalho*/
 #back{
     display:grid;
@@ -101,7 +102,6 @@ body>header h2 {
     align-items: stretch;
     justify-content: center;
     text-align: center;
-   /* margin-left: 20%;*/
 }
 
 #indexdepartment{
@@ -145,8 +145,6 @@ aside {
   }
 
 #profile_pag > #info  {
-    /*grid-column-start:2;
-    grid-column-end:3;*/
     grid-column: middle;
     grid-row: start/ end;
   }
