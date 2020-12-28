@@ -12,7 +12,7 @@
 
     $password=$_POST["password"];
     $department=$_POST["department"];
-    $cc=$_POST["cc"];
+    $cc=$_POST["CC"];
     $age=$_POST["age"];
 
     $photo=$_FILES["photo"];
@@ -28,7 +28,7 @@
     }
     
     if(strlen($mail_address)==0){
-        $_SESSION["msg"]="Registe Invalid! Please insert your Mail Address!";
+        $_SESSION["msg"]="Invalid Registration! Please insert your Mail Address!";
         header('Location: register.php');
         die();
     }
@@ -37,24 +37,24 @@
     try{
         if($_SESSION["funtion"]=="Nurse"){
             if(strlen($department)==0){
-                $_SESSION["msg"]="Registe Invalid! Please insert your Department!";
+                $_SESSION["msg"]="Invalid Registration! Please insert your Department!";
                 header('Location: register_N.php');
                 die();
             }
             if(!CheckDepartment($department)){
-                $_SESSION["msg"]="Registe Invalid! There is no such Department!";
+                $_SESSION["msg"]="Invalid Registration! There is no such Department!";
                 header('Location: register_N.php');
                 die();
             }
 
         insertNurse($name,$phone_number, $mail_address,$password,$department);
-        $_SESSION["msg"]=" Nurse registe sucessful";
+        $_SESSION["msg"]=" Nurse successfully registered";
         header("Location: index.php");
         }
         elseif($_SESSION["funtion"]=="Patient"){
 
             if(strlen($age)==0){
-                $_SESSION["msg"]="Registe Invalid! Please insert your age!";
+                $_SESSION["msg"]="Invalid Registration! Please insert your age!";
                 header('Location: register_P.php');
                 die();
             }
@@ -69,17 +69,17 @@
                 die();
             }
             insertPatient($cc,$name,$age,$phone_number,$mail_address,$password);
-            $_SESSION["msg"]=" Patient Registe sucessful";
+            $_SESSION["msg"]=" Patient successfully registered";
             header('Location: index.php');
         }
         elseif($_SESSION["funtion"]=="Doctor"){
             if(strlen($department)==0){
-                $_SESSION["msg"]="Registe Invalid! Please insert your Department!";
+                $_SESSION["msg"]="Invalid Registration! Please insert your Department!";
                 header('Location: register_D.php');
                 die();
             }
             if(!CheckDepartment($department)){
-                $_SESSION["msg"]="Registe Invalid! There is no such Department!";
+                $_SESSION["msg"]="Invalid Registration! There is no such Department!";
                 header('Location: register_D.php');
                 die();
             }
@@ -87,7 +87,7 @@
             $photo= "images/doctors/$pic_name";
             insertDoctor($name,$photo,$phone_number,$mail_address,$password,$department);
             saveProfilePicture($name);
-            $_SESSION["msg"]=" Doctor Register sucessful";
+            $_SESSION["msg"]=" Doctor successfully registered";
             header('Location: index.php');
         }
 

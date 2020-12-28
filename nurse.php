@@ -2,7 +2,7 @@
   require_once('config/init.php');
   require_once('database/bed.php');
   require_once('database/nurse.php');
-  // require_once('database/department.php');
+  require_once('database/appointment.php');
 
   if(isset($_SESSION['funtion'])){ 
     if($_SESSION['funtion']=='Nurse'){
