@@ -49,7 +49,7 @@ CREATE TABLE Patient (
 CREATE TABLE Doctor (
 	id integer PRIMARY KEY AUTOINCREMENT, 
 	name text NOT NULL,
-    photo text, -- não esquecer colocar uma foto como default, para caso um médico não adicione foto
+    photo text, 
     phone_number integer,
 	mail_address text NOT NULL UNIQUE,
     password text NOT NULL UNIQUE,
@@ -76,8 +76,8 @@ CREATE TABLE Block_time (
 
 CREATE TABLE Reservation(
     id integer PRIMARY KEY AUTOINCREMENT, 
-    date Date NOT NULL, -- tipo 11-11-2021 
-    time integer NOT NULL REFERENCES Block_time, -- the primary key of block time is an integer
+    date Date NOT NULL,
+    time integer NOT NULL REFERENCES Block_time,
     doctor integer NOT NULL REFERENCES Doctor, 
     patient integer NOT NULL REFERENCES Patient
     
@@ -91,7 +91,7 @@ CREATE TABLE Appointment(
 
 CREATE TABLE Prescription (
     id integer PRIMARY KEY AUTOINCREMENT, 
-    date Date NOT NULL, -- tipo 11-11-2021
+    date Date NOT NULL, 
     date_limit Date NOT NULL, 
     id_appointment integer NOT NULL REFERENCES Appointment,
     CHECK (Date(date_limit)> Date(date))
@@ -150,9 +150,6 @@ CREATE TABLE Inpatient(
     doctor integer REFERENCES Doctor
 
 );
-
--- a relação entre inpatient and report deve ser de 1 para * 
--- Ou seja, cada paciente tem vários daily report mas cada report apenas tem um paciente
 
 CREATE TABLE Report ( 
     id integer PRIMARY KEY AUTOINCREMENT,
@@ -478,7 +475,6 @@ INSERT INTO Block_time_and_Doctor VALUES(49, 1); --16:00
 
 
 -- Reservation
--- acho que deviamos de fazer um check qualquer porque a data da consulta e o block_time tem de coincidir com o mesmo dia da semana
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 5, 15431264);
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 3 , 5, 15726640);
 INSERT INTO Reservation (date, time, doctor,patient) VALUES ('2020-11-11', 2 , 6, 14511630);

@@ -9,8 +9,6 @@
             <input type="hidden" name="dep" value="<?php echo $dep_number; ?> ">
             <input type="hidden" name="name" value="<?php echo $Department_name; ?> ">
             <input type="text" name="Dname" placeholder="name of Doctor">
-            <!-- <input type="text" name="email" placeholder="mail address">
-            <input type="number" name="phone_number" placeholder="phone_number"> -->
             <input id="button_search" type="submit" value="SEARCH">
         </form>
 

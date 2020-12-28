@@ -80,7 +80,6 @@
           <h5 class="atribute">
             <p>Speciality: <?php echo  $row["speciality"] ?></p>
             <h6 class="subatribute">
-              <!-- Alterar Css -->
               <p>Doctor: <?php echo  $row["doctor"] ?></p>
               <p>Date: <?php echo  $row["date"] ?> <tab> Hour: <?php echo  $row["Hour"] ?></p>
               <?php if (!is_null($row['disease_name'])) { ?>

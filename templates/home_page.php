@@ -66,7 +66,7 @@
            
             <div id="indexdepartment" class = "departments_block">
 
-               <?php if ($err == null) { ?> <!--if there was no error -->
+               <?php if ($err == null) { ?> 
                <?php foreach ($result as $row) { ?> 
 
               <div class="col-6 ">

@@ -1,7 +1,6 @@
 <section id="profile_pag">
           <article>
             <header id="dados">
-              <!-- <img class="circle" src="images/doctors/9.jpg" alt="" width="130"> -->
               <img class="circle" src="<?php echo  $result["photo"] ?>" alt="" width="130">
               <h4><?php echo  $result["name"] ?></h4> 
               <h5><?php echo  $result2["Sname"] ?></h5>
@@ -25,13 +24,12 @@
 
             
             <h2>Schedule</h2>
-            <?php if( $numRowsSchedule['num'] != 0) { ?> <!-- if has a schedule-->
+            <?php if( $numRowsSchedule['num'] != 0) { ?> 
             <table class= "doctor_schedule">
                   <?php $week_days = array('MON', 'TUE', 'WED', 'THU', 'FRI');?>
                   <?php $begin_hours = array('8:00','9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00');?>
-                  <tr> <!-- Linha 1-->
+                  <tr> 
                     <th class ="b"> Hour</th>
-                    <!-- for para correr todos os dias da semana -->
                     <th class ="b"> Monday </th>
                     <th class ="b"> Tuesday </th>
                     <th class ="b"> Wednesday </th>

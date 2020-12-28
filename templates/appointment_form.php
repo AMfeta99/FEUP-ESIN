@@ -1,7 +1,7 @@
 
       <section class= book_appointment>
         <h2>Book Appointment</h2>
-      <form action="Appointment.php" method="post" class="specialization-select"> <!-- Queria que ficasse a mostrar a especialidade que foi selecionade depois de fazer o submit-->
+      <form action="Appointment.php" method="post" class="specialization-select"> 
         <label> Select Specialization: </label>
         
         <select name="dep" id="id_dep" required ="required">

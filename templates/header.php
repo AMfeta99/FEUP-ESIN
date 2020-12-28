@@ -52,9 +52,9 @@
                   <?php if($_SESSION["funtion"]=="Doctor"){?>
                    <li><a href='Doctor.php?id=<?php echo $id ?>'>Profile</a></li>
                   <?php }elseif($_SESSION["funtion"]=="Nurse"){ ?>
-                    <li><a href=' Doctor.php?id=<?php echo $id ?>'>Profile</a></li>
+                    <li><a href=' nurse.php?id=<?php echo $id ?>'>Profile</a></li>
                   <?php }elseif($_SESSION["funtion"]=="Patient"){ ?>
-                    <li><a href=' index_f_login.php?id=<?php echo $id ?>'>Profile</a></li>
+                    <li><a href=' index_f_login.php?cc=<?php echo $id ?>'>Profile</a></li>
                  <?php } ?>
                   <li><form action="logout_action.php">
                     <button class="out" type="submit">Log out</button>

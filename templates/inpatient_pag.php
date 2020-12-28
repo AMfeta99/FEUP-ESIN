@@ -27,7 +27,6 @@
             <h2>Patient Info:</h2>
             
             <article class="info_section">
-                <!-- <h4 >Patient Info: </h4> -->
                 <h5 class="atribute">Name: <p><?php echo  $result2["name"] ?></p></h5>
                 <h5 class="atribute">Age:  <p><?php echo  $result2["age"] ?></p></h5>
                 <h5 class="atribute">CC:  <p><?php echo  $result2["cc"] ?></p></h5> 
@@ -137,7 +136,7 @@
                     <h4 class="info_section">New Reports: </h4>
                     
                     <textarea name="report" rows="15"  cols="100"></textarea>
-                    <input type="hidden" name="time" value="<?php echo date('Y-m-d') ?>" > <!--não tenho a certeza deste time, queria q fosse buscar a data-->
+                    <input type="hidden" name="time" value="<?php echo date('Y-m-d') ?>" > 
                     <input type="hidden" name="inpatient" value="<?php echo  $result2["code"] ?>">
                     
                     <button type="submit" class="enviar">Submit</button>

@@ -4,7 +4,6 @@
     <h2>Patient Info:</h2>
 
     <article class="info_section">
-      <!-- <h4 >Patient Info: </h4> -->
       <h5 class="atribute">Name: <p><?php echo  $result["name"] ?></p>
       </h5>
       <h5 class="atribute">Age: <p><?php echo  $result["age"] ?></p>
@@ -48,7 +47,6 @@
       <button type="submit" class="button_appointment">Submit</button>
       <?php echo $msg_disease ?>
     </form>
-
 
 
     <form action="Medicine_action.php" method="post" class="info_section" id="add_report">

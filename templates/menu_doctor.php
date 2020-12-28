@@ -55,7 +55,6 @@
             <h5 class="atribute">
               <p>Name: <?php echo  $row["patient"] ?></p>
               <h6 class="subatribute">
-                <!-- Alterar Css -->
                 <p>Date: <?php echo  $row["date"] ?> </p>
                 <p>Hour: <?php echo  $row["Hour"] ?> </p>
 
@@ -90,7 +89,6 @@
             <h5 class="atribute">
               <p>Name: <?php echo  $row["patient"] ?></p>
               <h6 class="subatribute">
-                <!-- Alterar Css -->
                 <p>Date: <?php echo  $row["date"] ?> </p>
                 <p>Hour: <?php echo  $row["Hour"] ?> </p>
                 <div id="button-container">
@@ -127,7 +125,6 @@
           <h5 class="atribute">
             <p>Name: <?php echo  $row["name"] ?></p>
             <h6 class="subatribute">
-              <!-- Alterar Css -->
               <p>Bed: <?php echo  $row["bed"] ?> </p>
               <p>Code: <?php echo  $row["code"] ?> </p>
               <p>You can consult more info about the inpatient <a href='inpatient.php?code=<?php echo $row["code"] ?>'>here.</a> </p>
@@ -146,13 +143,11 @@
     <?php $begin_hours = array('08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'); ?>
 
     <?php if ($numRowsSchedule['num'] != 0) { ?>
-      <!-- if has a schedule-->
+
       <table class="doctor_schedule">
 
         <tr>
-          <!-- Linha 1-->
           <th class="b"> Hour</th>
-          <!-- for para correr todos os dias da semana -->
           <th class="b"> Monday </th>
           <th class="b"> Tuesday </th>
           <th class="b"> Wednesday </th>
@@ -192,9 +187,9 @@
         <table class="doctor_schedule">
 
           <tr>
-            <!-- Linha 1-->
+            
             <th class="b"> Hour</th>
-            <!-- for para correr todos os dias da semana -->
+          
             <th class="b"> Monday </th>
             <th class="b"> Tuesday </th>
             <th class="b"> Wednesday </th>
