@@ -8,18 +8,6 @@
     $message= $_POST['message'];
     $cc_patient=$_POST['patient_cc'];
     
-    // function DeleteReservation($id){
-    //     global $dbh;
-    //     $stmt= $dbh->prepare("DELETE FROM Reservation WHERE id=?");
-    //     $stmt->execute(array($id));
-    // }
-
-    // function DeleteNotification($id){
-    //     global $dbh;
-    //     $stmt= $dbh->prepare("DELETE FROM ReceiveNotification WHERE id=?");
-    //     $stmt->execute(array($id));
-    // }
- 
     try{
         if($message=="denied"){
             DeleteNotification($id_notification);

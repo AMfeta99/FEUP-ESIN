@@ -1,5 +1,4 @@
 <?php
-   
 
     function insertSchedule($code, $doctor_id){
         global $dbh;
@@ -15,7 +14,5 @@
        $stmt->execute(array($time,$week_day));
        return $stmt->fetch()['code'];
     }
-
-
 
 ?>

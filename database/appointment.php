@@ -19,7 +19,6 @@ function getAppointmentDiagnosis($patient_id){
     return $stmt->fetchALL();
 }
 
-
 function getDepartmentOfAppointment($dep_id){
     global $dbh;
     $stmt = $dbh->prepare("SELECT date, Block_time.begin_time as Hour, Doctor.name as Doctor, Patient.name as patient, Department.name as speciality

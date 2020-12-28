@@ -39,28 +39,6 @@ function getBedDepartment($code){
 
 }
 
-// // Medication of each patient
-// function getMedOfEachInpatient($code){
-//     global $dbh;
-//     $stmt=$dbh->prepare("SELECT Medicine.name as name_med, Medicine.dose as dose, instructions FROM Inpatient
-//                         JOIN MedicationAdministered ON Inpatient.code = inpatient
-//                         JOIN Medicine ON code_medicine = Medicine.code
-//                         WHERE Inpatient.code=?");
-//     $stmt->execute(array($code));
-//     return $stmt->fetchAll();
-// }
-
-// Reports of each patient
-// function getReportsOfEachInpatient($code){
-//     global $dbh;
-//     $stmt=$dbh->prepare("SELECT Report.id as report_id, date, message FROM Inpatient
-//                         JOIN Report ON Inpatient.code = inpatient
-//                         WHERE Inpatient.code=?");
-
-//     $stmt->execute(array($code));
-//     return $stmt->fetchAll();
-// }
-
 function getHistoryDiagnosis($code){
     global $dbh;
     $stmt = $dbh->prepare("SELECT Disease.name as disease_name FROM AppointmentDiagnosis
@@ -75,7 +53,6 @@ function getHistoryDiagnosis($code){
     return $stmt->fetchALL();
 }
 
-    
 function Hospitalize($patient, $bed, $doctor){
     $visiting_hours=' 2pm- 8pm';
     $code=(string)$patient;

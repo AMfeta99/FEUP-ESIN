@@ -26,5 +26,4 @@ function getMedicinecode($name,$dose){
     return $stmt->fetch();
 }
 
-
 ?>
