@@ -1,22 +1,28 @@
 /* layout.css (positioning the main components),.*/
 
+/* header */
 body> header> #simbolo{
     display:grid;
     grid-template-columns:[imagem] 0.05fr [nome] auto [username] 1fr;
     grid-template-rows:[start] 1fr [end];
     grid-template-areas: "imagem nome username"
 }
+/* "logotipo" */
 body>header img {
     grid-area: imagem;
 }
 
+/* nome do hospital "Hospital"*/
 body>header h1 {
     grid-area: nome;
 }
+
+/* nome do utilizado após fazer login*/
 #username {
     grid-area: username;
 }
 
+/*frase do header e opções*/
 #frase_menu{
     display:grid;
     grid-template-columns:[frase] auto  [menu] 1fr;
@@ -24,6 +30,7 @@ body>header h1 {
     grid-template-areas: "frase menu";
 }
 
+/* "The best care just a click away!"*/
 body>header h2 {
     grid-area: frase;
     padding: 5px;
@@ -33,12 +40,13 @@ body>header h2 {
     display: none;
   }
 
+/* links/opções do header do index*/
 #links{
     grid-area: menu;
     float: right;
 }
 
-/*cabeçalho*/
+/*header do registo e do perfil*/
 #back{
     display:grid;
     grid-template-columns:[frase-start] 1fr [frase-end] auto [form];
@@ -51,10 +59,12 @@ body>header h2 {
     grid-area: "form";
 }
 
+/* "The best care just a click away!"*/
 #back> h2{
     grid-area: "frase";
 }
-/**---------------------*/
+
+/*----------login e inpatient-----------*/
 #logins {
     display:grid;
     grid-template-rows: [content-start] auto [content-end];
@@ -63,16 +73,17 @@ body>header h2 {
                         
 }
 
+/* login */
 #logins > #login{
     grid-area: login;
 }
 
+/* inpatient */
 #logins > #inpatient{
     grid-area: inpatient_code;
 }
 
 /* Introduction */
-
 .about{
     display:grid;
     grid-template-rows: [about_begin] auto [about_end_info_start] auto [info_end];
@@ -94,7 +105,7 @@ body>header h2 {
     grid-area: about;
 }
 
-
+/* departamentos  */
 .departments_block {
     display: flex;
     flex-direction: row;
@@ -104,10 +115,12 @@ body>header h2 {
     text-align: center;
 }
 
+/* departamentos do index*/
 #indexdepartment{
     max-width: 900px;
 }
 
+/* departamentos do department.php*/
 #pagdepartment{
     max-width: 90%;
 }
@@ -167,7 +180,7 @@ body> #prescription{
     grid-template-rows: [start] auto [news] auto [end];
 }
 
-
+/*header da prescription*/
 #prescription > .header {
     grid-column: start ;
     grid-row: start;
@@ -179,6 +192,7 @@ h7.instructions {
     margin-left: 5%;
 }
 
+/* lista de medicamentos da prescription*/
 .list_medicines > h6:nth-child(1) {
     padding: 20px;
     border: 1px solid;
@@ -190,6 +204,8 @@ div.medication {
         padding-top: 10px;
         padding-bottom: 6px;
 }
+
+/* quantidade de cada medicação */
 .quantity > h6{
     grid-column: middle;
     grid-row: news;
@@ -199,9 +215,8 @@ div.medication {
 }
 
 
-
 /*____________________departement&Doctors_____________*/
-
+/* lista d medicos de cada departamento*/
 .especialista{
     display: grid;
   grid-template-columns: [start] auto [middle] 1fr [end];
@@ -211,15 +226,18 @@ div.medication {
  
 }
 
+/*nome do medico*/
 .especialista > #Dname{
     grid-area:nome;  
 }
+
+/* foto do medico*/
 .especialista > img{
     grid-area:image; 
     margin-top: 10px;
 }
 
-
+/*informações do medico: mail e numero de telemovel*/
 .especialista #info{
     grid-area:info;
 }

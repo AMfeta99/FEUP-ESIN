@@ -1,6 +1,7 @@
 /*style.css (styling the main components)*/
 
 /* ________________________Geral___________________________________*/
+/* header*/
 body > header {
     background-image: url("c.jpg") ;
     background-position: center;
@@ -13,6 +14,8 @@ body > header {
     margin-top: 0%;
     padding-top: 5px;
 }
+
+/* body*/
  body {
   width: 62em;
   justify-content: center;
@@ -56,6 +59,7 @@ body > header a {
     text-decoration: none;
 } 
 
+/* opções do header */
 #links{
   width: 100%;
   background-color: #555;
@@ -80,6 +84,7 @@ body > header a {
   transform: scale(1.1);
 }
 
+/* nome do user após login*/
 #username{
   text-align: right;
 }
@@ -160,7 +165,6 @@ body > footer p {
   margin-left: 15%;
 }
 
-/* Flex Item */
 #speciality_cards {
 flex: 1;
 margin: 0px;
@@ -170,12 +174,13 @@ font-size: 1.5em;
 width: 150px;
 }
 
-/*login*/
+/*login e inpatient*/
 
 #logins{
   padding: 1em 0;
   color: black;
 }
+/*login*/
 #login{
   background-image: url("https://img.freepik.com/fotos-gratis/homem-negocios-segurando-medico-icone-e-conexao_110893-1258.jpg?size=626&ext=jpg");
   padding: 1em;
@@ -186,7 +191,7 @@ width: 150px;
   max-width: 700px;
   
 }
-
+/*inpatient*/
 #inpatient{
   background-image: url("https://s.hdnux.com/photos/73/01/67/15474130/3/920x920.jpg");
   background-size: cover;
@@ -241,7 +246,7 @@ width: 150px;
   }
   
 /*______________________index_f_login.html_____________*/
-
+/*opções nos perfis*/
 #link_profile {
   display: flex;
   padding: 0;
@@ -260,7 +265,7 @@ width: 150px;
   background-color:White;
   text-align: center;
 }
-
+/*header nos perfis*/
 #header_profile{
   margin-bottom: 10px;
 }
@@ -289,12 +294,12 @@ width: 150px;
 #profile_pag a:hover{
   color:rgb(176, 85, 194);
 }
-
+/* necessário para responsive design*/
 #hamburgerp{
   display: none;
 }
 
-
+/* cor de border da opções do perfil*/
 aside li {
   border-right: 5px solid #862fe9c0;
 }
@@ -355,11 +360,12 @@ aside li {
   padding: 1%;
 }
 
+/* pagination */
 #pagination {
   text-align: center;
   font-size: 1em;
 }
-
+/* "<" e ">" no pagination */
 #pagination a{
   text-decoration: none;
   margin: 0 1em;
@@ -368,6 +374,7 @@ aside li {
 #lt{
   visibility: hidden;
 }
+
 /* search */
 
 #button_search:hover{
@@ -392,7 +399,7 @@ th, td {
 }
 
 
-
+/*horario do medico*/
 .doctor_schedule {
   font-size: 1em;
   padding-bottom: 3%;
@@ -433,7 +440,7 @@ td.mark_appointment:empty{
 }
 
 /*____________________Appointment.php_____________*/
-
+/* marcar consultas*/
 .book_appointment {
   border: 3px solid rgb(0, 132, 255);
   width: 25em;
@@ -445,6 +452,7 @@ td.mark_appointment:empty{
   margin-bottom: 2em;
   margin-top: 1.5em;
 }
+/* selecionar opções para marcação de consulta*/
 form.specialization-select{
   font-family: 'Times New Roman', Times, serif;
 }

@@ -69,6 +69,7 @@
         padding-bottom: 1.5em;
     }
 
+    /*hamburger nos perfis*/
     input#hamburger ~ label[for="hamburger"]>#link_profile> li{
         height:0;
         padding: 0;
@@ -119,7 +120,6 @@
     }
 
     /*----------profiles---------------*/
-
     #profile_pag img{
         display: none;
     }
@@ -155,12 +155,13 @@
     .ModalContent2{
         margin-left: 5%; 
     } 
-
+    /* inputs em forms*/
     input {
         width: 90%;
         padding: 8px 15px;
         }
-    
+
+    /* buttons em forms*/
     button{
         color: rgb(255, 255, 255);
         padding: 10px 25px;
@@ -185,6 +186,7 @@
         width:100%;
         }
 
+    /* login e inpatient no index*/
     #logins {
         display:grid;
         grid-template-columns: [content-start] auto [content-end];
@@ -193,6 +195,8 @@
         grid-template-areas:"login"
                             "inpatient_code";                  
     }
+
+    /* about us no index */
     .about{
         display:grid;
         grid-template-columns: [content-start] auto [content-end];
@@ -201,7 +205,7 @@
                               "img "
                               "text";     
     }
-    
+    /* "The best care just a click away!" e opções no index */
     #frase_menu{
         display:grid;
         grid-template-columns: [frase] auto [menu];

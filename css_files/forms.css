@@ -1,4 +1,4 @@
-/* forms.css (design for the login and register forms).*/
+/* forms.css (design and layout for the login and register forms).*/
 
 /*  input fields */
 input {
@@ -14,11 +14,13 @@ input {
 
 
 /*___________________________registo___________________________ */
-    
+ 
+/* cabeçalho */
 #registo> #register_option, form{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* register_choose: opções de registo */
 #register_choose {
     display: flex;
     flex-direction: column;
@@ -30,7 +32,7 @@ input {
     margin-left: 2%;
 }
 
-
+/*paginas de registo*/
 .ModalContent {
     background-color: rgba(255, 255, 255, 0.7);
     margin: 5px auto;
@@ -43,7 +45,7 @@ input {
     margin-top: 1.5em;
 }
 
-
+/* titulo no registo */
 .ModalContent> header h2{
     text-align: center;
     padding-top: 35px;

@@ -3,14 +3,15 @@
 
 /*--------------------buttons-----------------------*/
 
-
 /* button on hover */
+/* log out buttons and back button*/
 .out:hover, #out:hover{
 color: red;
 cursor: pointer;
 transform: scale(1.1);
 }
 
+/* log out button*/
 .out:hover{
   color: red;
   background-color:transparent;
@@ -29,7 +30,7 @@ transform: scale(1.1);
   color:white;
 }
 
-/*buttons e X*/
+/*buttons */
 button:hover {
   opacity: 0.8;
   background-color: rgb(98, 179, 211);
@@ -56,15 +57,18 @@ button {
   opacity: 0.8;
 }
 
+/* submit buttons*/
 .enviar{
   background-color: #037d58da;
 }
 
+/* cancel buttons*/
 .cancel{
   background-color:  rgba(167, 14, 14, 0.705);
   margin-left: 3%;
 }
 
+/* position of buttons in forms*/
  form>footer{
   display: flex;
   flex-direction: row;
@@ -72,6 +76,7 @@ button {
   align-items: stretch;
 }
 
+/* button in appointment file (add_apointment_info.php) */
 button.button_appointment{
   color: black;
   margin: 7px 0;
@@ -81,6 +86,7 @@ button.button_appointment{
 
 }
 
+/* button for add a prescription (add_apointment_info.php and impatient_pag.php)*/
 button.submit_prescription{
   padding: 8px 20px;
   border: 0 none;
