@@ -15,7 +15,8 @@
             <div id="speciality_cards_dep"><a href="departament&doctors.php?dep=<?php echo $row["number"]?>&name=<?php echo $row["name"]?>">
                 <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width:100%; height: 250px;" >
                 <p><?php echo $row["name"] ?></p>
-        </div></a>   
+                </a> 
+        </div>  
         </div>
 
             <?php } ?>

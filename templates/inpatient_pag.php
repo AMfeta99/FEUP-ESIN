@@ -72,7 +72,7 @@
                 <?php foreach ($result5 as $row) { ?> 
                   <?php $i = $i + 1; ?>
                   <?php if (!is_null($row["name_med"])) { ?>
-                    <h5 class="atribute">Name: <p><?php echo  $row["name_med"]; ?> <tab> Dose: <?php echo  $row["dose"]; ?></p></h5> 
+                    <h5 class="atribute">Name: <p><?php echo  $row["name_med"]; ?> <tab></tab> Dose: <?php echo  $row["dose"]; ?></p></h5> 
                     <h5 class="atribute">Instructions: <p><?php echo  $row["instructions"]; ?> </p></h5> 
                   <?php } else {
                     $sum_null = $sum_null + 1;

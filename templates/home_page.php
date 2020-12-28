@@ -12,25 +12,25 @@
             </div>
           
             <div class="mySlide" id="slide_2" style="display: block">
-              <div class="titletext"><a href="#slide_1"> <</a>Patient Profile <a href="#slide_3"> ></a></div>
+              <div class="titletext"><a href="#slide_1"> &lt; </a>Patient Profile <a href="#slide_3"> ></a></div>
               <img src="images/6.jpg" alt="2" style="width:100% ">
               <div class="descritext">The profile allows you to consult scheduled appointments, prescriptions and see your entire medical history</div>
             </div>
         
             <div class="mySlide" id="slide_3" style="display: block">
-              <div class="titletext"><a href="#slide_2"> <</a>Departments and Doctors <a href="#slide_4"> ></a></div>
+              <div class="titletext"><a href="#slide_2"> &lt; </a>Departments and Doctors <a href="#slide_4"> ></a></div>
               <img src="http://medintegra.es/wp-content/uploads/2012/09/Medicina-personalizada.jpg" alt="3 " style="width:100%">
               <div class="descritext">Discover the services that we have to offer and our healthcare professionals</div>
             </div>
           
             <div class="mySlide" id="slide_4" style="display: block">
-              <div class="titletext"><a href="#slide_3"> <</a> Appointment <a href="#slide_5"> ></a></div>
+              <div class="titletext"><a href="#slide_3"> &lt; </a> Appointment <a href="#slide_5"> ></a></div>
               <img src="http://neuroser.pt/wp-content/uploads/2015/02/07.-Servi%C3%A7os-Planos-Interven%C3%A7%C3%A3o_filtro.jpg" alt="4 " style="width:100%">
               <div class="descritext">Schedule an appointment with any doctor</div>
             </div>
           
             <div class="mySlide" id="slide_5" style="display: block">
-              <div class="titletext"><a href="#slide_4"> <</a>The best care just a click away!<a href="#slide_1"> ></a></div>
+              <div class="titletext"><a href="#slide_4"> &lt; </a>The best care just a click away!<a href="#slide_1"> ></a></div>
               <img src="http://portaldocoracao.com.br/wp-content/uploads/2008/11/cardiologista.jpg" alt="5 " style="width:100%">
               <div class="descritext"><a href="register.php" id="join"  style=" color:white; font-size: 30px; ">Join us</a> </div>
             </div>
@@ -74,7 +74,8 @@
                       <div>
                       <img src="images/departments/<?php echo $row["number"]?>.jpg" alt="7" style = "width: 100%; height: 160px;" >
                       <p><?php echo $row["name"] ?></p>
-                    </a></div>
+                      </div>
+                    </a>
                </div>
               </div> 
 

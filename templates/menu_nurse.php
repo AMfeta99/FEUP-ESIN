@@ -57,8 +57,8 @@
                   <h5 class="atribute"> 
                     <p>Name: <?php echo  $row["patient"] ?></p>
                     <h6 class= "subatribute">
-                      <p >code: <?php echo  $row["code"] ?> </p>
-                      <p >Bed: <?php echo  $row["bed"] ?></p>
+                      <p>Code: <?php echo  $row["code"] ?> </p>
+                      <p>Bed: <?php echo  $row["bed"] ?></p>
                       <p>You can consult more info about the inpatient <a href='inpatient.php?code=<?php echo $row["code"] ?>'>here.</a> </p>
                     </h6>
                   </h5>
