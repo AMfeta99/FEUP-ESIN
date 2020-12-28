@@ -46,13 +46,25 @@ function getDoctorInfo2($dep_number,$page){
     return $stmt->fetchAll();
 }
 
-function getDoctorBySearch($dep_number,$Dname){
+function getDoctorBySearch($dep_number,$Dname, $mail){
     global $dbh;
-    $stmt = $dbh->prepare("SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
-                            FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
-                            WHERE Doctor.speciality=? AND Doctor.name LIKE ?");
+    $query= "SELECT Doctor.id, Doctor.name, Doctor.photo, Doctor.phone_number, Doctor.mail_address, Department.name as speciality
+    FROM Doctor JOIN Department ON Doctor.speciality= Department.number 
+    WHERE Doctor.speciality=?";
+    $params = array($dep_number);
+    if($Dname != ''){
+        $query = $query . " AND Doctor.name LIKE ?";
+        $params[]= "%$Dname%";
+    }
+    if($mail != ''){
+        $query = $query . " AND Doctor.mail_address LIKE ?";
+        $params[]= "%$mail%";
+    }
 
-    $stmt->execute(array($dep_number,"%$Dname%"));
+
+    $stmt = $dbh->prepare($query);
+
+    $stmt->execute($params);
     return $stmt->fetchAll();
 }
 

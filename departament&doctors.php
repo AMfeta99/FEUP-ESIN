@@ -6,7 +6,7 @@
   $dep_number = $_GET['dep'];
 
   $Dname = $_GET["Dname"];
-
+  $mail = $_GET["email"];
   $n_doctor = getNumberOfDoctorForDepartment($dep_number);
   $n_pages = ceil($n_doctor / 2); // round up
   if (isset($_GET['page'])) {
@@ -21,8 +21,8 @@
   }
 
   try {
-    if (isset($Dname)) {
-      $result = getDoctorBySearch($dep_number, $Dname);
+    if (isset($Dname) && isset($mail)) {
+      $result = getDoctorBySearch($dep_number, $Dname, $mail);
     } else {
       $result = getDoctorInfo2($dep_number, $page);
     }
